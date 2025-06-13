@@ -153,7 +153,7 @@ func uRdied():
 
 
 func _on_area_entered(area):
-	if area is dangerousBalls and not invincibility:
+	if area is dangerousBalls or area is bulletToPlayer and not invincibility:
 		uRdied()
 		$invincibility.start()
 

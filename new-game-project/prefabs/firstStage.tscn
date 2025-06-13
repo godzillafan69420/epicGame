@@ -1,34 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://6ihrf5wb68u1"]
+[gd_scene load_steps=4 format=3 uid="uid://6ihrf5wb68u1"]
 
 [ext_resource type="PackedScene" uid="uid://b7a7kdiy2ua2k" path="res://prefabs/player.tscn" id="1_gp1vu"]
-[ext_resource type="Script" path="res://scripts/first_stage.gd" id="1_rlti1"]
+[ext_resource type="Script" uid="uid://dx685i44ok57h" path="res://scripts/first_stage.gd" id="1_rlti1"]
 [ext_resource type="PackedScene" uid="uid://dq28g10k4d752" path="res://ui/ui.tscn" id="2_e7hx6"]
-[ext_resource type="PackedScene" uid="uid://dmpm4hwdp4ij2" path="res://prefabs/theEnemy.tscn" id="6_uxj7l"]
 
 [node name="firstStage" type="Node2D"]
 script = ExtResource("1_rlti1")
 
 [node name="player" parent="." instance=ExtResource("1_gp1vu")]
+top_level = true
 position = Vector2(-159, 303)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("2_e7hx6")]
+top_level = true
+light_mask = 512
 offset_left = -578.0
 offset_top = -325.0
 offset_right = -578.0
 offset_bottom = -325.0
 
 [node name="elmoSpawnRate" type="Timer" parent="."]
-wait_time = 0.344
+wait_time = 0.45
 autostart = true
 
 [node name="gigaSpawnRate" type="Timer" parent="."]
-wait_time = 0.615
+wait_time = 1.5
 autostart = true
-
-[node name="guyShootTowardsYou" parent="." instance=ExtResource("6_uxj7l")]
-position = Vector2(-405, -191)
 
 [connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]
 [connection signal="timeout" from="gigaSpawnRate" to="." method="_on_giga_spawn_rate_timeout"]

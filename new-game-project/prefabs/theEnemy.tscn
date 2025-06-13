@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmpm4hwdp4ij2"]
 
-[ext_resource type="Script" path="res://prefabs/the_enemy.gd" id="1_temce"]
+[ext_resource type="Script" uid="uid://decx2bkwl6jhu" path="res://scripts/the_enemy.gd" id="1_temce"]
 [ext_resource type="Texture2D" uid="uid://il4gq1to5yyh" path="res://images/guywithagun.png" id="1_y4cat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msdjt"]
@@ -21,4 +21,5 @@ texture = ExtResource("1_y4cat")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

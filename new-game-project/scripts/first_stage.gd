@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var enemyPre = preload("res://prefabs/elmo.tscn")
+@onready var guyTowards = preload("res://prefabs/theEnemy.tscn")
 @onready var playerBody = preload("res://prefabs/player.tscn")
 var Score = 0
 @onready var thePlayer = find_child("player")
@@ -12,6 +13,7 @@ func _on_elmo_spawn_rate_timeout():
 	var elmo = enemyPre.instantiate()
 	elmo.position = Vector2(randf_range(-530,200),-365)
 	add_child(elmo)
+	
 func _process(delta):
 	if thePlayer != null:
 		$UI/score.text = "SCORE: " + str(Score)
@@ -37,4 +39,6 @@ func _process(delta):
 
 
 func _on_giga_spawn_rate_timeout():
-	pass
+	var strongGuy = guyTowards.instantiate()
+	strongGuy.position = Vector2(randf_range(-530,200),-365)
+	add_child(strongGuy)

@@ -1,0 +1,49 @@
+extends Area2D
+
+class_name GuyShootTowardsYou
+
+var Hitpoint = 50
+@export var bread = preload("res://prefabs/extra_points.tscn")
+@export var powerUp = preload("res://prefabs/power_up.tscn")
+@export var Hp = preload("res://prefabs/hp.tscn")
+@onready var thePlayer = get_parent().find_child("player")
+@onready var bulletPrefab = preload("res://prefabs/bullet_to_player.tscn")
+
+func _ready():
+	$Timer.start()
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	position.y += 1
+	if Hitpoint < 0:
+		get_parent().Score += 100
+		var drops = randi_range(1,100)
+		if drops == 1:
+			var items = Hp.instantiate()
+			items.position = position
+			get_parent().add_child(items)
+		elif drops < 60:
+			var items = bread.instantiate()
+			items.position = position
+			get_parent().add_child(items)
+		else:
+			var items = powerUp.instantiate()
+			items.position = position
+			get_parent().add_child(items)
+		queue_free()
+	if position.y > 295:
+		queue_free()
+	
+
+
+
+func _on_timer_timeout():
+	if thePlayer != null:
+		var bullets = bulletPrefab.instantiate()
+		bullets.position = position
+		bullets.theplayerDirtion = thePlayer.position-position
+		get_parent().add_child(bullets)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is bullet:
+		Hitpoint -= 10

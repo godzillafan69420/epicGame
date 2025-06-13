@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfpj052y7q84g"]
 
 [ext_resource type="Texture2D" uid="uid://c4v47qcts6jjm" path="res://images/emo.png" id="1_1hy5s"]
-[ext_resource type="Script" path="res://scripts/elmo.gd" id="1_25ax4"]
+[ext_resource type="Script" uid="uid://bcw4oah36h6f" path="res://scripts/elmo.gd" id="1_25ax4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1powp"]
 radius = 22.0227
