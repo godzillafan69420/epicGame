@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvmjl31opseig"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_yjf0x"]
+[ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="2_ltqf0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlaoe"]
+size = Vector2(10, 34)
+
+[node name="bullet" type="Area2D"]
+scale = Vector2(0.745976, 0.876029)
+script = ExtResource("1_yjf0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wlaoe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ltqf0")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

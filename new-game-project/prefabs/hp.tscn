@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq0my4khtq5xa"]
+
+[ext_resource type="Script" path="res://scripts/hp.gd" id="1_cm6vh"]
+[ext_resource type="Texture2D" uid="uid://dgim1nt47q8py" path="res://images/HP.png" id="1_h7nb6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8rgh"]
+
+[node name="Hp" type="Area2D"]
+script = ExtResource("1_cm6vh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a8rgh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h7nb6")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

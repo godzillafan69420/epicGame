@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://6ihrf5wb68u1"]
+
+[ext_resource type="PackedScene" uid="uid://b7a7kdiy2ua2k" path="res://prefabs/player.tscn" id="1_gp1vu"]
+[ext_resource type="Script" path="res://scripts/first_stage.gd" id="1_rlti1"]
+[ext_resource type="PackedScene" uid="uid://dq28g10k4d752" path="res://ui/ui.tscn" id="2_e7hx6"]
+
+[node name="firstStage" type="Node2D"]
+script = ExtResource("1_rlti1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("2_e7hx6")]
+offset_left = -578.0
+offset_top = -325.0
+offset_right = -578.0
+offset_bottom = -325.0
+
+[node name="elmoSpawnRate" type="Timer" parent="."]
+wait_time = 0.344
+autostart = true
+
+[node name="player" parent="." instance=ExtResource("1_gp1vu")]
+position = Vector2(-159, 303)
+
+[connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]

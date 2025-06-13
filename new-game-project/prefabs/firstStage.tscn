@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://6ihrf5wb68u1"]
+
+[ext_resource type="PackedScene" uid="uid://b7a7kdiy2ua2k" path="res://prefabs/player.tscn" id="1_gp1vu"]
+[ext_resource type="Script" path="res://scripts/first_stage.gd" id="1_rlti1"]
+[ext_resource type="PackedScene" uid="uid://dq28g10k4d752" path="res://ui/ui.tscn" id="2_e7hx6"]
+[ext_resource type="PackedScene" uid="uid://cu0k5nl8c2q58" path="res://prefabs/bombDeleteArea.tscn" id="4_ekq4k"]
+
+[node name="firstStage" type="Node2D"]
+script = ExtResource("1_rlti1")
+
+[node name="player" parent="." instance=ExtResource("1_gp1vu")]
+position = Vector2(-159, 303)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("2_e7hx6")]
+offset_left = -578.0
+offset_top = -325.0
+offset_right = -578.0
+offset_bottom = -325.0
+
+[node name="elmoSpawnRate" type="Timer" parent="."]
+wait_time = 0.344
+autostart = true
+
+[node name="gigaSpawnRate" type="Timer" parent="."]
+wait_time = 0.615
+autostart = true
+
+[node name="bomb" parent="." instance=ExtResource("4_ekq4k")]
+position = Vector2(-160, 293)
+
+[connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]
+[connection signal="timeout" from="gigaSpawnRate" to="." method="_on_giga_spawn_rate_timeout"]

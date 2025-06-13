@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dq28g10k4d752"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 828.0
+offset_top = -69.0
+offset_right = 1154.0
+offset_bottom = 727.0
+
+[node name="score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.018
+offset_left = 845.0
+offset_top = 19.0
+offset_right = 1075.68
+offset_bottom = 59.336
+uppercase = true
+
+[node name="HP" type="Label" parent="."]
+layout_mode = 0
+offset_left = 852.0
+offset_top = 132.0
+offset_right = 1135.0
+offset_bottom = 194.0
+
+[node name="power" type="Label" parent="."]
+layout_mode = 0
+offset_left = 913.0
+offset_top = 202.0
+offset_right = 1137.0
+offset_bottom = 238.0
+
+[node name="bomb" type="Label" parent="."]
+layout_mode = 0
+offset_left = 913.0
+offset_top = 258.0
+offset_right = 1137.0
+offset_bottom = 294.0
