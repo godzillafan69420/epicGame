@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://di36wv4xid0kd" path="res://images/circle.png" id="2_swkx0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4m0tf"]
-radius = 15.1327
 
 [node name="bulletToPlayer" type="Area2D"]
 script = ExtResource("1_3ok23")
@@ -13,4 +12,6 @@ script = ExtResource("1_3ok23")
 shape = SubResource("CircleShape2D_4m0tf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 4.76837e-07)
+scale = Vector2(0.65625, 0.65625)
 texture = ExtResource("2_swkx0")

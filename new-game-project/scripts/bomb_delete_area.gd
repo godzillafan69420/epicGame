@@ -19,5 +19,5 @@ func _on_timer_timeout():
 
 
 func _on_area_entered(area):
-	if area is dangerousBalls:
+	if area is dangerousBalls or area is bulletToPlayer:
 		area.queue_free()

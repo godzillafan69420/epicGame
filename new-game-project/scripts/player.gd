@@ -4,7 +4,7 @@ class_name player
 @onready var bulletPrefab = preload("res://prefabs/bullet.tscn")
 # Called when the node enters the scene tree for the first time.
 const  Speed = 8
-const slowSpeed = 2
+const slowSpeed = 4
 var moveX = 0
 var moveY = 0
 var justDieded = false
@@ -111,28 +111,7 @@ func _process(delta):
 			get_parent().add_child(bulletNO5)
 			get_parent().add_child(bulletNO6)
 			get_parent().add_child(bulletNO7)
-		else:
-			var bulletNO1 = bulletPrefab.instantiate()
-			var bulletNO2 = bulletPrefab.instantiate()
-			var bulletNO3 = bulletPrefab.instantiate()
-			var bulletNO4  = bulletPrefab.instantiate()
-			var bulletNO5  = bulletPrefab.instantiate()
-			var bulletNO6  = bulletPrefab.instantiate()
-			var bulletNO7  = bulletPrefab.instantiate()
-			bulletNO1.position = position - Vector2(10,YOffset)
-			bulletNO2.position = position + Vector2(10,-YOffset)
-			bulletNO3.position = position - Vector2(20,YOffset)
-			bulletNO4.position = position + Vector2(20,-YOffset)
-			bulletNO5.position = position - Vector2(0,YOffset)
-			bulletNO6.position = position + Vector2(30,-YOffset)
-			bulletNO7.position = position - Vector2(30,YOffset)
-			get_parent().add_child(bulletNO1)
-			get_parent().add_child(bulletNO2)
-			get_parent().add_child(bulletNO3)
-			get_parent().add_child(bulletNO4)
-			get_parent().add_child(bulletNO5)
-			get_parent().add_child(bulletNO6)
-			get_parent().add_child(bulletNO7)
+		
 	if Input.is_action_just_pressed("Bomb") and invincibility == false and amountOfBombs > 0:
 		invincibility = true
 		var bomb = bombPrefab.instantiate()

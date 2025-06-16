@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ynuqgjdkiyw5"]
+
+[ext_resource type="Texture2D" uid="uid://dmsr8bhnih2dl" path="res://images/guy.png" id="1_v5psm"]
+[ext_resource type="Script" uid="uid://ceeusjq3u4q67" path="res://scripts/side_to_side_enemy.gd" id="1_w1u70"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1u70"]
+size = Vector2(21, 31)
+
+[node name="sideToSideEnemy" type="Area2D"]
+script = ExtResource("1_w1u70")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_w1u70")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_v5psm")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

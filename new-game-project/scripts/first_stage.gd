@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var enemyPre = preload("res://prefabs/elmo.tscn")
 @onready var guyTowards = preload("res://prefabs/theEnemy.tscn")
-@onready var playerBody = preload("res://prefabs/player.tscn")
+@onready var shotGun = preload("res://prefabs/side_to_side_enemy.tscn")
 var Score = 0
 @onready var thePlayer = find_child("player")
 var isPlayerAlive = true
@@ -42,3 +42,18 @@ func _on_giga_spawn_rate_timeout():
 	var strongGuy = guyTowards.instantiate()
 	strongGuy.position = Vector2(randf_range(-530,200),-365)
 	add_child(strongGuy)
+
+
+func _on_side_to_side_timeout() -> void:
+	var badGuy = shotGun.instantiate()
+	var spwanPoint = randi_range(1,2)
+	var xPoint
+	if spwanPoint == 1:
+		badGuy.dir = spwanPoint
+		xPoint = -600
+	else:
+		badGuy.dir = spwanPoint
+		xPoint = 250
+	badGuy.position = Vector2(xPoint,-200)
+	add_child(badGuy)
+	

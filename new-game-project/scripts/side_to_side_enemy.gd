@@ -1,7 +1,9 @@
 extends Area2D
 
-class_name GuyShootTowardsYou
+class_name sideToSideEnemy
 
+var dir
+var speed
 var Hitpoint = 50
 @export var bread = preload("res://prefabs/extra_points.tscn")
 @export var powerUp = preload("res://prefabs/power_up.tscn")
@@ -10,10 +12,16 @@ var Hitpoint = 50
 @onready var bulletPrefab = preload("res://prefabs/bullet_to_player.tscn")
 
 func _ready():
+	if dir == 1:
+		speed = dir
+	elif dir == 2:
+		speed =-1
+			
+			
 	$Timer.start()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.y += 1
+	position.x += speed
 	if Hitpoint < 0:
 		get_parent().Score += 100
 		var drops = randi_range(1,100)
@@ -30,7 +38,7 @@ func _process(delta):
 			items.position = position
 			get_parent().add_child(items)
 		queue_free()
-	if position.y > 295:
+	if position.x > 270 or position.x < -620:
 		queue_free()
 	
 
@@ -42,7 +50,14 @@ func _on_timer_timeout():
 		bullets.position = position
 		bullets.theplayerDirtion = thePlayer.position-position
 		get_parent().add_child(bullets)
-		
+		var bulletRight = bulletPrefab.instantiate()
+		bulletRight.position = position
+		bulletRight.theplayerDirtion = thePlayer.position + Vector2(100,0)-position
+		get_parent().add_child(bulletRight)
+		var bulletLeft = bulletPrefab.instantiate()
+		bulletLeft.position = position
+		bulletLeft.theplayerDirtion = thePlayer.position + Vector2(-100,0)-position
+		get_parent().add_child(bulletLeft)
 
 
 func _on_area_entered(area: Area2D) -> void:

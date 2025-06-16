@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://6ihrf5wb68u1"]
+[gd_scene load_steps=5 format=3 uid="uid://6ihrf5wb68u1"]
 
 [ext_resource type="PackedScene" uid="uid://b7a7kdiy2ua2k" path="res://prefabs/player.tscn" id="1_gp1vu"]
 [ext_resource type="Script" uid="uid://dx685i44ok57h" path="res://scripts/first_stage.gd" id="1_rlti1"]
 [ext_resource type="PackedScene" uid="uid://dq28g10k4d752" path="res://ui/ui.tscn" id="2_e7hx6"]
+[ext_resource type="Texture2D" uid="uid://cw1brlb1k74vg" path="res://images/unnamed.jpg" id="4_jd60l"]
 
 [node name="firstStage" type="Node2D"]
 script = ExtResource("1_rlti1")
@@ -29,5 +30,19 @@ autostart = true
 wait_time = 1.5
 autostart = true
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-2, -196)
+
+[node name="sideToSide" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Unnamed" type="Sprite2D" parent="."]
+z_index = -1000
+position = Vector2(-161, 3.00002)
+scale = Vector2(2.28889, 1.81667)
+texture = ExtResource("4_jd60l")
+
 [connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]
 [connection signal="timeout" from="gigaSpawnRate" to="." method="_on_giga_spawn_rate_timeout"]
+[connection signal="timeout" from="sideToSide" to="." method="_on_side_to_side_timeout"]
