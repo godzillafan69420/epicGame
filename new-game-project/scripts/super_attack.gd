@@ -1,0 +1,13 @@
+extends Area2D
+
+class_name superAttack
+
+func _process(delta):
+	position.y -= 30
+	if position.y < -640:
+		queue_free()
+
+
+func _on_area_entered(area):
+	if area is enemy:
+		queue_free()

@@ -62,4 +62,6 @@ func _on_timer_timeout():
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is bullet:
-		Hitpoint -= 10
+		Hitpoint -= 5
+	if area is superAttack:
+		Hitpoint -= 100

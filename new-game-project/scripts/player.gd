@@ -1,7 +1,9 @@
 extends Area2D
 class_name player
 @onready var bombPrefab = preload("res://prefabs/bombDeleteArea.tscn")
-@onready var bulletPrefab = preload("res://prefabs/bullet.tscn")
+@onready var bulletPre = preload("res://prefabs/bullet.tscn")
+@onready var superPrefab = preload("res://prefabs/super_attack.tscn")
+var usingSuper = false
 # Called when the node enters the scene tree for the first time.
 const  Speed = 8
 const slowSpeed = 4
@@ -9,16 +11,18 @@ var moveX = 0
 var moveY = 0
 var justDieded = false
 const YOffset = 38
-var bulletLevel = 1
+var bulletLevel = 101
 var invincibility = false
 var glaze = 0
 var currentSpeed = Speed
 var HP = 2
 var amountOfBombs = 1
+@onready var bulletPrefab = bulletPre
 func _ready():
 	$hitboxes.hide()
 	add_to_group("player")
 	justDieded = false
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 
@@ -89,7 +93,7 @@ func _process(delta):
 			get_parent().add_child(bulletNO3)
 			get_parent().add_child(bulletNO4)
 			get_parent().add_child(bulletNO5)
-		elif bulletLevel < 100  :
+		elif bulletLevel <= 100  :
 			var bulletNO1 = bulletPrefab.instantiate()
 			var bulletNO2 = bulletPrefab.instantiate()
 			var bulletNO3 = bulletPrefab.instantiate()
@@ -111,7 +115,8 @@ func _process(delta):
 			get_parent().add_child(bulletNO5)
 			get_parent().add_child(bulletNO6)
 			get_parent().add_child(bulletNO7)
-		
+	if bulletLevel > 100:
+		bulletLevel = 100
 	if Input.is_action_just_pressed("Bomb") and invincibility == false and amountOfBombs > 0:
 		invincibility = true
 		var bomb = bombPrefab.instantiate()
@@ -123,6 +128,10 @@ func _process(delta):
 		$drip.modulate = Color8(0,0,255,50)
 	else:
 		$drip.modulate = Color8(255,255,255,255)
+	if Input.is_action_just_pressed("fireSpecial") and bulletLevel > 20 and !usingSuper:
+		$superTimePeriod.start()
+		bulletPrefab = superPrefab
+		usingSuper = true
 func uRdied():
 	justDieded = true
 	invincibility = true
@@ -149,3 +158,10 @@ func _on_collect_bread_area_entered(area):
 
 func _on_invincibility_timeout():
 	invincibility = false
+
+
+func _on_super_time_period_timeout() -> void:
+	bulletLevel -= 20
+	bulletPrefab = bulletPre
+	usingSuper = false
+	
