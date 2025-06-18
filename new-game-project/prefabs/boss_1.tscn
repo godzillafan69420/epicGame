@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxlh64yxeqp2w"]
+
+[ext_resource type="Script" uid="uid://bjwgky73nvemt" path="res://scripts/boss_1.gd" id="1_bll8f"]
+[ext_resource type="Texture2D" uid="uid://dtfeq5h6sufif" path="res://images/freaky.PNG" id="1_n3a0o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bll8f"]
+size = Vector2(203, 199)
+
+[node name="Boss1" type="Area2D"]
+script = ExtResource("1_bll8f")
+
+[node name="Freaky" type="Sprite2D" parent="."]
+z_index = -19
+position = Vector2(0.5, -2)
+scale = Vector2(0.496333, 0.493766)
+texture = ExtResource("1_n3a0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bll8f")
+
+[node name="BossShotgunInterval" type="Timer" parent="."]
+one_shot = true
+ignore_time_scale = true
+
+[node name="bulletShootinEverywhere" type="Timer" parent="."]
+
+[node name="shootTowardsThePlayer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="BossShotgunInterval" to="." method="_on_boss_shotgun_interval_timeout"]
+[connection signal="timeout" from="bulletShootinEverywhere" to="." method="_on_slower_shotgun_timeout"]
+[connection signal="timeout" from="shootTowardsThePlayer" to="." method="_on_shoot_towards_the_player_timeout"]

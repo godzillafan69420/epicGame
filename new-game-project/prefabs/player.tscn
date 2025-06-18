@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c2ld355al4qu2" path="res://scripts/collect_bread.gd" id="4_1eeyy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7erbq"]
+radius = 7.14288
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iqrp6"]
 radius = 115.082

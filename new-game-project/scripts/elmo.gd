@@ -40,8 +40,10 @@ func _process(delta):
 func _on_area_entered(area):
 	if area is bullet:
 		Hitpoint -= 5
+		area.queue_free()
 	if area is superAttack:
 		Hitpoint -= 100
+		area.queue_free()
 	
 	
 
