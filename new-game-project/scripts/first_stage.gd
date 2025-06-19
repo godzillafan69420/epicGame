@@ -7,7 +7,9 @@ extends Node2D
 @onready var boss_1 = preload("res://prefabs/boss_1.tscn")
 var Score = 0
 @onready var thePlayer = find_child("player")
-
+@export var allowSideToSide= false
+@export var normalEne = true
+@export var shootTowards = false
 var isPlayerAlive = true
 var glaze = 0
 var power = 0
@@ -15,7 +17,7 @@ var gamePhase = 0
 signal spawnBoss
 
 func _on_elmo_spawn_rate_timeout():
-	if gamePhase == 0:
+	if gamePhase == 0 and normalEne:
 		var elmo = enemyPre.instantiate()
 		elmo.position = Vector2(randf_range(-530,200),-365)
 		add_child(elmo)
@@ -56,15 +58,14 @@ func _process(delta):
 
 
 func _on_giga_spawn_rate_timeout():
-	if gamePhase == 0:
+	if gamePhase == 0 and shootTowards:
 		var strongGuy = guyTowards.instantiate()
 		strongGuy.position = Vector2(randf_range(-530,200),-365)
 		add_child(strongGuy)
 
 
 func _on_side_to_side_timeout() -> void:
-	pass
-	if gamePhase == 0:
+	if gamePhase == 0 and allowSideToSide:
 		var badGuy = shotGun.instantiate()
 		var spwanPoint = randi_range(1,2)
 		var xPoint

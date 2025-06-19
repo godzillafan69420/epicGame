@@ -16,8 +16,8 @@ scale = Vector2(0.279999, 0.279999)
 script = ExtResource("1_4j22m")
 
 [node name="drip" type="Sprite2D" parent="."]
-position = Vector2(-2.4, 0)
-scale = Vector2(1.18704, 1.19267)
+position = Vector2(-3.57144, 0)
+scale = Vector2(1.95853, 1.96782)
 texture = ExtResource("2_of66h")
 
 [node name="hitboxes" type="Sprite2D" parent="."]
