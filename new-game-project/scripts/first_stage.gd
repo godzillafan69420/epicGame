@@ -83,7 +83,7 @@ func _on_side_to_side_timeout() -> void:
 func _on_when_boss_spawn_timeout() -> void:
 	gamePhase = 2
 	var b0ss = boss_1.instantiate()
-	b0ss.position = Vector2(-100,-170)
+	b0ss.position = Vector2(-160,-170)
 	add_child(b0ss)
 	for i in range(81):
 		$LoopingSong.volume_db -= 1

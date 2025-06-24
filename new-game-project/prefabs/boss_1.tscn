@@ -4,19 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://hjgigajbxtia" path="res://images/barryToes.png" id="2_bll8f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bll8f"]
-size = Vector2(203, 199)
+size = Vector2(191.5, 247)
 
 [node name="Boss1" type="Area2D"]
 script = ExtResource("1_bll8f")
 
 [node name="Freaky" type="Sprite2D" parent="."]
 z_index = -19
-position = Vector2(2.5, -2)
-scale = Vector2(0.588068, 0.556818)
+position = Vector2(3, -1)
+scale = Vector2(0.75, 0.710145)
 texture = ExtResource("2_bll8f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, -2)
+position = Vector2(-2.75, -2.5)
 shape = SubResource("RectangleShape2D_bll8f")
 
 [node name="BossShotgunInterval" type="Timer" parent="."]

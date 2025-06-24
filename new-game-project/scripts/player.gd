@@ -133,15 +133,16 @@ func _process(delta):
 		bulletPrefab = superPrefab
 		usingSuper = true
 func uRdied():
-	justDieded = true
 	invincibility = true
+	justDieded = true
+	
 
 
 
 
 
 func _on_area_entered(area):
-	if area is dangerousBalls or area is bulletToPlayer and not invincibility:
+	if (area is dangerousBalls or area is bulletToPlayer or area is coolPatternBullet) and not invincibility:
 		uRdied()
 		$invincibility.start()
 

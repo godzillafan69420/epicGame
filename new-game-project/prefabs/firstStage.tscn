@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dx685i44ok57h" path="res://scripts/first_stage.gd" id="1_rlti1"]
 [ext_resource type="PackedScene" uid="uid://dq28g10k4d752" path="res://ui/ui.tscn" id="2_e7hx6"]
 [ext_resource type="Texture2D" uid="uid://cw1brlb1k74vg" path="res://images/unnamed.jpg" id="4_jd60l"]
-[ext_resource type="AudioStream" uid="uid://buo18oygwbkj0" path="res://music/barryToes.mp3" id="6_4vhdq"]
+[ext_resource type="AudioStream" uid="uid://c1goft2ei7yw5" path="res://music/barryToes.mp3" id="6_4vhdq"]
 [ext_resource type="AudioStream" uid="uid://m7foh8msecth" path="res://music/looping song.wav" id="6_kyb6m"]
 
 [node name="firstStage" type="Node2D"]
@@ -51,6 +51,7 @@ volume_db = -1.0
 autoplay = true
 
 [node name="WhenBossSpawn" type="Timer" parent="."]
+wait_time = 75.0
 one_shot = true
 
 [node name="BarryToes" type="AudioStreamPlayer" parent="."]
