@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c8vgjdjjaa7xu"]
 
 [ext_resource type="Script" uid="uid://ctjqby4xfbau0" path="res://scripts/super_attack.gd" id="1_l2kse"]
-[ext_resource type="Texture2D" uid="uid://b4h34btmsaxh2" path="res://images/icon.svg" id="1_sh5m5"]
+[ext_resource type="Texture2D" uid="uid://cverhagmd52gp" path="res://images/special.png" id="2_l2kse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2kse"]
 size = Vector2(56, 54)
@@ -11,7 +11,7 @@ script = ExtResource("1_l2kse")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.4375, 0.421875)
-texture = ExtResource("1_sh5m5")
+texture = ExtResource("2_l2kse")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l2kse")
