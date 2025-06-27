@@ -32,8 +32,11 @@ func _process(delta):
 	position.y += 1
 	if !readytoShoot:
 		$Timer.start()
-	if position.y > 295:
+	if position.y > 550:
 		queue_free()
+	if get_parent().gamePhase ==1:
+		queue_free()
+	
 		
 
 

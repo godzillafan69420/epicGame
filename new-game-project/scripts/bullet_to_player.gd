@@ -6,7 +6,7 @@ var theplayerDirtion
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position += theplayerDirtion.normalized() * bulletSpeed
-	if position.y > 300 or position.y < -300:
+	if position.y > 550  or position.y < -550:
 		queue_free()
-	if position.x > 255 or position.x < -586:
+	if position.x > 410 or position.x < -950:
 		queue_free()

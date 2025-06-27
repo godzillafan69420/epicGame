@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://by6g6ij1ky4qs"]
+
+[ext_resource type="Script" uid="uid://d31gvm5r2eor0" path="res://win_screen.gd" id="1_lun7r"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lun7r")
+
+[node name="youWin" type="Label" parent="."]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 101.0
+offset_right = 1078.0
+offset_bottom = 238.0
+theme_override_font_sizes/font_size = 100
+text = "Bro stop tryharding"
+
+[node name="score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 277.0
+offset_right = 531.0
+offset_bottom = 346.0
+theme_override_font_sizes/font_size = 50
+text = "score"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 388.0
+offset_right = 536.0
+offset_bottom = 465.0
+theme_override_font_sizes/font_size = 25
+text = "Try Again"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

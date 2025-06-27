@@ -5,7 +5,7 @@ extends Node2D
 @onready var guyTowards = preload("res://prefabs/theEnemy.tscn")
 @onready var shotGun = preload("res://prefabs/side_to_side_enemy.tscn")
 @onready var boss_1 = preload("res://prefabs/boss_1.tscn")
-var Score = 0
+var Score = GlobalVariables.score
 @onready var thePlayer = find_child("player")
 @export var allowSideToSide= false
 @export var normalEne = true
@@ -19,23 +19,31 @@ signal spawnBoss
 func _on_elmo_spawn_rate_timeout():
 	if gamePhase == 0 and normalEne:
 		var elmo = enemyPre.instantiate()
-		elmo.position = Vector2(randf_range(-530,200),-365)
+		elmo.position = Vector2(randf_range(-920,400),-550)
 		add_child(elmo)
 
 func _ready() -> void:
 	$WhenBossSpawn.start()
 func _process(delta):
-	
+	GlobalVariables.score = Score
+	$"UI/WhenBoss spawn".text = "Boss in coming! " + str(int($WhenBossSpawn.time_left))
 	if thePlayer != null:
 		$UI/score.text = "SCORE: " + str(Score)
 		$UI/HP.text = "HP: " + str(thePlayer.HP)
 		$UI/power.text = "power: " + str(power)
 		$UI/bomb.text = "Bomb: " + str(thePlayer.amountOfBombs)
+		
 		if gamePhase == 2:
-			var theBoss = find_child("Boss1")
-			$UI/BossName.text = "BarryToes"
+			var theBoss = $boss
 			if theBoss != null:
-				$UI/BossHP.text = "Boss HP " + str(theBoss.Hitpoint)
+				$"UI/WhenBoss spawn".text = ""
+				$UI/BossName.text = "BarryToes"
+
+				$UI/BossHP.text = "Boss HP " + str(int(theBoss.Hitpoint))
+			else:
+				get_tree().change_scene_to_file("res://stages/stage_2.tscn")
+			
+	
 		if isPlayerAlive:
 			power = thePlayer.bulletLevel
 			glaze = thePlayer.glaze
@@ -50,7 +58,8 @@ func _process(delta):
 				thePlayer.justDieded = false
 			elif !isPlayerAlive:
 				thePlayer.queue_free()
-	
+	else:
+		get_tree().change_scene_to_file("res://ui/deathScreen.tscn")
 		
 	
 		
@@ -81,13 +90,8 @@ func _on_side_to_side_timeout() -> void:
 
 
 func _on_when_boss_spawn_timeout() -> void:
-	gamePhase = 2
+	gamePhase = 1
 	var b0ss = boss_1.instantiate()
 	b0ss.position = Vector2(-160,-170)
 	add_child(b0ss)
-	for i in range(81):
-		$LoopingSong.volume_db -= 1
-	$LoopingSong.stop()
-	for i in range(80):
-		$BarryToes.volume_db += 1
-	$BarryToes.play()
+	

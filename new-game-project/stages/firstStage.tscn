@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://6ihrf5wb68u1"]
+
+[ext_resource type="Script" uid="uid://dx685i44ok57h" path="res://scripts/first_stage.gd" id="1_7ry33"]
+[ext_resource type="PackedScene" uid="uid://b7a7kdiy2ua2k" path="res://prefabs/player.tscn" id="2_81ccc"]
+[ext_resource type="PackedScene" uid="uid://dq28g10k4d752" path="res://ui/ui.tscn" id="3_7ujss"]
+[ext_resource type="Texture2D" uid="uid://cw1brlb1k74vg" path="res://images/unnamed.jpg" id="4_oqolo"]
+[ext_resource type="AudioStream" uid="uid://m7foh8msecth" path="res://music/looping song.wav" id="5_ugfdu"]
+[ext_resource type="AudioStream" uid="uid://c1goft2ei7yw5" path="res://music/barryToes.mp3" id="6_cvvoo"]
+
+[node name="firstStage" type="Node2D"]
+script = ExtResource("1_7ry33")
+
+[node name="player" parent="." instance=ExtResource("2_81ccc")]
+top_level = true
+position = Vector2(-159, 303)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+
+[node name="UI" parent="." instance=ExtResource("3_7ujss")]
+top_level = true
+light_mask = 512
+offset_left = -966.0
+offset_top = -536.0
+offset_right = -966.0
+offset_bottom = -536.0
+
+[node name="elmoSpawnRate" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="gigaSpawnRate" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[node name="sideToSide" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Unnamed" type="Sprite2D" parent="."]
+z_index = -1000
+position = Vector2(-259.5, -3.8147e-05)
+scale = Vector2(3.89722, 3.00556)
+texture = ExtResource("4_oqolo")
+
+[node name="LoopingSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ugfdu")
+volume_db = -1.0
+autoplay = true
+
+[node name="WhenBossSpawn" type="Timer" parent="."]
+one_shot = true
+
+[node name="BarryToes" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_cvvoo")
+volume_db = -80.0
+
+[connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]
+[connection signal="timeout" from="gigaSpawnRate" to="." method="_on_giga_spawn_rate_timeout"]
+[connection signal="timeout" from="sideToSide" to="." method="_on_side_to_side_timeout"]
+[connection signal="timeout" from="WhenBossSpawn" to="." method="_on_when_boss_spawn_timeout"]

@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://dq28g10k4d752"]
+[gd_scene load_steps=3 format=3 uid="uid://dq28g10k4d752"]
+
+[ext_resource type="Texture2D" uid="uid://hjgigajbxtia" path="res://images/barryToes.png" id="1_nb4k0"]
+[ext_resource type="Script" uid="uid://dbkeycqyiy0k" path="res://ui/barry_toes.gd" id="2_ks8t7"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -10,52 +13,61 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 828.0
-offset_top = -69.0
-offset_right = 1154.0
-offset_bottom = 727.0
+offset_left = 1409.0
+offset_top = -1.0
+offset_right = 1735.0
+offset_bottom = 795.0
+scale = Vector2(1.6, 1.44)
 
 [node name="score" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.035
 anchor_bottom = 0.018
-offset_left = 845.0
-offset_top = 19.0
-offset_right = 1075.68
-offset_bottom = 59.336
+offset_left = 1426.0
+offset_top = 87.0
+offset_right = 1656.68
+offset_bottom = 127.336
+scale = Vector2(1.6, 1.44)
 uppercase = true
 
 [node name="HP" type="Label" parent="."]
 layout_mode = 0
-offset_left = 852.0
-offset_top = 132.0
-offset_right = 1135.0
-offset_bottom = 194.0
+offset_left = 1433.0
+offset_top = 200.0
+offset_right = 1716.0
+offset_bottom = 262.0
+scale = Vector2(1.6, 1.44)
 
 [node name="power" type="Label" parent="."]
 layout_mode = 0
-offset_left = 913.0
-offset_top = 202.0
-offset_right = 1137.0
-offset_bottom = 238.0
+offset_left = 1494.0
+offset_top = 270.0
+offset_right = 1718.0
+offset_bottom = 306.0
+scale = Vector2(1.6, 1.44)
+theme_override_font_sizes/font_size = 25
 
 [node name="bomb" type="Label" parent="."]
 layout_mode = 0
-offset_left = 913.0
-offset_top = 258.0
-offset_right = 1137.0
-offset_bottom = 294.0
+offset_left = 1494.0
+offset_top = 326.0
+offset_right = 1718.0
+offset_bottom = 362.0
+scale = Vector2(1.6, 1.44)
+theme_override_font_sizes/font_size = 25
+text = "tep"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.528
 anchor_bottom = 0.298
-offset_left = 851.0
-offset_top = 439.0
-offset_right = 636.744
-offset_bottom = 490.896
+offset_left = 1432.0
+offset_top = 777.0
+offset_right = 1464.87
+offset_bottom = 828.896
+scale = Vector2(1.6, 1.44)
 theme_override_font_sizes/font_size = 50
 text = "Stupid
 Project"
@@ -63,13 +75,51 @@ uppercase = true
 
 [node name="BossName" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 46.0
+offset_top = 30.0
+offset_right = 328.0
+offset_bottom = 85.0
+scale = Vector2(1.6, 1.44)
 
 [node name="BossHP" type="Label" parent="."]
 layout_mode = 0
-offset_left = 786.0
-offset_top = 4.0
-offset_right = 826.0
-offset_bottom = 27.0
+offset_left = 1445.0
+offset_top = 676.0
+offset_right = 1620.0
+offset_bottom = 731.0
+scale = Vector2(1.6, 1.44)
 horizontal_alignment = 2
+
+[node name="WhenBoss spawn" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1428.0
+offset_top = 385.0
+offset_right = 1784.0
+offset_bottom = 469.0
+theme_override_font_sizes/font_size = 50
+text = "test"
+
+[node name="barryDialog" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(184, 643)
+scale = Vector2(3.1179, 3.1179)
+texture = ExtResource("1_nb4k0")
+script = ExtResource("2_ks8t7")
+
+[node name="dialog" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.277
+anchor_top = 0.32
+anchor_right = 0.277
+anchor_bottom = 0.32
+offset_left = -534.84
+offset_top = 313.4
+offset_right = 874.16
+offset_bottom = 729.4
+
+[node name="dialogText" type="Label" parent="dialog"]
+layout_mode = 0
+offset_right = 446.0
+offset_bottom = 129.0

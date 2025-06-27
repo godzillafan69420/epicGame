@@ -11,12 +11,12 @@ var moveX = 0
 var moveY = 0
 var justDieded = false
 const YOffset = 38
-var bulletLevel = 10
+var bulletLevel = GlobalVariables.playerPower
 var invincibility = false
 var glaze = 0
 var currentSpeed = Speed
-var HP = 2
-var amountOfBombs = 1
+var HP = GlobalVariables.PlayerHP
+var amountOfBombs = GlobalVariables.playerBombs
 @onready var bulletPrefab = bulletPre
 func _ready():
 	$hitboxes.hide()
@@ -25,20 +25,22 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
+	GlobalVariables.playerBombs = amountOfBombs
+	GlobalVariables.playerPower = bulletLevel
+	GlobalVariables.PlayerHP = HP
 	if bulletLevel < 0:
 		bulletLevel = 1
 	if HP > 10:
 		HP = 10
-	if position.y < 295 and Input.is_action_pressed("down"):
+	if position.y < 480 and Input.is_action_pressed("down"):
 		moveY = currentSpeed
-	elif position.y > -295 and Input.is_action_pressed("up"):
+	elif position.y > -480 and Input.is_action_pressed("up"):
 		moveY = -currentSpeed
 	else:
 		moveY = 0
-	if Input.is_action_pressed("left") and position.x > -555:
+	if Input.is_action_pressed("left") and position.x > -920:
 		moveX = -currentSpeed
-	elif Input.is_action_pressed("right") and position.x < 217:
+	elif Input.is_action_pressed("right") and position.x < 400:
 		moveX = currentSpeed
 	else:
 		moveX =0
@@ -50,7 +52,7 @@ func _process(delta):
 	else:
 		currentSpeed = Speed
 		$hitboxes.hide()
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1:
 		
 		if bulletLevel < 10:
 			var bullet = bulletPrefab.instantiate()
@@ -142,7 +144,7 @@ func uRdied():
 
 
 func _on_area_entered(area):
-	if (area is dangerousBalls or area is bulletToPlayer or area is coolPatternBullet) and not invincibility:
+	if (area is dangerousBalls or area is  bulletToPlayer or area is  superBulletForBoss or area is  coolPatternBullet or area is boss) and not invincibility:
 		uRdied()
 		$invincibility.start()
 

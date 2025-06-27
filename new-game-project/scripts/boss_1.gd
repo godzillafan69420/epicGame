@@ -3,13 +3,13 @@ extends Area2D
 class_name boss
 
 
-var Hitpoint = 60000
+var Hitpoint = 90000
 var count = 0
-var bossPhase = 1
+var bossPhase = 0
 signal changeAttacz
 @onready var thePlayer = get_parent().find_child("player")
 @onready var bulletPrefab = preload("res://prefabs/bullet_to_player.tscn")
-
+@onready var bossSuperBulletPre = preload("res://prefabs/boss_super_bullet.tscn")
 const Bullet_scene = preload("res://prefabs/boss_bullet.tscn")
 @onready var shoot_timer = $BulletIntervalForRotator
 @onready var rotator = $Rotator
@@ -48,10 +48,12 @@ func _process(delta):
 	if bossPhase == 3:
 	
 		rotator.rotation_degrees = fmod(new_rotation,360)
-
-	if Hitpoint < 40000 and Hitpoint > 20000:
+	if bossPhase == 3 and count !=1:
+		$shootTowardsThePlayer.start() 
+		count = 1
+	if Hitpoint < 60000 and Hitpoint > 30000:
 		bossPhase = 2
-	elif Hitpoint < 20000:
+	elif Hitpoint < 30000:
 		bossPhase = 3
 	
 	
@@ -63,7 +65,7 @@ func _process(delta):
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is bullet:
-		Hitpoint -= 7.5
+		Hitpoint -= 5
 		area.queue_free()
 	if area is superAttack:
 		Hitpoint -= 20
@@ -92,10 +94,11 @@ func _on_change_attack() -> void:
 
 
 func _on_shoot_towards_the_player_timeout() -> void:
-	var bullets = bulletPrefab.instantiate()
+	var bullets = bossSuperBulletPre.instantiate()
 	bullets.position = position
 	bullets.theplayerDirtion = thePlayer.position-position
 	get_parent().add_child(bullets)
+	count = 0
 
 
 func _on_slower_shotgun_timeout() -> void:
@@ -113,6 +116,6 @@ func _on_bullet_interval_for_rotator_timeout() -> void:
 		if thePlayer != null:
 			for s in rotator.get_children():
 				var bullet = Bullet_scene.instantiate()
-				get_tree().root.add_child(bullet)
+				get_parent().add_child(bullet)
 				bullet.position = s.global_position
 				bullet.rotation = s.global_rotation

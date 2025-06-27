@@ -11,10 +11,20 @@ config_version=5
 [application]
 
 config/name="New Game Project"
-run/main_scene="res://prefabs/firstStage.tscn"
+run/main_scene="res://stages/firstStage.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=60
 config/icon="res://images/icon.svg"
+
+[autoload]
+
+GlobalVariables="*res://scripts/global_variables.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
 
 [input]
 
@@ -62,3 +72,5 @@ fireSpecial={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
