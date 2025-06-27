@@ -33,15 +33,19 @@ func _process(delta):
 		$UI/power.text = "power: " + str(power)
 		$UI/bomb.text = "Bomb: " + str(thePlayer.amountOfBombs)
 		
+		
+		
 		if gamePhase == 2:
+
 			var theBoss = $boss
+
 			if theBoss != null:
 				$"UI/WhenBoss spawn".text = ""
-				$UI/BossName.text = "BarryToes"
+				$UI/BossName.text = "Barrwee Toes"
 
 				$UI/BossHP.text = "Boss HP " + str(int(theBoss.Hitpoint))
 			else:
-				get_tree().change_scene_to_file("res://stages/stage_2.tscn")
+				get_tree().change_scene_to_file("res://prefabs/win.tscn")
 			
 	
 		if isPlayerAlive:
@@ -58,6 +62,8 @@ func _process(delta):
 				thePlayer.justDieded = false
 			elif !isPlayerAlive:
 				thePlayer.queue_free()
+				
+				
 	else:
 		get_tree().change_scene_to_file("res://ui/deathScreen.tscn")
 		
@@ -94,4 +100,13 @@ func _on_when_boss_spawn_timeout() -> void:
 	var b0ss = boss_1.instantiate()
 	b0ss.position = Vector2(-160,-170)
 	add_child(b0ss)
+	
+	
+	
+
+
+func _on_ui_start_the_boss_music() -> void:
+	$LoopingSong.stop()
+	$BarryToes.play()
+	$boss.bossPhase = 1
 	

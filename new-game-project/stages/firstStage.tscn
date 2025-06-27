@@ -49,12 +49,14 @@ volume_db = -1.0
 autoplay = true
 
 [node name="WhenBossSpawn" type="Timer" parent="."]
+wait_time = 75.0
 one_shot = true
 
 [node name="BarryToes" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_cvvoo")
-volume_db = -80.0
+parameters/looping = false
 
+[connection signal="startTheBossMusic" from="UI" to="." method="_on_ui_start_the_boss_music"]
 [connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]
 [connection signal="timeout" from="gigaSpawnRate" to="." method="_on_giga_spawn_rate_timeout"]
 [connection signal="timeout" from="sideToSide" to="." method="_on_side_to_side_timeout"]

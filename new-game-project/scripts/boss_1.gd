@@ -6,7 +6,6 @@ class_name boss
 var Hitpoint = 90000
 var count = 0
 var bossPhase = 0
-signal changeAttacz
 @onready var thePlayer = get_parent().find_child("player")
 @onready var bulletPrefab = preload("res://prefabs/bullet_to_player.tscn")
 @onready var bossSuperBulletPre = preload("res://prefabs/boss_super_bullet.tscn")
@@ -33,11 +32,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var new_rotation = rotator.rotation_degrees + rotate_speed * delta
+	
 	if Hitpoint < 0:
 		queue_free()
-	if bossPhase == 0:
-		print("waiting")
 	
 	if bossPhase == 1 and count != 1:
 		$BossShotgunInterval.start()
@@ -46,7 +43,7 @@ func _process(delta):
 		$bulletShootinEverywhere.start()
 		count = 1
 	if bossPhase == 3:
-	
+		var new_rotation = rotator.rotation_degrees + rotate_speed * delta
 		rotator.rotation_degrees = fmod(new_rotation,360)
 	if bossPhase == 3 and count !=1:
 		$shootTowardsThePlayer.start() 
@@ -89,8 +86,6 @@ func _on_boss_shotgun_interval_timeout() -> void:
 	
 
 
-func _on_change_attack() -> void:
-	bossPhase += 1
 
 
 func _on_shoot_towards_the_player_timeout() -> void:
