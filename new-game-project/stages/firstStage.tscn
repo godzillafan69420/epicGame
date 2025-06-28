@@ -1,14 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://6ihrf5wb68u1"]
+[gd_scene load_steps=8 format=3 uid="uid://6ihrf5wb68u1"]
 
 [ext_resource type="Script" uid="uid://dx685i44ok57h" path="res://scripts/first_stage.gd" id="1_7ry33"]
 [ext_resource type="PackedScene" uid="uid://b7a7kdiy2ua2k" path="res://prefabs/player.tscn" id="2_81ccc"]
 [ext_resource type="PackedScene" uid="uid://dq28g10k4d752" path="res://ui/ui.tscn" id="3_7ujss"]
-[ext_resource type="Texture2D" uid="uid://cw1brlb1k74vg" path="res://images/unnamed.jpg" id="4_oqolo"]
+[ext_resource type="Texture2D" uid="uid://2wbtfekm2uad" path="res://images/bgFor Stage1.png" id="4_7ry33"]
 [ext_resource type="AudioStream" uid="uid://m7foh8msecth" path="res://music/looping song.wav" id="5_ugfdu"]
 [ext_resource type="AudioStream" uid="uid://c1goft2ei7yw5" path="res://music/barryToes.mp3" id="6_cvvoo"]
+[ext_resource type="Texture2D" uid="uid://b8rfflnqy1vir" path="res://images/jetPlane.png" id="7_81ccc"]
 
 [node name="firstStage" type="Node2D"]
 script = ExtResource("1_7ry33")
+
+[node name="Unnamed" type="Sprite2D" parent="."]
+modulate = Color(0.82606, 0.82606, 0.82606, 1)
+show_behind_parent = true
+z_index = -1000
+position = Vector2(-384, 3.99994)
+scale = Vector2(1.71667, 2.09231)
+texture = ExtResource("4_7ry33")
+
+[node name="JetPlane" type="Sprite2D" parent="."]
+show_behind_parent = true
+z_index = -500
+position = Vector2(68, -85)
+scale = Vector2(2.06813, 2.06813)
+texture = ExtResource("7_81ccc")
 
 [node name="player" parent="." instance=ExtResource("2_81ccc")]
 top_level = true
@@ -30,18 +46,11 @@ wait_time = 0.3
 autostart = true
 
 [node name="gigaSpawnRate" type="Timer" parent="."]
-wait_time = 1.5
 autostart = true
 
 [node name="sideToSide" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
-
-[node name="Unnamed" type="Sprite2D" parent="."]
-z_index = -1000
-position = Vector2(-259.5, -3.8147e-05)
-scale = Vector2(3.89722, 3.00556)
-texture = ExtResource("4_oqolo")
 
 [node name="LoopingSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ugfdu")

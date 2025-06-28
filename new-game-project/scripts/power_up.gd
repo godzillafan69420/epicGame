@@ -16,5 +16,5 @@ func _process(delta):
 
 func _on_area_entered(area):
 	if area is collectionArea:
-		get_parent().Score += 10
+		GlobalVariables.score  += 10
 		queue_free()

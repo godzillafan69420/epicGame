@@ -1,18 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bddov4uwlxwav"]
+[gd_scene load_steps=2 format=3 uid="uid://bddov4uwlxwav"]
 
 [ext_resource type="PackedScene" uid="uid://dut6g6ptou1mb" path="res://ui/deathScreen.tscn" id="1_3abjo"]
-[ext_resource type="AudioStream" uid="uid://dndkf3r2n1o8c" path="res://music/titleAndDeath.mp3" id="2_tf1l2"]
 
 [node name="deathScreen" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Control" parent="Camera2D" instance=ExtResource("1_3abjo")]
+[node name="Control" parent="." instance=ExtResource("1_3abjo")]
 offset_left = -576.0
 offset_top = -326.0
 offset_right = -576.0
 offset_bottom = -326.0
 
-[node name="TitleAndDeath" type="AudioStreamPlayer" parent="Camera2D"]
-stream = ExtResource("2_tf1l2")
-autoplay = true
+[node name="Camera2D" type="Camera2D" parent="."]

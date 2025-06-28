@@ -4,7 +4,7 @@ extends Node2D
 @onready var enemyPre = preload("res://prefabs/elmo.tscn")
 @onready var guyTowards = preload("res://prefabs/theEnemy.tscn")
 @onready var shotGun = preload("res://prefabs/side_to_side_enemy.tscn")
-@onready var boss_1 = preload("res://prefabs/boss_1.tscn")
+@onready var boss_1 = preload("res://prefabs/Boss2.tscn")
 var Score = GlobalVariables.score
 @onready var thePlayer = find_child("player")
 @export var allowSideToSide= false
@@ -12,7 +12,7 @@ var Score = GlobalVariables.score
 @export var shootTowards = true
 var isPlayerAlive = true
 var glaze = 0
-var power = 0
+var power = GlobalVariables.playerPower
 var gamePhase = 0
 signal spawnBoss
 
@@ -25,23 +25,28 @@ func _on_elmo_spawn_rate_timeout():
 func _ready() -> void:
 	$WhenBossSpawn.start()
 func _process(delta):
-	GlobalVariables.score = Score
+	$UI/score.text = "SCORE: " + str(GlobalVariables.score)
+
 	$"UI/WhenBoss spawn".text = "Boss in coming! " + str(int($WhenBossSpawn.time_left))
 	if thePlayer != null:
-		$UI/score.text = "SCORE: " + str(Score)
+		
 		$UI/HP.text = "HP: " + str(thePlayer.HP)
-		$UI/power.text = "power: " + str(power)
+		$UI/power.text = "power: " + str(thePlayer.bulletLevel)
 		$UI/bomb.text = "Bomb: " + str(thePlayer.amountOfBombs)
 		
+		
+		
 		if gamePhase == 2:
-			var theBoss = $boss
+
+			var theBoss = $ConeL
+
 			if theBoss != null:
 				$"UI/WhenBoss spawn".text = ""
-				$UI/BossName.text = "BarryToes"
+				$UI/BossName.text = "ConeL"
 
 				$UI/BossHP.text = "Boss HP " + str(int(theBoss.Hitpoint))
 			else:
-				get_tree().change_scene_to_file("res://stages/stage_2.tscn")
+				get_tree().change_scene_to_file("res://prefabs/win.tscn")
 			
 	
 		if isPlayerAlive:
@@ -58,6 +63,8 @@ func _process(delta):
 				thePlayer.justDieded = false
 			elif !isPlayerAlive:
 				thePlayer.queue_free()
+				
+				
 	else:
 		get_tree().change_scene_to_file("res://ui/deathScreen.tscn")
 		
@@ -69,7 +76,7 @@ func _process(delta):
 func _on_giga_spawn_rate_timeout():
 	if gamePhase == 0 and shootTowards:
 		var strongGuy = guyTowards.instantiate()
-		strongGuy.position = Vector2(randf_range(-530,200),-365)
+		strongGuy.position = Vector2(randf_range(-920,400),-550)
 		add_child(strongGuy)
 
 
@@ -90,13 +97,16 @@ func _on_side_to_side_timeout() -> void:
 
 
 func _on_when_boss_spawn_timeout() -> void:
-	gamePhase = 2
+	gamePhase = 1
 	var b0ss = boss_1.instantiate()
 	b0ss.position = Vector2(-160,-170)
 	add_child(b0ss)
-	for i in range(81):
-		$LoopingSong.volume_db -= 1
+	
+	
+	
+
+
+func _on_ui_start_the_boss_music() -> void:
 	$LoopingSong.stop()
-	for i in range(80):
-		$BarryToes.volume_db += 1
 	$BarryToes.play()
+	$ConeL.bossPhase = 1

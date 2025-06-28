@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://b7a7kdiy2ua2k" path="res://prefabs/player.tscn" id="1_c6umw"]
 [ext_resource type="Script" uid="uid://crte30qnov4tq" path="res://scripts/stage_2.gd" id="1_txogb"]
-[ext_resource type="PackedScene" uid="uid://dq28g10k4d752" path="res://ui/ui.tscn" id="2_txogb"]
 [ext_resource type="Texture2D" uid="uid://cw1brlb1k74vg" path="res://images/unnamed.jpg" id="3_85jxm"]
-[ext_resource type="AudioStream" uid="uid://m7foh8msecth" path="res://music/looping song.wav" id="4_013ri"]
-[ext_resource type="AudioStream" uid="uid://c1goft2ei7yw5" path="res://music/barryToes.mp3" id="5_mghc5"]
+[ext_resource type="AudioStream" uid="uid://cv3fmb17x3ak7" path="res://music/stage2.mp3" id="5_txogb"]
+[ext_resource type="PackedScene" uid="uid://due5nhs3wm7hu" path="res://ui/uiforstage2.tscn" id="6_85jxm"]
+[ext_resource type="AudioStream" uid="uid://ln3xpbph6plh" path="res://music/coneL.mp3" id="6_txogb"]
 
 [node name="stage2" type="Node2D"]
 script = ExtResource("1_txogb")
@@ -17,20 +17,17 @@ position = Vector2(-159, 303)
 [node name="Camera2D" type="Camera2D" parent="."]
 ignore_rotation = false
 
-[node name="UI" parent="." instance=ExtResource("2_txogb")]
-top_level = true
-light_mask = 512
-offset_left = -966.0
-offset_top = -536.0
-offset_right = -966.0
-offset_bottom = -536.0
+[node name="UI" parent="." instance=ExtResource("6_85jxm")]
+offset_left = -967.0
+offset_top = -545.0
+offset_right = -967.0
+offset_bottom = -545.0
 
 [node name="elmoSpawnRate" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.35
 autostart = true
 
 [node name="gigaSpawnRate" type="Timer" parent="."]
-wait_time = 1.5
 autostart = true
 
 [node name="sideToSide" type="Timer" parent="."]
@@ -44,14 +41,18 @@ scale = Vector2(3.89722, 3.00556)
 texture = ExtResource("3_85jxm")
 
 [node name="LoopingSong" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_013ri")
+stream = ExtResource("5_txogb")
 volume_db = -1.0
 autoplay = true
 
 [node name="WhenBossSpawn" type="Timer" parent="."]
-wait_time = 75.0
+wait_time = 90.0
 one_shot = true
 
 [node name="BarryToes" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_mghc5")
-volume_db = -80.0
+stream = ExtResource("6_txogb")
+
+[connection signal="startTheBossMusic" from="UI" to="." method="_on_ui_start_the_boss_music"]
+[connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]
+[connection signal="timeout" from="gigaSpawnRate" to="." method="_on_giga_spawn_rate_timeout"]
+[connection signal="timeout" from="WhenBossSpawn" to="." method="_on_when_boss_spawn_timeout"]

@@ -25,10 +25,9 @@ func _on_elmo_spawn_rate_timeout():
 func _ready() -> void:
 	$WhenBossSpawn.start()
 func _process(delta):
-	GlobalVariables.score = Score
 	$"UI/WhenBoss spawn".text = "Boss in coming! " + str(int($WhenBossSpawn.time_left))
 	if thePlayer != null:
-		$UI/score.text = "SCORE: " + str(Score)
+		$UI/score.text = "SCORE: " + str(GlobalVariables.score)
 		$UI/HP.text = "HP: " + str(thePlayer.HP)
 		$UI/power.text = "power: " + str(power)
 		$UI/bomb.text = "Bomb: " + str(thePlayer.amountOfBombs)
@@ -45,7 +44,7 @@ func _process(delta):
 
 				$UI/BossHP.text = "Boss HP " + str(int(theBoss.Hitpoint))
 			else:
-				get_tree().change_scene_to_file("res://prefabs/win.tscn")
+				get_tree().change_scene_to_file("res://stages/stage_2.tscn")
 			
 	
 		if isPlayerAlive:

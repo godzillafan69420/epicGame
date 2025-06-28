@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxlh64yxeqp2w"]
 
 [ext_resource type="Script" uid="uid://bjwgky73nvemt" path="res://scripts/boss_1.gd" id="1_bll8f"]
-[ext_resource type="Texture2D" uid="uid://hjgigajbxtia" path="res://images/barryToes.png" id="2_bll8f"]
+[ext_resource type="Texture2D" uid="uid://c5pcel4oduo0y" path="res://images/barry.png" id="2_bll8f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bll8f"]
 size = Vector2(191.5, 247)
@@ -24,9 +24,10 @@ one_shot = true
 ignore_time_scale = true
 
 [node name="bulletShootinEverywhere" type="Timer" parent="."]
+one_shot = true
+ignore_time_scale = true
 
 [node name="shootTowardsThePlayer" type="Timer" parent="."]
-wait_time = 0.5
 
 [node name="BulletIntervalForRotator" type="Timer" parent="."]
 

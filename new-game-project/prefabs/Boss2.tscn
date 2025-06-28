@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://db5xiww8efvgw"]
+
+[ext_resource type="Script" uid="uid://cwqvgufrmh1dk" path="res://prefabs/boss_2.gd" id="1_q65c2"]
+[ext_resource type="Texture2D" uid="uid://cqyqh3r11e1xg" path="res://images/ConeL.png" id="2_q65c2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q65c2"]
+size = Vector2(192, 201)
+
+[node name="ConeL" type="Area2D"]
+script = ExtResource("1_q65c2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_q65c2")
+
+[node name="Freaky" type="Sprite2D" parent="."]
+position = Vector2(-2, 5.5)
+scale = Vector2(0.59375, 0.640625)
+texture = ExtResource("2_q65c2")
+
+[node name="BossShotgunInterval" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="bulletShootinEverywhere" type="Timer" parent="."]
+one_shot = true
+
+[node name="shootTowardsThePlayer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="BulletIntervalForRotator" type="Timer" parent="."]
+
+[node name="Rotator" type="Node2D" parent="."]
+
+[node name="Rotator2" type="Node2D" parent="."]
+
+[node name="3Phaseattack" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="BossShotgunInterval" to="." method="_on_boss_shotgun_interval_timeout"]
+[connection signal="timeout" from="bulletShootinEverywhere" to="." method="_on_bullet_shootin_everywhere_timeout"]
+[connection signal="timeout" from="shootTowardsThePlayer" to="." method="_on_shoot_towards_the_player_timeout"]
+[connection signal="timeout" from="BulletIntervalForRotator" to="." method="_on_bullet_interval_for_rotator_timeout"]
+[connection signal="timeout" from="3Phaseattack" to="." method="_on_phaseattack_timeout"]

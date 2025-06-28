@@ -17,6 +17,7 @@ func _process(delta):
 
 func _on_area_entered(area):
 	if area is collectionArea:
-		get_parent().Score += 1000
+		GlobalVariables.score += 1000
+		GlobalVariables.souls += 1
 		queue_free()
 	

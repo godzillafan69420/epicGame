@@ -23,7 +23,7 @@ func _ready():
 func _process(delta):
 	position.x += speed
 	if Hitpoint < 0:
-		get_parent().Score += 100
+		GlobalVariables.score += 100
 		var drops = randi_range(1,100)
 		if drops == 1:
 			var items = Hp.instantiate()

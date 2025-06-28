@@ -15,7 +15,7 @@ func _ready():
 func _process(delta):
 	position.y += 1
 	if Hitpoint < 0:
-		get_parent().Score += 100
+		GlobalVariables.score += 100
 		var drops = randi_range(1,100)
 		if drops == 1:
 			var items = Hp.instantiate()
@@ -30,9 +30,10 @@ func _process(delta):
 			items.position = position
 			get_parent().add_child(items)
 		queue_free()
-	if position.y > 295:
+	if position.y > 550:
 		queue_free()
-	
+	if get_parent().gamePhase ==1:
+		queue_free()
 
 
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dut6g6ptou1mb"]
+[gd_scene load_steps=3 format=3 uid="uid://dut6g6ptou1mb"]
 
 [ext_resource type="Script" uid="uid://dtt8ntta5pj6m" path="res://scripts/death_screen.gd" id="1_y7kdk"]
+[ext_resource type="AudioStream" uid="uid://dndkf3r2n1o8c" path="res://music/titleAndDeath.mp3" id="2_brfy3"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -24,6 +25,10 @@ theme_override_font_sizes/font_size = 100
 text = "Skill issue"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TitleAndDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_brfy3")
+autoplay = true
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0

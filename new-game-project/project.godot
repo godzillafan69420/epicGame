@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="New Game Project"
-run/main_scene="res://stages/firstStage.tscn"
+run/main_scene="uid://6ihrf5wb68u1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=60
 config/icon="res://images/icon.svg"

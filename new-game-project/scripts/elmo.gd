@@ -14,7 +14,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Hitpoint < 0:
-		get_parent().Score += 100
+		GlobalVariables.score += 100
 		var drops = randi_range(1,100)
 		if drops == 1:
 			var items = Hp.instantiate()
