@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://cynbqx0sv3xao"]
+
+[ext_resource type="Script" uid="uid://rxkcaeainw5b" path="res://ui/music_room.gd" id="1_j15yv"]
+[ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="2_j15yv"]
+
+[node name="musicRoom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j15yv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 21.0
+offset_right = 789.0
+offset_bottom = 158.0
+theme_override_font_sizes/font_size = 100
+text = "Title music"
+
+[node name="player" type="AudioStreamPlayer" parent="."]
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 181.0
+offset_right = 789.0
+offset_bottom = 318.0
+theme_override_font_sizes/font_size = 100
+text = "fuuunii"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 334.0
+offset_right = 798.0
+offset_bottom = 471.0
+theme_override_font_sizes/font_size = 100
+text = "Guns liberty freedom"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 471.0
+offset_right = 798.0
+offset_bottom = 608.0
+theme_override_font_sizes/font_size = 100
+text = "Gooners"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 636.0
+offset_right = 800.0
+offset_bottom = 773.0
+theme_override_font_sizes/font_size = 100
+text = "PI * r^2 * h + L"
+
+[node name="Knifee" type="Sprite2D" parent="."]
+position = Vector2(136, 93)
+rotation = 1.5708
+scale = Vector2(6.25, 6.25)
+texture = ExtResource("2_j15yv")

@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://twxgp12xlrsv"]
+
+[ext_resource type="Script" uid="uid://bhyvxn4a78geb" path="res://ui/instructionn.gd" id="1_1aw0g"]
+[ext_resource type="Texture2D" uid="uid://dm3aduhrjkm1g" path="res://images/ShowHitBox.png" id="1_pph7c"]
+[ext_resource type="Texture2D" uid="uid://dyj1iw20kmijf" path="res://images/Souls.png" id="2_1aw0g"]
+[ext_resource type="Texture2D" uid="uid://ckxd3lsynlrsp" path="res://images/power.png" id="3_k8w4k"]
+[ext_resource type="Texture2D" uid="uid://b28ii2rnq8xl5" path="res://images/extraLife.png" id="4_ybc1o"]
+
+[node name="How to play" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = 6.0
+offset_right = -21.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1aw0g")
+
+[node name="instructions" type="Label" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = -6.0
+offset_right = 967.0
+offset_bottom = 423.0
+theme_override_font_sizes/font_size = 50
+text = "Arrow Key to move
+
+Z to shoot and skip dialog
+X to Bomb- delete bullets
+Space to activate Frenzy
+
+Shift to slowdown and Show Hitbox
+
+Red Balls are bad
+"
+
+[node name="ShowHitBox" type="Sprite2D" parent="."]
+position = Vector2(1149, 192)
+scale = Vector2(3.11062, 2.87594)
+texture = ExtResource("1_pph7c")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1003.0
+offset_top = 320.0
+offset_right = 1277.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 25
+text = "when pressing shift"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1443.0
+offset_top = 234.0
+offset_right = 1717.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 25
+text = "GIves more score"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1452.0
+offset_top = 496.0
+offset_right = 1726.0
+offset_bottom = 562.0
+theme_override_font_sizes/font_size = 25
+text = "GIves more HP"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 731.0
+offset_right = 897.0
+offset_bottom = 868.0
+theme_override_font_sizes/font_size = 100
+text = "[X] go back"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1463.0
+offset_top = 779.0
+offset_right = 1737.0
+offset_bottom = 845.0
+theme_override_font_sizes/font_size = 25
+text = "GIves more Power"
+
+[node name="Souls" type="Sprite2D" parent="."]
+position = Vector2(1556, 113)
+scale = Vector2(8.09375, 8.09375)
+texture = ExtResource("2_1aw0g")
+
+[node name="Power" type="Sprite2D" parent="."]
+position = Vector2(1567, 651)
+scale = Vector2(8.59375, 8.59375)
+texture = ExtResource("3_k8w4k")
+
+[node name="ExtraLife" type="Sprite2D" parent="."]
+position = Vector2(1558, 370)
+scale = Vector2(7.53125, 7.53125)
+texture = ExtResource("4_ybc1o")
