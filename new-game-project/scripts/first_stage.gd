@@ -44,7 +44,7 @@ func _process(delta):
 
 				$UI/BossHP.text = "Boss HP " + str(int(theBoss.Hitpoint))
 			else:
-				get_tree().change_scene_to_file("res://stages/stage_2.tscn")
+				get_tree().change_scene_to_file("res://ui/store.tscn")
 			
 	
 		if isPlayerAlive:

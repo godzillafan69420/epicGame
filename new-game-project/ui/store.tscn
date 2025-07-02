@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp02eeg1k66cg"]
+
+[ext_resource type="Script" uid="uid://0wwh4xkoi0gy" path="res://ui/store.gd" id="1_cjrdt"]
+[ext_resource type="Texture2D" uid="uid://b65l2ethyydb" path="res://images/store.png" id="1_kj3tv"]
+[ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="3_eflcf"]
+
+[node name="store" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cjrdt")
+
+[node name="Store" type="Sprite2D" parent="."]
+position = Vector2(951, 958)
+scale = Vector2(6.01875, 6.01875)
+texture = ExtResource("1_kj3tv")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 44.0
+offset_right = 515.0
+offset_bottom = 463.0
+theme_override_font_sizes/font_size = 100
+text = "more HP
+
+50 souls"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 29.0
+offset_right = 1237.0
+offset_bottom = 474.0
+theme_override_font_sizes/font_size = 100
+text = "more bombs
+
+25 souls"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1307.0
+offset_top = 30.0
+offset_right = 1905.0
+offset_bottom = 474.0
+theme_override_font_sizes/font_size = 100
+text = "10 power
+
+50 souls"
+
+[node name="[X]" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1174.0
+offset_top = 781.0
+offset_right = 1880.0
+offset_bottom = 1027.0
+theme_override_font_sizes/font_size = 100
+text = "[X] to continue"
+
+[node name="Knifee" type="Sprite2D" parent="."]
+position = Vector2(297, 632)
+scale = Vector2(9.26562, 9.26562)
+texture = ExtResource("3_eflcf")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="Button3" to="." method="_on_button_3_button_down"]
