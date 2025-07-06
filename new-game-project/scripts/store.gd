@@ -22,6 +22,16 @@ func _on_button_3_button_down() -> void:
 		GlobalVariables.souls -= 50
 		
 func _process(delta: float) -> void:
+	$souls.text = "Souls collected: " + str(GlobalVariables.souls)
+	$HP.text = "HP: " + str(GlobalVariables.PlayerHP)
+	if GlobalVariables.PlayerHP > 10:
+		GlobalVariables.PlayerHP = 10
+	$bombs.text = "Bombs: " + str(GlobalVariables.playerBombs)
+	if GlobalVariables.playerBombs > 10:
+		GlobalVariables.playerBombs = 10
+	$Power.text = "power: " + str(GlobalVariables.playerPower)
+	if GlobalVariables.playerPower > 100:
+		GlobalVariables.playerPower = 100
 	if Input.is_action_just_pressed("right"):
 		selectedItems += 1
 	if Input.is_action_just_pressed("left"):
@@ -40,7 +50,7 @@ func _process(delta: float) -> void:
 			GlobalVariables.souls -= 25
 	if selectedItems == 2 and Input.is_action_just_pressed("shoot"):
 		if GlobalVariables.souls >= 50:
-			GlobalVariables.playerPower +=10
+			GlobalVariables.playerPower +=30
 			GlobalVariables.souls -= 50
 	$Knifee.position = Vector2(selectedItems * 610 + 297, 632)
 	if Input.is_action_just_pressed("Bomb"):

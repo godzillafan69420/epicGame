@@ -57,7 +57,7 @@ func _process(delta):
 			if thePlayer.HP > -1 and thePlayer.justDieded and isPlayerAlive:
 				thePlayer.position = Vector2(-160, 285)
 				thePlayer.HP -= 1
-				thePlayer.bulletLevel -= 20
+				thePlayer.bulletLevel -= 10
 				thePlayer.justDieded = false
 			elif !isPlayerAlive:
 				thePlayer.queue_free()

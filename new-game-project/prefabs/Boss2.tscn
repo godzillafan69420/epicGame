@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://db5xiww8efvgw"]
 
-[ext_resource type="Script" uid="uid://cwqvgufrmh1dk" path="res://prefabs/boss_2.gd" id="1_q65c2"]
+[ext_resource type="Script" uid="uid://cwqvgufrmh1dk" path="res://scripts/boss_2.gd" id="1_q65c2"]
 [ext_resource type="Texture2D" uid="uid://cqyqh3r11e1xg" path="res://images/ConeL.png" id="2_q65c2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q65c2"]

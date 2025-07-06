@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://due5nhs3wm7hu"]
 
-[ext_resource type="Script" uid="uid://cicvv8gisbhti" path="res://ui/uiforstage_2.gd" id="1_h6l8i"]
+[ext_resource type="Script" uid="uid://cicvv8gisbhti" path="res://scripts/uiforstage_2.gd" id="1_h6l8i"]
 [ext_resource type="Texture2D" uid="uid://cqyqh3r11e1xg" path="res://images/ConeL.png" id="2_g8w2e"]
 [ext_resource type="Texture2D" uid="uid://edrbdji87lyp" path="res://images/protagonist.png" id="2_h6l8i"]
 

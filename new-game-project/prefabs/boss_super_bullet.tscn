@@ -4,13 +4,14 @@
 [ext_resource type="Script" uid="uid://c0ihryuuflce4" path="res://scripts/boss_super_bullet.gd" id="1_l1yua"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l1yua"]
-radius = 33.0151
+radius = 29.802
 
 [node name="bossSuperBullet" type="Area2D"]
 scale = Vector2(1.84582, 1.84582)
 script = ExtResource("1_l1yua")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.22917e-08)
 shape = SubResource("CircleShape2D_l1yua")
 
 [node name="Circle" type="Sprite2D" parent="."]
