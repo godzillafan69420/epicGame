@@ -164,7 +164,7 @@ func _on_invincibility_timeout():
 
 
 func _on_super_time_period_timeout() -> void:
-	GlobalVariables.playerPower -= 10
+	bulletLevel -= 10
 	bulletPrefab = bulletPre
 	usingSuper = false
 	

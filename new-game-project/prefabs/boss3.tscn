@@ -1,28 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://db5xiww8efvgw"]
+[gd_scene load_steps=4 format=3 uid="uid://lb2agmfchj8u"]
 
-[ext_resource type="Script" uid="uid://cwqvgufrmh1dk" path="res://scripts/boss_2.gd" id="1_q65c2"]
-[ext_resource type="Texture2D" uid="uid://56x8i56f7b8x" path="res://images/coneL.png" id="2_q65c2"]
+[ext_resource type="Script" uid="uid://c6bb677nas22n" path="res://prefabs/boss_3.gd" id="1_b3p8e"]
+[ext_resource type="Texture2D" uid="uid://dtfeq5h6sufif" path="res://images/freaky.PNG" id="2_pjr12"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q65c2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmbb1"]
 size = Vector2(192, 201)
 
-[node name="ConeL" type="Area2D"]
-script = ExtResource("1_q65c2")
+[node name="Rack" type="Area2D"]
+script = ExtResource("1_b3p8e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2)
-shape = SubResource("RectangleShape2D_q65c2")
+shape = SubResource("RectangleShape2D_fmbb1")
 
 [node name="Freaky" type="Sprite2D" parent="."]
 position = Vector2(1, -7.62939e-06)
 scale = Vector2(0.373047, 0.402498)
-texture = ExtResource("2_q65c2")
+texture = ExtResource("2_pjr12")
 
 [node name="BossShotgunInterval" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 
 [node name="bulletShootinEverywhere" type="Timer" parent="."]
+wait_time = 0.2
 one_shot = true
 
 [node name="shootTowardsThePlayer" type="Timer" parent="."]
@@ -32,10 +32,8 @@ one_shot = true
 [node name="BulletIntervalForRotator" type="Timer" parent="."]
 
 [node name="Rotator" type="Node2D" parent="."]
-visible = false
 
 [node name="Rotator2" type="Node2D" parent="."]
-visible = false
 
 [node name="3Phaseattack" type="Timer" parent="."]
 wait_time = 1.5

@@ -38,7 +38,7 @@ func _process(delta):
 			items.position = position
 			get_parent().add_child(items)
 		queue_free()
-	if position.x > 270 or position.x < -620:
+	if position.x > 410 or position.x < -940:
 		queue_free()
 	
 
