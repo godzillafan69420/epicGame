@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://twxgp12xlrsv"]
+[gd_scene load_steps=7 format=3 uid="uid://twxgp12xlrsv"]
 
 [ext_resource type="Script" uid="uid://bhyvxn4a78geb" path="res://scripts/instructionn.gd" id="1_1aw0g"]
 [ext_resource type="Texture2D" uid="uid://dm3aduhrjkm1g" path="res://images/ShowHitBox.png" id="1_pph7c"]
 [ext_resource type="Texture2D" uid="uid://dyj1iw20kmijf" path="res://images/Souls.png" id="2_1aw0g"]
+[ext_resource type="Texture2D" uid="uid://bx73v8oimnqvh" path="res://images/background.png" id="2_k8w4k"]
 [ext_resource type="Texture2D" uid="uid://ckxd3lsynlrsp" path="res://images/power.png" id="3_k8w4k"]
 [ext_resource type="Texture2D" uid="uid://b28ii2rnq8xl5" path="res://images/extraLife.png" id="4_ybc1o"]
 
@@ -18,6 +19,12 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1aw0g")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.252028, 0.252028, 0.252028, 1)
+position = Vector2(971, 526)
+scale = Vector2(2.01481, 2.01481)
+texture = ExtResource("2_k8w4k")
 
 [node name="instructions" type="Label" parent="."]
 layout_mode = 0
