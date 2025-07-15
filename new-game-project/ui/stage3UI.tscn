@@ -1,0 +1,134 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7i5brk8wrb0u"]
+
+[ext_resource type="Texture2D" uid="uid://clql05uvu1yxw" path="res://images/conelWith bubble.png" id="1_vnkr1"]
+[ext_resource type="Texture2D" uid="uid://cspacpfupv2gs" path="res://images/bob.png" id="2_yufgc"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.569153, 0.864816, 1, 1)
+self_modulate = Color(0.96858, 2.02149e-06, 0.568588, 1)
+offset_left = 1409.0
+offset_top = -1.0
+offset_right = 1735.0
+offset_bottom = 795.0
+scale = Vector2(1.6, 1.44)
+
+[node name="score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.018
+offset_left = 1426.0
+offset_top = 87.0
+offset_right = 1656.68
+offset_bottom = 127.336
+scale = Vector2(1.6, 1.44)
+uppercase = true
+
+[node name="HP" type="Label" parent="."]
+offset_left = 1433.0
+offset_top = 200.0
+offset_right = 1716.0
+offset_bottom = 262.0
+scale = Vector2(1.6, 1.44)
+
+[node name="power" type="Label" parent="."]
+offset_left = 1494.0
+offset_top = 270.0
+offset_right = 1718.0
+offset_bottom = 306.0
+scale = Vector2(1.6, 1.44)
+theme_override_font_sizes/font_size = 25
+
+[node name="bomb" type="Label" parent="."]
+offset_left = 1494.0
+offset_top = 326.0
+offset_right = 1718.0
+offset_bottom = 362.0
+scale = Vector2(1.6, 1.44)
+theme_override_font_sizes/font_size = 25
+text = "tep"
+
+[node name="souls" type="Label" parent="."]
+offset_left = 1490.0
+offset_top = 392.0
+offset_right = 1714.0
+offset_bottom = 428.0
+scale = Vector2(1.6, 1.44)
+theme_override_font_sizes/font_size = 25
+text = "tep"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.528
+anchor_bottom = 0.298
+offset_left = 1432.0
+offset_top = 777.0
+offset_right = 1464.87
+offset_bottom = 828.896
+scale = Vector2(1.6, 1.44)
+theme_override_font_sizes/font_size = 50
+text = "Stupid
+Project"
+uppercase = true
+
+[node name="BossName" type="Label" parent="."]
+offset_left = 46.0
+offset_top = 30.0
+offset_right = 328.0
+offset_bottom = 85.0
+scale = Vector2(1.6, 1.44)
+
+[node name="BossHP" type="Label" parent="."]
+offset_left = 1445.0
+offset_top = 676.0
+offset_right = 1620.0
+offset_bottom = 731.0
+scale = Vector2(1.6, 1.44)
+horizontal_alignment = 2
+
+[node name="WhenBoss spawn" type="Label" parent="."]
+offset_left = 1426.0
+offset_top = 455.0
+offset_right = 1782.0
+offset_bottom = 539.0
+theme_override_font_sizes/font_size = 50
+text = "test"
+
+[node name="barryDialog" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(251, 732)
+scale = Vector2(2.16247, 2.16247)
+texture = ExtResource("1_vnkr1")
+
+[node name="Protagonist" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1244, 686)
+scale = Vector2(2.08086, 2.08086)
+texture = ExtResource("2_yufgc")
+
+[node name="dialog" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = -3.0
+offset_top = 659.0
+offset_right = 1406.0
+offset_bottom = 1075.0
+
+[node name="dialogText" type="Label" parent="dialog"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 10.0
+offset_right = 1390.0
+offset_bottom = 398.0
+theme_override_font_sizes/font_size = 50
+max_lines_visible = 5

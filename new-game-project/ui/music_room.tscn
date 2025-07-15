@@ -26,7 +26,7 @@ offset_top = 21.0
 offset_right = 789.0
 offset_bottom = 158.0
 theme_override_font_sizes/font_size = 100
-text = "Title music"
+text = "Titled music"
 
 [node name="player" type="AudioStreamPlayer" parent="."]
 
@@ -37,7 +37,7 @@ offset_top = 181.0
 offset_right = 789.0
 offset_bottom = 318.0
 theme_override_font_sizes/font_size = 100
-text = "fuuunii"
+text = "Strong Abs"
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
@@ -55,7 +55,7 @@ offset_top = 471.0
 offset_right = 798.0
 offset_bottom = 608.0
 theme_override_font_sizes/font_size = 100
-text = "Gooners"
+text = "Why cyberbully kids"
 
 [node name="Label5" type="Label" parent="."]
 layout_mode = 0

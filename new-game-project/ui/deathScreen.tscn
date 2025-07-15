@@ -42,6 +42,7 @@ theme_override_font_sizes/font_size = 50
 text = "go to alternative timeline"
 
 [node name="quit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 618.0
 offset_top = 546.0
 offset_right = 1142.0

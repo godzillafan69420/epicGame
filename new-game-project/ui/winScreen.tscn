@@ -115,7 +115,7 @@ offset_top = 945.0
 offset_right = 1498.0
 offset_bottom = 1086.0
 theme_override_font_sizes/font_size = 50
-text = "Boss 1 - Barry "
+text = "Boss 1 name Barrwee Toes"
 
 [node name="Label11" type="Label" parent="Node2D"]
 offset_left = 596.0
@@ -123,7 +123,7 @@ offset_top = 1019.0
 offset_right = 1501.0
 offset_bottom = 1160.0
 theme_override_font_sizes/font_size = 50
-text = "Boss 2 - Connel "
+text = "Boss 2 name Cone L"
 
 [node name="Label12" type="Label" parent="Node2D"]
 offset_left = 597.0
@@ -167,7 +167,7 @@ position = Vector2(1071, 1749)
 texture = ExtResource("3_owqky")
 
 [node name="BarryToes" type="Sprite2D" parent="Node2D"]
-position = Vector2(1271, 888)
+position = Vector2(1318, 900)
 texture = ExtResource("4_efybc")
 
 [node name="ConelWithBubble" type="Sprite2D" parent="Node2D"]

@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 			barrySprite.visible = false
 			protagonistDialog.visible = true
 		if textToShow == 2:
-			textBox.text = "waahht did i do"
+			textBox.text = "whaaat did i do"
 			barrySprite.visible = true
 			protagonistDialog.visible = false
 		if textToShow == 3:
@@ -32,23 +32,24 @@ func _process(delta: float) -> void:
 			barrySprite.visible = false
 			protagonistDialog.visible = true
 		if textToShow == 4:
-			textBox.text = "Nuh un"
+			textBox.text = "Did not"
 			barrySprite.visible = true
 			protagonistDialog.visible = false
 		if textToShow == 5:
-			textBox.text = "why do you have to do this"
+			textBox.text = "It's so obvious that you did"
 			barrySprite.visible = false
 			protagonistDialog.visible = true
 			
 		if textToShow == 6:
-			textBox.text = "If ya gonna git me. 
+			textBox.text = "Fine
+			If ya gonna git me. 
 			You gotta get pass these abs.
 			Reinforce by FREEDOM. *eagle sound*"
 			barrySprite.visible = true
 			protagonistDialog.visible = false
 			
 		if textToShow == 7:
-			textBox.text = "Yeah yeah shut up"
+			textBox.text = "I don't get paid enough for this"
 			barrySprite.visible = false
 			protagonistDialog.visible = true
 		if textToShow == 8:
