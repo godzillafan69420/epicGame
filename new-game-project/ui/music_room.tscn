@@ -68,6 +68,15 @@ offset_bottom = 908.0
 theme_override_font_sizes/font_size = 100
 text = "Very legal business"
 
+[node name="Label7" type="Label" parent="."]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 898.0
+offset_right = 1227.0
+offset_bottom = 1035.0
+theme_override_font_sizes/font_size = 100
+text = "How could you die"
+
 [node name="Knifee" type="Sprite2D" parent="."]
 position = Vector2(136, 93)
 rotation = 1.5708

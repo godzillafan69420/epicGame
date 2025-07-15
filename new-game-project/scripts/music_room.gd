@@ -7,6 +7,7 @@ const barry = preload("res://music/barryToes.mp3")
 const stage2 = preload("res://music/stage2.mp3")
 const coneL = preload("res://music/coneL.mp3")
 const shop = preload("res://music/scammingYourMoney.mp3")
+const death = preload("res://music/death.mp3")
 var paused = false
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("down"):
@@ -14,8 +15,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("up"):
 		songSelected -= 1
 	if songSelected < 0:
-		songSelected = 5
-	if songSelected > 5:
+		songSelected = 6
+	if songSelected > 6:
 		songSelected = 0
 	$Knifee.position = Vector2(136, 150 * songSelected + 93.0)
 	if Input.is_action_just_pressed("Bomb"):
@@ -43,4 +44,8 @@ func _process(delta: float) -> void:
 	if songSelected == 5 and Input.is_action_just_pressed("shoot"):
 		$player.stop()
 		$player.stream = shop
+		$player.play()
+	if songSelected == 6 and Input.is_action_just_pressed("shoot"):
+		$player.stop()
+		$player.stream = death
 		$player.play()

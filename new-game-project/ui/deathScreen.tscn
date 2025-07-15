@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dut6g6ptou1mb"]
 
 [ext_resource type="Script" uid="uid://dtt8ntta5pj6m" path="res://scripts/death_screen.gd" id="1_y7kdk"]
-[ext_resource type="AudioStream" uid="uid://dndkf3r2n1o8c" path="res://music/titleAndDeath.mp3" id="2_brfy3"]
+[ext_resource type="AudioStream" uid="uid://cte31dofvt7og" path="res://music/death.mp3" id="2_brfy3"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
