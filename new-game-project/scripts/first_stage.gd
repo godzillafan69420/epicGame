@@ -52,7 +52,7 @@ func _process(delta):
 			glaze = thePlayer.glaze
 			power = thePlayer.bulletLevel
 			glaze = thePlayer.glaze
-			if thePlayer.HP == -1:
+			if thePlayer.HP == 0:
 				isPlayerAlive = false
 			if thePlayer.HP > -1 and thePlayer.justDieded and isPlayerAlive:
 				thePlayer.position = Vector2(-160, 285)

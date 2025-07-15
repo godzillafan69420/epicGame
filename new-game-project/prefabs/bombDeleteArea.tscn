@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cu0k5nl8c2q58"]
 
 [ext_resource type="Script" uid="uid://ix12c8cad2ub" path="res://scripts/bomb_delete_area.gd" id="1_3idx8"]
-[ext_resource type="Texture2D" uid="uid://di36wv4xid0kd" path="res://images/circle.png" id="2_y3hl1"]
+[ext_resource type="Texture2D" uid="uid://uf520mnk4k6y" path="res://images/bomb.png" id="2_dk5a5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kxojf"]
 radius = 150.0
@@ -10,6 +10,7 @@ radius = 150.0
 script = ExtResource("1_3idx8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_kxojf")
 
 [node name="Timer" type="Timer" parent="."]
@@ -17,9 +18,9 @@ wait_time = 3.0
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.211765)
-scale = Vector2(9.32, 9.16)
-texture = ExtResource("2_y3hl1")
+position = Vector2(1, -1)
+scale = Vector2(2.35789, 2.31741)
+texture = ExtResource("2_dk5a5")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

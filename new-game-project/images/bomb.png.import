@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56x8i56f7b8x"
-path="res://.godot/imported/coneL.png-e63067104a15b45699dabf0776a2ee91.ctex"
+uid="uid://uf520mnk4k6y"
+path="res://.godot/imported/bomb.png-776610640bf619e471f816482dfaf4e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/coneL.png"
-dest_files=["res://.godot/imported/coneL.png-e63067104a15b45699dabf0776a2ee91.ctex"]
+source_file="res://images/bomb.png"
+dest_files=["res://.godot/imported/bomb.png-776610640bf619e471f816482dfaf4e7.ctex"]
 
 [params]
 

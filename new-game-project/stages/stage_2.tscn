@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b7a7kdiy2ua2k" path="res://prefabs/player.tscn" id="1_c6umw"]
 [ext_resource type="Script" uid="uid://crte30qnov4tq" path="res://scripts/stage_2.gd" id="1_txogb"]
-[ext_resource type="Texture2D" uid="uid://cw1brlb1k74vg" path="res://images/unnamed.jpg" id="3_85jxm"]
+[ext_resource type="Texture2D" uid="uid://cc6fixmoqukid" path="res://images/stage2 backGround.png" id="4_txogb"]
 [ext_resource type="AudioStream" uid="uid://cv3fmb17x3ak7" path="res://music/stage2.mp3" id="5_txogb"]
 [ext_resource type="PackedScene" uid="uid://due5nhs3wm7hu" path="res://ui/uiforstage2.tscn" id="6_85jxm"]
 [ext_resource type="AudioStream" uid="uid://ln3xpbph6plh" path="res://music/coneL.mp3" id="6_txogb"]
@@ -35,10 +35,11 @@ wait_time = 5.0
 autostart = true
 
 [node name="Unnamed" type="Sprite2D" parent="."]
+modulate = Color(0.74558, 0.74558, 0.74558, 1)
 z_index = -1000
-position = Vector2(-259.5, -3.8147e-05)
-scale = Vector2(3.89722, 3.00556)
-texture = ExtResource("3_85jxm")
+position = Vector2(-2.99991, -2.00002)
+scale = Vector2(2.00208, 2)
+texture = ExtResource("4_txogb")
 
 [node name="LoopingSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_txogb")

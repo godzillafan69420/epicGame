@@ -8,6 +8,7 @@ radius = 22.0227
 
 [node name="elmo" type="Area2D"]
 scale = Vector2(1.29221, 1.44195)
+disable_mode = 1
 script = ExtResource("1_25ax4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

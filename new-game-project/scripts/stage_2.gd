@@ -46,7 +46,7 @@ func _process(delta):
 
 				$UI/BossHP.text = "Boss HP " + str(int(theBoss.Hitpoint))
 			else:
-				get_tree().change_scene_to_file("res://prefabs/win.tscn")
+				get_tree().change_scene_to_file("res://ui/winScreen.tscn")
 			
 	
 		if isPlayerAlive:
@@ -54,7 +54,7 @@ func _process(delta):
 			glaze = thePlayer.glaze
 			power = thePlayer.bulletLevel
 			glaze = thePlayer.glaze
-			if thePlayer.HP == -1:
+			if thePlayer.HP == 0:
 				isPlayerAlive = false
 			if thePlayer.HP > -1 and thePlayer.justDieded and isPlayerAlive:
 				thePlayer.position = Vector2(-160, 285)

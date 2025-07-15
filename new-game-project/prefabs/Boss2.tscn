@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://db5xiww8efvgw"]
 
 [ext_resource type="Script" uid="uid://cwqvgufrmh1dk" path="res://scripts/boss_2.gd" id="1_q65c2"]
-[ext_resource type="Texture2D" uid="uid://cqyqh3r11e1xg" path="res://images/ConeL.png" id="2_q65c2"]
+[ext_resource type="Texture2D" uid="uid://56x8i56f7b8x" path="res://images/coneL.png" id="2_q65c2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q65c2"]
 size = Vector2(192, 201)
@@ -14,8 +14,8 @@ position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_q65c2")
 
 [node name="Freaky" type="Sprite2D" parent="."]
-position = Vector2(-2, 5.5)
-scale = Vector2(0.59375, 0.640625)
+position = Vector2(1, -7.62939e-06)
+scale = Vector2(0.373047, 0.402498)
 texture = ExtResource("2_q65c2")
 
 [node name="BossShotgunInterval" type="Timer" parent="."]

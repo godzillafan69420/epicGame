@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56x8i56f7b8x"
-path="res://.godot/imported/coneL.png-e63067104a15b45699dabf0776a2ee91.ctex"
+uid="uid://cc6fixmoqukid"
+path="res://.godot/imported/stage2 backGround.png-2be5d6b124d7e933f44307ab7bcec0df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/coneL.png"
-dest_files=["res://.godot/imported/coneL.png-e63067104a15b45699dabf0776a2ee91.ctex"]
+source_file="res://images/stage2 backGround.png"
+dest_files=["res://.godot/imported/stage2 backGround.png-2be5d6b124d7e933f44307ab7bcec0df.ctex"]
 
 [params]
 
