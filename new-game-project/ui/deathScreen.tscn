@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dut6g6ptou1mb"]
 
 [ext_resource type="Script" uid="uid://dtt8ntta5pj6m" path="res://scripts/death_screen.gd" id="1_y7kdk"]
-[ext_resource type="AudioStream" uid="uid://cte31dofvt7og" path="res://music/death.mp3" id="2_brfy3"]
+[ext_resource type="AudioStream" uid="uid://bjewkmvmwrqx6" path="res://music/death.mp3" id="2_brfy3"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -39,16 +39,16 @@ offset_top = 407.0
 offset_right = 1226.0
 offset_bottom = 518.0
 theme_override_font_sizes/font_size = 50
-text = "go to alternative timeline"
+text = "[Z]go to alternative timeline"
 
 [node name="quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 618.0
-offset_top = 546.0
-offset_right = 1142.0
-offset_bottom = 670.0
+offset_left = 611.0
+offset_top = 539.0
+offset_right = 1135.0
+offset_bottom = 663.0
 theme_override_font_sizes/font_size = 50
-text = "back to titlescreen"
+text = "[X]back to titlescreen"
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="quit" to="." method="_on_quit_button_down"]

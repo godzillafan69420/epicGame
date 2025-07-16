@@ -4,6 +4,8 @@ class_name player
 @onready var bulletPre = preload("res://prefabs/bullet.tscn")
 @onready var superPrefab = preload("res://prefabs/super_attack.tscn")
 var usingSuper = false
+
+var wentToShoot = false
 # Called when the node enters the scene tree for the first time.
 const  Speed = 8
 const slowSpeed = 4
@@ -52,7 +54,7 @@ func _process(delta):
 	else:
 		currentSpeed = Speed
 		$hitboxes.hide()
-	if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1:
+	if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1 and wentToShoot:
 		
 		if bulletLevel < 10:
 			var bullet = bulletPrefab.instantiate()
@@ -117,6 +119,7 @@ func _process(delta):
 			get_parent().add_child(bulletNO5)
 			get_parent().add_child(bulletNO6)
 			get_parent().add_child(bulletNO7)
+		wentToShoot = false
 	if bulletLevel > 100:
 		bulletLevel = 100
 	if Input.is_action_just_pressed("Bomb") and invincibility == false and amountOfBombs > 0:
@@ -168,3 +171,7 @@ func _on_super_time_period_timeout() -> void:
 	bulletPrefab = bulletPre
 	usingSuper = false
 	
+
+
+func _on_shootinterval_timeout() -> void:
+	wentToShoot = true

@@ -3,7 +3,7 @@ extends Area2D
 class_name boss
 
 
-var Hitpoint = 90000
+var Hitpoint = 60000
 var count = 0
 var bossPhase = 0
 @onready var thePlayer = get_parent().find_child("player")
@@ -48,9 +48,9 @@ func _process(delta):
 	if bossPhase == 3 and count !=1:
 		$shootTowardsThePlayer.start() 
 		count = 1
-	if Hitpoint < 60000 and Hitpoint > 30000:
+	if Hitpoint < 40000 and Hitpoint > 20000:
 		bossPhase = 2
-	elif Hitpoint < 30000:
+	elif Hitpoint < 20000:
 		bossPhase = 3
 	
 	

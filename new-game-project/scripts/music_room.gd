@@ -8,6 +8,8 @@ const stage2 = preload("res://music/stage2.mp3")
 const coneL = preload("res://music/coneL.mp3")
 const shop = preload("res://music/scammingYourMoney.mp3")
 const death = preload("res://music/death.mp3")
+const banana = preload("res://music/bananaField.mp3")
+const monkey = preload("res://music/DirtyMonkeyBusiness.mp3")
 var paused = false
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("down"):
@@ -15,10 +17,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("up"):
 		songSelected -= 1
 	if songSelected < 0:
-		songSelected = 6
-	if songSelected > 6:
+		songSelected = 8
+	if songSelected > 8:
 		songSelected = 0
-	$Knifee.position = Vector2(136, 150 * songSelected + 93.0)
+	$Knifee.position = Vector2(136, 90 * songSelected + 93.0)
 	if Input.is_action_just_pressed("Bomb"):
 		get_tree().change_scene_to_file("res://ui/main_menu.tscn")
 	if songSelected == 0 and Input.is_action_just_pressed("shoot"):
@@ -48,4 +50,12 @@ func _process(delta: float) -> void:
 	if songSelected == 6 and Input.is_action_just_pressed("shoot"):
 		$player.stop()
 		$player.stream = death
+		$player.play()
+	if songSelected == 7 and Input.is_action_just_pressed("shoot"):
+		$player.stop()
+		$player.stream = banana
+		$player.play()
+	if songSelected == 8 and Input.is_action_just_pressed("shoot"):
+		$player.stop()
+		$player.stream = monkey
 		$player.play()

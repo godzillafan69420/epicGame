@@ -60,12 +60,13 @@ text = "when pressing shift"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1443.0
-offset_top = 234.0
-offset_right = 1717.0
-offset_bottom = 300.0
+offset_left = 1683.0
+offset_top = 99.0
+offset_right = 1957.0
+offset_bottom = 172.0
 theme_override_font_sizes/font_size = 25
-text = "GIves more score"
+text = "Increase Souls
+Use to buy stuff"
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
@@ -95,7 +96,7 @@ theme_override_font_sizes/font_size = 25
 text = "GIves more Power"
 
 [node name="Souls" type="Sprite2D" parent="."]
-position = Vector2(1556, 113)
+position = Vector2(1536, 119)
 scale = Vector2(8.09375, 8.09375)
 texture = ExtResource("2_1aw0g")
 

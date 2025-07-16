@@ -54,4 +54,7 @@ func _process(delta: float) -> void:
 			GlobalVariables.souls -= 50
 	$Knifee.position = Vector2(selectedItems * 610 + 297, 632)
 	if Input.is_action_just_pressed("Bomb"):
-		get_tree().change_scene_to_file("res://stages/stage_2.tscn")
+		if GlobalVariables.stage == 2:
+			get_tree().change_scene_to_file("res://stages/stage_2.tscn")
+		if GlobalVariables.stage == 3:
+			get_tree().change_scene_to_file("res://stages/stage_3.tscn")

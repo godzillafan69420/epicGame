@@ -17,9 +17,10 @@ func _process(delta: float) -> void:
 		
 		if textToShow == 0:
 			textBox.text = "Can you stop attacking my goons
-			Trying to troll this kid here"
+			It's really annoying and I am trying to
+			ruin this kid's day"
 		if textToShow == 1:
-			textBox.text = "Ok, I'm here to 
+			textBox.text = "Actually, I'm here to 
 			executed by the High Judge of the Underworld."
 			barrySprite.visible = false
 			protagonistDialog.visible = true

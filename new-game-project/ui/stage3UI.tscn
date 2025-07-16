@@ -1,8 +1,101 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7i5brk8wrb0u"]
+[gd_scene load_steps=20 format=3 uid="uid://b7i5brk8wrb0u"]
 
-[ext_resource type="Texture2D" uid="uid://clql05uvu1yxw" path="res://images/conelWith bubble.png" id="1_vnkr1"]
 [ext_resource type="Script" uid="uid://bcbws131ktysf" path="res://ui/stage_3ui.gd" id="1_yufgc"]
+[ext_resource type="Texture2D" uid="uid://tso7m76np3sm" path="res://images/monkeyBossBubble.png" id="2_u061t"]
 [ext_resource type="Texture2D" uid="uid://cspacpfupv2gs" path="res://images/bob.png" id="2_yufgc"]
+[ext_resource type="Texture2D" uid="uid://dyj1iw20kmijf" path="res://images/Souls.png" id="4_u061t"]
+[ext_resource type="Texture2D" uid="uid://uf520mnk4k6y" path="res://images/bomb.png" id="5_rl4u8"]
+[ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="6_3bmfl"]
+[ext_resource type="Texture2D" uid="uid://vtmbteswfso7" path="res://images/healthBar.png" id="7_3bmfl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7mxx3"]
+load_path = "res://.godot/imported/healthBar.png-f8e541990aa8c7f47f324a715e0000c9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w6he"]
+atlas = ExtResource("7_3bmfl")
+region = Rect2(0, 0, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uo37d"]
+atlas = ExtResource("7_3bmfl")
+region = Rect2(0, 128, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vj8c"]
+atlas = ExtResource("7_3bmfl")
+region = Rect2(0, 256, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ehk2"]
+atlas = ExtResource("7_3bmfl")
+region = Rect2(0, 384, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q2vu"]
+atlas = ExtResource("7_3bmfl")
+region = Rect2(0, 512, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibsxb"]
+atlas = ExtResource("7_3bmfl")
+region = Rect2(0, 640, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87n8b"]
+atlas = ExtResource("7_3bmfl")
+region = Rect2(0, 768, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqgff"]
+atlas = ExtResource("7_3bmfl")
+region = Rect2(0, 896, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq4df"]
+atlas = ExtResource("7_3bmfl")
+region = Rect2(0, 1024, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpcdd"]
+atlas = ExtResource("7_3bmfl")
+region = Rect2(0, 1152, 1280, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r40lb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_7mxx3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w6he")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uo37d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vj8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ehk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q2vu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibsxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87n8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqgff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq4df")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpcdd")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -16,6 +109,7 @@ script = ExtResource("1_yufgc")
 [node name="Panel" type="Panel" parent="."]
 modulate = Color(0.569153, 0.864816, 1, 1)
 self_modulate = Color(0.96858, 2.02149e-06, 0.568588, 1)
+layout_mode = 0
 offset_left = 1409.0
 offset_top = -1.0
 offset_right = 1735.0
@@ -35,6 +129,7 @@ scale = Vector2(1.6, 1.44)
 uppercase = true
 
 [node name="HP" type="Label" parent="."]
+layout_mode = 0
 offset_left = 1433.0
 offset_top = 200.0
 offset_right = 1716.0
@@ -42,27 +137,30 @@ offset_bottom = 262.0
 scale = Vector2(1.6, 1.44)
 
 [node name="power" type="Label" parent="."]
-offset_left = 1494.0
-offset_top = 270.0
-offset_right = 1718.0
-offset_bottom = 306.0
+layout_mode = 0
+offset_left = 1539.0
+offset_top = 271.0
+offset_right = 1763.0
+offset_bottom = 307.0
 scale = Vector2(1.6, 1.44)
 theme_override_font_sizes/font_size = 25
 
 [node name="bomb" type="Label" parent="."]
-offset_left = 1494.0
-offset_top = 326.0
-offset_right = 1718.0
-offset_bottom = 362.0
+layout_mode = 0
+offset_left = 1540.0
+offset_top = 328.0
+offset_right = 1764.0
+offset_bottom = 364.0
 scale = Vector2(1.6, 1.44)
 theme_override_font_sizes/font_size = 25
 text = "tep"
 
 [node name="souls" type="Label" parent="."]
-offset_left = 1490.0
-offset_top = 392.0
-offset_right = 1714.0
-offset_bottom = 428.0
+layout_mode = 0
+offset_left = 1543.0
+offset_top = 393.0
+offset_right = 1767.0
+offset_bottom = 429.0
 scale = Vector2(1.6, 1.44)
 theme_override_font_sizes/font_size = 25
 text = "tep"
@@ -83,6 +181,7 @@ Project"
 uppercase = true
 
 [node name="BossName" type="Label" parent="."]
+layout_mode = 0
 offset_left = 46.0
 offset_top = 30.0
 offset_right = 328.0
@@ -90,6 +189,7 @@ offset_bottom = 85.0
 scale = Vector2(1.6, 1.44)
 
 [node name="BossHP" type="Label" parent="."]
+layout_mode = 0
 offset_left = 1445.0
 offset_top = 676.0
 offset_right = 1620.0
@@ -98,6 +198,7 @@ scale = Vector2(1.6, 1.44)
 horizontal_alignment = 2
 
 [node name="WhenBoss spawn" type="Label" parent="."]
+layout_mode = 0
 offset_left = 1426.0
 offset_top = 455.0
 offset_right = 1782.0
@@ -109,7 +210,7 @@ text = "test"
 visible = false
 position = Vector2(251, 732)
 scale = Vector2(2.16247, 2.16247)
-texture = ExtResource("1_vnkr1")
+texture = ExtResource("2_u061t")
 
 [node name="Protagonist" type="Sprite2D" parent="."]
 visible = false
@@ -134,3 +235,31 @@ offset_right = 1390.0
 offset_bottom = 398.0
 theme_override_font_sizes/font_size = 50
 max_lines_visible = 5
+
+[node name="healthBar" type="ProgressBar" parent="."]
+visible = false
+offset_right = 1408.0
+offset_bottom = 27.0
+step = 5.0
+show_percentage = false
+
+[node name="Souls" type="Sprite2D" parent="."]
+position = Vector2(1497, 408)
+scale = Vector2(1.8125, 1.8125)
+texture = ExtResource("4_u061t")
+
+[node name="Bomb" type="Sprite2D" parent="."]
+position = Vector2(1497, 352)
+scale = Vector2(0.476563, 0.476563)
+texture = ExtResource("5_rl4u8")
+
+[node name="Knifee" type="Sprite2D" parent="."]
+position = Vector2(1495, 284)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("6_3bmfl")
+
+[node name="PlayerHealth" type="AnimatedSprite2D" parent="."]
+position = Vector2(1668, 215)
+scale = Vector2(0.390625, 0.390625)
+sprite_frames = SubResource("SpriteFrames_r40lb")
+animation = &"new_animation"

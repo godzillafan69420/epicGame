@@ -30,9 +30,10 @@ func _process(delta):
 	$"UI/WhenBoss spawn".text = "Boss in coming! " + str(int($WhenBossSpawn.time_left))
 	if thePlayer != null:
 		
-		$UI/HP.text = "HP: " + str(thePlayer.HP)
-		$UI/power.text = "power: " + str(thePlayer.bulletLevel)
-		$UI/bomb.text = "Bomb: " + str(thePlayer.amountOfBombs)
+		$UI/score.text =  "Score: "+str(GlobalVariables.score)
+		$UI/power.text = str(power)
+		$UI/bomb.text = str(thePlayer.amountOfBombs)
+		$UI/PlayerHealth.frame = thePlayer.HP - 1
 		
 		
 		
@@ -41,11 +42,15 @@ func _process(delta):
 			var theBoss = $Rack
 
 			if theBoss != null:
+				$UI/healthBar.visible = true
+				$UI/healthBar.max_value = 70000
+				$UI/healthBar.value = theBoss.Hitpoint
 				$"UI/WhenBoss spawn".text = ""
-				$UI/BossName.text = "Rack the king of the jungle"
+				$UI/BossName.text = "Rack the banana banker"
 
-				$UI/BossHP.text = "Boss HP " + str(int(theBoss.Hitpoint))
 			else:
+				GlobalVariables.souls += 30
+				GlobalVariables.score += 150000
 				get_tree().change_scene_to_file("res://ui/winScreen.tscn")
 			
 	

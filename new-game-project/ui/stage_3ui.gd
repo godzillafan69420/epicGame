@@ -16,40 +16,43 @@ func _process(delta: float) -> void:
 		barrySprite.visible = true
 		
 		if textToShow == 0:
-			textBox.text = "Can you stop attacking my goons
-			Trying to troll this kid here"
+			textBox.text = "Umm this is a private property
+			Can you leave"
 		if textToShow == 1:
-			textBox.text = "Ok, I'm here to 
-			executed by the High Judge of the Underworld."
+			textBox.text = "No, I have Important
+			business with you"
 			barrySprite.visible = false
 			protagonistDialog.visible = true
 		if textToShow == 2:
-			textBox.text = "For what"
+			textBox.text = "Bananas?"
 			barrySprite.visible = true
 			protagonistDialog.visible = false
 		if textToShow == 3:
-			textBox.text = "You literally terrorised so many
-			children that they have chronic depression"
+			textBox.text = "No, well sort of.
+			You are getting executed for your
+			silly banana scheme"
 			barrySprite.visible = false
 			protagonistDialog.visible = true
 		if textToShow == 4:
-			textBox.text = "Bro, i'm sorry that these kids are
-			that bad at the game"
+			textBox.text = "Well before you execute me
+			Can I tell you a joke"
 			barrySprite.visible = true
 			protagonistDialog.visible = false
 		if textToShow == 5:
 			textBox.text = "....
-			You think sorry is enough"
+			That is a weird request.
+			Ok what."
 			barrySprite.visible = false
 			protagonistDialog.visible = true
 			
 		if textToShow == 6:
-			textBox.text = "Ok, Ok my bad"
+			textBox.text = "Chicken-butt"
 			barrySprite.visible = true
 			protagonistDialog.visible = false
 			
 		if textToShow == 7:
-			textBox.text = "Mortals these days"
+			textBox.text = "well I am laughing my so hard
+			that I am not laughing"
 			barrySprite.visible = false
 			protagonistDialog.visible = true
 		if textToShow == 8:
