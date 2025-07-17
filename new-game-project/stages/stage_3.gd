@@ -23,6 +23,8 @@ func _on_elmo_spawn_rate_timeout():
 		add_child(elmo)
 
 func _ready() -> void:
+	$sceneTransition.get_node("ColorRect").color.a = 255
+	$sceneTransition/AnimationPlayer.play("fade - in")
 	$WhenBossSpawn.start()
 func _process(delta):
 	$UI/score.text = "SCORE: " + str(GlobalVariables.score)
@@ -49,9 +51,15 @@ func _process(delta):
 				$UI/BossName.text = "Rack the banana banker"
 
 			else:
-				GlobalVariables.souls += 30
-				GlobalVariables.score += 150000
-				get_tree().change_scene_to_file("res://ui/winScreen.tscn")
+				$UI/UWon.visible = true
+				gamePhase = 4
+		if Input.is_action_just_pressed("shoot") and gamePhase == 4:
+			GlobalVariables.stage = 2
+			GlobalVariables.souls += 50
+			GlobalVariables.score += 150000
+			$sceneTransition/AnimationPlayer.play("fade-Out")
+			await get_tree().create_timer(0.5).timeout
+			get_tree().change_scene_to_file("res://ui/store.tscn")
 			
 	
 		if isPlayerAlive:

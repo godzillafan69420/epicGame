@@ -97,9 +97,10 @@ func _on_boss_shotgun_interval_timeout() -> void:
 	if thePlayer != null and bossPhase == 2:
 		
 		for i in range(25):
+
 			var bullets = bulletPrefab.instantiate()
 			bullets.position = Vector2(randf_range(-920,400),randf_range(-550,-200))
-			bullets.theplayerDirtion = thePlayer.position- Vector2(randf_range(-100,100),randf_range(-100,100))
+			bullets.theplayerDirtion =thePlayer.position - position
 			get_parent().add_child(bullets)
 	count =0
 	

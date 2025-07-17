@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://by6g6ij1ky4qs"]
+[gd_scene load_steps=14 format=3 uid="uid://by6g6ij1ky4qs"]
 
 [ext_resource type="Script" uid="uid://bgu3yo545j84c" path="res://scripts/win_screen.gd" id="1_lun7r"]
 [ext_resource type="Texture2D" uid="uid://cw1brlb1k74vg" path="res://images/unnamed.jpg" id="2_5sexf"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://clql05uvu1yxw" path="res://images/conelWith bubble.png" id="5_s4kbo"]
 [ext_resource type="Texture2D" uid="uid://di4827m7ueo1q" path="res://images/player.png" id="6_7rkqr"]
 [ext_resource type="Texture2D" uid="uid://dyj1iw20kmijf" path="res://images/Souls.png" id="7_m447b"]
+[ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="13_wrm5i"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -25,6 +26,10 @@ offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lun7r")
+
+[node name="TitleAndDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pwn25")
+autoplay = true
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(-158, 14)
@@ -97,7 +102,7 @@ offset_top = 2811.0
 offset_right = 1458.0
 offset_bottom = 2952.0
 theme_override_font_sizes/font_size = 50
-text = "press [esc] to go back to Menu"
+text = "press [Z] to go back to Menu"
 
 [node name="Label5" type="Label" parent="Node2D"]
 offset_left = 522.0
@@ -181,6 +186,5 @@ texture = ExtResource("4_efybc")
 position = Vector2(1088, 2549)
 texture = ExtResource("5_s4kbo")
 
-[node name="TitleAndDeath" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_pwn25")
-autoplay = true
+[node name="sceneTransition" parent="." instance=ExtResource("13_wrm5i")]
+position = Vector2(-54, 18)

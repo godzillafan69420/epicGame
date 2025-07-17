@@ -7,4 +7,5 @@ func _process(delta: float) -> void:
 		queue_free()
 	if position.x > 410 or position.x < -950:
 		queue_free()
-	
+	if get_parent().gamePhase == 4:
+		queue_free()

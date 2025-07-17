@@ -3,6 +3,8 @@ extends Control
 var buttomSelected = 0
 
 func _on_start_button_down() -> void:
+	$sceneTransition/AnimationPlayer.play("fade-Out")
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://stages/firstStage.tscn")
 
 
@@ -27,6 +29,8 @@ func _process(delta: float) -> void:
 	if buttomSelected > 4:
 		buttomSelected = 0
 	if buttomSelected == 0 and Input.is_action_just_pressed("shoot"):
+		$sceneTransition/AnimationPlayer.play("fade-Out")
+		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://stages/firstStage.tscn")
 	if buttomSelected == 2 and Input.is_action_just_pressed("shoot"):
 		get_tree().change_scene_to_file("res://ui/instructionn.tscn")

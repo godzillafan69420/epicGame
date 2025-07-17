@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 		GlobalVariables.playerBombs = 4
 		GlobalVariables.playerPower = 10
 		GlobalVariables.souls = 0
+		GlobalVariables.score = 0
 		GlobalVariables.stage = 1
 		get_tree().change_scene_to_file("res://ui/main_menu.tscn")
 	
@@ -24,6 +25,7 @@ func _on_button_button_down() -> void:
 	GlobalVariables.PlayerHP = 2
 	GlobalVariables.playerBombs = 4
 	GlobalVariables.playerPower = 70
+	GlobalVariables.score = 0
 	GlobalVariables.souls = 0
 	if GlobalVariables.stage == 1:
 		get_tree().change_scene_to_file("res://stages/firstStage.tscn")

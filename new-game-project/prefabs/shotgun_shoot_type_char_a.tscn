@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf5rcgats0ao3"]
+
+[ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="1_6u7co"]
+[ext_resource type="Script" uid="uid://bf1r4plng3nxk" path="res://prefabs/shotgun_shoot_type_char_a.gd" id="1_vyyou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyyou"]
+size = Vector2(32, 20)
+
+[node name="shotgunShootTypeCharA" type="Area2D"]
+script = ExtResource("1_vyyou")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57081
+texture = ExtResource("1_6u7co")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vyyou")

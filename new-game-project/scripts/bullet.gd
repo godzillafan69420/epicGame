@@ -12,6 +12,8 @@ func _process(delta):
 	position.y -= 10
 	if position.y < -540:
 		queue_free()
+	if get_parent().gamePhase ==1:
+		queue_free()
 
 
 func _on_area_entered(area):

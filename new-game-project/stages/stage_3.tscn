@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgva82va80hav"]
+[gd_scene load_steps=8 format=3 uid="uid://cgva82va80hav"]
 
 [ext_resource type="PackedScene" uid="uid://b7i5brk8wrb0u" path="res://ui/stage3UI.tscn" id="1_1hwes"]
 [ext_resource type="Script" uid="uid://dx6asmnwghj2a" path="res://stages/stage_3.gd" id="1_8iyqq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bu640p5gvgcxa" path="res://images/bananaBank.png" id="4_8iyqq"]
 [ext_resource type="AudioStream" uid="uid://cprvy3fomjyp7" path="res://music/bananaField.mp3" id="5_8iyqq"]
 [ext_resource type="AudioStream" uid="uid://bspcjg0qvdoty" path="res://music/DirtyMonkeyBusiness.mp3" id="6_8iyqq"]
+[ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="7_sg1oo"]
 
 [node name="stage3" type="Node2D"]
 script = ExtResource("1_8iyqq")
@@ -53,6 +54,9 @@ offset_left = -971.0
 offset_top = -542.0
 offset_right = -971.0
 offset_bottom = -542.0
+
+[node name="sceneTransition" parent="." instance=ExtResource("7_sg1oo")]
+position = Vector2(-961, -542)
 
 [connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]
 [connection signal="timeout" from="gigaSpawnRate" to="." method="_on_giga_spawn_rate_timeout"]

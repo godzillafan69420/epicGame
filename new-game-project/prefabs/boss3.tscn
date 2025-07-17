@@ -19,6 +19,7 @@ scale = Vector2(0.373047, 0.402498)
 texture = ExtResource("2_b3p8e")
 
 [node name="BossShotgunInterval" type="Timer" parent="."]
+wait_time = 1.5
 one_shot = true
 
 [node name="bulletShootinEverywhere" type="Timer" parent="."]
@@ -26,7 +27,6 @@ wait_time = 0.2
 one_shot = true
 
 [node name="shootTowardsThePlayer" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 
 [node name="BulletIntervalForRotator" type="Timer" parent="."]

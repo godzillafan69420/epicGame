@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp02eeg1k66cg"]
+[gd_scene load_steps=6 format=3 uid="uid://dp02eeg1k66cg"]
 
 [ext_resource type="Script" uid="uid://0wwh4xkoi0gy" path="res://scripts/store.gd" id="1_cjrdt"]
 [ext_resource type="Texture2D" uid="uid://b65l2ethyydb" path="res://images/store.png" id="1_kj3tv"]
 [ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="3_eflcf"]
 [ext_resource type="AudioStream" uid="uid://dmxdw2i64ejhp" path="res://music/scammingYourMoney.mp3" id="4_u1bgn"]
+[ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="5_od2if"]
 
 [node name="store" type="Control"]
 layout_mode = 3
@@ -111,6 +112,9 @@ theme_override_font_sizes/font_size = 100
 [node name="ScammingYourMoney" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_u1bgn")
 autoplay = true
+
+[node name="sceneTransition" parent="." instance=ExtResource("5_od2if")]
+position = Vector2(-1, 8)
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]

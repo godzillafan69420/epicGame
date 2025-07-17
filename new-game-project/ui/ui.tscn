@@ -134,11 +134,13 @@ uppercase = true
 
 [node name="HP" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1433.0
-offset_top = 200.0
-offset_right = 1716.0
-offset_bottom = 262.0
+offset_left = 1417.0
+offset_top = 138.0
+offset_right = 1700.0
+offset_bottom = 200.0
 scale = Vector2(1.6, 1.44)
+theme_override_font_sizes/font_size = 25
+text = "player:"
 
 [node name="power" type="Label" parent="."]
 layout_mode = 0
@@ -272,3 +274,35 @@ position = Vector2(1668, 215)
 scale = Vector2(0.390625, 0.390625)
 sprite_frames = SubResource("SpriteFrames_gycre")
 animation = &"new_animation"
+
+[node name="UWon" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 523.0
+offset_top = 208.0
+offset_right = 1006.0
+offset_bottom = 787.0
+
+[node name="Label" type="Label" parent="UWon"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 24.0
+offset_right = 481.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 50
+text = "You beat the Boss"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="UWon"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 125.0
+offset_right = 480.0
+offset_bottom = 581.0
+theme_override_font_sizes/font_size = 50
+text = "+ 50 Souls
++ 150000
+[Z] to continue
+"
+horizontal_alignment = 1

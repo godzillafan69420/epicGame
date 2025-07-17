@@ -1,5 +1,8 @@
 extends Control
 
+func _ready() -> void:
+	$sceneTransition.get_node("ColorRect").color.a = 255
+	$sceneTransition/AnimationPlayer.play("fade - in")
 func _process(delta: float) -> void:
 	$Node2D/score.text = "Your Score: " + str(GlobalVariables.score)
 	if $Node2D.position.y > -1800:

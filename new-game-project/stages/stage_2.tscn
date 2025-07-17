@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cftub4i4qhmrk"]
+[gd_scene load_steps=8 format=3 uid="uid://cftub4i4qhmrk"]
 
 [ext_resource type="PackedScene" uid="uid://b7a7kdiy2ua2k" path="res://prefabs/player.tscn" id="1_c6umw"]
 [ext_resource type="Script" uid="uid://crte30qnov4tq" path="res://scripts/stage_2.gd" id="1_txogb"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cv3fmb17x3ak7" path="res://music/stage2.mp3" id="5_txogb"]
 [ext_resource type="PackedScene" uid="uid://due5nhs3wm7hu" path="res://ui/uiforstage2.tscn" id="6_85jxm"]
 [ext_resource type="AudioStream" uid="uid://ln3xpbph6plh" path="res://music/coneL.mp3" id="6_txogb"]
+[ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="7_85jxm"]
 
 [node name="stage2" type="Node2D"]
 script = ExtResource("1_txogb")
@@ -52,6 +53,9 @@ one_shot = true
 
 [node name="BarryToes" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_txogb")
+
+[node name="sceneTransition" parent="." instance=ExtResource("7_85jxm")]
+position = Vector2(-961, -542)
 
 [connection signal="startTheBossMusic" from="UI" to="." method="_on_ui_start_the_boss_music"]
 [connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]

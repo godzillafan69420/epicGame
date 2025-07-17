@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6sc6jmkpi5an"]
+[gd_scene load_steps=8 format=3 uid="uid://c6sc6jmkpi5an"]
 
 [ext_resource type="Script" uid="uid://duutoxbnnsydq" path="res://scripts/main_menu.gd" id="1_0dkrt"]
 [ext_resource type="Texture2D" uid="uid://bx73v8oimnqvh" path="res://images/background.png" id="2_ei257"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="3_wk0pr"]
 [ext_resource type="Texture2D" uid="uid://2u8wy48k0tnl" path="res://images/title.png" id="5_p8ri8"]
 [ext_resource type="Texture2D" uid="uid://cw1brlb1k74vg" path="res://images/unnamed.jpg" id="6_ubpvv"]
+[ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="7_p8ri8"]
 
 [node name="mainMenu" type="Control"]
 layout_mode = 3
@@ -89,6 +90,9 @@ position = Vector2(920, 905)
 rotation = -0.97174
 scale = Vector2(0.430556, 0.436111)
 texture = ExtResource("6_ubpvv")
+
+[node name="sceneTransition" parent="." instance=ExtResource("7_p8ri8")]
+position = Vector2(-2, 10)
 
 [connection signal="button_down" from="start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="Instructions" to="." method="_on_instructions_button_down"]

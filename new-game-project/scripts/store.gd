@@ -2,6 +2,9 @@ extends Control
 
 var selectedItems = 0
 
+func _ready() -> void:
+	$sceneTransition.get_node("ColorRect").color.a = 255
+	$sceneTransition/AnimationPlayer.play("fade - in")
 
 func _on_button_button_down() -> void:
 	if GlobalVariables.souls >= 50:
@@ -54,6 +57,8 @@ func _process(delta: float) -> void:
 			GlobalVariables.souls -= 50
 	$Knifee.position = Vector2(selectedItems * 610 + 297, 632)
 	if Input.is_action_just_pressed("Bomb"):
+		$sceneTransition/AnimationPlayer.play("fade-Out")
+		await get_tree().create_timer(0.5).timeout
 		if GlobalVariables.stage == 2:
 			get_tree().change_scene_to_file("res://stages/stage_2.tscn")
 		if GlobalVariables.stage == 3:
