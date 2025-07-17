@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6ihrf5wb68u1"]
+[gd_scene load_steps=9 format=3 uid="uid://xykodx86abkc"]
 
 [ext_resource type="Script" uid="uid://dx685i44ok57h" path="res://scripts/first_stage.gd" id="1_7ry33"]
 [ext_resource type="PackedScene" uid="uid://b7a7kdiy2ua2k" path="res://prefabs/player.tscn" id="2_81ccc"]
@@ -13,7 +13,7 @@
 script = ExtResource("1_7ry33")
 
 [node name="Unnamed" type="Sprite2D" parent="."]
-modulate = Color(0.82606, 0.82606, 0.82606, 1)
+modulate = Color(0.61339, 0.61339, 0.61339, 1)
 show_behind_parent = true
 z_index = -1000
 position = Vector2(-384, 3.99994)
@@ -21,6 +21,7 @@ scale = Vector2(1.71667, 2.09231)
 texture = ExtResource("4_7ry33")
 
 [node name="JetPlane" type="Sprite2D" parent="."]
+modulate = Color(0.67069, 0.67069, 0.67069, 1)
 show_behind_parent = true
 z_index = -500
 position = Vector2(68, -85)
@@ -59,6 +60,7 @@ volume_db = -1.0
 autoplay = true
 
 [node name="WhenBossSpawn" type="Timer" parent="."]
+wait_time = 75.0
 one_shot = true
 
 [node name="BarryToes" type="AudioStreamPlayer" parent="."]

@@ -7,6 +7,7 @@
 size = Vector2(32, 20)
 
 [node name="shotgunShootTypeCharA" type="Area2D"]
+rotation = -1.5708
 script = ExtResource("1_vyyou")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

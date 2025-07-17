@@ -31,7 +31,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="Unnamed" type="Sprite2D" parent="."]
-modulate = Color(0.74558, 0.74558, 0.74558, 1)
+modulate = Color(0.473976, 0.473976, 0.473975, 1)
 z_index = -1000
 position = Vector2(-2.99991, -2.00002)
 scale = Vector2(2.00208, 2)
@@ -43,7 +43,6 @@ volume_db = -1.0
 autoplay = true
 
 [node name="WhenBossSpawn" type="Timer" parent="."]
-wait_time = 90.0
 one_shot = true
 
 [node name="BarryToes" type="AudioStreamPlayer" parent="."]

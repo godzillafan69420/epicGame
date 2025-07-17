@@ -48,7 +48,7 @@ func _process(delta):
 				$UI/healthBar.max_value = 70000
 				$UI/healthBar.value = theBoss.Hitpoint
 				$"UI/WhenBoss spawn".text = ""
-				$UI/BossName.text = "Rack the banana banker"
+				$UI/BossName.text = "Monkey ze banana banker"
 
 			else:
 				$UI/UWon.visible = true
