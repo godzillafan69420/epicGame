@@ -43,6 +43,7 @@ volume_db = -1.0
 autoplay = true
 
 [node name="WhenBossSpawn" type="Timer" parent="."]
+wait_time = 90.0
 one_shot = true
 
 [node name="BarryToes" type="AudioStreamPlayer" parent="."]

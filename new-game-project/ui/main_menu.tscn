@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6sc6jmkpi5an"]
+[gd_scene load_steps=10 format=3 uid="uid://c6sc6jmkpi5an"]
 
 [ext_resource type="Script" uid="uid://duutoxbnnsydq" path="res://scripts/main_menu.gd" id="1_0dkrt"]
 [ext_resource type="Texture2D" uid="uid://bx73v8oimnqvh" path="res://images/background.png" id="2_ei257"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="3_wk0pr"]
 [ext_resource type="Texture2D" uid="uid://2u8wy48k0tnl" path="res://images/title.png" id="5_p8ri8"]
 [ext_resource type="Texture2D" uid="uid://cw1brlb1k74vg" path="res://images/unnamed.jpg" id="6_ubpvv"]
+[ext_resource type="Texture2D" uid="uid://cspacpfupv2gs" path="res://images/bob.png" id="7_arv2f"]
 [ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="7_p8ri8"]
+[ext_resource type="Texture2D" uid="uid://dtfeq5h6sufif" path="res://images/freaky.PNG" id="8_5klac"]
 
 [node name="mainMenu" type="Control"]
 layout_mode = 3
@@ -25,62 +27,12 @@ position = Vector2(973, 567)
 scale = Vector2(2.04664, 2.10278)
 texture = ExtResource("2_ei257")
 
-[node name="start" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1359.0
-offset_top = 329.0
-offset_right = 1883.0
-offset_bottom = 453.0
-theme_override_font_sizes/font_size = 50
-text = "start"
-
-[node name="extra" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1361.0
-offset_top = 462.0
-offset_right = 1885.0
-offset_bottom = 586.0
-theme_override_font_sizes/font_size = 50
-text = "extra start"
-
-[node name="Instructions" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1361.0
-offset_top = 599.0
-offset_right = 1885.0
-offset_bottom = 723.0
-theme_override_font_sizes/font_size = 50
-text = "Instruction"
-
-[node name="quit" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1364.0
-offset_top = 874.0
-offset_right = 1888.0
-offset_bottom = 998.0
-theme_override_font_sizes/font_size = 50
-text = "Quit"
-
-[node name="music Room" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1363.0
-offset_top = 735.0
-offset_right = 1887.0
-offset_bottom = 859.0
-theme_override_font_sizes/font_size = 50
-text = "Music Room"
-
 [node name="TitleAndDeath" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_wk0pr")
 autoplay = true
 
-[node name="Knifee" type="Sprite2D" parent="."]
-position = Vector2(1254, 394)
-rotation = 1.5708
-scale = Vector2(6.25, 6.25)
-texture = ExtResource("3_wk0pr")
-
 [node name="Title" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(723.22, 317.5)
 scale = Vector2(1.51829, 1.14629)
 texture = ExtResource("5_p8ri8")
@@ -91,10 +43,106 @@ rotation = -0.97174
 scale = Vector2(0.430556, 0.436111)
 texture = ExtResource("6_ubpvv")
 
-[node name="sceneTransition" parent="." instance=ExtResource("7_p8ri8")]
-position = Vector2(-2, 10)
+[node name="firstpart" type="Node2D" parent="."]
+visible = false
 
-[connection signal="button_down" from="start" to="." method="_on_start_button_down"]
-[connection signal="button_down" from="Instructions" to="." method="_on_instructions_button_down"]
-[connection signal="button_down" from="quit" to="." method="_on_quit_button_down"]
-[connection signal="button_down" from="music Room" to="." method="_on_music_room_button_down"]
+[node name="Knifee" type="Sprite2D" parent="firstpart"]
+position = Vector2(1254, 394)
+rotation = 1.5708
+scale = Vector2(6.25, 6.25)
+texture = ExtResource("3_wk0pr")
+
+[node name="start" type="Button" parent="firstpart"]
+offset_left = 1359.0
+offset_top = 329.0
+offset_right = 1883.0
+offset_bottom = 453.0
+theme_override_font_sizes/font_size = 50
+text = "start"
+
+[node name="extra" type="Button" parent="firstpart"]
+offset_left = 1361.0
+offset_top = 462.0
+offset_right = 1885.0
+offset_bottom = 586.0
+theme_override_font_sizes/font_size = 50
+text = "extra start"
+
+[node name="Instructions" type="Button" parent="firstpart"]
+offset_left = 1361.0
+offset_top = 599.0
+offset_right = 1885.0
+offset_bottom = 723.0
+theme_override_font_sizes/font_size = 50
+text = "Instruction"
+
+[node name="quit" type="Button" parent="firstpart"]
+offset_left = 1364.0
+offset_top = 874.0
+offset_right = 1888.0
+offset_bottom = 998.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="music Room" type="Button" parent="firstpart"]
+offset_left = 1363.0
+offset_top = 735.0
+offset_right = 1887.0
+offset_bottom = 859.0
+theme_override_font_sizes/font_size = 50
+text = "Music Room"
+
+[node name="characterSelection" type="Node2D" parent="."]
+
+[node name="Bob" type="Sprite2D" parent="characterSelection"]
+position = Vector2(229, 465)
+scale = Vector2(1.66406, 1.66406)
+texture = ExtResource("7_arv2f")
+
+[node name="Freaky" type="Sprite2D" parent="characterSelection"]
+position = Vector2(867, 504.625)
+scale = Vector2(1.53912, 2.00312)
+texture = ExtResource("8_5klac")
+
+[node name="Freaky2" type="Sprite2D" parent="characterSelection"]
+position = Vector2(1616, 504)
+scale = Vector2(1.53912, 1.98317)
+texture = ExtResource("8_5klac")
+
+[node name="Label" type="Label" parent="characterSelection"]
+offset_left = 31.0
+offset_top = 13.0
+offset_right = 473.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 50
+text = "Timmy Juicebottle"
+
+[node name="Label2" type="Label" parent="characterSelection"]
+offset_left = 555.0
+offset_top = 18.0
+offset_right = 997.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 50
+text = "PlaceHolder"
+
+[node name="Label3" type="Label" parent="characterSelection"]
+offset_left = 1307.0
+offset_top = 10.0
+offset_right = 1749.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 50
+text = "Rin Satsuki"
+
+[node name="Knifee" type="Sprite2D" parent="characterSelection"]
+position = Vector2(233, 990)
+rotation = 1.5708
+scale = Vector2(6.25, 6.25)
+texture = ExtResource("3_wk0pr")
+
+[node name="sceneTransition" parent="." instance=ExtResource("7_p8ri8")]
+position = Vector2(4, -19)
+
+[connection signal="button_down" from="firstpart/start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="firstpart/Instructions" to="." method="_on_instructions_button_down"]
+[connection signal="button_down" from="firstpart/quit" to="." method="_on_quit_button_down"]
+[connection signal="button_down" from="firstpart/music Room" to="." method="_on_music_room_button_down"]
