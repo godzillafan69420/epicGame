@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 		$Title.visible = false
 		$firstpart.visible = false
 		$TimmyShotTypeSelection.visible = false
-		
+		await get_tree().create_timer(0.1).timeout
 		if Input.is_action_just_pressed("right"):
 			charcterSelected += 1
 		if Input.is_action_just_pressed("left"):
@@ -68,6 +68,29 @@ func _process(delta: float) -> void:
 			part = 2
 			
 	if part == 2:
-		pass
-		
-		
+		$characterSelection.visible = false
+		$Title.visible = false
+		$firstpart.visible = false
+		$TimmyShotTypeSelection.visible = true
+		await get_tree().create_timer(0.1).timeout
+		if Input.is_action_just_pressed("right"):
+			shotTypeSelected+= 1
+		if Input.is_action_just_pressed("left"):
+			shotTypeSelected -= 1
+		if shotTypeSelected < 0:
+			shotTypeSelected = 1
+		if shotTypeSelected > 1:
+			shotTypeSelected = 0
+		$TimmyShotTypeSelection/Knifee.position = Vector2(261+ shotTypeSelected* 640,890)
+		if shotTypeSelected == 0 and Input.is_action_just_pressed("shoot"):
+			GlobalVariables.shotType = 1
+			$sceneTransition/AnimationPlayer.play("fade-Out")
+			await get_tree().create_timer(0.5).timeout
+			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+		if shotTypeSelected == 1 and Input.is_action_just_pressed("shoot"):
+			GlobalVariables.shotType = 2
+			$sceneTransition/AnimationPlayer.play("fade-Out")
+			await get_tree().create_timer(0.5).timeout
+			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+		if Input.is_action_just_pressed("Bomb"):
+			part = 1

@@ -104,7 +104,7 @@ func _process(delta):
 				get_parent().add_child(bulletNO3)
 				get_parent().add_child(bulletNO4)
 				get_parent().add_child(bulletNO5)
-			elif bulletLevel <= 100  :
+			elif bulletLevel <= 101 :
 				var bulletNO1 = bulletPrefab.instantiate()
 				var bulletNO2 = bulletPrefab.instantiate()
 				var bulletNO3 = bulletPrefab.instantiate()
@@ -152,9 +152,9 @@ func _process(delta):
 				for i in range(5):
 					var bullet = bullet2Pre.instantiate()
 					bullet.position = position
-					bullet.rotation = deg_to_rad(15*i-120)
+					bullet.rotation = deg_to_rad(10*i-110)
 					get_parent().add_child(bullet)
-			elif bulletLevel <= 100:
+			elif bulletLevel <= 101:
 				for i in range(7):
 					var bullet = bullet2Pre.instantiate()
 					bullet.position = position

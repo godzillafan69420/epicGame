@@ -48,7 +48,7 @@ func _process(delta):
 				$UI/healthBar.max_value = 70000
 				$UI/healthBar.value = theBoss.Hitpoint
 				$"UI/WhenBoss spawn".text = ""
-				$UI/BossName.text = "Monkey ze banana banker"
+				$UI/BossName.text = "Rack ze banana banker"
 
 			else:
 				$UI/UWon.visible = true
@@ -59,7 +59,7 @@ func _process(delta):
 			GlobalVariables.score += 150000
 			$sceneTransition/AnimationPlayer.play("fade-Out")
 			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_file("res://ui/store.tscn")
+			get_tree().change_scene_to_file("res://ui/winScreen.tscn")
 			
 	
 		if isPlayerAlive:
