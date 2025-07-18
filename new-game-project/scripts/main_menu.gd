@@ -2,8 +2,8 @@ extends Control
 
 var buttomSelected = 0
 var part = 0
-
-	
+var charcterSelected = 0
+var shotTypeSelected = 0
 func _on_start_button_down() -> void:
 	$sceneTransition/AnimationPlayer.play("fade-Out")
 	await get_tree().create_timer(0.5).timeout
@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 		$Title.visible = true
 		$firstpart.visible = true
 		$characterSelection.visible = false
+		$TimmyShotTypeSelection.visible = false
 		if Input.is_action_just_pressed("down"):
 			buttomSelected += 1
 		if Input.is_action_just_pressed("up"):
@@ -36,9 +37,7 @@ func _process(delta: float) -> void:
 			buttomSelected = 0
 		if buttomSelected == 0 and Input.is_action_just_pressed("shoot"):
 			part = 1
-			$sceneTransition/AnimationPlayer.play("fade-Out")
-			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+			
 		if buttomSelected == 2 and Input.is_action_just_pressed("shoot"):
 			get_tree().change_scene_to_file("res://ui/instructionn.tscn")
 		if buttomSelected == 3 and Input.is_action_just_pressed("shoot"):
@@ -49,5 +48,26 @@ func _process(delta: float) -> void:
 		$firstpart/Knifee.position = Vector2(1254.0, 130 * buttomSelected + 394.0)
 	if part == 1:
 		$characterSelection.visible = true
+		$Title.visible = false
+		$firstpart.visible = false
+		$TimmyShotTypeSelection.visible = false
+		
+		if Input.is_action_just_pressed("right"):
+			charcterSelected += 1
+		if Input.is_action_just_pressed("left"):
+			charcterSelected -= 1
+		if charcterSelected < 0:
+			charcterSelected = 2
+		if charcterSelected > 2:
+			charcterSelected = 0
+		$characterSelection/Knifee.position = Vector2(233.0 + charcterSelected* 640, 990.0)
+		if Input.is_action_just_pressed("Bomb"):
+			part = 0
+		if Input.is_action_just_pressed("shoot") and charcterSelected == 0:
+			GlobalVariables.char = 1
+			part = 2
+			
+	if part == 2:
+		pass
 		
 		
