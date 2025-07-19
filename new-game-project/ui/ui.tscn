@@ -214,13 +214,13 @@ text = "test"
 
 [node name="barryDialog" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(184, 643)
+position = Vector2(184, 827)
 scale = Vector2(3.1179, 3.1179)
 texture = ExtResource("1_nb4k0")
 
 [node name="Protagonist" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1243, 623)
+position = Vector2(1227, 773)
 scale = Vector2(2.19024, 2.19024)
 texture = ExtResource("3_wl5ax")
 

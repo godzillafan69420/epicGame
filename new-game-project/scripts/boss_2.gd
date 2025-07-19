@@ -7,7 +7,7 @@ var Hitpoint = 70000
 var count = 0
 var count2 = 0
 var bossPhase = 0
-@onready var thePlayer = get_parent().find_child("player")
+@onready var thePlayer
 @onready var bulletPrefab = preload("res://prefabs/bullet_to_player.tscn")
 @onready var bossSuperBulletPre = preload("res://prefabs/boss_super_bullet.tscn")
 const Bullet_scene = preload("res://prefabs/boss_bullet.tscn")
@@ -22,7 +22,7 @@ const radius = 100
 
 func _ready() -> void:
 	var step = 2 * PI  / spawn_point_count
-		
+	thePlayer = get_parent().get_node("player")
 	for i in range(spawn_point_count):
 		var spawn_point =  Node2D.new()
 		var pos = Vector2(radius, 0).rotated(step*i)
@@ -86,6 +86,8 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is superAttack:
 		Hitpoint -= 22.5
 		area.queue_free()
+	if area is Rinbullet:
+		Hitpoint -= 150
 
 
 

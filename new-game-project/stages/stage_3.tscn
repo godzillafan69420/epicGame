@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgva82va80hav"]
+[gd_scene load_steps=7 format=3 uid="uid://cgva82va80hav"]
 
 [ext_resource type="PackedScene" uid="uid://b7i5brk8wrb0u" path="res://ui/stage3UI.tscn" id="1_1hwes"]
 [ext_resource type="Script" uid="uid://dx6asmnwghj2a" path="res://stages/stage_3.gd" id="1_8iyqq"]
-[ext_resource type="PackedScene" uid="uid://b7a7kdiy2ua2k" path="res://prefabs/player.tscn" id="2_8iyqq"]
 [ext_resource type="Texture2D" uid="uid://bu640p5gvgcxa" path="res://images/bananaBank.png" id="4_8iyqq"]
 [ext_resource type="AudioStream" uid="uid://cprvy3fomjyp7" path="res://music/bananaField.mp3" id="5_8iyqq"]
 [ext_resource type="AudioStream" uid="uid://bspcjg0qvdoty" path="res://music/DirtyMonkeyBusiness.mp3" id="6_8iyqq"]
@@ -10,10 +9,6 @@
 
 [node name="stage3" type="Node2D"]
 script = ExtResource("1_8iyqq")
-
-[node name="player" parent="." instance=ExtResource("2_8iyqq")]
-top_level = true
-position = Vector2(-159, 303)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 ignore_rotation = false

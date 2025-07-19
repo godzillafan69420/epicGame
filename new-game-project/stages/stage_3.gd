@@ -6,7 +6,10 @@ extends Node2D
 @onready var shotGun = preload("res://prefabs/side_to_side_enemy.tscn")
 @onready var boss_1 = preload("res://prefabs/boss3.tscn")
 var Score = GlobalVariables.score
-@onready var thePlayer = find_child("player")
+@onready var thePlayerPre = preload("res://prefabs/player.tscn")
+@onready var theRinPre = preload("res://prefabs/Rin.tscn")
+var gameStarted = false
+var thePlayer
 @export var allowSideToSide= true
 @export var normalEne = true
 @export var shootTowards = true
@@ -23,9 +26,18 @@ func _on_elmo_spawn_rate_timeout():
 		add_child(elmo)
 
 func _ready() -> void:
+	if GlobalVariables.char == 1:
+		thePlayer = thePlayerPre.instantiate()
+		thePlayer.position = Vector2(-237,469)
+		add_child(thePlayer)
+	if GlobalVariables.char == 3:
+		thePlayer = theRinPre.instantiate()
+		thePlayer.position = Vector2(-237,469)
+		add_child(thePlayer)
 	$sceneTransition.get_node("ColorRect").color.a = 255
 	$sceneTransition/AnimationPlayer.play("fade - in")
 	$WhenBossSpawn.start()
+	gameStarted = true
 func _process(delta):
 	$UI/score.text = "SCORE: " + str(GlobalVariables.score)
 
@@ -78,7 +90,7 @@ func _process(delta):
 				thePlayer.queue_free()
 				
 				
-	else:
+	elif  gameStarted and thePlayer == null:
 		get_tree().change_scene_to_file("res://ui/deathScreen.tscn")
 		
 	

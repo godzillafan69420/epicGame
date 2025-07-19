@@ -4,7 +4,7 @@ var buttomSelected = 0
 var part = 0
 var charcterSelected = 0
 var shotTypeSelected = 0
-
+@onready var startOfGame = preload("res://stages/firstStage.tscn")
 
 func _on_instructions_button_down() -> void:
 	get_tree().change_scene_to_file("res://ui/instructionn.tscn")
@@ -43,10 +43,12 @@ func _process(delta: float) -> void:
 	
 		$firstpart/Knifee.position = Vector2(1254.0, 130 * buttomSelected + 394.0)
 	if part == 1:
+		
 		$characterSelection.visible = true
 		$Title.visible = false
 		$firstpart.visible = false
 		$TimmyShotTypeSelection.visible = false
+		$RinSatsuki.visible = false
 		await get_tree().create_timer(0.1).timeout
 		if Input.is_action_just_pressed("right"):
 			charcterSelected += 1
@@ -62,15 +64,17 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("shoot") and charcterSelected == 0:
 			GlobalVariables.char = 1
 			part = 2
+			
 		if Input.is_action_just_pressed("shoot") and charcterSelected == 2:
-			GlobalVariables.char = 2
+			GlobalVariables.char = 3
 			part = 2
 			
-	if part == 2:
+	if part == 2 and GlobalVariables.char == 1:
 		$characterSelection.visible = false
 		$Title.visible = false
 		$firstpart.visible = false
 		$TimmyShotTypeSelection.visible = true
+		
 		await get_tree().create_timer(0.1).timeout
 		if Input.is_action_just_pressed("right"):
 			shotTypeSelected+= 1
@@ -98,6 +102,23 @@ func _process(delta: float) -> void:
 			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
 		if shotTypeSelected == 1 and Input.is_action_just_pressed("shoot"):
 			GlobalVariables.shotType = 2
+			$sceneTransition/AnimationPlayer.play("fade-Out")
+			await get_tree().create_timer(0.5).timeout
+			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+		if Input.is_action_just_pressed("Bomb"):
+			part = 1
+	if part == 2 and GlobalVariables.char == 3:
+		$characterSelection.visible = false
+		$Title.visible = false
+		$firstpart.visible = false
+		$RinSatsuki.visible = true
+		await get_tree().create_timer(0.1).timeout
+		$RinSatsuki/stats1.text ="High damage piercing attacks"
+		$RinSatsuki/stats2.text = "Special: None"
+		
+		$TimmyShotTypeSelection/Knifee.position = Vector2(261,890)
+		if shotTypeSelected == 0 and Input.is_action_just_pressed("shoot"):
+			GlobalVariables.shotType = 1
 			$sceneTransition/AnimationPlayer.play("fade-Out")
 			await get_tree().create_timer(0.5).timeout
 			get_tree().change_scene_to_file("res://stages/firstStage.tscn")

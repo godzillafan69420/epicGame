@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://xykodx86abkc"]
+[gd_scene load_steps=8 format=3 uid="uid://xykodx86abkc"]
 
 [ext_resource type="Script" uid="uid://dx685i44ok57h" path="res://scripts/first_stage.gd" id="1_7ry33"]
-[ext_resource type="PackedScene" uid="uid://b7a7kdiy2ua2k" path="res://prefabs/player.tscn" id="2_81ccc"]
 [ext_resource type="PackedScene" uid="uid://dq28g10k4d752" path="res://ui/ui.tscn" id="3_7ujss"]
 [ext_resource type="Texture2D" uid="uid://2wbtfekm2uad" path="res://images/bgFor Stage1.png" id="4_7ry33"]
 [ext_resource type="AudioStream" uid="uid://m7foh8msecth" path="res://music/looping song.wav" id="5_ugfdu"]
@@ -27,10 +26,6 @@ z_index = -500
 position = Vector2(68, -85)
 scale = Vector2(2.06813, 2.06813)
 texture = ExtResource("7_81ccc")
-
-[node name="player" parent="." instance=ExtResource("2_81ccc")]
-top_level = true
-position = Vector2(-159, 303)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 ignore_rotation = false

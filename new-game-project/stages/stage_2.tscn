@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://cftub4i4qhmrk"]
+[gd_scene load_steps=7 format=3 uid="uid://cftub4i4qhmrk"]
 
-[ext_resource type="PackedScene" uid="uid://b7a7kdiy2ua2k" path="res://prefabs/player.tscn" id="1_c6umw"]
 [ext_resource type="Script" uid="uid://crte30qnov4tq" path="res://scripts/stage_2.gd" id="1_txogb"]
 [ext_resource type="Texture2D" uid="uid://cc6fixmoqukid" path="res://images/stage2 backGround.png" id="4_txogb"]
 [ext_resource type="AudioStream" uid="uid://cv3fmb17x3ak7" path="res://music/stage2.mp3" id="5_txogb"]
@@ -10,10 +9,6 @@
 
 [node name="stage2" type="Node2D"]
 script = ExtResource("1_txogb")
-
-[node name="player" parent="." instance=ExtResource("1_c6umw")]
-top_level = true
-position = Vector2(-159, 303)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 ignore_rotation = false

@@ -8,8 +8,8 @@ var usingSuper = false
 
 var wentToShoot = false
 # Called when the node enters the scene tree for the first time.
-const  Speed = 8
-const slowSpeed = 4
+const  Speed = 10
+const slowSpeed = 3
 var moveX = 0
 var moveY = 0
 var justDieded = false
@@ -26,7 +26,7 @@ func _ready():
 	add_to_group("player")
 	justDieded = false
 	if GlobalVariables.char == 3 and GlobalVariables.shotType == 1:
-		$shootinterval.wait_time = 0.05
+		$shootinterval.wait_time = 0.4
 	if GlobalVariables.char == 3 and GlobalVariables.shotType == 2:
 		$shootinterval.wait_time = 0.125
 	
@@ -61,11 +61,30 @@ func _process(delta):
 		currentSpeed = Speed
 		$hitboxes.hide()
 	if GlobalVariables.shotType == 1 and GlobalVariables.char == 3:
-			if bulletLevel <= 101:
-				var bullet = bulletPre.instantiate()
-				bullet.position = position
-				bullet.rotation = deg_to_rad(90)
-				get_parent().add_child(bullet)
+		if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1 and wentToShoot:
+			if bulletLevel <= 25:
+					var bullet = bulletPre.instantiate()
+					bullet.position = position
+					bullet.rotation = deg_to_rad(-90)
+					get_parent().add_child(bullet)
+			elif bulletLevel <= 50:
+				for i in range(2):
+					var bullet = bulletPre.instantiate()
+					bullet.position = position
+					bullet.rotation = deg_to_rad(-90+ 180*i)
+					get_parent().add_child(bullet)
+			elif bulletLevel <= 75:
+				for i in range(4):
+					var bullet = bulletPre.instantiate()
+					bullet.position = position
+					bullet.rotation = deg_to_rad(-90 + 90*i)
+					get_parent().add_child(bullet)
+			elif bulletLevel <= 101:
+				for i in range(8):
+					var bullet = bulletPre.instantiate()
+					bullet.position = position
+					bullet.rotation = deg_to_rad(-90+ 45*i)
+					get_parent().add_child(bullet)
 			wentToShoot = false
 		
 	if GlobalVariables.shotType == 2 and GlobalVariables.char == 3:
@@ -84,17 +103,6 @@ func _process(delta):
 		$drip.modulate = Color8(0,0,255,50)
 	else:
 		$drip.modulate = Color8(255,255,255,255)
-	if Input.is_action_just_pressed("fireSpecial") and bulletLevel > 20 and !usingSuper and GlobalVariables.shotType == 1 and GlobalVariables.char == 1:
-		$superTimePeriod.start()
-		bulletPrefab = superPrefab
-		usingSuper = true
-	if Input.is_action_just_pressed("fireSpecial") and bulletLevel > 20 and !invincibility and GlobalVariables.shotType == 2 and GlobalVariables.char == 1:
-		invincibility = true
-		var bomb = bombPrefab.instantiate()
-		bomb.position = position
-		get_parent().add_child(bomb)
-		$invincibility.start()
-		bulletLevel -=30
 func uRdied():
 	invincibility = true
 	justDieded = true

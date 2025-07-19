@@ -8,10 +8,11 @@ var Hitpoint = 50
 @export var bread = preload("res://prefabs/extra_points.tscn")
 @export var powerUp = preload("res://prefabs/power_up.tscn")
 @export var Hp = preload("res://prefabs/hp.tscn")
-@onready var thePlayer = get_parent().find_child("player")
+@onready var thePlayer
 @onready var bulletPrefab = preload("res://prefabs/bullet_to_player.tscn")
 
 func _ready():
+	thePlayer = get_parent().get_node("player")
 	if dir == 1:
 		speed = dir
 	elif dir == 2:
@@ -72,3 +73,5 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is superAttack:
 		Hitpoint -= 100
 		area.queue_free()
+	if area is Rinbullet:
+		Hitpoint -= 15

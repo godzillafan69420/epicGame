@@ -5,8 +5,8 @@ var PlayerHP = 3
 var playerBombs = 4
 var playerPower = 100
 var souls = 10
-var shotType = 2
-var char = 1
+var shotType = 1
+var char = 3
 
 var stage = 1
 

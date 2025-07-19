@@ -6,7 +6,10 @@ extends Node2D
 @onready var shotGun = preload("res://prefabs/side_to_side_enemy.tscn")
 @onready var boss_1 = preload("res://prefabs/boss_1.tscn")
 var Score = GlobalVariables.score
-@onready var thePlayer = find_child("player")
+@onready var thePlayerPre = preload("res://prefabs/player.tscn")
+@onready var theRinPre = preload("res://prefabs/Rin.tscn")
+var gameStarted = false
+var thePlayer
 @export var allowSideToSide= false
 @export var normalEne = true
 @export var shootTowards = false
@@ -23,9 +26,20 @@ func _on_elmo_spawn_rate_timeout():
 		add_child(elmo)
 
 func _ready() -> void:
+	if GlobalVariables.char == 1:
+		thePlayer = thePlayerPre.instantiate()
+		thePlayer.position = Vector2(-237,469)
+		add_child(thePlayer)
+	if GlobalVariables.char == 3:
+		thePlayer = theRinPre.instantiate()
+		thePlayer.position = Vector2(-237,469)
+		add_child(thePlayer)
+	
 	$sceneTransition.get_node("ColorRect").color.a = 255
 	$sceneTransition/AnimationPlayer.play("fade - in")
+	await  get_tree().create_timer(0.5).timeout
 	$WhenBossSpawn.start()
+	gameStarted = true
 func _process(delta):
 	$"UI/WhenBoss spawn".text = "Boss in coming! " + str(int($WhenBossSpawn.time_left))
 	if thePlayer != null:
@@ -33,13 +47,8 @@ func _process(delta):
 		$UI/PlayerHealth.frame = thePlayer.HP - 1
 		$UI/power.text = str(power)
 		$UI/bomb.text = str(thePlayer.amountOfBombs)
-		
-		
-		
 		if gamePhase == 2:
-
 			var theBoss = $boss
-
 			if theBoss != null:
 				$UI/healthBar.visible = true
 				$UI/healthBar.max_value = 60000
@@ -75,7 +84,7 @@ func _process(delta):
 				thePlayer.queue_free()
 				
 				
-	else:
+	elif gameStarted and thePlayer == null:
 		get_tree().change_scene_to_file("res://ui/deathScreen.tscn")
 		
 	

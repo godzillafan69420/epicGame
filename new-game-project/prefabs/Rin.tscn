@@ -6,21 +6,21 @@
 [ext_resource type="Script" uid="uid://c2ld355al4qu2" path="res://scripts/collect_bread.gd" id="4_q5qhq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fy6g3"]
-radius = 10.0499
+radius = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4cyov"]
-radius = 115.082
+radius = 37.6962
 
 [node name="player" type="Area2D"]
 script = ExtResource("1_460ro")
 
 [node name="drip" type="Sprite2D" parent="."]
-position = Vector2(-3.57144, 0)
-scale = Vector2(1.95853, 1.96782)
+position = Vector2(-1, 0)
+scale = Vector2(0.548387, 0.549768)
 texture = ExtResource("2_ix5la")
 
 [node name="hitboxes" type="Sprite2D" parent="."]
-scale = Vector2(0.65625, 0.65625)
+scale = Vector2(0.226562, 0.226562)
 texture = ExtResource("3_2vwj7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -49,6 +49,8 @@ one_shot = true
 wait_time = 0.05
 autostart = true
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_entered" from="collectBread" to="." method="_on_collect_bread_area_entered"]
 [connection signal="timeout" from="invincibility" to="." method="_on_invincibility_timeout"]
 [connection signal="timeout" from="superTimePeriod" to="." method="_on_super_time_period_timeout"]
 [connection signal="timeout" from="shootinterval" to="." method="_on_shootinterval_timeout"]
