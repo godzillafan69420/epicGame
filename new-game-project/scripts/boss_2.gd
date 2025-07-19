@@ -84,7 +84,7 @@ func _on_area_entered(area: Area2D) -> void:
 		Hitpoint -= 15
 		area.queue_free()
 	if area is superAttack:
-		Hitpoint -= 20
+		Hitpoint -= 22.5
 		area.queue_free()
 
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ynuqgjdkiyw5"]
 
 [ext_resource type="Script" uid="uid://ceeusjq3u4q67" path="res://scripts/side_to_side_enemy.gd" id="1_w1u70"]
-[ext_resource type="Texture2D" uid="uid://jhsc6rwjbn17" path="res://images/monkey.png" id="2_w1u70"]
+[ext_resource type="Texture2D" uid="uid://dm5mjms6fpmei" path="res://images/monkeyGoon.png" id="2_w1u70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1u70"]
 size = Vector2(62, 78)

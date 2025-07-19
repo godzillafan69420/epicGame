@@ -54,7 +54,7 @@ func _process(delta):
 				$UI/UWon.visible = true
 				gamePhase = 4
 		if Input.is_action_just_pressed("shoot") and gamePhase == 4:
-			GlobalVariables.stage = 2
+			GlobalVariables.stage = 3
 			GlobalVariables.souls += 50
 			GlobalVariables.score += 150000
 			$sceneTransition/AnimationPlayer.play("fade-Out")

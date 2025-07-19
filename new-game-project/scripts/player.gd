@@ -28,7 +28,7 @@ func _ready():
 	if GlobalVariables.char == 1 and GlobalVariables.shotType == 1:
 		$shootinterval.wait_time = 0.05
 	if GlobalVariables.char == 1 and GlobalVariables.shotType == 2:
-		$shootinterval.wait_time = 0.1
+		$shootinterval.wait_time = 0.125
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -4,10 +4,6 @@ var buttomSelected = 0
 var part = 0
 var charcterSelected = 0
 var shotTypeSelected = 0
-func _on_start_button_down() -> void:
-	$sceneTransition/AnimationPlayer.play("fade-Out")
-	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://stages/firstStage.tscn")
 
 
 func _on_instructions_button_down() -> void:
@@ -66,6 +62,9 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("shoot") and charcterSelected == 0:
 			GlobalVariables.char = 1
 			part = 2
+		if Input.is_action_just_pressed("shoot") and charcterSelected == 2:
+			GlobalVariables.char = 2
+			part = 2
 			
 	if part == 2:
 		$characterSelection.visible = false
@@ -81,6 +80,16 @@ func _process(delta: float) -> void:
 			shotTypeSelected = 1
 		if shotTypeSelected > 1:
 			shotTypeSelected = 0
+		if shotTypeSelected == 0:
+			$TimmyShotTypeSelection/stats1.text ="Beginner friendly,
+			 focus fire"
+			$TimmyShotTypeSelection/stats2.text = "Special: Increase
+			 damage for your bullet"
+		if shotTypeSelected == 1:
+			$TimmyShotTypeSelection/stats1.text ="agressive, High-damage,
+			 shreadshot"
+			$TimmyShotTypeSelection/stats2.text = "Special: a bomb that
+			 takes your power away"
 		$TimmyShotTypeSelection/Knifee.position = Vector2(261+ shotTypeSelected* 640,890)
 		if shotTypeSelected == 0 and Input.is_action_just_pressed("shoot"):
 			GlobalVariables.shotType = 1

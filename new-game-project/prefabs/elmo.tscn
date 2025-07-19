@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfpj052y7q84g"]
 
 [ext_resource type="Script" uid="uid://bcw4oah36h6f" path="res://scripts/elmo.gd" id="1_25ax4"]
-[ext_resource type="Texture2D" uid="uid://ccid7fira6y6n" path="res://images/Elmo2.0.png" id="2_32w6t"]
+[ext_resource type="Texture2D" uid="uid://bbju35t1hd4l5" path="res://images/Job aplication.png" id="2_lbk4n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1powp"]
-radius = 22.0227
+radius = 55.7228
 
 [node name="elmo" type="Area2D"]
 scale = Vector2(1.29221, 1.44195)
@@ -12,12 +12,13 @@ disable_mode = 1
 script = ExtResource("1_25ax4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.773868, -16.6441)
 shape = SubResource("CircleShape2D_1powp")
 
 [node name="red guy" type="Sprite2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(0.390625, 0.390625)
-texture = ExtResource("2_32w6t")
+position = Vector2(0.773868, -15.9506)
+scale = Vector2(0.219329, 0.219329)
+texture = ExtResource("2_lbk4n")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
