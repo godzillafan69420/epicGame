@@ -26,7 +26,7 @@ func _ready():
 	add_to_group("player")
 	justDieded = false
 	if GlobalVariables.char == 3 and GlobalVariables.shotType == 1:
-		$shootinterval.wait_time = 0.4
+		$shootinterval.wait_time = 0.25
 	if GlobalVariables.char == 3 and GlobalVariables.shotType == 2:
 		$shootinterval.wait_time = 0.125
 	
@@ -64,24 +64,29 @@ func _process(delta):
 		if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1 and wentToShoot:
 			if bulletLevel <= 25:
 					var bullet = bulletPre.instantiate()
+					bullet.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
 					bullet.position = position
 					bullet.rotation = deg_to_rad(-90)
 					get_parent().add_child(bullet)
 			elif bulletLevel <= 50:
 				for i in range(2):
+					
 					var bullet = bulletPre.instantiate()
+					bullet.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
 					bullet.position = position
 					bullet.rotation = deg_to_rad(-90+ 180*i)
 					get_parent().add_child(bullet)
 			elif bulletLevel <= 75:
 				for i in range(4):
 					var bullet = bulletPre.instantiate()
+					bullet.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
 					bullet.position = position
 					bullet.rotation = deg_to_rad(-90 + 90*i)
 					get_parent().add_child(bullet)
 			elif bulletLevel <= 101:
 				for i in range(8):
 					var bullet = bulletPre.instantiate()
+					bullet.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
 					bullet.position = position
 					bullet.rotation = deg_to_rad(-90+ 45*i)
 					get_parent().add_child(bullet)

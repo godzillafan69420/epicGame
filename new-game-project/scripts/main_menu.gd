@@ -64,10 +64,11 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("shoot") and charcterSelected == 0:
 			GlobalVariables.char = 1
 			part = 2
-			
 		if Input.is_action_just_pressed("shoot") and charcterSelected == 2:
 			GlobalVariables.char = 3
 			part = 2
+			
+		
 			
 	if part == 2 and GlobalVariables.char == 1:
 		$characterSelection.visible = false
@@ -108,13 +109,14 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("Bomb"):
 			part = 1
 	if part == 2 and GlobalVariables.char == 3:
+		shotTypeSelected = 0
 		$characterSelection.visible = false
 		$Title.visible = false
 		$firstpart.visible = false
 		$RinSatsuki.visible = true
 		await get_tree().create_timer(0.1).timeout
-		$RinSatsuki/stats1.text ="High damage piercing attacks"
-		$RinSatsuki/stats2.text = "Special: None"
+		$RinSatsuki/stats1.text ="High damage AOE"
+		$RinSatsuki/stats2.text = "Special: idk hurt Vmen ears tho"
 		
 		$TimmyShotTypeSelection/Knifee.position = Vector2(261,890)
 		if shotTypeSelected == 0 and Input.is_action_just_pressed("shoot"):

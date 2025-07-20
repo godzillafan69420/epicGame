@@ -74,4 +74,5 @@ func _on_area_entered(area: Area2D) -> void:
 		Hitpoint -= 100
 		area.queue_free()
 	if area is Rinbullet:
-		Hitpoint -= 15
+		Hitpoint -= 25
+		area.queue_free()

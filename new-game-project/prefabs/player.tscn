@@ -12,7 +12,7 @@ radius = 7.14288
 radius = 115.082
 
 [node name="player" type="Area2D"]
-scale = Vector2(0.279999, 0.279999)
+scale = Vector2(0.4, 0.399)
 script = ExtResource("1_4j22m")
 
 [node name="drip" type="Sprite2D" parent="."]

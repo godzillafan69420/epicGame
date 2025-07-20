@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ct1t3l8cpcwtq"]
 
 [ext_resource type="Script" uid="uid://c82aarhppe20k" path="res://rin_bulllet.gd" id="1_pqfbb"]
-[ext_resource type="Texture2D" uid="uid://cverhagmd52gp" path="res://images/special.png" id="2_pqfbb"]
+[ext_resource type="Texture2D" uid="uid://cuflmeqk7xgb0" path="res://images/Rinbullet.png" id="2_pqfbb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shxdp"]
 size = Vector2(48, 76)
@@ -10,10 +10,9 @@ size = Vector2(48, 76)
 script = ExtResource("1_pqfbb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.219608, 0.266667, 1)
 position = Vector2(1, 0)
 rotation = 1.57081
-scale = Vector2(0.59929, 0.59929)
+scale = Vector2(2.63919, 2.63919)
 texture = ExtResource("2_pqfbb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

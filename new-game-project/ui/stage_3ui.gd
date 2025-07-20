@@ -5,8 +5,8 @@ extends Control
 @onready var barrySprite = $barryDialog
 @onready var protagonistDialog = $Protagonist
 @onready var textBox = $dialog/dialogText
-@onready var rinSpriteangry = preload("res://images/RinBetter.png")
-@onready var rinSprite = preload("res://images/RinBetter.png")
+@onready var rinSpriteangry = preload("res://images/erm ok.png")
+@onready var rinSprite = preload("res://images/erm ok.png")
 var textToShow = 0
 
 signal startTheBossMusic
@@ -61,7 +61,7 @@ func _process(delta: float) -> void:
 				protagonistDialog.visible = false
 			
 			if textToShow == 9:
-				textBox.text = "I am gonna kill you"
+				textBox.text = "I'm gonna kill you"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 10:
@@ -77,18 +77,18 @@ func _process(delta: float) -> void:
 			barrySprite.visible = true
 			if textToShow == 0:
 				textBox.text = "Why are you here?
-			 I can't be dealing with this stuff you know"
+			 Stop blasting phonk in this area there."
 			if textToShow == 1:
 				textBox.text = "Omg a monkey"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 2:
 				textBox.text = "Yeah i am a monkey.
-				You have something against me"
+				"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 3:
-				textBox.text = "No, I'm looking for a monkey called Rack
+				textBox.text = "I'm looking for a monkey called Rack
 			"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
@@ -103,17 +103,18 @@ func _process(delta: float) -> void:
 			
 			if textToShow == 6:
 				textBox.text = "yeah.
-				wait why you ask"
+				wait, why you ask"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			
 			if textToShow == 7:
-				textBox.text = "well your getting executed"
+				textBox.text = "well your getting executed according to this.
+				"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:
 				textBox.text = ":o
-				Hold it tho let me tell you a joke if you laugh 
+				Before you do. Let me tell you a joke. If you laugh 
 				you spare me"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
@@ -137,7 +138,8 @@ func _process(delta: float) -> void:
 				protagonistDialog.visible = false
 			
 			if textToShow == 13:
-				textBox.text = "No"
+				textBox.text = ".... No
+				You know what I hope you burn"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			

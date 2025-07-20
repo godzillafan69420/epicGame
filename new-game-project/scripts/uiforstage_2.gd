@@ -5,8 +5,8 @@ extends Control
 @onready var barrySprite = $barryDialog
 @onready var protagonistDialog = $Protagonist
 @onready var textBox = $dialog/dialogText
-@onready var rinSpriteangry = preload("res://images/RinBetter.png")
-@onready var rinSprite = preload("res://images/RinBetter.png")
+@onready var rinSpriteangry =preload("res://images/erm ok.png")
+@onready var rinSprite = preload("res://images/erm ok.png")
 var textToShow = 0
 
 signal startTheBossMusic
@@ -35,13 +35,12 @@ func _process(delta: float) -> void:
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 4:
-				textBox.text = "Bro, i'm sorry that these kids are
-			that bad at the game"
+				textBox.text = "It's honestly not that deep on gigidy"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 5:
 				textBox.text = "....
-			You think sorry is enough"
+			Be serious"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			
@@ -51,7 +50,7 @@ func _process(delta: float) -> void:
 				protagonistDialog.visible = false
 			
 			if textToShow == 7:
-				textBox.text = "Mortals these days"
+				textBox.text = "Such a fool"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:
@@ -80,35 +79,41 @@ func _process(delta: float) -> void:
 				protagonistDialog.visible = false
 			if textToShow == 3:
 				protagonistDialog.texture =rinSpriteangry
-				textBox.text = "Ok I see....
-				
-				Hold on your ConeL"
+				textBox.text = "Then why does it write ConeL on the
+				Top-Left conner of the screen"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 4:
-				textBox.text = "Damn you saw through
-				
-				why am i getting executed"
+				textBox.text = "Programming error"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 5:
 				protagonistDialog.texture =rinSprite
-				textBox.text = "....
-			You cyberbully children til they are chronically depress"
+				textBox.text = "Cap"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
-			
 			if textToShow == 6:
-				textBox.text = "I don't really care those nerds.
-				Tooo EZ"
+				textBox.text = "Ok fine
+				What am I getting executed for"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
-			
 			if textToShow == 7:
-				textBox.text = "Cold"
+				protagonistDialog.texture =rinSprite
+				textBox.text = "Cyber-bullying children"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:
+				textBox.text = "I don't really care those nerds.
+				They should of been better at
+				The Strongest BattleGrounds"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			
+			if textToShow == 9:
+				textBox.text = "damn"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 10:
 				get_parent().gamePhase = 2
 				textBox.text = ""
 				barrySprite.visible = false

@@ -53,7 +53,8 @@ func _on_area_entered(area):
 	if area is Bomb:
 		Hitpoint -= 100
 	if area is Rinbullet:
-		Hitpoint -= 15
+		Hitpoint -= 25
+		area.queue_free()
 	
 
 

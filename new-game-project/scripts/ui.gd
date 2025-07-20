@@ -5,8 +5,8 @@ extends Control
 @onready var barrySprite = $barryDialog
 @onready var protagonistDialog = $Protagonist
 @onready var textBox = $dialog/dialogText
-@onready var rinSpriteangry = preload("res://images/RinBetter.png")
-@onready var rinSprite = preload("res://images/RinBetter.png")
+@onready var rinSpriteangry = preload("res://images/erm ok.png")
+@onready var rinSprite = preload("res://images/erm ok.png")
 var textToShow = 0
 
 signal startTheBossMusic
@@ -90,8 +90,8 @@ func _process(delta: float) -> void:
 				protagonistDialog.visible = true
 			
 			if textToShow == 6:
-				textBox.text = "Thats not a plane silly
-				If ya gonna git me. 
+				textBox.text = "Thats not a plane silly.
+				However, If ya gonna git me. 
 				You gotta get pass these abs.
 				Reinforce by FREEDOM. *eagle sound*"
 				barrySprite.visible = true
@@ -99,7 +99,7 @@ func _process(delta: float) -> void:
 			
 			if textToShow == 7:
 				protagonistDialog.texture = rinSpriteangry
-				textBox.text = "I see"
+				textBox.text = "Sure"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:

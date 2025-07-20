@@ -1,30 +1,31 @@
 [gd_scene load_steps=7 format=3 uid="uid://cmfldv5flfnr8"]
 
 [ext_resource type="Script" uid="uid://ujrf2tcl0vrp" path="res://scripts/rin.gd" id="1_460ro"]
-[ext_resource type="Texture2D" uid="uid://di4827m7ueo1q" path="res://images/player.png" id="2_ix5la"]
+[ext_resource type="Texture2D" uid="uid://b3em7d6ox7pbb" path="res://images/Rin player sprite.png" id="2_460ro"]
 [ext_resource type="Texture2D" uid="uid://di36wv4xid0kd" path="res://images/circle.png" id="3_2vwj7"]
 [ext_resource type="Script" uid="uid://c2ld355al4qu2" path="res://scripts/collect_bread.gd" id="4_q5qhq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fy6g3"]
-radius = 3.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_460ro"]
+radius = 7.14288
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4cyov"]
-radius = 37.6962
+[sub_resource type="CircleShape2D" id="CircleShape2D_ix5la"]
+radius = 115.082
 
 [node name="player" type="Area2D"]
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_460ro")
 
 [node name="drip" type="Sprite2D" parent="."]
-position = Vector2(-1, 0)
-scale = Vector2(0.548387, 0.549768)
-texture = ExtResource("2_ix5la")
+position = Vector2(-2.38419e-07, 0)
+scale = Vector2(1.63853, 1.88782)
+texture = ExtResource("2_460ro")
 
 [node name="hitboxes" type="Sprite2D" parent="."]
-scale = Vector2(0.226562, 0.226562)
+scale = Vector2(0.65625, 0.65625)
 texture = ExtResource("3_2vwj7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_fy6g3")
+shape = SubResource("CircleShape2D_460ro")
 
 [node name="bulletSpawnPoint" type="Node2D" parent="."]
 position = Vector2(-63.6365, 0)
@@ -36,7 +37,7 @@ position = Vector2(65.9092, 0)
 script = ExtResource("4_q5qhq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collectBread"]
-shape = SubResource("CircleShape2D_4cyov")
+shape = SubResource("CircleShape2D_ix5la")
 
 [node name="invincibility" type="Timer" parent="."]
 wait_time = 4.0

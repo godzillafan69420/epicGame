@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6sc6jmkpi5an"]
+[gd_scene load_steps=15 format=3 uid="uid://c6sc6jmkpi5an"]
 
 [ext_resource type="Script" uid="uid://duutoxbnnsydq" path="res://scripts/main_menu.gd" id="1_0dkrt"]
 [ext_resource type="Texture2D" uid="uid://bx73v8oimnqvh" path="res://images/background.png" id="2_ei257"]
@@ -12,7 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://ccd1fjlglv8j7" path="res://images/RinSatsuki.webp" id="9_jiymt"]
 [ext_resource type="Texture2D" uid="uid://bvtr415iyhgab" path="res://images/ShootType1char1.png" id="9_lsdqh"]
 [ext_resource type="Texture2D" uid="uid://bsee8y8xguwvx" path="res://images/vmanBuster.png" id="10_jiymt"]
-[ext_resource type="Texture2D" uid="uid://c0m7l0d25k58g" path="res://images/RinSatsukiArt.png" id="12_bgtsx"]
+[ext_resource type="Texture2D" uid="uid://djbvaiofda6qw" path="res://images/erm ok.png" id="12_kaxbk"]
+[ext_resource type="Texture2D" uid="uid://dtgi3tvo3cl3j" path="res://images/PhonkOverdrive.png" id="13_0nobx"]
 
 [node name="mainMenu" type="Control"]
 layout_mode = 3
@@ -230,10 +231,11 @@ text = "Nothing special about Timmy.
 He works for the underworld 
 Soul reapers to collect bad people's souls. 
 He works on minnium wage. 
-
 Please  support  change for soul 
 reaper working in poor condition. 
-He's very Broke"
+He's very Broke
+speed: 8
+Shift Speed: 4"
 
 [node name="Label2" type="Label" parent="TimmyShotTypeSelection"]
 offset_left = 1047.0
@@ -253,14 +255,14 @@ visible = false
 
 [node name="Bob" type="Sprite2D" parent="RinSatsuki"]
 modulate = Color(0.165656, 0.165656, 0.165656, 1)
-position = Vector2(579, 536)
+position = Vector2(1909, 992)
 scale = Vector2(3.17773, 3.17773)
-texture = ExtResource("12_bgtsx")
+texture = ExtResource("12_kaxbk")
 
 [node name="ShootType1Char1" type="Sprite2D" parent="RinSatsuki"]
 position = Vector2(276, 392)
-scale = Vector2(4.09375, 4.09375)
-texture = ExtResource("9_lsdqh")
+scale = Vector2(15.5337, 15.5337)
+texture = ExtResource("13_0nobx")
 
 [node name="Label" type="Label" parent="RinSatsuki"]
 offset_right = 867.0
@@ -273,8 +275,9 @@ offset_left = -3.0
 offset_top = 636.0
 offset_right = 864.0
 offset_bottom = 773.0
+scale = Vector2(1.01793, 1)
 theme_override_font_sizes/font_size = 75
-text = "Inf knife Hax"
+text = "Painful Phonk"
 
 [node name="Label6" type="Label" parent="RinSatsuki"]
 offset_left = 1422.0
@@ -305,10 +308,15 @@ offset_top = 131.0
 offset_right = 2372.0
 offset_bottom = 639.0
 theme_override_font_sizes/font_size = 40
-text = "ZUN, my almighty overlord pls add
+text = "After being forgotten by the entire 
+fandom. Rin Satsuki needed to find
+a new job.
+(ZUN, my almighty overlord pls add
 Rin Satsuki to touhou 20.
 
-I'm on my knees"
+I'm on my knees)
+Speed: 10
+Shift speed: 3"
 
 [node name="Label2" type="Label" parent="RinSatsuki"]
 offset_left = 1047.0

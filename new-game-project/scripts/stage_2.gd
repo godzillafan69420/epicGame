@@ -47,8 +47,8 @@ func _process(delta):
 		$UI/power.text = str(power)
 		$UI/bomb.text = str(thePlayer.amountOfBombs)
 		$UI/PlayerHealth.frame = thePlayer.HP - 1
-		
-		
+		if gamePhase == 1:
+			$UI/BossName.text = "ConeL"
 		
 		if gamePhase == 2:
 
@@ -60,6 +60,7 @@ func _process(delta):
 				$UI/healthBar.value = theBoss.Hitpoint
 				$"UI/WhenBoss spawn".text = ""
 				$UI/BossName.text = "ConeL"
+
 
 
 			else:
