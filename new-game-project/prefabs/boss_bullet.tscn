@@ -7,6 +7,8 @@
 size = Vector2(59.9904, 7.08216)
 
 [node name="bossBulletType1" type="Area2D"]
+z_index = 1000
+monitoring = false
 script = ExtResource("1_tg5vd")
 
 [node name="Area2D" type="CollisionShape2D" parent="."]

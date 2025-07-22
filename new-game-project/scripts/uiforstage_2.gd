@@ -5,8 +5,8 @@ extends Control
 @onready var barrySprite = $barryDialog
 @onready var protagonistDialog = $Protagonist
 @onready var textBox = $dialog/dialogText
-@onready var rinSpriteangry =preload("res://images/erm ok.png")
-@onready var rinSprite = preload("res://images/erm ok.png")
+@onready var rinSpriteangry =preload("res://images/Rin even even better.png")
+@onready var rinSprite = preload("res://images/Rin even even better.png")
 var textToShow = 0
 
 signal startTheBossMusic

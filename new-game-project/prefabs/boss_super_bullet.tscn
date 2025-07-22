@@ -7,7 +7,9 @@
 radius = 29.802
 
 [node name="bossSuperBullet" type="Area2D"]
+z_index = 1000
 scale = Vector2(1.84582, 1.84582)
+monitoring = false
 script = ExtResource("1_l1yua")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

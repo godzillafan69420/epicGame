@@ -6,7 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_f36nv"]
 
 [node name="balls" type="Area2D"]
+z_index = 1000
 disable_mode = 1
+monitoring = false
 script = ExtResource("1_n5f2e")
 
 [node name="Circle" type="Sprite2D" parent="."]

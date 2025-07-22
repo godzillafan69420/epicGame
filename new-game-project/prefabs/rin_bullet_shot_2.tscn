@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsunmarmdq8d5"]
+
+[ext_resource type="Script" uid="uid://42gl1vyjps7f" path="res://rin_bullet_shot_2.gd" id="1_xhtcq"]
+[ext_resource type="Texture2D" uid="uid://cukvkx2o68c02" path="res://images/rin bullet 2.png" id="2_xhtcq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xhtcq"]
+radius = 314.129
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1mxd"]
+size = Vector2(48, 76)
+
+[node name="Glitch" type="Area2D"]
+monitoring = false
+script = ExtResource("1_xhtcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57081
+scale = Vector2(0.5, 0.568)
+texture = ExtResource("2_xhtcq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_xhtcq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -3)
+shape = SubResource("RectangleShape2D_n1mxd")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

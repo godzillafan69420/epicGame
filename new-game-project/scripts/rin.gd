@@ -3,7 +3,8 @@ class_name player2
 @onready var bombPrefab = preload("res://prefabs/bombDeleteArea.tscn")
 @onready var bulletPre = preload("res://prefabs/rin_bulllet.tscn")
 @onready var superPrefab = preload("res://prefabs/super_attack.tscn")
-@onready var bullet2Pre = preload("res://prefabs/shotgun_shoot_type_char_a.tscn")
+@onready var bullet2Pre = preload("res://prefabs/rin_bullet_shot_2.tscn")
+@onready var bullet3Pre = preload("res://prefabs/rinBulletno2again.tscn")
 var usingSuper = false
 
 var wentToShoot = false
@@ -25,10 +26,11 @@ func _ready():
 	$hitboxes.hide()
 	add_to_group("player")
 	justDieded = false
+	if GlobalVariables.char == 3 and GlobalVariables.shotType == 2:
+		$shootinterval.wait_time = 0.1
+		
 	if GlobalVariables.char == 3 and GlobalVariables.shotType == 1:
 		$shootinterval.wait_time = 0.25
-	if GlobalVariables.char == 3 and GlobalVariables.shotType == 2:
-		$shootinterval.wait_time = 0.125
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -63,6 +65,7 @@ func _process(delta):
 	if GlobalVariables.shotType == 1 and GlobalVariables.char == 3:
 		if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1 and wentToShoot:
 			if bulletLevel <= 25:
+				for i in range(1):
 					var bullet = bulletPre.instantiate()
 					bullet.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
 					bullet.position = position
@@ -94,6 +97,43 @@ func _process(delta):
 		
 	if GlobalVariables.shotType == 2 and GlobalVariables.char == 3:
 		
+		if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1 and wentToShoot:
+			for i in range(1):
+					var bullet = bullet3Pre.instantiate()
+					bullet.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
+					bullet.position = position- Vector2(0,YOffset)
+					bullet.rotation = deg_to_rad(-90)
+					get_parent().add_child(bullet)
+			if bulletLevel <= 25:
+				
+				for i in range(1):
+					var bullet = bullet2Pre.instantiate()
+					bullet.position = position + Vector2(0,0)- Vector2(0,YOffset)
+					bullet.rotation = deg_to_rad(-90)
+					get_parent().add_child(bullet)
+			elif bulletLevel <= 50:
+				
+				for i in range(2):
+					var bullet = bullet2Pre.instantiate()
+					bullet.position = position + Vector2(50*i - 25,0)- Vector2(0,YOffset)
+					bullet.rotation = deg_to_rad(-90)
+					get_parent().add_child(bullet)
+			elif bulletLevel <= 75:
+				
+				for i in range(3):
+					var bullet = bullet2Pre.instantiate()
+
+					bullet.position = position + Vector2(50*i -50,0)- Vector2(0,YOffset)
+					bullet.rotation = deg_to_rad(-90)
+					get_parent().add_child(bullet)
+			elif bulletLevel <= 101:
+				
+				for i in range(4):
+					var bullet = bullet2Pre.instantiate()
+
+					bullet.position = position + Vector2(50*i -75,0)- Vector2(0,YOffset)
+					bullet.rotation = deg_to_rad(-90)
+					get_parent().add_child(bullet)
 			wentToShoot = false
 	if bulletLevel > 100:
 			bulletLevel = 100

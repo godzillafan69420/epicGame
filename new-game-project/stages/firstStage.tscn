@@ -12,7 +12,7 @@
 script = ExtResource("1_7ry33")
 
 [node name="Unnamed" type="Sprite2D" parent="."]
-modulate = Color(0.61339, 0.61339, 0.61339, 1)
+modulate = Color(0.470076, 0.470076, 0.470076, 1)
 show_behind_parent = true
 z_index = -1000
 position = Vector2(-384, 3.99994)
@@ -20,7 +20,7 @@ scale = Vector2(1.71667, 2.09231)
 texture = ExtResource("4_7ry33")
 
 [node name="JetPlane" type="Sprite2D" parent="."]
-modulate = Color(0.67069, 0.67069, 0.67069, 1)
+modulate = Color(0.942823, 0.942823, 0.942823, 1)
 show_behind_parent = true
 z_index = -500
 position = Vector2(68, -85)

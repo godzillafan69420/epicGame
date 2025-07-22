@@ -133,31 +133,31 @@ func _process(delta):
 		
 			if bulletLevel < 10:
 				var bullet = bullet2Pre.instantiate()
-				bullet.position = position
+				bullet.position = position- Vector2(0,YOffset)
 				bullet.rotation = deg_to_rad(-90)
 				get_parent().add_child(bullet)
 			elif bulletLevel < 25:
 				for i in range(3):
 					var bullet = bullet2Pre.instantiate()
-					bullet.position = position
+					bullet.position = position- Vector2(0,YOffset)
 					bullet.rotation = deg_to_rad(15*i-105)
 					get_parent().add_child(bullet)
 			elif bulletLevel < 50:
 				for i in range(4):
 					var bullet = bullet2Pre.instantiate()
-					bullet.position = position
+					bullet.position = position- Vector2(0,YOffset)
 					bullet.rotation = deg_to_rad(15*i-115)
 					get_parent().add_child(bullet)
 			elif bulletLevel < 75:
 				for i in range(5):
 					var bullet = bullet2Pre.instantiate()
-					bullet.position = position
+					bullet.position = position- Vector2(0,YOffset)
 					bullet.rotation = deg_to_rad(10*i-110)
 					get_parent().add_child(bullet)
 			elif bulletLevel <= 101:
 				for i in range(7):
 					var bullet = bullet2Pre.instantiate()
-					bullet.position = position
+					bullet.position = position- Vector2(0,YOffset)
 					bullet.rotation = deg_to_rad(10*i-120)
 					get_parent().add_child(bullet)
 			wentToShoot = false

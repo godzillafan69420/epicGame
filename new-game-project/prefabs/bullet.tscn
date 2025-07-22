@@ -8,6 +8,7 @@ size = Vector2(10, 34)
 
 [node name="bullet" type="Area2D"]
 scale = Vector2(0.745976, 0.876029)
+monitoring = false
 script = ExtResource("1_yjf0x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

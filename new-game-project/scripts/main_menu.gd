@@ -1,24 +1,19 @@
 extends Control
 
 var buttomSelected = 0
-var part = 0
+var part = 5
 var charcterSelected = 0
 var shotTypeSelected = 0
 @onready var startOfGame = preload("res://stages/firstStage.tscn")
-
-func _on_instructions_button_down() -> void:
-	get_tree().change_scene_to_file("res://ui/instructionn.tscn")
-
-
-func _on_quit_button_down() -> void:
-	get_tree().quit()
-
-
-func _on_music_room_button_down() -> void:
-	get_tree().change_scene_to_file("res://ui/music_room.tscn")
-
+func _ready() -> void:
+	for i in range(100):
+		$loadingScreen/ProgressBar.value = i
+	await get_tree().create_timer(1).timeout
+	part = 0
+	
 func _process(delta: float) -> void:
 	if part == 0:
+		$loadingScreen.visible = false
 		$Title.visible = true
 		$firstpart.visible = true
 		$characterSelection.visible = false
@@ -109,20 +104,38 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("Bomb"):
 			part = 1
 	if part == 2 and GlobalVariables.char == 3:
-		shotTypeSelected = 0
+
 		$characterSelection.visible = false
 		$Title.visible = false
 		$firstpart.visible = false
 		$RinSatsuki.visible = true
 		await get_tree().create_timer(0.1).timeout
-		$RinSatsuki/stats1.text ="High damage AOE"
-		$RinSatsuki/stats2.text = "Special: idk hurt Vmen ears tho"
 		
-		$TimmyShotTypeSelection/Knifee.position = Vector2(261,890)
+		if Input.is_action_just_pressed("right"):
+			shotTypeSelected+= 1
+		if Input.is_action_just_pressed("left"):
+			shotTypeSelected -= 1
+		if shotTypeSelected < 0:
+			shotTypeSelected = 1
+		if shotTypeSelected > 1:
+			shotTypeSelected = 0
+		if shotTypeSelected == 0:
+			$RinSatsuki/stats1.text ="High damage AOE"
+			$RinSatsuki/stats2.text = "Special: idk hurt Vmen ears tho"
+		if shotTypeSelected == 1:
+			$RinSatsuki/stats1.text ="High damage AOE"
+			$RinSatsuki/stats2.text = "Special: idk hurt Vmen ears tho"
+		$RinSatsuki/Knifee.position = Vector2(261+ shotTypeSelected* 640,890)
 		if shotTypeSelected == 0 and Input.is_action_just_pressed("shoot"):
 			GlobalVariables.shotType = 1
 			$sceneTransition/AnimationPlayer.play("fade-Out")
 			await get_tree().create_timer(0.5).timeout
 			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+		if shotTypeSelected == 1 and Input.is_action_just_pressed("shoot"):
+			GlobalVariables.shotType = 2
+			$sceneTransition/AnimationPlayer.play("fade-Out")
+			await get_tree().create_timer(0.5).timeout
+			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
 		if Input.is_action_just_pressed("Bomb"):
+			
 			part = 1

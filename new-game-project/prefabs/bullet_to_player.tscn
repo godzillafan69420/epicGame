@@ -6,6 +6,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_4m0tf"]
 
 [node name="bulletToPlayer" type="Area2D"]
+z_index = 1000
+monitoring = false
 script = ExtResource("1_3ok23")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

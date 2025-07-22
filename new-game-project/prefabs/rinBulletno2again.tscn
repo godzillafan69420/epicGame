@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhrtq0h3j3sla"]
+
+[ext_resource type="Script" uid="uid://c3eqp3m1n0w1n" path="res://rin_bulletno_2_again.gd" id="1_fetej"]
+[ext_resource type="Texture2D" uid="uid://cuflmeqk7xgb0" path="res://images/Rinbullet.png" id="2_mt254"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1s2kx"]
+size = Vector2(48, 76)
+
+[node name="rinBulletNorm" type="Area2D"]
+script = ExtResource("1_fetej")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+rotation = 1.57081
+scale = Vector2(2.63919, 2.63919)
+texture = ExtResource("2_mt254")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -3)
+shape = SubResource("RectangleShape2D_1s2kx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

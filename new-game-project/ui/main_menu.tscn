@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6sc6jmkpi5an"]
+[gd_scene load_steps=16 format=3 uid="uid://c6sc6jmkpi5an"]
 
 [ext_resource type="Script" uid="uid://duutoxbnnsydq" path="res://scripts/main_menu.gd" id="1_0dkrt"]
 [ext_resource type="Texture2D" uid="uid://bx73v8oimnqvh" path="res://images/background.png" id="2_ei257"]
@@ -12,8 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://ccd1fjlglv8j7" path="res://images/RinSatsuki.webp" id="9_jiymt"]
 [ext_resource type="Texture2D" uid="uid://bvtr415iyhgab" path="res://images/ShootType1char1.png" id="9_lsdqh"]
 [ext_resource type="Texture2D" uid="uid://bsee8y8xguwvx" path="res://images/vmanBuster.png" id="10_jiymt"]
-[ext_resource type="Texture2D" uid="uid://djbvaiofda6qw" path="res://images/erm ok.png" id="12_kaxbk"]
+[ext_resource type="Texture2D" uid="uid://wsxmmj2pksy3" path="res://images/Rin even even better.png" id="12_kaxbk"]
 [ext_resource type="Texture2D" uid="uid://dtgi3tvo3cl3j" path="res://images/PhonkOverdrive.png" id="13_0nobx"]
+[ext_resource type="Texture2D" uid="uid://d3pr6gp566mtr" path="res://images/rin.exefunnit.png" id="14_0nobx"]
 
 [node name="mainMenu" type="Control"]
 layout_mode = 3
@@ -255,7 +256,7 @@ visible = false
 
 [node name="Bob" type="Sprite2D" parent="RinSatsuki"]
 modulate = Color(0.165656, 0.165656, 0.165656, 1)
-position = Vector2(1909, 992)
+position = Vector2(1937, 814)
 scale = Vector2(3.17773, 3.17773)
 texture = ExtResource("12_kaxbk")
 
@@ -278,6 +279,20 @@ offset_bottom = 773.0
 scale = Vector2(1.01793, 1)
 theme_override_font_sizes/font_size = 75
 text = "Painful Phonk"
+
+[node name="ShootType1Char2" type="Sprite2D" parent="RinSatsuki"]
+position = Vector2(855, 394)
+scale = Vector2(3.92639, 3.92639)
+texture = ExtResource("14_0nobx")
+
+[node name="Label5" type="Label" parent="RinSatsuki"]
+offset_left = 599.0
+offset_top = 637.0
+offset_right = 1466.0
+offset_bottom = 774.0
+scale = Vector2(1.01793, 1)
+theme_override_font_sizes/font_size = 75
+text = "Rin.exe"
 
 [node name="Label6" type="Label" parent="RinSatsuki"]
 offset_left = 1422.0
@@ -332,7 +347,23 @@ scale = Vector2(9.40625, 9.40625)
 texture = ExtResource("3_wk0pr")
 
 [node name="sceneTransition" parent="." instance=ExtResource("7_p8ri8")]
-position = Vector2(6, 5)
+position = Vector2(-1, -2)
+
+[node name="loadingScreen" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="loadingScreen"]
+offset_left = 709.0
+offset_top = 424.0
+offset_right = 2328.0
+offset_bottom = 833.0
+theme_override_font_sizes/font_size = 100
+text = "Loading"
+
+[node name="ProgressBar" type="ProgressBar" parent="loadingScreen"]
+offset_left = 294.0
+offset_top = 937.0
+offset_right = 1552.0
+offset_bottom = 1042.0
 
 [connection signal="button_down" from="firstpart/start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="firstpart/Instructions" to="." method="_on_instructions_button_down"]
