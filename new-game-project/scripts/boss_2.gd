@@ -55,8 +55,11 @@ func _process(delta):
 	if bossPhase == 1  and count != 1:
 		$bulletShootinEverywhere.start()
 		count = 1
-	if bossPhase == 2 and count !=1:
+	if bossPhase == 2 and count2 !=1:
 		$BossShotgunInterval.start() 
+		count2 = 1
+	if bossPhase == 2 and count !=1:
+		$Timer.start() 
 		count = 1
 	if bossPhase == 3 and count != 1:
 		$shootTowardsThePlayer.start()
@@ -102,14 +105,19 @@ func _on_area_entered(area: Area2D) -> void:
 
 
 func _on_boss_shotgun_interval_timeout() -> void:
-	if thePlayer != null and bossPhase == 2:
-		
+	if bossPhase ==2:
+	
 		for i in range(25):
 			var bullets = bulletPrefab.instantiate()
-			bullets.position = Vector2(randf_range(-920,400),randf_range(-550,-200))
-			bullets.theplayerDirtion =thePlayer.position - position
+			bullets.position = Vector2(-50* i +randf_range(-100,100), -540)
+			bullets.theplayerDirtion = Vector2(0,1)
 			get_parent().add_child(bullets)
-	count =0
+		for i in range(25):
+			var bullets = bulletPrefab.instantiate()
+			bullets.position = Vector2(50* i + randf_range(-100,100), -540)
+			bullets.theplayerDirtion = Vector2(0,1)
+			get_parent().add_child(bullets)
+	count2 = 0
 	
 	
 	
@@ -169,3 +177,15 @@ func _on_phaseattack_timeout() -> void:
 		bullets.theplayerDirtion = thePlayer.position - position
 		get_parent().add_child(bullets)
 	count2 = 0
+
+
+func _on_timer_timeout() -> void:
+	if thePlayer != null and bossPhase == 2:
+		
+		for i in range(25):
+
+			var bullets = bulletPrefab.instantiate()
+			bullets.position = Vector2(randf_range(-920,400),randf_range(-550,-200))
+			bullets.theplayerDirtion =thePlayer.position - position
+			get_parent().add_child(bullets)
+	count =0

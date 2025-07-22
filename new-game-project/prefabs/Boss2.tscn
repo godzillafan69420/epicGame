@@ -19,7 +19,6 @@ scale = Vector2(0.373047, 0.402498)
 texture = ExtResource("2_q65c2")
 
 [node name="BossShotgunInterval" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 
 [node name="bulletShootinEverywhere" type="Timer" parent="."]
@@ -41,9 +40,14 @@ visible = false
 wait_time = 1.5
 one_shot = true
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="BossShotgunInterval" to="." method="_on_boss_shotgun_interval_timeout"]
 [connection signal="timeout" from="bulletShootinEverywhere" to="." method="_on_bullet_shootin_everywhere_timeout"]
 [connection signal="timeout" from="shootTowardsThePlayer" to="." method="_on_shoot_towards_the_player_timeout"]
 [connection signal="timeout" from="BulletIntervalForRotator" to="." method="_on_bullet_interval_for_rotator_timeout"]
 [connection signal="timeout" from="3Phaseattack" to="." method="_on_phaseattack_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

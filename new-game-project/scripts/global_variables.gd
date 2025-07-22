@@ -3,7 +3,7 @@ extends Node
 var score = 0
 var PlayerHP = 3
 var playerBombs = 4
-var playerPower = 15
+var playerPower = 100
 var souls = 10
 var shotType = 1
 var char = 3
