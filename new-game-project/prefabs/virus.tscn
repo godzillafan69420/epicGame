@@ -1,26 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://wx08x006mfsm"]
 
 [ext_resource type="Script" uid="uid://bgjyy52fvjixt" path="res://prefabs/virus.gd" id="1_psuyn"]
-[ext_resource type="Texture2D" uid="uid://wlt5wnadc1a8" path="res://images/virus.png" id="1_w3b66"]
+[ext_resource type="Texture2D" uid="uid://bhmglxygrdmeb" path="res://images/virus giga better.png" id="2_psuyn"]
 
 [node name="Window" type="Window"]
-position = Vector2i(704, 93)
+position = Vector2i(704, 61)
 size = Vector2i(512, 512)
 script = ExtResource("1_psuyn")
 
 [node name="Virus" type="Sprite2D" parent="."]
 modulate = Color(0.533037, 0.533037, 0.533037, 1)
 position = Vector2(259, 254)
-texture = ExtResource("1_w3b66")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 7.0
-offset_top = 288.0
-offset_right = 514.0
-offset_bottom = 429.0
-theme_override_font_sizes/font_size = 50
-text = "Stupid Project 
- is unable to respond"
+texture = ExtResource("2_psuyn")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0

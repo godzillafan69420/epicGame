@@ -82,12 +82,13 @@ func _process(delta: float) -> void:
 			shotTypeSelected = 0
 		if shotTypeSelected == 0:
 			$TimmyShotTypeSelection/stats1.text ="Beginner friendly,
-			 focus fire"
+			 focus fire."
 			$TimmyShotTypeSelection/stats2.text = "Special: Increase
 			 damage for your bullet"
 		if shotTypeSelected == 1:
 			$TimmyShotTypeSelection/stats1.text ="agressive, High-damage,
-			 shreadshot"
+			 shreadshot. 'Put knife in Vman' 
+			- ConeL"
 			$TimmyShotTypeSelection/stats2.text = "Special: a bomb that
 			 takes your power away"
 		$TimmyShotTypeSelection/Knifee.position = Vector2(261+ shotTypeSelected* 640,890)
@@ -121,11 +122,11 @@ func _process(delta: float) -> void:
 			shotTypeSelected = 0
 		if shotTypeSelected == 0:
 			$RinSatsuki/stats1.text ="High damage AOE, hurts Vmen
-			ears when they listen"
+			ears when they listen >:3"
 			$RinSatsuki/stats2.text = "Special: Trojan Horse "
 		if shotTypeSelected == 1:
 			$RinSatsuki/stats1.text ="Beginner friendly, Currupted 
-			Job Aplication, Lags the game"
+			Job Aplication attacks!"
 			$RinSatsuki/stats2.text = "Special:  Trojan Horse "
 		$RinSatsuki/Knifee.position = Vector2(261+ shotTypeSelected* 640,890)
 		if shotTypeSelected == 0 and Input.is_action_just_pressed("shoot"):

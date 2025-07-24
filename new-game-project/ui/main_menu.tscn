@@ -151,7 +151,7 @@ offset_right = 1832.0
 offset_bottom = 358.0
 scale = Vector2(0.759624, 0.759624)
 theme_override_font_sizes/font_size = 50
-text = "Rin satsuki"
+text = "8D E1 8C 8E 20 97 D9"
 
 [node name="Knifee" type="Sprite2D" parent="characterSelection"]
 position = Vector2(233, 990)
@@ -216,10 +216,10 @@ theme_override_font_sizes/font_size = 50
 text = "your mom"
 
 [node name="stats2" type="Label" parent="TimmyShotTypeSelection"]
-offset_left = 1163.0
-offset_top = 778.0
-offset_right = 2030.0
-offset_bottom = 915.0
+offset_left = 1168.0
+offset_top = 832.0
+offset_right = 2035.0
+offset_bottom = 969.0
 theme_override_font_sizes/font_size = 50
 
 [node name="Label3" type="Label" parent="TimmyShotTypeSelection"]
@@ -323,23 +323,23 @@ offset_top = 131.0
 offset_right = 2372.0
 offset_bottom = 639.0
 theme_override_font_sizes/font_size = 40
-text = "After being forgotten by the entire 
-fandom. Rin Satsuki needed to find
-a new job.
-(ZUN, my almighty overlord pls add
-Rin Satsuki to touhou 20.
+text = "Feel too bad for this character.
+Computer virus maybe.
 
-I'm on my knees)
+ZUN my mightly lord pls add this 
+character to main game
+
+
 Speed: 10
 Shift speed: 3"
 
 [node name="Label2" type="Label" parent="RinSatsuki"]
-offset_left = 1047.0
-offset_top = -8.0
-offset_right = 1914.0
-offset_bottom = 129.0
+offset_left = 851.0
+offset_top = -4.0
+offset_right = 1718.0
+offset_bottom = 133.0
 theme_override_font_sizes/font_size = 100
-text = "Character: Rin"
+text = "Character: Rin Satsuki"
 
 [node name="Knifee" type="Sprite2D" parent="RinSatsuki"]
 position = Vector2(261, 890)
@@ -352,18 +352,18 @@ position = Vector2(-1, -2)
 [node name="loadingScreen" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="loadingScreen"]
-offset_left = 709.0
-offset_top = 424.0
-offset_right = 2328.0
-offset_bottom = 833.0
+offset_left = 891.0
+offset_top = 935.0
+offset_right = 2510.0
+offset_bottom = 1344.0
 theme_override_font_sizes/font_size = 100
-text = "Loading"
+text = "beating a Vman up..."
 
 [node name="ProgressBar" type="ProgressBar" parent="loadingScreen"]
-offset_left = 294.0
-offset_top = 937.0
-offset_right = 1552.0
-offset_bottom = 1042.0
+offset_left = 335.0
+offset_top = 513.0
+offset_right = 1593.0
+offset_bottom = 618.0
 
 [connection signal="button_down" from="firstpart/start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="firstpart/Instructions" to="." method="_on_instructions_button_down"]

@@ -44,8 +44,7 @@ func _ready() -> void:
 	$BulletIntervalForRotator.start()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(bossPhase)
-	print(count)
+	
 	if Hitpoint < 0:
 		queue_free()
 	
