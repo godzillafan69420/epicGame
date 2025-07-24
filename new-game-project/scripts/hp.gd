@@ -12,9 +12,3 @@ func _process(delta):
 	if position.y > 550:
 		queue_free()
 	
-
-
-func _on_area_entered(area):
-	if area is collectionArea:
-		GlobalVariables.score += 10
-		queue_free()

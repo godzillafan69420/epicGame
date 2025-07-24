@@ -10,13 +10,12 @@ var Score = GlobalVariables.score
 @onready var theRinPre = preload("res://prefabs/Rin.tscn")
 var gameStarted = false
 var thePlayer
-@export var allowSideToSide= false
-@export var normalEne = true
-@export var shootTowards = true
-var isPlayerAlive = true
-var glaze = 0
+@export var allowSideToSide: bool= false
+@export var normalEne: bool = true
+@export var shootTowards: bool = true
+var isPlayerAlive: bool = true
 var power = GlobalVariables.playerPower
-var gamePhase = 0
+var gamePhase: int = 0
 signal spawnBoss
 
 func _on_elmo_spawn_rate_timeout():
@@ -76,9 +75,7 @@ func _process(delta):
 	
 		if isPlayerAlive:
 			power = thePlayer.bulletLevel
-			glaze = thePlayer.glaze
 			power = thePlayer.bulletLevel
-			glaze = thePlayer.glaze
 			if thePlayer.HP == 0:
 				isPlayerAlive = false
 			if thePlayer.HP > -1 and thePlayer.justDieded and isPlayerAlive:

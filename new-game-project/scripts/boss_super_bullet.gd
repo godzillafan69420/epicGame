@@ -1,8 +1,8 @@
 extends Area2D
 
 class_name superBulletForBoss
-const bulletSpeed = 5
-var theplayerDirtion 
+const bulletSpeed: float = 5
+var theplayerDirtion: Vector2
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position += theplayerDirtion.normalized() * bulletSpeed

@@ -1,6 +1,6 @@
 extends Control
 
-var selectedItems = 0
+var selectedItems: int = 0
 
 func _ready() -> void:
 	$sceneTransition.get_node("ColorRect").color.a = 255

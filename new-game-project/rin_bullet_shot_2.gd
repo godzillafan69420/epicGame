@@ -1,11 +1,10 @@
 extends Area2D
 
 class_name  Rinbulletno2
-var dir
-var posX
-var target
-var attacking
-var playerboody
+var dir: Vector2
+var target:Object
+var attacking: bool
+var playerboody: Object
 func _ready() -> void:
 	attacking = false
 	playerboody = get_parent().get_node("player")

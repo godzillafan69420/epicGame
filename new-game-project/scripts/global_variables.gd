@@ -1,14 +1,14 @@
 extends Node
 
-var score = 0
-var PlayerHP = 3
-var playerBombs = 4
-var playerPower = 100
-var souls = 10
-var shotType = 1
-var char = 3
+var score: int = 0
+var PlayerHP: int = 3
+var playerBombs: int = 4
+var playerPower: int = 20
+var souls: int = 10
+var shotType: int = 1
+var char: int = 3
 
-var stage = 1
+var stage: int = 1
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("MainMenu"):

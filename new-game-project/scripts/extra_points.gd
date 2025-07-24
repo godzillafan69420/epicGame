@@ -1,6 +1,6 @@
 extends Area2D
 
-
+class_name  extrapoint
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	position.y -= 100
@@ -15,9 +15,5 @@ func _process(delta):
 	
 
 
-func _on_area_entered(area):
-	if area is collectionArea:
-		GlobalVariables.score += 1000
-		GlobalVariables.souls += 1
-		queue_free()
+
 	

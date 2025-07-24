@@ -5,18 +5,17 @@ extends Node2D
 @onready var guyTowards = preload("res://prefabs/theEnemy.tscn")
 @onready var shotGun = preload("res://prefabs/side_to_side_enemy.tscn")
 @onready var boss_1 = preload("res://prefabs/boss_1.tscn")
-var Score = GlobalVariables.score
+var Score: int = GlobalVariables.score
 @onready var thePlayerPre = preload("res://prefabs/player.tscn")
 @onready var theRinPre = preload("res://prefabs/Rin.tscn")
-var gameStarted = false
+var gameStarted: bool = false
 var thePlayer
 @export var allowSideToSide= false
 @export var normalEne = true
 @export var shootTowards = false
-var isPlayerAlive = true
-var glaze = 0
-var power = 0
-var gamePhase = 0
+var isPlayerAlive: bool = true
+var power: int = 0
+var gamePhase: int = 0
 signal spawnBoss
 
 func _on_elmo_spawn_rate_timeout():
@@ -70,9 +69,7 @@ func _process(delta):
 	
 		if isPlayerAlive:
 			power = thePlayer.bulletLevel
-			glaze = thePlayer.glaze
 			power = thePlayer.bulletLevel
-			glaze = thePlayer.glaze
 			if thePlayer.HP == 0:
 				isPlayerAlive = false
 			if thePlayer.HP > -1 and thePlayer.justDieded and isPlayerAlive:

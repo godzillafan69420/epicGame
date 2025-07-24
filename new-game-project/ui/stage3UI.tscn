@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b7i5brk8wrb0u"]
+[gd_scene load_steps=21 format=3 uid="uid://b7i5brk8wrb0u"]
 
 [ext_resource type="Script" uid="uid://bcbws131ktysf" path="res://ui/stage_3ui.gd" id="1_yufgc"]
 [ext_resource type="Texture2D" uid="uid://h0uvystrlwy8" path="res://images/rackNew.png" id="2_3bmfl"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://uf520mnk4k6y" path="res://images/bomb.png" id="5_rl4u8"]
 [ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="6_3bmfl"]
 [ext_resource type="Texture2D" uid="uid://vtmbteswfso7" path="res://images/healthBar.png" id="7_3bmfl"]
+[ext_resource type="PackedScene" uid="uid://dkt4ysoejexn" path="res://ui/fps_counter.tscn" id="8_r40lb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7mxx3"]
 load_path = "res://.godot/imported/healthBar.png-f8e541990aa8c7f47f324a715e0000c9.ctex"
@@ -305,3 +306,10 @@ offset_bottom = 201.0
 scale = Vector2(1.6, 1.44)
 theme_override_font_sizes/font_size = 25
 text = "player:"
+
+[node name="FPSCounter" parent="." instance=ExtResource("8_r40lb")]
+layout_mode = 1
+offset_left = 1806.0
+offset_top = 1007.0
+offset_right = 1806.0
+offset_bottom = 1007.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dq28g10k4d752"]
+[gd_scene load_steps=21 format=3 uid="uid://dq28g10k4d752"]
 
 [ext_resource type="Texture2D" uid="uid://hjgigajbxtia" path="res://images/barryToes.png" id="1_nb4k0"]
 [ext_resource type="Script" uid="uid://d1lp7p7o62byt" path="res://scripts/ui.gd" id="1_vkava"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://uf520mnk4k6y" path="res://images/bomb.png" id="5_obcwv"]
 [ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="6_bo1jx"]
 [ext_resource type="Texture2D" uid="uid://vtmbteswfso7" path="res://images/healthBar.png" id="7_bo1jx"]
+[ext_resource type="PackedScene" uid="uid://dkt4ysoejexn" path="res://ui/fps_counter.tscn" id="8_gycre"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7mxx3"]
 load_path = "res://.godot/imported/healthBar.png-f8e541990aa8c7f47f324a715e0000c9.ctex"
@@ -306,3 +307,10 @@ text = "+ 50 Souls
 [Z] to continue
 "
 horizontal_alignment = 1
+
+[node name="FPSCounter" parent="." instance=ExtResource("8_gycre")]
+layout_mode = 1
+offset_left = 1798.0
+offset_top = 1001.0
+offset_right = 1798.0
+offset_bottom = 1001.0

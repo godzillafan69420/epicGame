@@ -4,19 +4,18 @@ class_name player
 @onready var bulletPre = preload("res://prefabs/bullet.tscn")
 @onready var superPrefab = preload("res://prefabs/super_attack.tscn")
 @onready var bullet2Pre = preload("res://prefabs/shotgun_shoot_type_char_a.tscn")
-var usingSuper = false
+var usingSuper: bool = false
 
-var wentToShoot = false
+var wentToShoot: bool = false
 # Called when the node enters the scene tree for the first time.
-const  Speed = 8
-const slowSpeed = 4
+const  Speed: float = 8
+const slowSpeed: float = 4
 var moveX = 0
 var moveY = 0
-var justDieded = false
-const YOffset = 38
+var justDieded: bool = false
+const YOffset: float = 38
 var bulletLevel = GlobalVariables.playerPower
-var invincibility = false
-var glaze = 0
+var invincibility: bool = false
 var currentSpeed = Speed
 var HP = GlobalVariables.PlayerHP
 var amountOfBombs = GlobalVariables.playerBombs
@@ -203,9 +202,17 @@ func _on_area_entered(area):
 func _on_collect_bread_area_entered(area):
 	
 	if area is powerUp:
+		GlobalVariables.score += 100
 		bulletLevel += 1
+		area.queue_free()
+	if area is extrapoint:
+		GlobalVariables.score += 1000
+		GlobalVariables.souls += 1
+		area.queue_free()
 	if area is HpGiver:
+		GlobalVariables.score += 100
 		HP += 1
+		area.queue_free()
 	
 		
 

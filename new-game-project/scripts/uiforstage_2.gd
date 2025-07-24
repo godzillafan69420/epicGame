@@ -7,7 +7,7 @@ extends Control
 @onready var textBox = $dialog/dialogText
 @onready var rinSpriteangry =preload("res://images/Rin even even better.png")
 @onready var rinSprite = preload("res://images/Rin even even better.png")
-var textToShow = 0
+var textToShow: int = 0
 
 signal startTheBossMusic
 func _process(delta: float) -> void:

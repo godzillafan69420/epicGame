@@ -7,6 +7,7 @@
 size = Vector2(69, 65)
 
 [node name="Hp" type="Area2D"]
+monitoring = false
 script = ExtResource("1_cm6vh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

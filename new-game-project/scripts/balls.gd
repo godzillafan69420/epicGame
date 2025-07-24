@@ -7,7 +7,7 @@ class_name dangerousBalls
 
 
 
-var speed = 5
+var speed: float = 5
 
 
 

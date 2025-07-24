@@ -3,10 +3,10 @@ extends Area2D
 class_name bossNo2
 
 
-var Hitpoint = 70000
-var count = 0
-var count2 = 0
-var bossPhase = 0
+var Hitpoint: float = 70000
+var count: int = 0
+var count2: int = 0
+var bossPhase: int = 0
 @onready var thePlayer
 @onready var bulletPrefab = preload("res://prefabs/bullet_to_player.tscn")
 @onready var bossSuperBulletPre = preload("res://prefabs/boss_super_bullet.tscn")
@@ -15,10 +15,10 @@ const Bullet_scene = preload("res://prefabs/boss_bullet.tscn")
 @onready var rotator = $Rotator
 @onready var rotator2 = $Rotator2
 
-const rotate_speed = 30
-const shooter_timer_wait_timer = 0.3
-const spawn_point_count = 3
-const radius = 100
+const rotate_speed: float = 30
+const shooter_timer_wait_timer: float = 0.3
+const spawn_point_count: int = 3
+const radius: float = 100
 
 func _ready() -> void:
 	var step = 2 * PI  / spawn_point_count
@@ -98,6 +98,8 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is RinbulletNorm:
 		Hitpoint -= 20
 		area.queue_free()
+	if area is deathZone:
+		Hitpoint -= 10000
 
 
 

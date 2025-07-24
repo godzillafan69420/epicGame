@@ -5,19 +5,20 @@ class_name player2
 @onready var superPrefab = preload("res://prefabs/super_attack.tscn")
 @onready var bullet2Pre = preload("res://prefabs/rin_bullet_shot_2.tscn")
 @onready var bullet3Pre = preload("res://prefabs/rinBulletno2again.tscn")
+@onready var nuke = preload("res://prefabs/virus.tscn")
+@onready var deathZone = preload("res://prefabs/death_zone.tscn")
 var usingSuper = false
 
 var wentToShoot = false
 # Called when the node enters the scene tree for the first time.
-const  Speed = 10
-const slowSpeed = 3
+const  Speed: float = 10
+const slowSpeed: float = 3
 var moveX = 0
 var moveY = 0
-var justDieded = false
-const YOffset = 38
+var justDieded: bool = false
+const YOffset: float = 38
 var bulletLevel = GlobalVariables.playerPower
-var invincibility = false
-var glaze = 0
+var invincibility: bool = false
 var currentSpeed = Speed
 var HP = GlobalVariables.PlayerHP
 var amountOfBombs = GlobalVariables.playerBombs
@@ -148,6 +149,23 @@ func _process(delta):
 		$drip.modulate = Color8(0,0,255,50)
 	else:
 		$drip.modulate = Color8(255,255,255,255)
+	if Input.is_action_just_pressed("fireSpecial") and GlobalVariables.PlayerHP > 5 and GlobalVariables.playerPower > 50:
+		get_parent().get_node("LoopingSong").stop()
+		get_parent().get_node("BarryToes").stop()
+		$"Emergency-alert-us-2".play()
+		bulletLevel -= 50
+		HP -= 5
+		get_parent().get_node("sceneTransition").get_node("AnimationPlayer").play("flash")
+		for i in range(10):
+					var bullet = nuke.instantiate()
+					
+					bullet.position = Vector2(randf_range(0,1080),randf_range(0,1080))
+					get_parent().add_child(bullet)
+		var bullet = deathZone.instantiate()
+		
+		bullet.position = Vector2(0,0)
+		get_parent().add_child(bullet)
+		
 func uRdied():
 	invincibility = true
 	justDieded = true
@@ -166,9 +184,17 @@ func _on_area_entered(area):
 func _on_collect_bread_area_entered(area):
 	
 	if area is powerUp:
+		GlobalVariables.score += 100
 		bulletLevel += 1
+		area.queue_free()
+	if area is extrapoint:
+		GlobalVariables.score += 1000
+		GlobalVariables.souls += 1
+		area.queue_free()
 	if area is HpGiver:
+		GlobalVariables.score += 100
 		HP += 1
+		area.queue_free()
 	
 		
 

@@ -1,9 +1,9 @@
 extends Control
 
-var buttomSelected = 0
-var part = 5
-var charcterSelected = 0
-var shotTypeSelected = 0
+var buttomSelected: int = 0
+var part: int = 5
+var charcterSelected: int = 0
+var shotTypeSelected: int  = 0
 @onready var startOfGame = preload("res://stages/firstStage.tscn")
 func _ready() -> void:
 	for i in range(100):
@@ -120,11 +120,13 @@ func _process(delta: float) -> void:
 		if shotTypeSelected > 1:
 			shotTypeSelected = 0
 		if shotTypeSelected == 0:
-			$RinSatsuki/stats1.text ="High damage AOE"
-			$RinSatsuki/stats2.text = "Special: idk hurt Vmen ears tho"
+			$RinSatsuki/stats1.text ="High damage AOE, hurts Vmen
+			ears when they listen"
+			$RinSatsuki/stats2.text = "Special: Trojan Horse "
 		if shotTypeSelected == 1:
-			$RinSatsuki/stats1.text ="High damage AOE"
-			$RinSatsuki/stats2.text = "Special: idk hurt Vmen ears tho"
+			$RinSatsuki/stats1.text ="Beginner friendly, Currupted 
+			Job Aplication, Lags the game"
+			$RinSatsuki/stats2.text = "Special:  Trojan Horse "
 		$RinSatsuki/Knifee.position = Vector2(261+ shotTypeSelected* 640,890)
 		if shotTypeSelected == 0 and Input.is_action_just_pressed("shoot"):
 			GlobalVariables.shotType = 1

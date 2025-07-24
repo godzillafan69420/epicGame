@@ -4,7 +4,7 @@ class_name sideToSideEnemy
 
 var dir
 var speed
-var Hitpoint = 50
+var Hitpoint: float = 50
 @export var bread = preload("res://prefabs/extra_points.tscn")
 @export var powerUp = preload("res://prefabs/power_up.tscn")
 @export var Hp = preload("res://prefabs/hp.tscn")
@@ -82,3 +82,5 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is RinbulletNorm:
 		Hitpoint -= 20
 		area.queue_free()
+	if area is deathZone:
+		Hitpoint -= 10000

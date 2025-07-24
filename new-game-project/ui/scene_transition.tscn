@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxqwnhhteb662"]
+[gd_scene load_steps=6 format=3 uid="uid://dxqwnhhteb662"]
 
 [sub_resource type="Animation" id="Animation_li7wd"]
 length = 0.001
@@ -47,14 +47,32 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_lcbxi"]
+resource_name = "flash"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.07, 0.166667, 4.69, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lcbxi"]
 _data = {
 &"RESET": SubResource("Animation_li7wd"),
 &"fade - in": SubResource("Animation_1un8b"),
-&"fade-Out": SubResource("Animation_qog2d")
+&"fade-Out": SubResource("Animation_qog2d"),
+&"flash": SubResource("Animation_lcbxi")
 }
 
 [node name="sceneTransition" type="Node2D"]
+z_index = 4096
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -171.0

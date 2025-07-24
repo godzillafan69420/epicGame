@@ -1,12 +1,12 @@
 extends Area2D
 
 class_name enemy
-@export var Hitpoint = 50
+@export var Hitpoint: float = 50
 @export var balls = preload("res://prefabs/balls.tscn")
 @export var bread = preload("res://prefabs/extra_points.tscn")
 @export var powerUp = preload("res://prefabs/power_up.tscn")
 @export var Hp = preload("res://prefabs/hp.tscn")
-var readytoShoot = true
+var readytoShoot: bool = true
 func _ready():
 	pass # Replace with function body.
 
@@ -61,7 +61,8 @@ func _on_area_entered(area):
 	if area is RinbulletNorm:
 		Hitpoint -= 20
 		area.queue_free()
-
+	if area is deathZone:
+		Hitpoint -= 10000
 
 func _on_timer_timeout():
 	var ball = balls.instantiate()
