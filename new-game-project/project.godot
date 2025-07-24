@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="StupidProject"
-run/main_scene="uid://cftub4i4qhmrk"
+run/main_scene="uid://c6sc6jmkpi5an"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=60
 config/icon="uid://uf520mnk4k6y"
