@@ -27,6 +27,7 @@ func _ready() -> void:
 		var spawn_point =  Node2D.new()
 		var pos = Vector2(radius, 0).rotated(step*i)
 		spawn_point.position = pos
+		spawn_point.visible = false
 		spawn_point.rotation = pos.angle()	
 		rotator.add_child(spawn_point)
 
@@ -36,6 +37,7 @@ func _ready() -> void:
 		var spawn_point =  Node2D.new()
 		var pos = Vector2(0, radius).rotated(otherStep*i)
 		spawn_point.position = pos
+		spawn_point.visible = false
 		spawn_point.rotation = pos.angle()	
 		$Rotator2.add_child(spawn_point)
 	shoot_timer.wait_time = shooter_timer_wait_timer
@@ -150,15 +152,15 @@ func _on_bullet_interval_for_rotator_timeout() -> void:
 	if  bossPhase == 1:
 		if thePlayer != null:
 			for s in rotator.get_children():
-				var bullet = Bullet_scene.instantiate()
-				get_parent().add_child(bullet)
-				bullet.position = s.global_position
-				bullet.rotation = s.global_rotation
+				var bullets = Bullet_scene.instantiate()
+				get_parent().add_child(bullets)
+				bullets.position = s.global_position
+				bullets.rotation = s.global_rotation
 			for j in $Rotator2.get_children():
-				var bullet = Bullet_scene.instantiate()
-				get_parent().add_child(bullet)
-				bullet.position = j.global_position
-				bullet.rotation = j.global_rotation
+				var bullets = Bullet_scene.instantiate()
+				get_parent().add_child(bullets)
+				bullets.position = j.global_position
+				bullets.rotation = j.global_rotation
 
 
 func _on_bullet_shootin_everywhere_timeout() -> void:

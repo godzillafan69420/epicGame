@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	if get_parent().gamePhase == 1:
 		panel.visible = true
 		barrySprite.visible = true
-		if GlobalVariables.char == 1:
+		if GlobalVariables.character == 1:
 			if textToShow == 0:
 				textBox.text = "what are ya doin'.
 				why re ya throwing knifes."
@@ -60,7 +60,7 @@ func _process(delta: float) -> void:
 				protagonistDialog.visible = false
 				panel.visible = false
 				startTheBossMusic.emit()
-		if GlobalVariables.char == 3:
+		if GlobalVariables.character == 3:
 			protagonistDialog.texture =rinSprite
 			panel.visible = true
 			barrySprite.visible = true

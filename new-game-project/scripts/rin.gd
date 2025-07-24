@@ -6,7 +6,7 @@ class_name player2
 @onready var bullet2Pre = preload("res://prefabs/rin_bullet_shot_2.tscn")
 @onready var bullet3Pre = preload("res://prefabs/rinBulletno2again.tscn")
 @onready var nuke = preload("res://prefabs/virus.tscn")
-@onready var deathZone = preload("res://prefabs/death_zone.tscn")
+@onready var deathZones = preload("res://prefabs/death_zone.tscn")
 var usingSuper = false
 
 var wentToShoot = false
@@ -27,10 +27,10 @@ func _ready():
 	$hitboxes.hide()
 	add_to_group("player")
 	justDieded = false
-	if GlobalVariables.char == 3 and GlobalVariables.shotType == 2:
+	if GlobalVariables.character == 3 and GlobalVariables.shotType == 2:
 		$shootinterval.wait_time = 0.1
 		
-	if GlobalVariables.char == 3 and GlobalVariables.shotType == 1:
+	if GlobalVariables.character == 3 and GlobalVariables.shotType == 1:
 		$shootinterval.wait_time = 0.25
 	
 	
@@ -63,78 +63,78 @@ func _process(delta):
 	else:
 		currentSpeed = Speed
 		$hitboxes.hide()
-	if GlobalVariables.shotType == 1 and GlobalVariables.char == 3:
+	if GlobalVariables.shotType == 1 and GlobalVariables.character == 3:
 		if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1 and wentToShoot:
 			if bulletLevel <= 25:
 				for i in range(1):
-					var bullet = bulletPre.instantiate()
-					bullet.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
-					bullet.position = position
-					bullet.rotation = deg_to_rad(-90)
-					get_parent().add_child(bullet)
+					var bullets = bulletPre.instantiate()
+					bullets.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
+					bullets.position = position
+					bullets.rotation = deg_to_rad(-90)
+					get_parent().add_child(bullets)
 			elif bulletLevel <= 50:
 				for i in range(2):
 					
-					var bullet = bulletPre.instantiate()
-					bullet.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
-					bullet.position = position
-					bullet.rotation = deg_to_rad(-90+ 180*i)
-					get_parent().add_child(bullet)
+					var bullets = bulletPre.instantiate()
+					bullets.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
+					bullets.position = position
+					bullets.rotation = deg_to_rad(-90+ 180*i)
+					get_parent().add_child(bullets)
 			elif bulletLevel <= 75:
 				for i in range(4):
-					var bullet = bulletPre.instantiate()
-					bullet.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
-					bullet.position = position
-					bullet.rotation = deg_to_rad(-90 + 90*i)
-					get_parent().add_child(bullet)
+					var bullets = bulletPre.instantiate()
+					bullets.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
+					bullets.position = position
+					bullets.rotation = deg_to_rad(-90 + 90*i)
+					get_parent().add_child(bullets)
 			elif bulletLevel <= 101:
 				for i in range(8):
-					var bullet = bulletPre.instantiate()
-					bullet.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
-					bullet.position = position
-					bullet.rotation = deg_to_rad(-90+ 45*i)
-					get_parent().add_child(bullet)
+					var bullets = bulletPre.instantiate()
+					bullets.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
+					bullets.position = position
+					bullets.rotation = deg_to_rad(-90+ 45*i)
+					get_parent().add_child(bullets)
 			wentToShoot = false
 		
-	if GlobalVariables.shotType == 2 and GlobalVariables.char == 3:
+	if GlobalVariables.shotType == 2 and GlobalVariables.character == 3:
 		
 		if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1 and wentToShoot:
 			for i in range(1):
-					var bullet = bullet3Pre.instantiate()
-					bullet.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
-					bullet.position = position- Vector2(0,YOffset)
-					bullet.rotation = deg_to_rad(-90)
-					get_parent().add_child(bullet)
+					var bullets = bullet3Pre.instantiate()
+					bullets.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
+					bullets.position = position- Vector2(0,YOffset)
+					bullets.rotation = deg_to_rad(-90)
+					get_parent().add_child(bullets)
 			if bulletLevel <= 25:
 				
 				for i in range(1):
-					var bullet = bullet2Pre.instantiate()
-					bullet.position = position + Vector2(0,0)- Vector2(0,YOffset)
-					bullet.rotation = deg_to_rad(-90)
-					get_parent().add_child(bullet)
+					var bullets = bullet2Pre.instantiate()
+					bullets.position = position + Vector2(0,0)- Vector2(0,YOffset)
+					bullets.rotation = deg_to_rad(-90)
+					get_parent().add_child(bullets)
 			elif bulletLevel <= 50:
 				
 				for i in range(2):
-					var bullet = bullet2Pre.instantiate()
-					bullet.position = position + Vector2(50*i - 25,0)- Vector2(0,YOffset)
-					bullet.rotation = deg_to_rad(-90)
-					get_parent().add_child(bullet)
+					var bullets = bullet2Pre.instantiate()
+					bullets.position = position + Vector2(50*i - 25,0)- Vector2(0,YOffset)
+					bullets.rotation = deg_to_rad(-90)
+					get_parent().add_child(bullets)
 			elif bulletLevel <= 75:
 				
 				for i in range(3):
-					var bullet = bullet2Pre.instantiate()
+					var bullets = bullet2Pre.instantiate()
 
-					bullet.position = position + Vector2(50*i -50,0)- Vector2(0,YOffset)
-					bullet.rotation = deg_to_rad(-90)
-					get_parent().add_child(bullet)
+					bullets.position = position + Vector2(50*i -50,0)- Vector2(0,YOffset)
+					bullets.rotation = deg_to_rad(-90)
+					get_parent().add_child(bullets)
 			elif bulletLevel <= 101:
 				
 				for i in range(4):
-					var bullet = bullet2Pre.instantiate()
+					var bullets = bullet2Pre.instantiate()
 
-					bullet.position = position + Vector2(50*i -75,0)- Vector2(0,YOffset)
-					bullet.rotation = deg_to_rad(-90)
-					get_parent().add_child(bullet)
+					bullets.position = position + Vector2(50*i -75,0)- Vector2(0,YOffset)
+					bullets.rotation = deg_to_rad(-90)
+					get_parent().add_child(bullets)
 			wentToShoot = false
 	if bulletLevel > 100:
 			bulletLevel = 100
@@ -157,14 +157,14 @@ func _process(delta):
 		HP -= 5
 		get_parent().get_node("sceneTransition").get_node("AnimationPlayer").play("flash")
 		for i in range(10):
-					var bullet = nuke.instantiate()
+					var bullets = nuke.instantiate()
 					
-					bullet.position = Vector2(randf_range(0,1080),randf_range(0,1080))
-					get_parent().add_child(bullet)
-		var bullet = deathZone.instantiate()
+					bullets.position = Vector2(randf_range(0,1080),randf_range(0,1080))
+					get_parent().add_child(bullets)
+		var bullets = deathZones.instantiate()
 		
-		bullet.position = Vector2(0,0)
-		get_parent().add_child(bullet)
+		bullets.position = Vector2(0,0)
+		get_parent().add_child(bullets)
 		
 func uRdied():
 	invincibility = true

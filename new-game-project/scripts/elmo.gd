@@ -4,7 +4,7 @@ class_name enemy
 @export var Hitpoint: float = 50
 @export var balls = preload("res://prefabs/balls.tscn")
 @export var bread = preload("res://prefabs/extra_points.tscn")
-@export var powerUp = preload("res://prefabs/power_up.tscn")
+@export var powerUps = preload("res://prefabs/power_up.tscn")
 @export var Hp = preload("res://prefabs/hp.tscn")
 var readytoShoot: bool = true
 func _ready():
@@ -25,7 +25,7 @@ func _process(delta):
 			items.position = position
 			get_parent().add_child(items)
 		else:
-			var items = powerUp.instantiate()
+			var items = powerUps.instantiate()
 			items.position = position
 			get_parent().add_child(items)
 		queue_free()

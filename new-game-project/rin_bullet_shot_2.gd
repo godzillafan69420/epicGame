@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	
 	if attacking and target !=null:
 		if target == null:
-			attacking == false
+			attacking = false
 		dir = target.position- position 
 		position += dir.normalized() * 10
 		
@@ -20,7 +20,13 @@ func _process(delta: float) -> void:
 	else:
 		dir = Vector2(0, -1)
 		position += dir.normalized() * 10
-	
+	if position.y > 550  or position.y < -550:
+		queue_free()
+	if position.x > 410 or position.x < -950:
+		queue_free()
+	if get_parent().gamePhase == 4:
+		queue_free()
+
 		
 
 

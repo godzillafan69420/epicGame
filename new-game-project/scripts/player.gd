@@ -24,9 +24,9 @@ func _ready():
 	$hitboxes.hide()
 	add_to_group("player")
 	justDieded = false
-	if GlobalVariables.char == 1 and GlobalVariables.shotType == 1:
+	if GlobalVariables.character == 1 and GlobalVariables.shotType == 1:
 		$shootinterval.wait_time = 0.05
-	if GlobalVariables.char == 1 and GlobalVariables.shotType == 2:
+	if GlobalVariables.character == 1 and GlobalVariables.shotType == 2:
 		$shootinterval.wait_time = 0.125
 	
 	
@@ -59,20 +59,20 @@ func _process(delta):
 	else:
 		currentSpeed = Speed
 		$hitboxes.hide()
-	if GlobalVariables.shotType == 1 and GlobalVariables.char == 1:
+	if GlobalVariables.shotType == 1 and GlobalVariables.character == 1:
 		if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1 and wentToShoot:
 		
 			if bulletLevel < 10:
-				var bullet = bulletPrefab.instantiate()
-				bullet.position = position - Vector2(0,YOffset)
+				var bullets = bulletPrefab.instantiate()
+				bullets.position = position - Vector2(0,YOffset)
 		
-				get_parent().add_child(bullet)
+				get_parent().add_child(bullets)
 			elif bulletLevel < 25:
-				var bullet = bulletPrefab.instantiate()
+				var bullets = bulletPrefab.instantiate()
 				var secoundbullet = bulletPrefab.instantiate()
-				bullet.position = position - Vector2(10,YOffset)
+				bullets.position = position - Vector2(10,YOffset)
 				secoundbullet.position = position + Vector2(10,-YOffset)
-				get_parent().add_child(bullet)
+				get_parent().add_child(bullets)
 				get_parent().add_child(secoundbullet)
 			elif bulletLevel < 50:
 				var bulletNO1 = bulletPrefab.instantiate()
@@ -127,38 +127,38 @@ func _process(delta):
 				get_parent().add_child(bulletNO7)
 			wentToShoot = false
 		
-	if GlobalVariables.shotType == 2 and GlobalVariables.char == 1:
+	if GlobalVariables.shotType == 2 and GlobalVariables.character == 1:
 		if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1 and wentToShoot:
 		
 			if bulletLevel < 10:
-				var bullet = bullet2Pre.instantiate()
-				bullet.position = position- Vector2(0,YOffset)
-				bullet.rotation = deg_to_rad(-90)
-				get_parent().add_child(bullet)
+				var bullets = bullet2Pre.instantiate()
+				bullets.position = position- Vector2(0,YOffset)
+				bullets.rotation = deg_to_rad(-90)
+				get_parent().add_child(bullets)
 			elif bulletLevel < 25:
 				for i in range(3):
-					var bullet = bullet2Pre.instantiate()
-					bullet.position = position- Vector2(0,YOffset)
-					bullet.rotation = deg_to_rad(15*i-105)
-					get_parent().add_child(bullet)
+					var bullets = bullet2Pre.instantiate()
+					bullets.position = position- Vector2(0,YOffset)
+					bullets.rotation = deg_to_rad(15*i-105)
+					get_parent().add_child(bullets)
 			elif bulletLevel < 50:
 				for i in range(4):
-					var bullet = bullet2Pre.instantiate()
-					bullet.position = position- Vector2(0,YOffset)
-					bullet.rotation = deg_to_rad(15*i-115)
-					get_parent().add_child(bullet)
+					var bullets = bullet2Pre.instantiate()
+					bullets.position = position- Vector2(0,YOffset)
+					bullets.rotation = deg_to_rad(15*i-115)
+					get_parent().add_child(bullets)
 			elif bulletLevel < 75:
 				for i in range(5):
-					var bullet = bullet2Pre.instantiate()
-					bullet.position = position- Vector2(0,YOffset)
-					bullet.rotation = deg_to_rad(10*i-110)
-					get_parent().add_child(bullet)
+					var bullets = bullet2Pre.instantiate()
+					bullets.position = position- Vector2(0,YOffset)
+					bullets.rotation = deg_to_rad(10*i-110)
+					get_parent().add_child(bullets)
 			elif bulletLevel <= 101:
 				for i in range(7):
-					var bullet = bullet2Pre.instantiate()
-					bullet.position = position- Vector2(0,YOffset)
-					bullet.rotation = deg_to_rad(10*i-120)
-					get_parent().add_child(bullet)
+					var bullets = bullet2Pre.instantiate()
+					bullets.position = position- Vector2(0,YOffset)
+					bullets.rotation = deg_to_rad(10*i-120)
+					get_parent().add_child(bullets)
 			wentToShoot = false
 	if bulletLevel > 100:
 			bulletLevel = 100
@@ -173,11 +173,11 @@ func _process(delta):
 		$drip.modulate = Color8(0,0,255,50)
 	else:
 		$drip.modulate = Color8(255,255,255,255)
-	if Input.is_action_just_pressed("fireSpecial") and bulletLevel > 20 and !usingSuper and GlobalVariables.shotType == 1 and GlobalVariables.char == 1:
+	if Input.is_action_just_pressed("fireSpecial") and bulletLevel > 20 and !usingSuper and GlobalVariables.shotType == 1 and GlobalVariables.character == 1:
 		$superTimePeriod.start()
 		bulletPrefab = superPrefab
 		usingSuper = true
-	if Input.is_action_just_pressed("fireSpecial") and bulletLevel > 20 and !invincibility and GlobalVariables.shotType == 2 and GlobalVariables.char == 1:
+	if Input.is_action_just_pressed("fireSpecial") and bulletLevel > 20 and !invincibility and GlobalVariables.shotType == 2 and GlobalVariables.character == 1:
 		invincibility = true
 		var bomb = bombPrefab.instantiate()
 		bomb.position = position

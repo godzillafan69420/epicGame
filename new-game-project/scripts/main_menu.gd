@@ -57,15 +57,15 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("Bomb"):
 			part = 0
 		if Input.is_action_just_pressed("shoot") and charcterSelected == 0:
-			GlobalVariables.char = 1
+			GlobalVariables.character = 1
 			part = 2
 		if Input.is_action_just_pressed("shoot") and charcterSelected == 2:
-			GlobalVariables.char = 3
+			GlobalVariables.character = 3
 			part = 2
 			
 		
 			
-	if part == 2 and GlobalVariables.char == 1:
+	if part == 2 and GlobalVariables.character == 1:
 		$characterSelection.visible = false
 		$Title.visible = false
 		$firstpart.visible = false
@@ -103,7 +103,7 @@ func _process(delta: float) -> void:
 			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
 		if Input.is_action_just_pressed("Bomb"):
 			part = 1
-	if part == 2 and GlobalVariables.char == 3:
+	if part == 2 and GlobalVariables.character == 3:
 
 		$characterSelection.visible = false
 		$Title.visible = false

@@ -16,7 +16,7 @@ var thePlayer
 var isPlayerAlive: bool = true
 var power = GlobalVariables.playerPower
 var gamePhase: int = 0
-signal spawnBoss
+
 
 func _on_elmo_spawn_rate_timeout():
 	if gamePhase == 0 and normalEne:
@@ -25,11 +25,11 @@ func _on_elmo_spawn_rate_timeout():
 		add_child(elmo)
 
 func _ready() -> void:
-	if GlobalVariables.char == 1:
+	if GlobalVariables.character == 1:
 		thePlayer = thePlayerPre.instantiate()
 		thePlayer.position = Vector2(-237,469)
 		add_child(thePlayer)
-	if GlobalVariables.char == 3:
+	if GlobalVariables.character == 3:
 		thePlayer = theRinPre.instantiate()
 		thePlayer.position = Vector2(-237,469)
 		add_child(thePlayer)

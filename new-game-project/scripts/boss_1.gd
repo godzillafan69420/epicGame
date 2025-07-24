@@ -127,7 +127,7 @@ func _on_bullet_interval_for_rotator_timeout() -> void:
 	if  bossPhase == 3:
 		if thePlayer != null:
 			for s in rotator.get_children():
-				var bullet = Bullet_scene.instantiate()
-				get_parent().add_child(bullet)
-				bullet.position = s.global_position
-				bullet.rotation = s.global_rotation
+				var bullets = Bullet_scene.instantiate()
+				get_parent().add_child(bullets)
+				bullets.position = s.global_position
+				bullets.rotation = s.global_rotation
