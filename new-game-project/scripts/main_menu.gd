@@ -11,7 +11,7 @@ func _ready() -> void:
 	await get_tree().create_timer(1).timeout
 	part = 0
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if part == 0:
 		$loadingScreen.visible = false
 		$Title.visible = true
@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 			buttomSelected = 0
 		if buttomSelected == 0 and Input.is_action_just_pressed("shoot"):
 			part = 1
-			
+		
 		if buttomSelected == 2 and Input.is_action_just_pressed("shoot"):
 			get_tree().change_scene_to_file("res://ui/instructionn.tscn")
 		if buttomSelected == 3 and Input.is_action_just_pressed("shoot"):
@@ -63,7 +63,11 @@ func _process(delta: float) -> void:
 			GlobalVariables.character = 3
 			part = 2
 			
-		
+		if Input.is_action_just_pressed("slowDown"):
+			GlobalVariables.character = 4
+			$sceneTransition/AnimationPlayer.play("fade-Out")
+			await get_tree().create_timer(0.5).timeout
+			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
 			
 	if part == 2 and GlobalVariables.character == 1:
 		$characterSelection.visible = false

@@ -21,7 +21,7 @@ func _ready():
 			
 	$Timer.start()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	position.x += speed
 	if Hitpoint < 0:
 		GlobalVariables.score += 100
@@ -83,4 +83,6 @@ func _on_area_entered(area: Area2D) -> void:
 		Hitpoint -= 20
 		area.queue_free()
 	if area is deathZone:
+		Hitpoint -= 10000
+	if area is hollowPurple:
 		Hitpoint -= 10000

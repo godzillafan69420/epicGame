@@ -7,10 +7,11 @@ extends Control
 @onready var textBox = $dialog/dialogText
 @onready var rinSpriteangry = preload("res://images/Rin even even better.png")
 @onready var rinSprite = preload("res://images/Rin even even better.png")
+@onready var gojo = preload("res://images/nahidWin.jpg")
 var textToShow: int = 0
 
 signal startTheBossMusic
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$souls.text = str(GlobalVariables.souls)
 	if get_parent().gamePhase == 1:
 		panel.visible = true
@@ -65,19 +66,21 @@ func _process(delta: float) -> void:
 			panel.visible = true
 			barrySprite.visible = true
 			if textToShow == 0:
-				textBox.text = "what are ya doin'.
+				textBox.text = "what are ya doin' 
+				stop scaring away my customers.
 				"
 			if textToShow == 1:
-				textBox.text = "Do you know where is barry"
+				textBox.text = "Mb, do u know where is Barrwee"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 2:
-				textBox.text = "Thats me "
+				textBox.text = "Thats me, pal"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 3:
-				textBox.text = "I will have to execute you.
-				As you stole that plane over there"
+				textBox.text = "Ok thx. Can u die.
+				U have been the lucky winner to die.
+				For stealing that jet"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 4:
@@ -90,7 +93,7 @@ func _process(delta: float) -> void:
 				protagonistDialog.visible = true
 			
 			if textToShow == 6:
-				textBox.text = "Thats not a plane silly.
+				textBox.text = "not a plane silly.
 				However, If ya gonna git me. 
 				You gotta get pass these abs.
 				Reinforce by FREEDOM. *eagle sound*"
@@ -100,6 +103,54 @@ func _process(delta: float) -> void:
 			if textToShow == 7:
 				protagonistDialog.texture = rinSpriteangry
 				textBox.text = "Sure"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 8:
+				get_parent().gamePhase = 2
+				textBox.text = ""
+				barrySprite.visible = false
+				protagonistDialog.visible = false
+				panel.visible = false
+				startTheBossMusic.emit()
+	
+		if GlobalVariables.character == 4:
+			protagonistDialog.texture =gojo
+			panel.visible = true
+			barrySprite.visible = true
+			if textToShow == 0:
+				textBox.text = "what are ya doin'.
+				"
+			if textToShow == 1:
+				textBox.text = "Nah I'd win"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 2:
+				textBox.text = "What?"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 3:
+				textBox.text = "Nah I'd win"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 4:
+				textBox.text = "I'm so confuse. Stop saying that"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if 	textToShow == 5:
+				textBox.text = "Nah I'd win"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			
+			if textToShow == 6:
+				textBox.text = "Thats it pal
+				Imma beat you up using my abs.
+				Reinforce by FREEDOM. *eagle sound*"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			
+			if textToShow == 7:
+				protagonistDialog.texture = gojo
+				textBox.text = "Nah I'd win"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:

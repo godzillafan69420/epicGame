@@ -7,10 +7,11 @@ extends Control
 @onready var textBox = $dialog/dialogText
 @onready var rinSpriteangry = preload("res://images/Rin even even better.png")
 @onready var rinSprite = preload("res://images/Rin even even better.png")
+@onready var gojo = preload("res://images/nahidWin.jpg")
 var textToShow: int = 0
 
 signal startTheBossMusic
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$souls.text = str(GlobalVariables.souls)
 	if get_parent().gamePhase == 1:
 		
@@ -77,13 +78,13 @@ func _process(delta: float) -> void:
 			barrySprite.visible = true
 			if textToShow == 0:
 				textBox.text = "Why are you here?
-			 Stop blasting phonk in this area there."
+			 Stop blasting Music in this area there."
 			if textToShow == 1:
-				textBox.text = "Omg a monkey"
+				textBox.text = "Errrm No"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 2:
-				textBox.text = "Yeah i am a monkey.
+				textBox.text = "Why? 
 				"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
@@ -108,7 +109,8 @@ func _process(delta: float) -> void:
 				protagonistDialog.visible = false
 			
 			if textToShow == 7:
-				textBox.text = "well your getting executed according to this.
+				textBox.text = "well ur getting executed because
+				all the moneky are straving because of your goofy monopoly.
 				"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
@@ -139,11 +141,91 @@ func _process(delta: float) -> void:
 			
 			if textToShow == 13:
 				textBox.text = ".... No
+				That is so bad
 				"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			
 			if textToShow == 14:
+				get_parent().gamePhase = 2
+				textBox.text = ""
+				barrySprite.visible = false
+				protagonistDialog.visible = false
+				panel.visible = false
+				startTheBossMusic.emit()
+		if GlobalVariables.character == 4:
+			protagonistDialog.texture =gojo
+			panel.visible = true
+			barrySprite.visible = true
+			if textToShow == 0:
+				textBox.text = "Why are you here?
+			 Wait it's Gojo"
+			if textToShow == 1:
+				textBox.text = "Nah I'd win"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 2:
+				textBox.text = "?
+				"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 3:
+				textBox.text = "Nah I'd win"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 4:
+				textBox.text = "I think this a bot"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 5:
+				textBox.text = "Nah I'd win"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			
+			if textToShow == 6:
+				textBox.text = "Can you stop"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			
+			if textToShow == 7:
+				textBox.text = "Nah I'd win"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 8:
+				textBox.text = "If I make you laugh, stop saying Nah I'd win"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			
+			if textToShow == 9:
+				textBox.text = "Nah I'd win"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 10:
+				textBox.text = "guess what"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			
+			if textToShow == 11:
+				textBox.text = "Nah I'd win"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 12:
+				textBox.text = "Chicken - butt"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			
+			if textToShow == 13:
+				textBox.text = "Through Heavens and earth I alone am 
+				truely the Honour one
+				Imaginary technique Purple
+				"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 14:
+				textBox.text = "I made it worst huh"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 15:
 				get_parent().gamePhase = 2
 				textBox.text = ""
 				barrySprite.visible = false

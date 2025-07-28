@@ -100,6 +100,8 @@ func _on_area_entered(area: Area2D) -> void:
 		area.queue_free()
 	if area is deathZone:
 		Hitpoint -= 10000
+	if area is hollowPurple:
+		Hitpoint -= 10000
 
 
 

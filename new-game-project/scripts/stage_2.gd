@@ -8,6 +8,7 @@ extends Node2D
 var Score = GlobalVariables.score
 @onready var thePlayerPre = preload("res://prefabs/player.tscn")
 @onready var theRinPre = preload("res://prefabs/Rin.tscn")
+@onready var gojoPre = preload("res://prefabs/gojo.tscn")
 var gameStarted = false
 var thePlayer
 @export var allowSideToSide: bool= false
@@ -33,11 +34,15 @@ func _ready() -> void:
 		thePlayer = theRinPre.instantiate()
 		thePlayer.position = Vector2(-237,469)
 		add_child(thePlayer)
+	if GlobalVariables.character == 4:
+		thePlayer = gojoPre.instantiate()
+		thePlayer.position = Vector2(-237,469)
+		add_child(thePlayer)
 	$sceneTransition.get_node("ColorRect").color.a = 255
 	$sceneTransition/AnimationPlayer.play("fade - in")
 	$WhenBossSpawn.start()
 	gameStarted = true
-func _process(delta):
+func _process(_delta):
 	$UI/score.text = "SCORE: " + str(GlobalVariables.score)
 
 	$"UI/WhenBoss spawn".text = "Boss in coming! " + str(int($WhenBossSpawn.time_left))

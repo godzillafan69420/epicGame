@@ -4,7 +4,7 @@ class_name bulletToPlayer
 const bulletSpeed: int = 4
 var theplayerDirtion: Vector2
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	position += theplayerDirtion.normalized() * bulletSpeed
 	if position.y > 550  or position.y < -550:
 		queue_free()

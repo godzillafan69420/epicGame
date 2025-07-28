@@ -8,7 +8,7 @@ var playerboody: Object
 func _ready() -> void:
 	attacking = false
 	playerboody = get_parent().get_node("player")
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if attacking and target !=null:
 		if target == null:

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmaqdd7cv8ft2"]
+
+[ext_resource type="Script" uid="uid://jrhn3wtrqpql" path="res://prefabs/hollow_purple.gd" id="1_882rs"]
+[ext_resource type="Texture2D" uid="uid://bf37rfp4paphl" path="res://images/Hollow_Purple_-_Item_-_Fortnite.webp" id="2_882rs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ln73s"]
+radius = 165.436
+
+[node name="hollowPurple" type="Area2D"]
+script = ExtResource("1_882rs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -2)
+rotation = 1.57081
+scale = Vector2(0.791125, 0.791125)
+texture = ExtResource("2_882rs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -3)
+shape = SubResource("CircleShape2D_ln73s")

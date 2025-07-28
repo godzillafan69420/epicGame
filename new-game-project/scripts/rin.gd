@@ -35,7 +35,7 @@ func _ready():
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	GlobalVariables.playerBombs = amountOfBombs
 	GlobalVariables.playerPower = bulletLevel
 	GlobalVariables.PlayerHP = HP

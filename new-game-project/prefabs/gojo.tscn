@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwt8olxa4jcei"]
+
+[ext_resource type="Script" uid="uid://dlch3a021eajo" path="res://gojo.gd" id="1_ibqsm"]
+[ext_resource type="Texture2D" uid="uid://b8y2o0xtjh88r" path="res://images/Gojo.png" id="2_ibqsm"]
+[ext_resource type="Texture2D" uid="uid://di36wv4xid0kd" path="res://images/circle.png" id="3_d64p0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_th0q8"]
+radius = 7.14288
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5nss3"]
+radius = 115.082
+
+[node name="player" type="Area2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_ibqsm")
+
+[node name="drip" type="Sprite2D" parent="."]
+position = Vector2(-3.05176e-05, -2.00012)
+scale = Vector2(0.340749, 0.392592)
+texture = ExtResource("2_ibqsm")
+
+[node name="hitboxes" type="Sprite2D" parent="."]
+scale = Vector2(0.65625, 0.65625)
+texture = ExtResource("3_d64p0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_th0q8")
+
+[node name="bulletSpawnPoint" type="Node2D" parent="."]
+position = Vector2(-63.6365, 0)
+
+[node name="bulletSpawnPoint2" type="Node2D" parent="."]
+position = Vector2(65.9092, 0)
+
+[node name="collectBread" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectBread"]
+shape = SubResource("CircleShape2D_5nss3")
+
+[node name="invincibility" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="superTimePeriod" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="shootinterval" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_entered" from="collectBread" to="." method="_on_collect_bread_area_entered"]
+[connection signal="timeout" from="invincibility" to="." method="_on_invincibility_timeout"]
+[connection signal="timeout" from="superTimePeriod" to="." method="_on_super_time_period_timeout"]
+[connection signal="timeout" from="shootinterval" to="." method="_on_shootinterval_timeout"]

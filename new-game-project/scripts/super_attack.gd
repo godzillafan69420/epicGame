@@ -2,7 +2,7 @@ extends Area2D
 
 class_name superAttack
 
-func _process(delta):
+func _process(_delta):
 	position.y -= 30
 	if position.y < -640:
 		queue_free()

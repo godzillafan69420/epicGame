@@ -13,7 +13,7 @@ var speed: float = 5
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	position.y += 5
 	if position.y > 550:
 		queue_free()

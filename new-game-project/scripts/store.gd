@@ -24,7 +24,7 @@ func _on_button_3_button_down() -> void:
 		GlobalVariables.playerPower +=10
 		GlobalVariables.souls -= 50
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$souls.text = "Souls collected: " + str(GlobalVariables.souls)
 	$HP.text = "HP: " + str(GlobalVariables.PlayerHP)
 	if GlobalVariables.PlayerHP > 10:

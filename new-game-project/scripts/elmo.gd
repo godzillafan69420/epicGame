@@ -12,7 +12,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Hitpoint < 0:
 		GlobalVariables.score += 100
 		var drops = randi_range(1,100)
@@ -62,6 +62,8 @@ func _on_area_entered(area):
 		Hitpoint -= 20
 		area.queue_free()
 	if area is deathZone:
+		Hitpoint -= 10000
+	if area is hollowPurple:
 		Hitpoint -= 10000
 
 func _on_timer_timeout():
