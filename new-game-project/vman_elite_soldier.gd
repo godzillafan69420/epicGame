@@ -1,19 +1,34 @@
 extends Area2D
 
-class_name GuyShootTowardsYou
-
-var Hitpoint: float = 50
+class_name VmanElite
+@onready var Bullet_scene = preload("res://prefabs/boss_bullet.tscn")
+var Hitpoint: float = 100
+@onready var shoot_timer =$Timer
+@onready var rotator = $Rotator
 @export var bread = preload("res://prefabs/extra_points.tscn")
 @export var powerUps = preload("res://prefabs/power_up.tscn")
 @export var Hp = preload("res://prefabs/hp.tscn")
 @onready var thePlayer
-@onready var bulletPrefab = preload("res://prefabs/bullet_to_player.tscn")
+const rotate_speed: float = 30
+const shooter_timer_wait_timer: float = 0.5
+const spawn_point_count: int = 3
+const radius: float = 10
 
-func _ready():
+func _ready() -> void:
+
+	var step = 2 * PI  / spawn_point_count
+		
+	for i in range(spawn_point_count):
+		var spawn_point =  Node2D.new()
+		var pos = Vector2(radius, 0).rotated(step*i)
+		spawn_point.position = pos
+		spawn_point.rotation = pos.angle()
+		rotator.add_child(spawn_point)
+	shoot_timer.wait_time = shooter_timer_wait_timer
 	$Timer.start()
-	thePlayer = get_parent().get_node("player")
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta: float) -> void:
+	var new_rotation = rotator.rotation_degrees + rotate_speed * delta
+	rotator.rotation_degrees = fmod(new_rotation,360)
 	position.y += 1
 	if Hitpoint < 0:
 		GlobalVariables.score += 100
@@ -35,16 +50,12 @@ func _process(_delta):
 		queue_free()
 	if get_parent().gamePhase ==1:
 		queue_free()
-
-
-
-func _on_timer_timeout():
-	if thePlayer != null:
-		var bullets = bulletPrefab.instantiate()
-		bullets.position = position
-		bullets.theplayerDirtion = thePlayer.position-position
+func _on_timer_timeout() -> void:
+	for s in rotator.get_children():
+		var bullets = Bullet_scene.instantiate()
 		get_parent().add_child(bullets)
-		
+		bullets.position = s.global_position
+		bullets.rotation = s.global_rotation
 
 
 func _on_area_entered(area: Area2D) -> void:

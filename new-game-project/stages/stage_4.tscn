@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b0stdvu8jp5y7"]
 
-[ext_resource type="Script" uid="uid://bfawg6m4iy4vf" path="res://stage_4.gd" id="1_vf6kw"]
+[ext_resource type="Script" uid="uid://bfawg6m4iy4vf" path="res://scripts/stage_4.gd" id="1_vf6kw"]
 [ext_resource type="Texture2D" uid="uid://cod5fllscj4xg" path="res://images/stage4bg.png" id="2_1wohy"]
 [ext_resource type="AudioStream" uid="uid://ds6foxfyx2x7j" path="res://music/VmanGoons.mp3" id="3_vf6kw"]
 [ext_resource type="AudioStream" uid="uid://bspcjg0qvdoty" path="res://music/Vman.mp3" id="4_aoydv"]
@@ -18,14 +18,15 @@ metadata/_edit_vertical_guides_ = [3129.0]
 ignore_rotation = false
 
 [node name="elmoSpawnRate" type="Timer" parent="."]
-wait_time = 0.4
+wait_time = 0.7
 autostart = true
 
 [node name="gigaSpawnRate" type="Timer" parent="."]
+wait_time = 1.4
 autostart = true
 
 [node name="sideToSide" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 3.0
 autostart = true
 
 [node name="Unnamed" type="Sprite2D" parent="."]
@@ -86,12 +87,17 @@ texture = ExtResource("7_134k0")
 
 [node name="244-2445743Chicken-burger-bbq-chicken-burger-bbq-mcdonalds-removebg-preview2" type="Sprite2D" parent="."]
 modulate = Color(0.67069, 0.67069, 0.67069, 1)
-position = Vector2(425, 56)
+position = Vector2(454, 57)
 scale = Vector2(0.518047, 0.521635)
 texture = ExtResource("7_134k0")
+
+[node name="VmanElite" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
 
 [connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]
 [connection signal="timeout" from="gigaSpawnRate" to="." method="_on_giga_spawn_rate_timeout"]
 [connection signal="timeout" from="sideToSide" to="." method="_on_side_to_side_timeout"]
 [connection signal="timeout" from="WhenBossSpawn" to="." method="_on_when_boss_spawn_timeout"]
 [connection signal="startTheBossMusic" from="UI" to="." method="_on_ui_start_the_boss_music"]
+[connection signal="timeout" from="VmanElite" to="." method="_on_vman_elite_timeout"]

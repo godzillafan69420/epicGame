@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var BossFightTheme = preload("res://music/barryToes.mp3")
 @onready var enemyPre = preload("res://prefabs/elmo.tscn")
+@onready var vman = preload("res://prefabs/vman_elite_soldier.tscn")
 @onready var guyTowards = preload("res://prefabs/theEnemy.tscn")
 @onready var shotGun = preload("res://prefabs/side_to_side_enemy.tscn")
 @onready var boss_1 = preload("res://prefabs/boss4.tscn")
@@ -11,6 +12,7 @@ var Score = GlobalVariables.score
 @onready var gojoPre = preload("res://prefabs/gojo.tscn")
 var gameStarted: bool = false
 var thePlayer
+var vmansAllowed: bool = true
 @export var allowSideToSide: bool= true
 @export var normalEne: bool = true
 @export var shootTowards: bool = true
@@ -138,3 +140,10 @@ func _on_ui_start_the_boss_music() -> void:
 	$LoopingSong.stop()
 	$BarryToes.play()
 	$VmanThePro.bossPhase = 1
+
+
+func _on_vman_elite_timeout() -> void:
+	if gamePhase == 0 and vmansAllowed:
+		var strongGuy = vman.instantiate()
+		strongGuy.position = Vector2(randf_range(-920,400),-550)
+		add_child(strongGuy)

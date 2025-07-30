@@ -205,28 +205,6 @@ offset_bottom = 539.0
 theme_override_font_sizes/font_size = 50
 text = "test"
 
-[node name="dialog" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.277
-anchor_top = 0.32
-anchor_right = 0.277
-anchor_bottom = 0.32
-offset_left = -534.84
-offset_top = 313.4
-offset_right = 874.16
-offset_bottom = 729.4
-
-[node name="dialogText" type="Label" parent="dialog"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 10.0
-offset_right = 1390.0
-offset_bottom = 398.0
-theme_override_font_sizes/font_size = 50
-max_lines_visible = 5
-
 [node name="barryDialog" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(184, 827)
@@ -238,6 +216,28 @@ visible = false
 position = Vector2(1227, 773)
 scale = Vector2(2.19024, 2.19024)
 texture = ExtResource("3_wl5ax")
+
+[node name="dialog" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.277
+anchor_top = 0.32
+anchor_right = 0.277
+anchor_bottom = 0.32
+offset_left = -3.0
+offset_top = 648.0
+offset_right = 1406.0
+offset_bottom = 1064.0
+
+[node name="dialogText" type="Label" parent="dialog"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 10.0
+offset_right = 1390.0
+offset_bottom = 398.0
+theme_override_font_sizes/font_size = 50
+max_lines_visible = 5
 
 [node name="healthBar" type="ProgressBar" parent="."]
 visible = false

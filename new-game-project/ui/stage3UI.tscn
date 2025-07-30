@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://b7i5brk8wrb0u"]
 
-[ext_resource type="Script" uid="uid://bcbws131ktysf" path="res://ui/stage_3ui.gd" id="1_yufgc"]
+[ext_resource type="Script" uid="uid://bcbws131ktysf" path="res://scripts/stage_3ui.gd" id="1_yufgc"]
 [ext_resource type="Texture2D" uid="uid://h0uvystrlwy8" path="res://images/rackNew.png" id="2_3bmfl"]
 [ext_resource type="Texture2D" uid="uid://cspacpfupv2gs" path="res://images/bob.png" id="2_yufgc"]
 [ext_resource type="Texture2D" uid="uid://dyj1iw20kmijf" path="res://images/Souls.png" id="4_u061t"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmaqdd7cv8ft2"]
 
-[ext_resource type="Script" uid="uid://jrhn3wtrqpql" path="res://prefabs/hollow_purple.gd" id="1_882rs"]
+[ext_resource type="Script" uid="uid://jrhn3wtrqpql" path="res://scripts/hollow_purple.gd" id="1_882rs"]
 [ext_resource type="Texture2D" uid="uid://bf37rfp4paphl" path="res://images/Hollow_Purple_-_Item_-_Fortnite.webp" id="2_882rs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ln73s"]

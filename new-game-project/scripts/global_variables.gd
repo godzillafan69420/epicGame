@@ -1,12 +1,12 @@
 extends Node
 
 var score: int = 0
-var PlayerHP: int = 10
+var PlayerHP: int = 3
 var playerBombs: int = 4
-var playerPower: int = 100
+var playerPower: int = 20
 var souls: int = 10
-var shotType: int = 1
-var character: int = 4
+var shotType: int = 2
+var character: int = 3
 
 var stage: int = 1
 

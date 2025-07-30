@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cgva82va80hav"]
 
 [ext_resource type="PackedScene" uid="uid://b7i5brk8wrb0u" path="res://ui/stage3UI.tscn" id="1_1hwes"]
-[ext_resource type="Script" uid="uid://dx6asmnwghj2a" path="res://stages/stage_3.gd" id="1_8iyqq"]
+[ext_resource type="Script" uid="uid://dx6asmnwghj2a" path="res://scripts/stage_3.gd" id="1_8iyqq"]
 [ext_resource type="Texture2D" uid="uid://bu640p5gvgcxa" path="res://images/bananaBank.png" id="4_8iyqq"]
 [ext_resource type="AudioStream" uid="uid://wnuqjqedu8sm" path="res://music/bananamonopoly.mp3" id="4_sg1oo"]
 [ext_resource type="AudioStream" uid="uid://cprvy3fomjyp7" path="res://music/bananaField.mp3" id="5_8iyqq"]
