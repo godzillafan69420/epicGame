@@ -71,12 +71,12 @@ func _process(_delta):
 				$UI/UWon.visible = true
 				gamePhase = 4
 		if Input.is_action_just_pressed("shoot") and gamePhase == 4:
-			GlobalVariables.stage = 2
+			GlobalVariables.stage = 4
 			GlobalVariables.souls += 50
 			GlobalVariables.score += 150000
 			$sceneTransition/AnimationPlayer.play("fade-Out")
 			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_file("res://ui/winScreen.tscn")
+			get_tree().change_scene_to_file("res://ui/store.tscn")
 			
 	
 		if isPlayerAlive:

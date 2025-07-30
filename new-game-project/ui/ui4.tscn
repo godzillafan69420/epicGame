@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://c5vy74tms4jq7"]
 
 [ext_resource type="Script" uid="uid://b864xfiwcjuma" path="res://ui/ui_4.gd" id="1_otv2o"]
-[ext_resource type="Texture2D" uid="uid://hjgigajbxtia" path="res://images/barryToes.png" id="2_1jnr5"]
+[ext_resource type="Texture2D" uid="uid://dkhr3w5s11p" path="res://images/VmanWithBubble.png" id="2_otv2o"]
 [ext_resource type="Texture2D" uid="uid://cspacpfupv2gs" path="res://images/bob.png" id="3_5vx1s"]
 [ext_resource type="Texture2D" uid="uid://dyj1iw20kmijf" path="res://images/Souls.png" id="4_mqxdk"]
 [ext_resource type="Texture2D" uid="uid://uf520mnk4k6y" path="res://images/bomb.png" id="5_1u4pg"]
@@ -208,9 +208,9 @@ text = "test"
 
 [node name="barryDialog" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(184, 827)
-scale = Vector2(3.1179, 3.1179)
-texture = ExtResource("2_1jnr5")
+position = Vector2(155, 746)
+scale = Vector2(2.07147, 2.07147)
+texture = ExtResource("2_otv2o")
 
 [node name="Protagonist" type="Sprite2D" parent="."]
 visible = false

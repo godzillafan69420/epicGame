@@ -63,3 +63,5 @@ func _process(_delta: float) -> void:
 			get_tree().change_scene_to_file("res://stages/stage_2.tscn")
 		if GlobalVariables.stage == 3:
 			get_tree().change_scene_to_file("res://stages/stage_3.tscn")
+		if GlobalVariables.stage == 4:
+			get_tree().change_scene_to_file("res://stages/stage_4.tscn")

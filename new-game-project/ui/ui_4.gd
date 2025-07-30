@@ -20,39 +20,38 @@ func _process(_delta: float) -> void:
 			panel.visible = true
 			barrySprite.visible = true
 			if textToShow == 0:
-				textBox.text = "Can you stop attacking my goons
-				I am trying to ruin this kid's day"
+				textBox.text = "Bro stop running around and throwing knifes
+				everywhere
+				Do you need a job?"
 			if textToShow == 1:
-				textBox.text = "Actually, I'm here to 
-			executed by the High Judge of the Underworld."
+				textBox.text = "Actually, I'm employed by the High Court of
+				 The Underworld"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 2:
-				textBox.text = "For what"
+				textBox.text = "Don't lie"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 3:
-				textBox.text = "You literally terrorised so many
-			children that they have chronic depression"
+				textBox.text = "-_- why would I lie"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 4:
-				textBox.text = "It's honestly not that deep on gigidy"
+				textBox.text = "You want to pick a fight with me boy"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 5:
-				textBox.text = "....
-			Be serious"
+				textBox.text = "Sure, I really really want to punch you"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			
 			if textToShow == 6:
-				textBox.text = "Ok, Ok my bad"
+				textBox.text = "Nah I'd win"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			
 			if textToShow == 7:
-				textBox.text = "Such a fool"
+				textBox.text = "*sign*"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:
@@ -67,50 +66,55 @@ func _process(_delta: float) -> void:
 			panel.visible = true
 			barrySprite.visible = true
 			if textToShow == 0:
-				textBox.text = "Can you stop attacking my goons
-				I am trying to ruin this kid's day"
+				textBox.text = "Stop playing that despicable music.
+				Listen to some classical music"
 			if textToShow == 1:
-				textBox.text = "No, because they r a stinky poo"
+				textBox.text = "No"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 2:
-				textBox.text = "...
-				Ok. Why are you in my base"
+				textBox.text = "How dare you reject this offer.
+				What are you unemployed"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 3:
 				protagonistDialog.texture =rinSpriteangry
-				textBox.text = "Too kill ConeL"
+				textBox.text = "Yeah"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 4:
-				textBox.text = "hmmmm sorry can't help u"
+				textBox.text = "Then you need to be employed now.
+				You are Disgusting"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 5:
 				protagonistDialog.texture =rinSprite
-				textBox.text = "wait a minute
-				ur Cone L"
+				textBox.text = "No U"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 6:
-				textBox.text = "Awww I thought i got away.
-				What am I getting executed for"
+				textBox.text = "What are these goofy ah responses
+				Wait, where is all my goons?"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 7:
 				protagonistDialog.texture =rinSprite
-				textBox.text = "Cyber-bullying children"
+				textBox.text = "Their ear drums are burst open.
+				Sorry sorry"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:
-				textBox.text = "It's not that deep.
-				Like Chronic depression is not that bad"
+				textBox.text = "I will never forgive for this.
+				They are my goons.
+				I love them with all my heart and wish to be by their side
+				all the time for enternity"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			
 			if textToShow == 9:
-				textBox.text = "-_-
+				textBox.text = ".....
+				D:
+				 
 				"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
@@ -126,15 +130,13 @@ func _process(_delta: float) -> void:
 			panel.visible = true
 			barrySprite.visible = true
 			if textToShow == 0:
-				textBox.text = "Can you stop attacking my goons
-				I am trying to ruin this kid's day"
+				textBox.text = "Bro stop killing my goons"
 			if textToShow == 1:
 				textBox.text = "Nah I'd win"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 2:
-				textBox.text = "....
-				Wait it's gojo"
+				textBox.text = "what"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 3:
@@ -143,7 +145,7 @@ func _process(_delta: float) -> void:
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 4:
-				textBox.text = "OMG big fan"
+				textBox.text = "bro stop"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 5:
@@ -161,7 +163,7 @@ func _process(_delta: float) -> void:
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:
-				textBox.text = "... You fake I think"
+				textBox.text = "STOOOP"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://hlxud1ado0ys"]
 
 [ext_resource type="Script" uid="uid://bbpi0o8k6bk54" path="res://scripts/boss_4.gd" id="1_t8tms"]
-[ext_resource type="Texture2D" uid="uid://c5pcel4oduo0y" path="res://images/barry.png" id="2_s87l8"]
+[ext_resource type="Texture2D" uid="uid://jkft8w5xbpl6" path="res://images/VmanWithoutBubble.png" id="2_t8tms"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4phh5"]
 size = Vector2(191.5, 247)
@@ -12,8 +12,8 @@ script = ExtResource("1_t8tms")
 [node name="Freaky" type="Sprite2D" parent="."]
 z_index = -19
 position = Vector2(3, -1)
-scale = Vector2(0.75, 0.710145)
-texture = ExtResource("2_s87l8")
+scale = Vector2(0.5, 0.47343)
+texture = ExtResource("2_t8tms")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.75, -2.5)
@@ -33,15 +33,19 @@ wait_time = 2.0
 [node name="BulletIntervalForRotator" type="Timer" parent="."]
 
 [node name="Rotator" type="Node2D" parent="."]
+visible = false
 position = Vector2(-213, 118)
 
 [node name="Rotator2" type="Node2D" parent="."]
+visible = false
 position = Vector2(176, 118)
 
 [node name="Rotator3" type="Node2D" parent="."]
+visible = false
 position = Vector2(165, -166)
 
 [node name="Rotator4" type="Node2D" parent="."]
+visible = false
 position = Vector2(-219, -166)
 
 [node name="phase3Attack" type="Timer" parent="."]
