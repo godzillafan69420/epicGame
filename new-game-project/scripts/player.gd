@@ -194,7 +194,7 @@ func uRdied():
 
 
 func _on_area_entered(area):
-	if (area is dangerousBalls or area is  bulletToPlayer or area is  superBulletForBoss or area is  coolPatternBullet or area is boss) and not invincibility:
+	if (area is dangerousBalls or area is  bulletToPlayer or area is  superBulletForBoss or area is  coolPatternBullet or area is boss or area is bossNo2 or area is bossNo3 or area is bossNo4) and not invincibility:
 		uRdied()
 		$invincibility.start()
 

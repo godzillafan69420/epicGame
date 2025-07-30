@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhrtq0h3j3sla"]
 
-[ext_resource type="Script" uid="uid://c3eqp3m1n0w1n" path="res://rin_bulletno_2_again.gd" id="1_fetej"]
+[ext_resource type="Script" uid="uid://c3eqp3m1n0w1n" path="res://scripts/rin_bulletno_2_again.gd" id="1_fetej"]
 [ext_resource type="Texture2D" uid="uid://cuflmeqk7xgb0" path="res://images/Rinbullet.png" id="2_mt254"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s2kx"]

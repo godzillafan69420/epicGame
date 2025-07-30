@@ -12,7 +12,7 @@ var usingSuper = false
 var wentToShoot = false
 # Called when the node enters the scene tree for the first time.
 const  Speed: float = 10
-const slowSpeed: float = 3
+const slowSpeed: float = 3.5
 var moveX = 0
 var moveY = 0
 var justDieded: bool = false
@@ -150,8 +150,8 @@ func _process(_delta):
 	else:
 		$drip.modulate = Color8(255,255,255,255)
 	if Input.is_action_just_pressed("fireSpecial") and GlobalVariables.PlayerHP > 5 and GlobalVariables.playerPower > 50:
-		get_parent().get_node("LoopingSong").stop()
-		get_parent().get_node("BarryToes").stop()
+		get_parent().get_node("LoopingSong").volume_db = -80
+		get_parent().get_node("BarryToes").volume_db = -80
 		$"Emergency-alert-us-2".play()
 		bulletLevel -= 50
 		HP -= 5
@@ -176,7 +176,7 @@ func uRdied():
 
 
 func _on_area_entered(area):
-	if (area is dangerousBalls or area is  bulletToPlayer or area is  superBulletForBoss or area is  coolPatternBullet or area is boss) and not invincibility:
+	if (area is dangerousBalls or area is  bulletToPlayer or area is  superBulletForBoss or area is  coolPatternBullet or area is boss or area is bossNo2 or area is bossNo3 or area is bossNo4) and not invincibility:
 		uRdied()
 		$invincibility.start()
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cwt8olxa4jcei"]
 
-[ext_resource type="Script" uid="uid://dlch3a021eajo" path="res://gojo.gd" id="1_ibqsm"]
+[ext_resource type="Script" uid="uid://dlch3a021eajo" path="res://scripts/gojo.gd" id="1_ibqsm"]
 [ext_resource type="Texture2D" uid="uid://b8y2o0xtjh88r" path="res://images/Gojo.png" id="2_ibqsm"]
 [ext_resource type="Texture2D" uid="uid://di36wv4xid0kd" path="res://images/circle.png" id="3_d64p0"]
 

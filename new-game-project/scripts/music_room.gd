@@ -9,7 +9,7 @@ const coneL = preload("res://music/coneL.mp3")
 const shop = preload("res://music/scammingYourMoney.mp3")
 const death = preload("res://music/death.mp3")
 const banana = preload("res://music/bananaField.mp3")
-const monkey = preload("res://music/DirtyMonkeyBusiness.mp3")
+const monkey = preload("res://music/bananamonopoly.mp3")
 var paused: bool = false
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("down"):

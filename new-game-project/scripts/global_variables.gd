@@ -1,9 +1,9 @@
 extends Node
 
 var score: int = 0
-var PlayerHP: int = 3
+var PlayerHP: int = 10
 var playerBombs: int = 4
-var playerPower: int = 20
+var playerPower: int = 100
 var souls: int = 10
 var shotType: int = 2
 var character: int = 3

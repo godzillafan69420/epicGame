@@ -1,14 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgva82va80hav"]
+[gd_scene load_steps=7 format=3 uid="uid://b0stdvu8jp5y7"]
 
-[ext_resource type="PackedScene" uid="uid://b7i5brk8wrb0u" path="res://ui/stage3UI.tscn" id="1_1hwes"]
-[ext_resource type="Script" uid="uid://dx6asmnwghj2a" path="res://stages/stage_3.gd" id="1_8iyqq"]
-[ext_resource type="Texture2D" uid="uid://bu640p5gvgcxa" path="res://images/bananaBank.png" id="4_8iyqq"]
-[ext_resource type="AudioStream" uid="uid://wnuqjqedu8sm" path="res://music/bananamonopoly.mp3" id="4_sg1oo"]
-[ext_resource type="AudioStream" uid="uid://cprvy3fomjyp7" path="res://music/bananaField.mp3" id="5_8iyqq"]
-[ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="7_sg1oo"]
+[ext_resource type="Script" uid="uid://bfawg6m4iy4vf" path="res://stage_4.gd" id="1_vf6kw"]
+[ext_resource type="Texture2D" uid="uid://bu640p5gvgcxa" path="res://images/bananaBank.png" id="2_aoydv"]
+[ext_resource type="AudioStream" uid="uid://ds6foxfyx2x7j" path="res://music/VmanGoons.mp3" id="3_vf6kw"]
+[ext_resource type="AudioStream" uid="uid://bspcjg0qvdoty" path="res://music/Vman.mp3" id="4_aoydv"]
+[ext_resource type="PackedScene" uid="uid://c5vy74tms4jq7" path="res://ui/ui4.tscn" id="5_vf6kw"]
+[ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="6_ek58y"]
 
-[node name="stage3" type="Node2D"]
-script = ExtResource("1_8iyqq")
+[node name="stage4" type="Node2D"]
+script = ExtResource("1_vf6kw")
+metadata/_edit_vertical_guides_ = [3129.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 ignore_rotation = false
@@ -30,27 +31,26 @@ modulate = Color(0.473976, 0.473976, 0.473975, 1)
 z_index = -1000
 position = Vector2(-2.99991, -2.00002)
 scale = Vector2(2.00208, 2)
-texture = ExtResource("4_8iyqq")
+texture = ExtResource("2_aoydv")
 
 [node name="LoopingSong" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_8iyqq")
+stream = ExtResource("3_vf6kw")
 volume_db = -1.0
 autoplay = true
 
 [node name="WhenBossSpawn" type="Timer" parent="."]
-wait_time = 90.0
 one_shot = true
 
+[node name="UI" parent="." instance=ExtResource("5_vf6kw")]
+offset_left = -973.0
+offset_top = -543.0
+offset_right = -973.0
+offset_bottom = -543.0
+
 [node name="BarryToes" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_sg1oo")
+stream = ExtResource("4_aoydv")
 
-[node name="UI" parent="." instance=ExtResource("1_1hwes")]
-offset_left = -971.0
-offset_top = -542.0
-offset_right = -971.0
-offset_bottom = -542.0
-
-[node name="sceneTransition" parent="." instance=ExtResource("7_sg1oo")]
+[node name="sceneTransition" parent="." instance=ExtResource("6_ek58y")]
 position = Vector2(-961, -542)
 
 [connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]

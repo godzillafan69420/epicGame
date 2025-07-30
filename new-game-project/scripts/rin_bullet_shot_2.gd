@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if (area is enemy or area is boss or area is bossNo2 or area is bossNo3 or area is  GuyShootTowardsYou or area is sideToSideEnemy) and attacking == false:
+	if (area is enemy or area is boss or area is bossNo2 or area is bossNo3 or area is bossNo4 or area is  GuyShootTowardsYou or area is sideToSideEnemy) and attacking == false:
 		target = area
 		attacking = true
 		

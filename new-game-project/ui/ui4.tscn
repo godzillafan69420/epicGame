@@ -1,58 +1,58 @@
-[gd_scene load_steps=21 format=3 uid="uid://dq28g10k4d752"]
+[gd_scene load_steps=21 format=3 uid="uid://c5vy74tms4jq7"]
 
-[ext_resource type="Texture2D" uid="uid://hjgigajbxtia" path="res://images/barryToes.png" id="1_nb4k0"]
-[ext_resource type="Script" uid="uid://d1lp7p7o62byt" path="res://scripts/ui.gd" id="1_vkava"]
-[ext_resource type="Texture2D" uid="uid://cspacpfupv2gs" path="res://images/bob.png" id="3_wl5ax"]
-[ext_resource type="Texture2D" uid="uid://dyj1iw20kmijf" path="res://images/Souls.png" id="4_vkava"]
-[ext_resource type="Texture2D" uid="uid://uf520mnk4k6y" path="res://images/bomb.png" id="5_obcwv"]
-[ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="6_bo1jx"]
-[ext_resource type="Texture2D" uid="uid://vtmbteswfso7" path="res://images/healthBar.png" id="7_bo1jx"]
-[ext_resource type="PackedScene" uid="uid://dkt4ysoejexn" path="res://ui/fps_counter.tscn" id="8_gycre"]
+[ext_resource type="Script" uid="uid://b864xfiwcjuma" path="res://ui/ui_4.gd" id="1_otv2o"]
+[ext_resource type="Texture2D" uid="uid://hjgigajbxtia" path="res://images/barryToes.png" id="2_1jnr5"]
+[ext_resource type="Texture2D" uid="uid://cspacpfupv2gs" path="res://images/bob.png" id="3_5vx1s"]
+[ext_resource type="Texture2D" uid="uid://dyj1iw20kmijf" path="res://images/Souls.png" id="4_mqxdk"]
+[ext_resource type="Texture2D" uid="uid://uf520mnk4k6y" path="res://images/bomb.png" id="5_1u4pg"]
+[ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="6_vvmsg"]
+[ext_resource type="Texture2D" uid="uid://vtmbteswfso7" path="res://images/healthBar.png" id="7_2rtr6"]
+[ext_resource type="PackedScene" uid="uid://dkt4ysoejexn" path="res://ui/fps_counter.tscn" id="8_yy0q4"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7mxx3"]
 load_path = "res://.godot/imported/healthBar.png-f8e541990aa8c7f47f324a715e0000c9.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2w6he"]
-atlas = ExtResource("7_bo1jx")
+atlas = ExtResource("7_2rtr6")
 region = Rect2(0, 0, 1280, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uo37d"]
-atlas = ExtResource("7_bo1jx")
+atlas = ExtResource("7_2rtr6")
 region = Rect2(0, 128, 1280, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6vj8c"]
-atlas = ExtResource("7_bo1jx")
+atlas = ExtResource("7_2rtr6")
 region = Rect2(0, 256, 1280, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ehk2"]
-atlas = ExtResource("7_bo1jx")
+atlas = ExtResource("7_2rtr6")
 region = Rect2(0, 384, 1280, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5q2vu"]
-atlas = ExtResource("7_bo1jx")
+atlas = ExtResource("7_2rtr6")
 region = Rect2(0, 512, 1280, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ibsxb"]
-atlas = ExtResource("7_bo1jx")
+atlas = ExtResource("7_2rtr6")
 region = Rect2(0, 640, 1280, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_87n8b"]
-atlas = ExtResource("7_bo1jx")
+atlas = ExtResource("7_2rtr6")
 region = Rect2(0, 768, 1280, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqgff"]
-atlas = ExtResource("7_bo1jx")
+atlas = ExtResource("7_2rtr6")
 region = Rect2(0, 896, 1280, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mq4df"]
-atlas = ExtResource("7_bo1jx")
+atlas = ExtResource("7_2rtr6")
 region = Rect2(0, 1024, 1280, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wpcdd"]
-atlas = ExtResource("7_bo1jx")
+atlas = ExtResource("7_2rtr6")
 region = Rect2(0, 1152, 1280, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gycre"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nph32"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -99,9 +99,10 @@ animations = [{
 }]
 
 [node name="UI" type="Control"]
+z_index = 4096
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_vkava")
+script = ExtResource("1_otv2o")
 
 [node name="Panel" type="Panel" parent="."]
 modulate = Color(0.569153, 0.864816, 1, 1)
@@ -205,6 +206,18 @@ offset_bottom = 539.0
 theme_override_font_sizes/font_size = 50
 text = "test"
 
+[node name="barryDialog" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(184, 827)
+scale = Vector2(3.1179, 3.1179)
+texture = ExtResource("2_1jnr5")
+
+[node name="Protagonist" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1227, 773)
+scale = Vector2(2.19024, 2.19024)
+texture = ExtResource("3_5vx1s")
+
 [node name="dialog" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -213,10 +226,10 @@ anchor_left = 0.277
 anchor_top = 0.32
 anchor_right = 0.277
 anchor_bottom = 0.32
-offset_left = -534.84
-offset_top = 313.4
-offset_right = 874.16
-offset_bottom = 729.4
+offset_left = 1.0
+offset_top = 651.0
+offset_right = 1410.0
+offset_bottom = 1067.0
 
 [node name="dialogText" type="Label" parent="dialog"]
 layout_mode = 0
@@ -226,18 +239,6 @@ offset_right = 1390.0
 offset_bottom = 398.0
 theme_override_font_sizes/font_size = 50
 max_lines_visible = 5
-
-[node name="barryDialog" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(184, 827)
-scale = Vector2(3.1179, 3.1179)
-texture = ExtResource("1_nb4k0")
-
-[node name="Protagonist" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1227, 773)
-scale = Vector2(2.19024, 2.19024)
-texture = ExtResource("3_wl5ax")
 
 [node name="healthBar" type="ProgressBar" parent="."]
 visible = false
@@ -250,22 +251,22 @@ show_percentage = false
 [node name="Souls" type="Sprite2D" parent="."]
 position = Vector2(1497, 408)
 scale = Vector2(1.8125, 1.8125)
-texture = ExtResource("4_vkava")
+texture = ExtResource("4_mqxdk")
 
 [node name="Bomb" type="Sprite2D" parent="."]
 position = Vector2(1497, 352)
 scale = Vector2(0.476563, 0.476563)
-texture = ExtResource("5_obcwv")
+texture = ExtResource("5_1u4pg")
 
 [node name="Knifee" type="Sprite2D" parent="."]
 position = Vector2(1495, 284)
 scale = Vector2(2.125, 2.125)
-texture = ExtResource("6_bo1jx")
+texture = ExtResource("6_vvmsg")
 
 [node name="PlayerHealth" type="AnimatedSprite2D" parent="."]
 position = Vector2(1668, 215)
 scale = Vector2(0.390625, 0.390625)
-sprite_frames = SubResource("SpriteFrames_gycre")
+sprite_frames = SubResource("SpriteFrames_nph32")
 animation = &"new_animation"
 
 [node name="UWon" type="Panel" parent="."]
@@ -300,7 +301,7 @@ text = "+ 50 Souls
 "
 horizontal_alignment = 1
 
-[node name="FPSCounter" parent="." instance=ExtResource("8_gycre")]
+[node name="FPSCounter" parent="." instance=ExtResource("8_yy0q4")]
 layout_mode = 1
 offset_left = 1798.0
 offset_top = 1001.0

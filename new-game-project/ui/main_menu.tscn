@@ -256,7 +256,7 @@ visible = false
 
 [node name="Bob" type="Sprite2D" parent="RinSatsuki"]
 modulate = Color(0.165656, 0.165656, 0.165656, 1)
-position = Vector2(1937, 814)
+position = Vector2(1911, 1115)
 scale = Vector2(3.17773, 3.17773)
 texture = ExtResource("12_kaxbk")
 
@@ -331,7 +331,7 @@ character to main game
 
 
 Speed: 10
-Shift speed: 3"
+Shift speed: 3.5"
 
 [node name="Label2" type="Label" parent="RinSatsuki"]
 offset_left = 851.0

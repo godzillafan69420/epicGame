@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://hlxud1ado0ys"]
+
+[ext_resource type="Script" uid="uid://bbpi0o8k6bk54" path="res://scripts/boss_4.gd" id="1_t8tms"]
+[ext_resource type="Texture2D" uid="uid://c5pcel4oduo0y" path="res://images/barry.png" id="2_s87l8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4phh5"]
+size = Vector2(191.5, 247)
+
+[node name="VmanThePro" type="Area2D"]
+script = ExtResource("1_t8tms")
+
+[node name="Freaky" type="Sprite2D" parent="."]
+z_index = -19
+position = Vector2(3, -1)
+scale = Vector2(0.75, 0.710145)
+texture = ExtResource("2_s87l8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.75, -2.5)
+shape = SubResource("RectangleShape2D_4phh5")
+
+[node name="BossShotgunInterval" type="Timer" parent="."]
+one_shot = true
+ignore_time_scale = true
+
+[node name="bulletShootinEverywhere" type="Timer" parent="."]
+one_shot = true
+ignore_time_scale = true
+
+[node name="shootTowardsThePlayer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="BulletIntervalForRotator" type="Timer" parent="."]
+
+[node name="Rotator" type="Node2D" parent="."]
+position = Vector2(-213, 118)
+
+[node name="Rotator2" type="Node2D" parent="."]
+position = Vector2(176, 118)
+
+[node name="Rotator3" type="Node2D" parent="."]
+position = Vector2(165, -166)
+
+[node name="Rotator4" type="Node2D" parent="."]
+position = Vector2(-219, -166)
+
+[node name="phase3Attack" type="Timer" parent="."]
+wait_time = 1.1
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="BossShotgunInterval" to="." method="_on_boss_shotgun_interval_timeout"]
+[connection signal="timeout" from="bulletShootinEverywhere" to="." method="_on_bullet_shootin_everywhere_timeout"]
+[connection signal="timeout" from="shootTowardsThePlayer" to="." method="_on_shoot_towards_the_player_timeout"]
+[connection signal="timeout" from="BulletIntervalForRotator" to="." method="_on_bullet_interval_for_rotator_timeout"]
+[connection signal="timeout" from="phase3Attack" to="." method="_on_phase_3_attack_timeout"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ct1t3l8cpcwtq"]
 
-[ext_resource type="Script" uid="uid://c82aarhppe20k" path="res://rin_bulllet.gd" id="1_pqfbb"]
+[ext_resource type="Script" uid="uid://c82aarhppe20k" path="res://scripts/rin_bulllet.gd" id="1_pqfbb"]
 [ext_resource type="Texture2D" uid="uid://cuflmeqk7xgb0" path="res://images/Rinbullet.png" id="2_pqfbb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shxdp"]
