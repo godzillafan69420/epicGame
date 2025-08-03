@@ -284,7 +284,7 @@ offset_top = 24.0
 offset_right = 481.0
 offset_bottom = 128.0
 theme_override_font_sizes/font_size = 50
-text = "You beat the Boss"
+text = "You Won"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -295,8 +295,7 @@ offset_top = 125.0
 offset_right = 480.0
 offset_bottom = 581.0
 theme_override_font_sizes/font_size = 50
-text = "+ 50 Souls
-+ 150000
+text = "
 [Z] to continue
 "
 horizontal_alignment = 1

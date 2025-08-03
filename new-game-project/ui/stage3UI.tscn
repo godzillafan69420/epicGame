@@ -292,7 +292,8 @@ offset_top = 125.0
 offset_right = 480.0
 offset_bottom = 581.0
 theme_override_font_sizes/font_size = 50
-text = "
+text = "+ 50 Souls
++ 150000
 [Z] to continue
 "
 horizontal_alignment = 1
