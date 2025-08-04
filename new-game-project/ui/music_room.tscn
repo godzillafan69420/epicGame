@@ -102,6 +102,24 @@ offset_bottom = 901.0
 theme_override_font_sizes/font_size = 100
 text = "Dirty Monkey Business"
 
+[node name="Label10" type="Label" parent="."]
+layout_mode = 0
+offset_left = 299.0
+offset_top = 849.0
+offset_right = 1245.0
+offset_bottom = 986.0
+theme_override_font_sizes/font_size = 100
+text = "Burgar"
+
+[node name="Label11" type="Label" parent="."]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 939.0
+offset_right = 1400.0
+offset_bottom = 1076.0
+theme_override_font_sizes/font_size = 100
+text = "Very stinky tunes"
+
 [node name="Knifee" type="Sprite2D" parent="."]
 position = Vector2(136, 93)
 rotation = 1.5708
