@@ -10,7 +10,7 @@ var Hitpoint: float = 100
 @export var Hp = preload("res://prefabs/hp.tscn")
 @onready var thePlayer
 const rotate_speed: float = 30
-const shooter_timer_wait_timer: float = 0.5
+const shooter_timer_wait_timer: float = 1
 const spawn_point_count: int = 3
 const radius: float = 10
 

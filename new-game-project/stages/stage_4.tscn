@@ -21,11 +21,11 @@ wait_time = 0.7
 autostart = true
 
 [node name="gigaSpawnRate" type="Timer" parent="."]
-wait_time = 1.4
+wait_time = 2.0
 autostart = true
 
 [node name="sideToSide" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 3.5
 autostart = true
 
 [node name="Unnamed" type="Sprite2D" parent="."]
@@ -59,7 +59,7 @@ scale = Vector2(0.518047, 0.521635)
 texture = ExtResource("7_134k0")
 
 [node name="VmanElite" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 autostart = true
 
 [node name="LoopingSong" type="AudioStreamPlayer" parent="."]

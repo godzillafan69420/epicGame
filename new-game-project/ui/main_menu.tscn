@@ -278,7 +278,7 @@ offset_right = 864.0
 offset_bottom = 773.0
 scale = Vector2(1.01793, 1)
 theme_override_font_sizes/font_size = 75
-text = "Painful Phonk"
+text = "Bad music"
 
 [node name="ShootType1Char2" type="Sprite2D" parent="RinSatsuki"]
 position = Vector2(855, 394)
