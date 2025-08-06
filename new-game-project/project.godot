@@ -16,6 +16,7 @@ run/main_scene="uid://c6sc6jmkpi5an"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=60
 config/icon="uid://uf520mnk4k6y"
+config/windows_native_icon="uid://dlv7f5hvnrvll"
 
 [autoload]
 
