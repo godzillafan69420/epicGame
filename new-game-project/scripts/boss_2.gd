@@ -111,15 +111,15 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_boss_shotgun_interval_timeout() -> void:
 	if bossPhase ==2:
-	
+		var offset: float = randf_range(-100, 100) 
 		for i in range(25):
 			var bullets = bulletPrefab.instantiate()
-			bullets.position = Vector2(-50* i +randf_range(-100,100), -540)
+			bullets.position = Vector2(-75*i+ offset, -540)
 			bullets.theplayerDirtion = Vector2(0,1)
 			get_parent().add_child(bullets)
 		for i in range(25):
 			var bullets = bulletPrefab.instantiate()
-			bullets.position = Vector2(50* i + randf_range(-100,100), -540)
+			bullets.position = Vector2(75 *i+ offset, -540)
 			bullets.theplayerDirtion = Vector2(0,1)
 			get_parent().add_child(bullets)
 	count2 = 0
