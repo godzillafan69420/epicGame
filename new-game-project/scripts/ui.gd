@@ -160,5 +160,12 @@ func _process(_delta: float) -> void:
 				protagonistDialog.visible = false
 				panel.visible = false
 				startTheBossMusic.emit()
+		if GlobalVariables.character == 2:
+			get_parent().gamePhase = 2
+			textBox.text = ""
+			barrySprite.visible = false
+			protagonistDialog.visible = false
+			panel.visible = false
+			startTheBossMusic.emit()
 		if Input.is_action_just_pressed("shoot"):
 			textToShow +=1

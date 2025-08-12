@@ -8,7 +8,7 @@ var Hitpoint: float = 50
 @export var Hp = preload("res://prefabs/hp.tscn")
 @onready var thePlayer
 @onready var bulletPrefab = preload("res://prefabs/bullet_to_player.tscn")
-
+var inLazer: bool = false
 func _ready():
 	$Timer.start()
 	thePlayer = get_parent().get_node("player")
@@ -35,7 +35,8 @@ func _process(_delta):
 		queue_free()
 	if get_parent().gamePhase ==1:
 		queue_free()
-
+	if inLazer:
+		Hitpoint -= 2.5
 
 
 func _on_timer_timeout():
@@ -72,3 +73,7 @@ func _on_area_entered(area: Area2D) -> void:
 		Hitpoint -= 10000
 	if area is hollowPurple:
 		Hitpoint -= 10000
+	if area is Lazer:
+		inLazer = true
+	else:
+		inLazer = false

@@ -1,5 +1,5 @@
 extends Area2D
-class_name player3
+class_name player4
 @onready var bombPrefab = preload("res://prefabs/bombDeleteArea.tscn")
 @onready var bulletPre = preload("res://prefabs/hollow_purple.tscn")
 @onready var superPrefab = preload("res://prefabs/super_attack.tscn")

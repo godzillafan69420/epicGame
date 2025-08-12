@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddn04knp2k7hi"]
+
+[ext_resource type="Script" uid="uid://dqjlr263mifyy" path="res://prefabs/playable_2.gd" id="1_1161m"]
+[ext_resource type="Texture2D" uid="uid://boy38go6l0ajg" path="res://images/unamedYet.png" id="2_1161m"]
+[ext_resource type="Texture2D" uid="uid://di36wv4xid0kd" path="res://images/circle.png" id="3_cy6l6"]
+[ext_resource type="Script" uid="uid://c2ld355al4qu2" path="res://scripts/collect_bread.gd" id="4_u3xxk"]
+[ext_resource type="AudioStream" uid="uid://bfgc6ub7504t3" path="res://music/emergency-alert-us-2.wav" id="5_gl8kg"]
+[ext_resource type="PackedScene" uid="uid://bo5g54o7tiwcj" path="res://prefabs/lazer.tscn" id="6_1161m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_460ro"]
+radius = 7.14288
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ix5la"]
+radius = 115.082
+
+[node name="player" type="Area2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_1161m")
+
+[node name="drip" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, 0)
+scale = Vector2(1.63853, 1.88782)
+texture = ExtResource("2_1161m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_460ro")
+
+[node name="collectBread" type="Area2D" parent="."]
+script = ExtResource("4_u3xxk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectBread"]
+position = Vector2(-2.5, 2.5)
+shape = SubResource("CircleShape2D_ix5la")
+
+[node name="invincibility" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="superTimePeriod" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="shootinterval" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="Emergency-alert-us-2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_gl8kg")
+
+[node name="lazer" parent="." instance=ExtResource("6_1161m")]
+position = Vector2(0, -125)
+
+[node name="lazer5" parent="." instance=ExtResource("6_1161m")]
+position = Vector2(-117.5, -5)
+
+[node name="lazer2" parent="." instance=ExtResource("6_1161m")]
+position = Vector2(45, -65)
+
+[node name="lazer3" parent="." instance=ExtResource("6_1161m")]
+position = Vector2(-50, -65)
+
+[node name="lazer4" parent="." instance=ExtResource("6_1161m")]
+position = Vector2(115, -5)
+
+[node name="hitboxes" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.65625, 0.65625)
+texture = ExtResource("3_cy6l6")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_entered" from="collectBread" to="." method="_on_collect_bread_area_entered"]
+[connection signal="timeout" from="invincibility" to="." method="_on_invincibility_timeout"]
+[connection signal="timeout" from="superTimePeriod" to="." method="_on_super_time_period_timeout"]
+[connection signal="timeout" from="shootinterval" to="." method="_on_shootinterval_timeout"]

@@ -8,6 +8,7 @@ extends Node2D
 @onready var boss_1 = preload("res://prefabs/boss4.tscn")
 var Score = GlobalVariables.score
 @onready var thePlayerPre = preload("res://prefabs/player.tscn")
+@onready var thePlayable = preload("res://prefabs/playable2.tscn")
 @onready var theRinPre = preload("res://prefabs/Rin.tscn")
 @onready var gojoPre = preload("res://prefabs/gojo.tscn")
 var gameStarted: bool = false
@@ -31,6 +32,10 @@ func _on_elmo_spawn_rate_timeout():
 func _ready() -> void:
 	if GlobalVariables.character == 1:
 		thePlayer = thePlayerPre.instantiate()
+		thePlayer.position = Vector2(-237,469)
+		add_child(thePlayer)
+	if GlobalVariables.character == 2:
+		thePlayer = thePlayable.instantiate()
 		thePlayer.position = Vector2(-237,469)
 		add_child(thePlayer)
 	if GlobalVariables.character == 3:

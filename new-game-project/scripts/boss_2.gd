@@ -14,7 +14,7 @@ const Bullet_scene = preload("res://prefabs/boss_bullet.tscn")
 @onready var shoot_timer = $BulletIntervalForRotator
 @onready var rotator = $Rotator
 @onready var rotator2 = $Rotator2
-
+var inLazer: bool = false
 const rotate_speed: float = 30
 const shooter_timer_wait_timer: float = 0.3
 const spawn_point_count: int = 3
@@ -72,7 +72,8 @@ func _process(delta):
 		bossPhase = 2
 	elif Hitpoint < 20000:
 		bossPhase = 3
-	
+	if inLazer:
+		Hitpoint -= 2.5
 	
 
 
@@ -103,7 +104,10 @@ func _on_area_entered(area: Area2D) -> void:
 		Hitpoint -= 10000
 	if area is hollowPurple:
 		Hitpoint -= 10000
-
+	if area is Lazer:
+		inLazer = true
+	else:
+		inLazer = false
 
 
 

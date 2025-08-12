@@ -6,6 +6,7 @@ class_name enemy
 @export var bread = preload("res://prefabs/extra_points.tscn")
 @export var powerUps = preload("res://prefabs/power_up.tscn")
 @export var Hp = preload("res://prefabs/hp.tscn")
+var inLazer: bool = false
 var readytoShoot: bool = true
 func _ready():
 	pass # Replace with function body.
@@ -36,6 +37,8 @@ func _process(_delta):
 		queue_free()
 	if get_parent().gamePhase ==1:
 		queue_free()
+	if inLazer:
+		Hitpoint -= 2.5
 	
 		
 
@@ -44,30 +47,37 @@ func _on_area_entered(area):
 	if area is bullet:
 		Hitpoint -= 5
 		area.queue_free()
-	if area is bullet_shot2:
+	elif area is bullet_shot2:
 		Hitpoint -= 20
 		area.queue_free()
-	if area is superAttack:
+	elif area is superAttack:
 		Hitpoint -= 100
 		area.queue_free()
-	if area is Bomb:
+	elif area is Bomb:
 		Hitpoint -= 100
-	if area is Rinbullet:
+	elif area is Rinbullet:
 		Hitpoint -= 25
 		area.queue_free()
-	if area is Rinbulletno2:
+	elif area is Rinbulletno2:
 		Hitpoint -= 7.5
 		area.queue_free()
-	if area is RinbulletNorm:
+	elif area is RinbulletNorm:
 		Hitpoint -= 20
 		area.queue_free()
-	if area is deathZone:
+	elif area is deathZone:
 		Hitpoint -= 10000
-	if area is hollowPurple:
+	elif area is hollowPurple:
 		Hitpoint -= 10000
-
+	if area is Lazer:
+		inLazer = true
+	
 func _on_timer_timeout():
 	var ball = balls.instantiate()
 	ball.position = position
 	readytoShoot = false
 	get_parent().add_child(ball)
+
+
+func _on_area_exited(area: Area2D) -> void:
+	if area is Lazer:
+		inLazer = false
