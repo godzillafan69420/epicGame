@@ -20,39 +20,6 @@ position = Vector2(951, 958)
 scale = Vector2(6.01875, 6.01875)
 texture = ExtResource("1_kj3tv")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 71.0
-offset_top = 44.0
-offset_right = 515.0
-offset_bottom = 463.0
-theme_override_font_sizes/font_size = 100
-text = "more HP
-
-50 souls"
-
-[node name="Button2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 616.0
-offset_top = 29.0
-offset_right = 1237.0
-offset_bottom = 474.0
-theme_override_font_sizes/font_size = 100
-text = "more bombs
-
-25 souls"
-
-[node name="Button3" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1307.0
-offset_top = 30.0
-offset_right = 1905.0
-offset_bottom = 474.0
-theme_override_font_sizes/font_size = 100
-text = "30 power
-
-50 souls"
-
 [node name="[X]" type="Label" parent="."]
 layout_mode = 0
 offset_left = 1204.0
@@ -115,6 +82,39 @@ autoplay = true
 
 [node name="sceneTransition" parent="." instance=ExtResource("5_od2if")]
 position = Vector2(-1, 8)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 44.0
+offset_right = 515.0
+offset_bottom = 463.0
+theme_override_font_sizes/font_size = 100
+text = "more HP
+
+50 souls"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 29.0
+offset_right = 1237.0
+offset_bottom = 474.0
+theme_override_font_sizes/font_size = 100
+text = "more bombs
+
+25 souls"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1307.0
+offset_top = 30.0
+offset_right = 1905.0
+offset_bottom = 474.0
+theme_override_font_sizes/font_size = 100
+text = "30 power
+
+50 souls"
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]

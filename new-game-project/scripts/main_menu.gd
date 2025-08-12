@@ -1,5 +1,6 @@
 extends Control
 
+var dummy = false
 var buttomSelected: int = 0
 var part: int = 5
 var charcterSelected: int = 0
@@ -12,10 +13,17 @@ func _ready() -> void:
 	part = 0
 	
 func _process(_delta: float) -> void:
+	
 	if part == 0:
+		if Input.is_action_just_pressed("Bomb"):
+			dummy = false
+			$"how move in the main menu".visible = false
+			$Title.visible = true
+			$firstpart.visible = true
 		$loadingScreen.visible = false
-		$Title.visible = true
-		$firstpart.visible = true
+		if dummy == false:
+			$Title.visible = true
+			$firstpart.visible = true
 		$characterSelection.visible = false
 		$TimmyShotTypeSelection.visible = false
 		if Input.is_action_just_pressed("down"):
@@ -38,7 +46,8 @@ func _process(_delta: float) -> void:
 	
 		$firstpart/Knifee.position = Vector2(1254.0, 130 * buttomSelected + 394.0)
 	if part == 1:
-		
+		dummy = false
+		$"how move in the main menu".visible = false
 		$characterSelection.visible = true
 		$Title.visible = false
 		$firstpart.visible = false
@@ -145,3 +154,13 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("Bomb"):
 			
 			part = 1
+
+
+
+
+
+func _on_start_pressed() -> void:
+	dummy = true
+	$"how move in the main menu".visible = true
+	$Title.visible = false
+	$firstpart.visible = false

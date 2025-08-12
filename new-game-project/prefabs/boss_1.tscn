@@ -28,6 +28,7 @@ one_shot = true
 ignore_time_scale = true
 
 [node name="shootTowardsThePlayer" type="Timer" parent="."]
+wait_time = 2.0
 
 [node name="BulletIntervalForRotator" type="Timer" parent="."]
 

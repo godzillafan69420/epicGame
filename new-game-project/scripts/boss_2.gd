@@ -3,7 +3,7 @@ extends Area2D
 class_name bossNo2
 
 
-var Hitpoint: float = 70000
+var Hitpoint: float = 40000
 var count: int = 0
 var count2: int = 0
 var bossPhase: int = 0
@@ -68,9 +68,9 @@ func _process(delta):
 	if bossPhase == 3 and count2 != 1:
 		$"3Phaseattack".start()
 		count2 = 1
-	if Hitpoint < 50000 and Hitpoint > 30000:
+	if Hitpoint < 30000 and Hitpoint > 20000:
 		bossPhase = 2
-	elif Hitpoint < 30000:
+	elif Hitpoint < 20000:
 		bossPhase = 3
 	
 	

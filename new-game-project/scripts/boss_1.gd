@@ -3,7 +3,7 @@ extends Area2D
 class_name boss
 
 
-var Hitpoint: float = 60000
+var Hitpoint: float = 30000
 var count: int = 0
 var bossPhase: int = 0
 @onready var thePlayer
@@ -49,9 +49,9 @@ func _process(delta):
 	if bossPhase == 3 and count !=1:
 		$shootTowardsThePlayer.start() 
 		count = 1
-	if Hitpoint < 40000 and Hitpoint > 20000:
+	if Hitpoint < 20000 and Hitpoint > 10000:
 		bossPhase = 2
-	elif Hitpoint < 20000:
+	elif Hitpoint < 10000:
 		bossPhase = 3
 	
 	
@@ -96,7 +96,7 @@ func _on_boss_shotgun_interval_timeout() -> void:
 		if thePlayer != null:
 			var bullets = bulletPrefab.instantiate()
 			bullets.position = position
-			bullets.theplayerDirtion = thePlayer.position+Vector2(50*i,0)-position
+			bullets.theplayerDirtion = thePlayer.position+Vector2(100*i,0)-position
 			get_parent().add_child(bullets)
 	count =0
 	
