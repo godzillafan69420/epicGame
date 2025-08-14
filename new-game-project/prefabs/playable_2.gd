@@ -65,10 +65,22 @@ func _process(_delta):
 		$hitboxes.hide()
 	if GlobalVariables.shotType == 1 and GlobalVariables.character == 2:
 		if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1:
-			if bulletLevel <= 25:
+			$lazer.position = Vector2(0,-125)
+			$lazer5.position = Vector2(-117.5,-5)
+			$lazer2.position = Vector2(45.0,-65)
+			$lazer3.position = Vector2(-50,-65)
+			$lazer4.position = Vector2(115.0,-5)
+			if bulletLevel <= 35:
 				$lazer.visible = true
 				$lazer.monitorable = true
-					
+				$lazer2.visible = false
+				$lazer2.monitorable = false
+				$lazer3.visible = false
+				$lazer3.monitorable = false
+				$lazer4.visible = false
+				$lazer4.monitorable = false
+				$lazer5.visible = false
+				$lazer5.monitorable = false
 			elif bulletLevel <= 75:
 				$lazer.visible = true
 				$lazer.monitorable = true
@@ -76,7 +88,10 @@ func _process(_delta):
 				$lazer2.monitorable = true
 				$lazer3.visible = true
 				$lazer3.monitorable = true
-			
+				$lazer4.visible = false
+				$lazer4.monitorable = false
+				$lazer5.visible = false
+				$lazer5.monitorable = false
 			elif bulletLevel <= 101:
 				$lazer.visible = true
 				$lazer.monitorable = true
@@ -88,6 +103,7 @@ func _process(_delta):
 				$lazer4.monitorable = true
 				$lazer5.visible = true
 				$lazer5.monitorable = true
+		
 		else:
 			$lazer.visible = false
 			$lazer.monitorable = false

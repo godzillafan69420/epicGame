@@ -13,7 +13,7 @@ const rotate_speed: float = 30
 const shooter_timer_wait_timer: float = 1
 const spawn_point_count: int = 3
 const radius: float = 10
-var inLazer: bool = false
+var inLazer: int = 0
 func _ready() -> void:
 
 	var step = 2 * PI  / spawn_point_count
@@ -48,8 +48,7 @@ func _process(delta: float) -> void:
 		queue_free()
 	if position.y > 550:
 		queue_free()
-	if inLazer:
-		Hitpoint -= 2.5
+	Hitpoint -= 1.5*inLazer
 	if get_parent().gamePhase ==1:
 		queue_free()
 func _on_timer_timeout() -> void:
@@ -86,6 +85,9 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is hollowPurple:
 		Hitpoint -= 10000
 	if area is Lazer:
-		inLazer = true
-	else:
-		inLazer = false
+		inLazer +=1
+
+
+func _on_area_exited(area: Area2D) -> void:
+	if area is Lazer:
+		inLazer -=1

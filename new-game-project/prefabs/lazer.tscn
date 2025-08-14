@@ -8,6 +8,7 @@ size = Vector2(6, 253)
 
 [node name="lazer" type="Area2D"]
 scale = Vector2(3, 13)
+monitoring = false
 script = ExtResource("1_ntuir")
 
 [node name="Lazer" type="Sprite2D" parent="."]
@@ -18,3 +19,6 @@ texture = ExtResource("1_ifbys")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -120.5)
 shape = SubResource("RectangleShape2D_ntuir")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

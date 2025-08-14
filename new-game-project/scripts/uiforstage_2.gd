@@ -8,6 +8,7 @@ extends Control
 @onready var rinSpriteangry =preload("res://images/Rin even even better.png")
 @onready var rinSprite = preload("res://images/Rin even even better.png")
 @onready var gojo = preload("res://images/nahidWin.jpg")
+@onready var jimmy = preload("res://images/Unnamedcharacter.png")
 var textToShow: int = 0
 
 signal startTheBossMusic
@@ -166,6 +167,60 @@ func _process(_delta: float) -> void:
 			
 			if textToShow == 9:
 				textBox.text = "Nah I'd win"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 10:
+				get_parent().gamePhase = 2
+				textBox.text = ""
+				barrySprite.visible = false
+				protagonistDialog.visible = false
+				panel.visible = false
+				startTheBossMusic.emit()
+		if GlobalVariables.character == 2:
+			protagonistDialog.texture =jimmy
+			panel.visible = true
+			barrySprite.visible = true
+			if textToShow == 0:
+				textBox.text = "Really wish they add dark mode into real life
+				These lazer of yours really hurt my eyes"
+			if textToShow == 1:
+				textBox.text = "What's that"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 2:
+				textBox.text = "hmmm hard to explain"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 3:
+				protagonistDialog.texture =gojo
+				textBox.text = "It's ok I'm not here to know
+				what is dark mode."
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 4:
+				textBox.text = "True what brings you here?"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 5:
+				textBox.text = "Your getting executed kid."
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 6:
+				textBox.text = "What did i do"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 7:
+				textBox.text = "Cyberbullying? what the heck is that"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 8:
+				textBox.text = "You must be very old"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			
+			if textToShow == 9:
+				textBox.text = "Yes I'm like 2500 years old.
+				... Damn I'm old"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 10:

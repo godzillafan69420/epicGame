@@ -6,7 +6,7 @@ class_name enemy
 @export var bread = preload("res://prefabs/extra_points.tscn")
 @export var powerUps = preload("res://prefabs/power_up.tscn")
 @export var Hp = preload("res://prefabs/hp.tscn")
-var inLazer: bool = false
+var inLazer: int = 0
 var readytoShoot: bool = true
 func _ready():
 	pass # Replace with function body.
@@ -37,8 +37,8 @@ func _process(_delta):
 		queue_free()
 	if get_parent().gamePhase ==1:
 		queue_free()
-	if inLazer:
-		Hitpoint -= 2.5
+	
+	Hitpoint -= 1.5*inLazer
 	
 		
 
@@ -69,7 +69,8 @@ func _on_area_entered(area):
 	elif area is hollowPurple:
 		Hitpoint -= 10000
 	if area is Lazer:
-		inLazer = true
+		inLazer += 1
+	
 	
 func _on_timer_timeout():
 	var ball = balls.instantiate()
@@ -80,4 +81,4 @@ func _on_timer_timeout():
 
 func _on_area_exited(area: Area2D) -> void:
 	if area is Lazer:
-		inLazer = false
+		inLazer -=1

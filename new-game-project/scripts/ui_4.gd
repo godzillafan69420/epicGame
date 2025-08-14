@@ -9,6 +9,7 @@ extends Control
 @onready var rinSpriteangry =preload("res://images/Rin even even better.png")
 @onready var rinSprite = preload("res://images/Rin even even better.png")
 @onready var gojo = preload("res://images/nahidWin.jpg")
+@onready var jimmy = preload("res://images/Unnamedcharacter.png")
 var textToShow: int = 0
 
 signal startTheBossMusic
@@ -169,6 +170,64 @@ func _process(_delta: float) -> void:
 			
 			if textToShow == 9:
 				textBox.text = "Nah I'd win"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 10:
+				get_parent().gamePhase = 2
+				textBox.text = ""
+				barrySprite.visible = false
+				protagonistDialog.visible = false
+				panel.visible = false
+				startTheBossMusic.emit()
+		if GlobalVariables.character == 2:
+			protagonistDialog.texture =jimmy
+			panel.visible = true
+			barrySprite.visible = true
+			if textToShow == 0:
+				textBox.text = "Bro stop killing my goons
+				and get a  job"
+			if textToShow == 1:
+				textBox.text = "No for both.
+				I have been working for 2000 years. 
+				I still haven't got my retirement. 
+				They really need to add a worker union 
+				in the underworld"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 2:
+				textBox.text = "Ok if your employed then I can leave 
+				you alone"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 3:
+				textBox.text = "Well, I have to kill you 
+				as part of my job"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 4:
+				textBox.text = "What kind of job is this
+				"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 5:
+				textBox.text = "I don't know"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 6:
+				textBox.text = "Why am I getting executed for"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 7:
+				textBox.text = "Being a nuisance to world peace"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 8:
+				textBox.text = "Am I really a threat"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			
+			if textToShow == 9:
+				textBox.text = "Don't ask me"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 10:

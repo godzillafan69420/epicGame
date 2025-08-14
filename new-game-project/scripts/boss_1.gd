@@ -3,7 +3,7 @@ extends Area2D
 class_name boss
 
 
-var Hitpoint: float = 30000
+var Hitpoint: float = 40000
 var count: int = 0
 var bossPhase: int = 0
 @onready var thePlayer
@@ -12,7 +12,7 @@ var bossPhase: int = 0
 const Bullet_scene = preload("res://prefabs/boss_bullet.tscn")
 @onready var shoot_timer = $BulletIntervalForRotator
 @onready var rotator = $Rotator
-var inLazer: bool = false
+var inLazer: int = 0
 const rotate_speed: float = 100
 const shooter_timer_wait_timer:float = 0.2
 const spawn_point_count: int = 4
@@ -33,7 +33,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+	if get_parent().gamePhase == 1:
+		monitoring = false
+	else:
+		monitoring = true
+	Hitpoint -= 1.5*inLazer
 	if Hitpoint < 0:
 		queue_free()
 	
@@ -49,12 +53,11 @@ func _process(delta):
 	if bossPhase == 3 and count !=1:
 		$shootTowardsThePlayer.start() 
 		count = 1
-	if Hitpoint < 20000 and Hitpoint > 10000:
+	if Hitpoint < 30000 and Hitpoint > 20000:
 		bossPhase = 2
-	elif Hitpoint < 10000:
+	elif Hitpoint < 20000:
 		bossPhase = 3
-	if inLazer:
-		Hitpoint -= 2.5
+	
 	
 
 
@@ -63,33 +66,33 @@ func _process(delta):
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if area is bullet:
-		Hitpoint -= 5
-		
-		area.queue_free()
-	if area is bullet_shot2:
-		Hitpoint -= 20
-		area.queue_free()
-	if area is superAttack:
-		Hitpoint -= 22.5
-		area.queue_free()
-	if area is Rinbullet:
-		Hitpoint -= 150
-		area.queue_free()
-	if area is Rinbulletno2:
-		Hitpoint -= 7.5
-		area.queue_free()
-	if area is RinbulletNorm:
-		Hitpoint -= 20
-		area.queue_free()
-	if area is deathZone:
-		Hitpoint -= 10000
-	if area is hollowPurple:
-		Hitpoint -= 10000
-	if area is Lazer:
-		inLazer = true
-	else:
-		inLazer = false
+	if get_parent().gamePhase != 1:
+		if area is bullet:
+			Hitpoint -= 5
+			area.queue_free()
+		elif area is bullet_shot2:
+			Hitpoint -= 20
+			area.queue_free()
+		elif area is superAttack:
+			Hitpoint -= 100
+			area.queue_free()
+		elif area is Bomb:
+			Hitpoint -= 100
+		elif area is Rinbullet:
+			Hitpoint -= 25
+			area.queue_free()
+		elif area is Rinbulletno2:
+			Hitpoint -= 7.5
+			area.queue_free()
+		elif area is RinbulletNorm:
+			Hitpoint -= 20
+			area.queue_free()
+		elif area is deathZone:
+			Hitpoint -= 10000
+		elif area is hollowPurple:
+			Hitpoint -= 10000
+		if area is Lazer:
+			inLazer +=1
 
 
 
@@ -137,3 +140,8 @@ func _on_bullet_interval_for_rotator_timeout() -> void:
 				get_parent().add_child(bullets)
 				bullets.position = s.global_position
 				bullets.rotation = s.global_rotation
+
+
+func _on_area_exited(area: Area2D) -> void:
+	if area is Lazer:
+		inLazer -=1

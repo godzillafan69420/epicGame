@@ -3,7 +3,7 @@ extends Area2D
 class_name bossNo2
 
 
-var Hitpoint: float = 40000
+var Hitpoint: float = 50000
 var count: int = 0
 var count2: int = 0
 var bossPhase: int = 0
@@ -14,7 +14,7 @@ const Bullet_scene = preload("res://prefabs/boss_bullet.tscn")
 @onready var shoot_timer = $BulletIntervalForRotator
 @onready var rotator = $Rotator
 @onready var rotator2 = $Rotator2
-var inLazer: bool = false
+var inLazer: int = 0
 const rotate_speed: float = 30
 const shooter_timer_wait_timer: float = 0.3
 const spawn_point_count: int = 3
@@ -44,7 +44,10 @@ func _ready() -> void:
 	$BulletIntervalForRotator.start()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+	if get_parent().gamePhase == 1:
+		monitoring = false
+	else:
+		monitoring = true
 	if Hitpoint < 0:
 		queue_free()
 	
@@ -72,8 +75,7 @@ func _process(delta):
 		bossPhase = 2
 	elif Hitpoint < 20000:
 		bossPhase = 3
-	if inLazer:
-		Hitpoint -= 2.5
+	Hitpoint -= 1.5*inLazer
 	
 
 
@@ -105,9 +107,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is hollowPurple:
 		Hitpoint -= 10000
 	if area is Lazer:
-		inLazer = true
-	else:
-		inLazer = false
+		inLazer +=1
 
 
 
@@ -198,3 +198,8 @@ func _on_timer_timeout() -> void:
 			bullets.theplayerDirtion =thePlayer.position - position
 			get_parent().add_child(bullets)
 	count =0
+
+
+func _on_area_exited(area: Area2D) -> void:
+	if area is Lazer:
+		inLazer -=1

@@ -8,6 +8,7 @@ extends Control
 @onready var rinSpriteangry = preload("res://images/Rin even even better.png")
 @onready var rinSprite = preload("res://images/Rin even even better.png")
 @onready var gojo = preload("res://images/nahidWin.jpg")
+@onready var jimmy = preload("res://images/Unnamedcharacter.png")
 var textToShow: int = 0
 
 signal startTheBossMusic
@@ -223,6 +224,86 @@ func _process(_delta: float) -> void:
 				protagonistDialog.visible = true
 			if textToShow == 14:
 				textBox.text = "I made it worst huh"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 15:
+				get_parent().gamePhase = 2
+				textBox.text = ""
+				barrySprite.visible = false
+				protagonistDialog.visible = false
+				panel.visible = false
+				startTheBossMusic.emit()
+		if GlobalVariables.character == 2:
+			protagonistDialog.texture =jimmy
+			panel.visible = true
+			barrySprite.visible = true
+			if textToShow == 0:
+				textBox.text = "Ahhh my weakness light"
+			if textToShow == 1:
+				textBox.text = "What is wrong with everyone in this period
+				Why are they allergic to light"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 2:
+				textBox.text = "... Video games?
+				"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 3:
+				textBox.text = "What is that crap."
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 4:
+				textBox.text = "Um hard to explain"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 5:
+				textBox.text = "Geez, anyways you gotta go ya bum"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			
+			if textToShow == 6:
+				textBox.text = "D: What did I do?"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			
+			if textToShow == 7:
+				textBox.text = "Monopoly on bananas.
+				Forcing every monkey to eat apples"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 8:
+				textBox.text = "If I make you laugh
+				 you will for get my crimes"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			
+			if textToShow == 9:
+				textBox.text = "Bet"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 10:
+				textBox.text = "guess what"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			
+			if textToShow == 11:
+				textBox.text = "What"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 12:
+				textBox.text = "Chicken - nugger"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			
+			if textToShow == 13:
+				textBox.text = "What is even that?????
+				"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 14:
+				textBox.text = "I thought it would work this time.
+				"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 15:

@@ -8,6 +8,7 @@ extends Control
 @onready var rinSpriteangry = preload("res://images/Rin even even better.png")
 @onready var rinSprite = preload("res://images/Rin even even better.png")
 @onready var gojo = preload("res://images/nahidWin.jpg")
+@onready var Jimmy = preload("res://images/Unnamedcharacter.png")
 var textToShow: int = 0
 
 signal startTheBossMusic
@@ -161,11 +162,53 @@ func _process(_delta: float) -> void:
 				panel.visible = false
 				startTheBossMusic.emit()
 		if GlobalVariables.character == 2:
-			get_parent().gamePhase = 2
-			textBox.text = ""
-			barrySprite.visible = false
-			protagonistDialog.visible = false
-			panel.visible = false
-			startTheBossMusic.emit()
+			protagonistDialog.texture =Jimmy
+			panel.visible = true
+			barrySprite.visible = true
+			if textToShow == 0:
+				textBox.text = "Stop blasting lazer every where.
+				What is this, independence day?"
+			if textToShow == 1:
+				textBox.text = "Shut up with the US reference would ya.
+				I haven't seen a nationalist like you since 1945 .
+				Anyways you gotta go."
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 2:
+				textBox.text = "For what !!!!!!"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if textToShow == 3:
+				textBox.text = "Stealing a plane. Are you stupid like this game"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 4:
+				textBox.text = "Nah un"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			if 	textToShow == 5:
+				textBox.text = "fair point this game is way too stupid
+				Come with me ya US glazer"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			
+			if textToShow == 6:
+				textBox.text = "Nah get pass my abs.
+				Reinforce by FREEDOM. *eagle sound*"
+				barrySprite.visible = true
+				protagonistDialog.visible = false
+			
+			if textToShow == 7:
+				textBox.text = "Always with these nationalist
+				Right Fred"
+				barrySprite.visible = false
+				protagonistDialog.visible = true
+			if textToShow == 8:
+				get_parent().gamePhase = 2
+				textBox.text = ""
+				barrySprite.visible = false
+				protagonistDialog.visible = false
+				panel.visible = false
+				startTheBossMusic.emit()
 		if Input.is_action_just_pressed("shoot"):
 			textToShow +=1

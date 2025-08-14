@@ -1,15 +1,22 @@
 extends Control
 
+var bgcode :int
 var dummy = false
 var buttomSelected: int = 0
 var part: int = 5
 var charcterSelected: int = 0
 var shotTypeSelected: int  = 0
+const back1 = preload("res://images/bg1.png")
+const back2 = preload("res://images/bg2.png")
 @onready var startOfGame = preload("res://stages/firstStage.tscn")
 func _ready() -> void:
-	for i in range(100):
-		$loadingScreen/ProgressBar.value = i
-	await get_tree().create_timer(1).timeout
+	bgcode = randi_range(1,8)
+	if bgcode == 1:
+		$Background.texture = back1
+	if bgcode == 2:
+		$Background.texture = back2
+		
+	await get_tree().create_timer(1.5).timeout
 	part = 0
 	
 func _process(_delta: float) -> void:
@@ -53,6 +60,7 @@ func _process(_delta: float) -> void:
 		$firstpart.visible = false
 		$TimmyShotTypeSelection.visible = false
 		$RinSatsuki.visible = false
+		$Jimmy.visible = false
 		await get_tree().create_timer(0.1).timeout
 		if Input.is_action_just_pressed("right"):
 			charcterSelected += 1
@@ -67,6 +75,9 @@ func _process(_delta: float) -> void:
 			part = 0
 		if Input.is_action_just_pressed("shoot") and charcterSelected == 0:
 			GlobalVariables.character = 1
+			part = 2
+		if Input.is_action_just_pressed("shoot") and charcterSelected == 1:
+			GlobalVariables.character = 2
 			part = 2
 		if Input.is_action_just_pressed("shoot") and charcterSelected == 2:
 			GlobalVariables.character = 3
@@ -83,7 +94,7 @@ func _process(_delta: float) -> void:
 		$Title.visible = false
 		$firstpart.visible = false
 		$TimmyShotTypeSelection.visible = true
-		
+		$Jimmy.visible = false
 		await get_tree().create_timer(0.1).timeout
 		if Input.is_action_just_pressed("right"):
 			shotTypeSelected+= 1
@@ -122,6 +133,7 @@ func _process(_delta: float) -> void:
 		$Title.visible = false
 		$firstpart.visible = false
 		$RinSatsuki.visible = true
+		$Jimmy.visible = false
 		await get_tree().create_timer(0.1).timeout
 		
 		if Input.is_action_just_pressed("right"):
@@ -154,9 +166,41 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("Bomb"):
 			
 			part = 1
+	if part == 2 and GlobalVariables.character == 2:
+		shotTypeSelected = 0
+		$characterSelection.visible = false
+		$Title.visible = false
+		$firstpart.visible = false
+		$RinSatsuki.visible = false
+		$Jimmy.visible = true
+		await get_tree().create_timer(0.1).timeout
+		
+		if Input.is_action_just_pressed("right"):
+			shotTypeSelected+= 1
+		if Input.is_action_just_pressed("left"):
+			shotTypeSelected -= 1
+		if shotTypeSelected < 0:
+			shotTypeSelected = 1
+		if shotTypeSelected > 1:
+			shotTypeSelected = 0
+		if shotTypeSelected == 0:
+			$Jimmy/stats1.text ="SuperBright lazer hurt
+			peoples eyes"
+			$Jimmy/stats2.text = "Special: None yet"
+		if shotTypeSelected == 1:
+			$Jimmy/stats1.text ="Indevelopment"
+			$Jimmy/stats2.text = "Special: None yet"
+		$Jimmy/Knifee.position = Vector2(261+ shotTypeSelected* 640,890)
+		if shotTypeSelected == 0 and Input.is_action_just_pressed("shoot"):
+			GlobalVariables.shotType = 1
+			$sceneTransition/AnimationPlayer.play("fade-Out")
+			await get_tree().create_timer(0.5).timeout
+			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+		if Input.is_action_just_pressed("Bomb"):
+			
+			part = 1
 
-
-
+	
 
 
 func _on_start_pressed() -> void:

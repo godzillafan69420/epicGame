@@ -42,6 +42,7 @@ wait_time = 0.75
 one_shot = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="timeout" from="BossShotgunInterval" to="." method="_on_boss_shotgun_interval_timeout"]
 [connection signal="timeout" from="bulletShootinEverywhere" to="." method="_on_bullet_shootin_everywhere_timeout"]
 [connection signal="timeout" from="shootTowardsThePlayer" to="." method="_on_shoot_towards_the_player_timeout"]
