@@ -336,11 +336,10 @@ offset_top = 636.0
 offset_right = 864.0
 offset_bottom = 773.0
 scale = Vector2(1.01793, 1)
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 67
 text = "iscord light mode"
 
 [node name="ShootType1Char2" type="Sprite2D" parent="Jimmy"]
-modulate = Color(0, 0, 0, 1)
 position = Vector2(855, 394)
 scale = Vector2(3.92639, 3.92639)
 texture = ExtResource("14_0nobx")
@@ -351,7 +350,8 @@ offset_top = 637.0
 offset_right = 1466.0
 offset_bottom = 774.0
 scale = Vector2(1.01793, 1)
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 68
+text = "explosive Lazers"
 
 [node name="Label6" type="Label" parent="Jimmy"]
 offset_left = 1422.0

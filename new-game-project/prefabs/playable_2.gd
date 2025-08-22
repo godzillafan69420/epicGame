@@ -129,13 +129,24 @@ func _process(_delta):
 	if GlobalVariables.shotType == 2 and GlobalVariables.character == 2:
 		
 		if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1 and wentToShoot:
+			if bulletLevel <= 35:
+				for i in range(2):
+					var bullets = bullet2Pre.instantiate()
 
-			if bulletLevel <= 101:
+					bullets.position = position + Vector2(25*i -12.5,0)- Vector2(0,YOffset)
+					get_parent().add_child(bullets)
+			elif bulletLevel <= 75:
+				for i in range(4):
+					var bullets = bullet2Pre.instantiate()
+
+					bullets.position = position + Vector2(25*i -12.5-25,0)- Vector2(0,YOffset)
+					get_parent().add_child(bullets)
+			elif bulletLevel <= 101:
 				
 				for i in range(6):
 					var bullets = bullet2Pre.instantiate()
 
-					bullets.position = position + Vector2(25*i -75,0)- Vector2(0,YOffset)
+					bullets.position = position + Vector2(25*i -50-12.5,0)- Vector2(0,YOffset)
 					get_parent().add_child(bullets)
 			wentToShoot = false
 	if bulletLevel > 100:

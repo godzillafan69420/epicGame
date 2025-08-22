@@ -197,7 +197,6 @@ func _process(_delta: float) -> void:
 			
 			part = 1
 	if part == 2 and GlobalVariables.character == 2:
-		shotTypeSelected = 0
 		$characterSelection.visible = false
 		$Title.visible = false
 		$firstpart.visible = false
@@ -223,6 +222,11 @@ func _process(_delta: float) -> void:
 		$Jimmy/Knifee.position = Vector2(261+ shotTypeSelected* 640,890)
 		if shotTypeSelected == 0 and Input.is_action_just_pressed("shoot"):
 			GlobalVariables.shotType = 1
+			$sceneTransition/AnimationPlayer.play("fade-Out")
+			await get_tree().create_timer(0.5).timeout
+			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+		if shotTypeSelected == 1 and Input.is_action_just_pressed("shoot"):
+			GlobalVariables.shotType = 2
 			$sceneTransition/AnimationPlayer.play("fade-Out")
 			await get_tree().create_timer(0.5).timeout
 			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
