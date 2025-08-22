@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b65l2ethyydb" path="res://images/store.png" id="2_xiia5"]
 [ext_resource type="Texture2D" uid="uid://cspacpfupv2gs" path="res://images/bob.png" id="3_owqky"]
 [ext_resource type="Texture2D" uid="uid://2wbtfekm2uad" path="res://images/bgFor Stage1.png" id="3_wrm5i"]
-[ext_resource type="Texture2D" uid="uid://cc6fixmoqukid" path="res://images/stage2 backGround.png" id="4_ctcfl"]
 [ext_resource type="Texture2D" uid="uid://hjgigajbxtia" path="res://images/barryToes.png" id="4_efybc"]
 [ext_resource type="Texture2D" uid="uid://il4gq1to5yyh" path="res://images/guywithagun.png" id="5_05j88"]
+[ext_resource type="Texture2D" uid="uid://cod5fllscj4xg" path="res://images/stage4bg.png" id="5_m447b"]
 [ext_resource type="Texture2D" uid="uid://clql05uvu1yxw" path="res://images/conelWith bubble.png" id="5_s4kbo"]
 [ext_resource type="Texture2D" uid="uid://di4827m7ueo1q" path="res://images/player.png" id="6_7rkqr"]
 [ext_resource type="Texture2D" uid="uid://dyj1iw20kmijf" path="res://images/Souls.png" id="7_m447b"]
@@ -54,7 +54,7 @@ texture = ExtResource("3_wrm5i")
 modulate = Color(0.262932, 0.262932, 0.262932, 1)
 position = Vector2(1073.56, 1612)
 scale = Vector2(2.04074, 2.04074)
-texture = ExtResource("4_ctcfl")
+texture = ExtResource("5_m447b")
 
 [node name="Guywithagun" type="Sprite2D" parent="Node2D"]
 position = Vector2(638, 1305)
@@ -115,7 +115,7 @@ offset_right = 1235.0
 offset_bottom = 2391.0
 theme_override_font_sizes/font_size = 50
 text = "special thanks to people who 
-played sprint 1"
+played sprint 1 and Sprint 2"
 
 [node name="Label6" type="Label" parent="Node2D"]
 offset_left = 521.0
@@ -123,7 +123,8 @@ offset_top = 2131.0
 offset_right = 1426.0
 offset_bottom = 2272.0
 theme_override_font_sizes/font_size = 50
-text = "thanks to people who gave feed back "
+text = "thanks to people who gave feed back  
+Some of it was just pure stupid which the game needs"
 
 [node name="Label8" type="Label" parent="Node2D"]
 offset_left = 593.0
@@ -203,7 +204,7 @@ position = Vector2(1318, 900)
 texture = ExtResource("4_efybc")
 
 [node name="ConelWithBubble" type="Sprite2D" parent="Node2D"]
-position = Vector2(1088, 2549)
+position = Vector2(1625, 2540)
 texture = ExtResource("5_s4kbo")
 
 [node name="sceneTransition" parent="." instance=ExtResource("13_wrm5i")]

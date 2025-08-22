@@ -167,6 +167,7 @@ func _process(_delta):
 		get_parent().add_child(bullets)
 		
 func uRdied():
+	$SePldead00.play()
 	invincibility = true
 	justDieded = true
 	
@@ -184,14 +185,17 @@ func _on_area_entered(area):
 func _on_collect_bread_area_entered(area):
 	
 	if area is powerUp:
+		$SeItem00.play()
 		GlobalVariables.score += 100
 		bulletLevel += 1
 		area.queue_free()
 	if area is extrapoint:
+		$SeItem00.play()
 		GlobalVariables.score += 1000
 		GlobalVariables.souls += 1
 		area.queue_free()
 	if area is HpGiver:
+		$SeExtend.play()
 		GlobalVariables.score += 100
 		HP += 1
 		area.queue_free()
@@ -212,3 +216,8 @@ func _on_super_time_period_timeout() -> void:
 
 func _on_shootinterval_timeout() -> void:
 	wentToShoot = true
+
+
+func _on_power_up_timer_timeout() -> void:
+	if bulletLevel < 100  and get_parent().gamePhase != 1:
+		bulletLevel += 5

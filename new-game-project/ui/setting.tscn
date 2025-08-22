@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwmgerox8ntbp"]
+
+[ext_resource type="Script" uid="uid://dfcvyu03j7nfm" path="res://ui/setting.gd" id="1_qt3sj"]
+[ext_resource type="Texture2D" uid="uid://peqvte4xqet7" path="res://images/death.png" id="2_2w7xm"]
+
+[node name="setting" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qt3sj")
+
+[node name="Death" type="Sprite2D" parent="."]
+modulate = Color(0.359069, 0.359069, 0.359069, 1)
+position = Vector2(962.5, 543.5)
+scale = Vector2(3.00156, 3.01389)
+texture = ExtResource("2_2w7xm")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 487.0
+offset_right = -694.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "volume"
+
+[node name="volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -6.0
+max_value = 50.0
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "mute"
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = " "
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "vsync"
+
+[node name="vsync" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "disable"
+popup/item_0/id = 0
+popup/item_1/text = "enable"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 425.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 50
+text = "[x] to go back"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/vsync" to="." method="_on_vsync_item_selected"]

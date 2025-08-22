@@ -192,7 +192,6 @@ func _process(_delta: float) -> void:
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 3:
-				protagonistDialog.texture =gojo
 				textBox.text = "It's ok I'm not here to know
 				what is dark mode."
 				barrySprite.visible = false

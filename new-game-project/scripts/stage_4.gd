@@ -69,7 +69,7 @@ func _process(_delta):
 
 			if theBoss != null:
 				$UI/healthBar.visible = true
-				$UI/healthBar.max_value = 80000
+				$UI/healthBar.max_value = 70000
 				$UI/healthBar.value = theBoss.Hitpoint
 				$"UI/WhenBoss spawn".text = ""
 				$UI/BossName.text = "Vman the Pro"

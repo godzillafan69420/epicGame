@@ -168,24 +168,10 @@ func _process(_delta):
 		$drip.modulate = Color8(0,0,255,50)
 	else:
 		$drip.modulate = Color8(255,255,255,255)
-	if Input.is_action_just_pressed("fireSpecial") and GlobalVariables.PlayerHP > 5 and GlobalVariables.playerPower > 50:
-		get_parent().get_node("LoopingSong").volume_db = -80
-		get_parent().get_node("BarryToes").volume_db = -80
-		$"Emergency-alert-us-2".play()
-		bulletLevel -= 50
-		HP -= 5
-		get_parent().get_node("sceneTransition").get_node("AnimationPlayer").play("flash")
-		for i in range(10):
-					var bullets = nuke.instantiate()
-					
-					bullets.position = Vector2(randf_range(0,1080),randf_range(0,1080))
-					get_parent().add_child(bullets)
-		var bullets = deathZones.instantiate()
-		
-		bullets.position = Vector2(0,0)
-		get_parent().add_child(bullets)
+	
 		
 func uRdied():
+	$SePldead00.play()
 	invincibility = true
 	justDieded = true
 	
@@ -203,14 +189,17 @@ func _on_area_entered(area):
 func _on_collect_bread_area_entered(area):
 	
 	if area is powerUp:
+		$SeItem00.play()
 		GlobalVariables.score += 100
 		bulletLevel += 1
 		area.queue_free()
 	if area is extrapoint:
+		$SeItem00.play()
 		GlobalVariables.score += 1000
 		GlobalVariables.souls += 1
 		area.queue_free()
 	if area is HpGiver:
+		$SeExtend.play()
 		GlobalVariables.score += 100
 		HP += 1
 		area.queue_free()
@@ -231,3 +220,8 @@ func _on_super_time_period_timeout() -> void:
 
 func _on_shootinterval_timeout() -> void:
 	wentToShoot = true
+
+
+func _on_power_up_timeout() -> void:
+	if bulletLevel < 100 and get_parent().gamePhase != 1:
+		bulletLevel += 7

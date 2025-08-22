@@ -8,19 +8,42 @@ var charcterSelected: int = 0
 var shotTypeSelected: int  = 0
 const back1 = preload("res://images/bg1.png")
 const back2 = preload("res://images/bg2.png")
+const back3 = preload("res://images/bgs-3.png.png")
+const back4 = preload("res://images/bgs-4.png")
+const back5 = preload("res://images/bgs-5.png (1).png")
+const back6 = preload("res://images/bgs-6.png.png")
+const back7 = preload("res://images/bgs-7.png.png")
+const back8 = preload("res://images/bgs-8.png.png")
 @onready var startOfGame = preload("res://stages/firstStage.tscn")
 func _ready() -> void:
+	
 	bgcode = randi_range(1,8)
 	if bgcode == 1:
 		$Background.texture = back1
 	if bgcode == 2:
 		$Background.texture = back2
-		
+	if bgcode == 3:
+		$Background.texture = back3
+	if bgcode == 4:
+		$Background.texture = back4
+	if bgcode == 5:
+		$Background.texture = back5
+	if bgcode == 6:
+		$Background.texture = back6
+	if bgcode == 7:
+		$Background.texture = back7
+	if bgcode == 8:
+		$Background.texture = back8
 	await get_tree().create_timer(1.5).timeout
 	part = 0
 	
 func _process(_delta: float) -> void:
-	
+	if Input.is_action_just_pressed("Bomb"):
+		$SeCancel00.play()
+	if Input.is_action_just_pressed("shoot"):
+		$SeSelect00.play()
+	if Input.is_action_just_pressed("down") or Input.is_action_just_pressed("up") or Input.is_action_just_pressed("left")or Input.is_action_just_pressed("right"):
+		$SeSlash.play()
 	if part == 0:
 		if Input.is_action_just_pressed("Bomb"):
 			dummy = false
@@ -38,20 +61,22 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("up"):
 			buttomSelected -= 1
 		if buttomSelected < 0:
-			buttomSelected = 4
-		if buttomSelected > 4:
+			buttomSelected = 5
+		if buttomSelected > 5:
 			buttomSelected = 0
 		if buttomSelected == 0 and Input.is_action_just_pressed("shoot"):
 			part = 1
 		
-		if buttomSelected == 2 and Input.is_action_just_pressed("shoot"):
-			get_tree().change_scene_to_file("res://ui/instructionn.tscn")
 		if buttomSelected == 3 and Input.is_action_just_pressed("shoot"):
-			get_tree().change_scene_to_file("res://ui/music_room.tscn")
+			get_tree().change_scene_to_file("res://ui/instructionn.tscn")
+		if buttomSelected == 2 and Input.is_action_just_pressed("shoot"):
+			get_tree().change_scene_to_file("res://ui/setting.tscn")
 		if buttomSelected == 4 and Input.is_action_just_pressed("shoot"):
+			get_tree().change_scene_to_file("res://ui/music_room.tscn")
+		if buttomSelected == 5 and Input.is_action_just_pressed("shoot"):
 			get_tree().quit()
 	
-		$firstpart/Knifee.position = Vector2(1254.0, 130 * buttomSelected + 394.0)
+		$firstpart/Knifee.position = Vector2(1254.0, 130 * buttomSelected + 264.0)
 	if part == 1:
 		dummy = false
 		$"how move in the main menu".visible = false
@@ -89,6 +114,11 @@ func _process(_delta: float) -> void:
 			await get_tree().create_timer(0.5).timeout
 			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
 			
+			
+	if part == 2:
+		$Background.modulate = Color8(1,1,1,255)
+	else:
+		$Background.modulate = Color8(157,157,157,255)
 	if part == 2 and GlobalVariables.character == 1:
 		$characterSelection.visible = false
 		$Title.visible = false

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dq28g10k4d752" path="res://ui/ui.tscn" id="3_7ujss"]
 [ext_resource type="Texture2D" uid="uid://2wbtfekm2uad" path="res://images/bgFor Stage1.png" id="4_7ry33"]
 [ext_resource type="AudioStream" uid="uid://m7foh8msecth" path="res://music/looping song.wav" id="5_ugfdu"]
-[ext_resource type="AudioStream" uid="uid://c1goft2ei7yw5" path="res://music/barryToes.mp3" id="6_cvvoo"]
+[ext_resource type="AudioStream" uid="uid://kvhdhw54r5l5" path="res://music/barry2.0.mp3" id="6_81ccc"]
 [ext_resource type="Texture2D" uid="uid://b8rfflnqy1vir" path="res://images/jetPlane.png" id="7_81ccc"]
 [ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="8_7ujss"]
 
@@ -59,7 +59,7 @@ wait_time = 75.0
 one_shot = true
 
 [node name="BarryToes" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_cvvoo")
+stream = ExtResource("6_81ccc")
 parameters/looping = false
 
 [node name="sceneTransition" parent="." instance=ExtResource("8_7ujss")]

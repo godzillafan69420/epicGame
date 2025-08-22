@@ -74,7 +74,7 @@ func _process(delta):
 	elif Hitpoint < 25000:
 	
 		bossPhase = 3
-	Hitpoint -= 1.5*inLazer
+	Hitpoint -= 2*inLazer
 	
 
 

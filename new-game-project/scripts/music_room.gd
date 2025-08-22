@@ -3,7 +3,7 @@ extends Control
 var songSelected: int = 0
 const title = preload("res://music/titleAndDeath.mp3")
 const stage1 = preload("res://music/looping song.wav")
-const barry = preload("res://music/barryToes.mp3")
+const barry = preload("res://music/barry2.0.mp3")
 const stage2 = preload("res://music/stage2.mp3")
 const coneL = preload("res://music/coneL.mp3")
 const shop = preload("res://music/scammingYourMoney.mp3")

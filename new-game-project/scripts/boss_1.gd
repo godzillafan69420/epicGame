@@ -37,7 +37,7 @@ func _process(delta):
 		monitoring = false
 	else:
 		monitoring = true
-	Hitpoint -= 1.5*inLazer
+	Hitpoint -= 2*inLazer
 	if Hitpoint < 0:
 		queue_free()
 	
@@ -79,7 +79,7 @@ func _on_area_entered(area: Area2D) -> void:
 		elif area is Bomb:
 			Hitpoint -= 100
 		elif area is Rinbullet:
-			Hitpoint -= 25
+			Hitpoint -= 150
 			area.queue_free()
 		elif area is Rinbulletno2:
 			Hitpoint -= 7.5
