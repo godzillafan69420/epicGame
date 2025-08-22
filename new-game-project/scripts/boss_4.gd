@@ -117,6 +117,12 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is bullet:
 		Hitpoint -= 5
 		area.queue_free()
+	elif area is LazerShot2:
+			Hitpoint -= 15
+		
+			area.queue_free()
+	elif area is smallLazers:
+			Hitpoint -= 5
 	if area is bullet_shot2:
 		Hitpoint -= 20
 		area.queue_free()

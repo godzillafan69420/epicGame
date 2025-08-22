@@ -5,6 +5,7 @@ class_name sideToSideEnemy
 var dir
 var speed
 var Hitpoint: float = 50
+@onready var bulletsPre =preload("res://prefabs/smallLazers.tscn")
 @export var bread = preload("res://prefabs/extra_points.tscn")
 @export var powerUps = preload("res://prefabs/power_up.tscn")
 @export var Hp = preload("res://prefabs/hp.tscn")
@@ -24,6 +25,12 @@ func _ready():
 func _process(_delta):
 	position.x += speed
 	if Hitpoint < 0:
+		if GlobalVariables.character == 2 and GlobalVariables.shotType == 2:
+			for i in range(8):
+				var bullets = bulletsPre.instantiate()
+				bullets.position = position
+				bullets.rotation = deg_to_rad(-90+ 45*i)
+				get_parent().add_child(bullets)
 		GlobalVariables.score += 100
 		var drops = randi_range(1,100)
 		if drops == 1:
@@ -81,6 +88,14 @@ func _on_area_entered(area: Area2D) -> void:
 		area.queue_free()
 	if area is RinbulletNorm:
 		Hitpoint -= 20
+		area.queue_free()
+	elif area is LazerShot2:
+		Hitpoint -= 15
+		
+		area.queue_free()
+	elif area is smallLazers:
+		Hitpoint -= 5
+		
 		area.queue_free()
 	if area is deathZone:
 		Hitpoint -= 10000

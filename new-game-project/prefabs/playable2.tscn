@@ -50,18 +50,23 @@ autostart = true
 stream = ExtResource("5_gl8kg")
 
 [node name="lazer" parent="." instance=ExtResource("6_1161m")]
+visible = false
 position = Vector2(0, -125)
 
 [node name="lazer5" parent="." instance=ExtResource("6_1161m")]
+visible = false
 position = Vector2(-117.5, -5)
 
 [node name="lazer2" parent="." instance=ExtResource("6_1161m")]
+visible = false
 position = Vector2(45, -65)
 
 [node name="lazer3" parent="." instance=ExtResource("6_1161m")]
+visible = false
 position = Vector2(-50, -65)
 
 [node name="lazer4" parent="." instance=ExtResource("6_1161m")]
+visible = false
 position = Vector2(115, -5)
 
 [node name="hitboxes" type="Sprite2D" parent="."]

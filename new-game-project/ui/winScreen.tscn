@@ -85,6 +85,14 @@ offset_bottom = 761.0
 theme_override_font_sizes/font_size = 50
 text = "Art - Kevin Xu"
 
+[node name="Label13" type="Label" parent="Node2D"]
+offset_left = 573.0
+offset_top = 856.0
+offset_right = 1207.0
+offset_bottom = 934.0
+theme_override_font_sizes/font_size = 50
+text = "SFX - stole from touhou 10"
+
 [node name="score" type="Label" parent="Node2D"]
 offset_left = 930.0
 offset_top = 573.0
@@ -208,4 +216,4 @@ position = Vector2(1625, 2540)
 texture = ExtResource("5_s4kbo")
 
 [node name="sceneTransition" parent="." instance=ExtResource("13_wrm5i")]
-position = Vector2(-54, 18)
+position = Vector2(-56, 116)

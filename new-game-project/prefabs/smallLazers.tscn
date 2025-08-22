@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl6l4kub63ai2"]
+
+[ext_resource type="Script" uid="uid://elwe4g6uysxw" path="res://prefabs/small_lazers.gd" id="1_qf6ta"]
+[ext_resource type="Texture2D" uid="uid://d4b4eabyxfknx" path="res://images/explodyLight.png" id="1_xd2sm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf6ta"]
+size = Vector2(8, 32)
+
+[node name="SmallLazers" type="Area2D"]
+script = ExtResource("1_qf6ta")
+
+[node name="ExplodyLight" type="Sprite2D" parent="."]
+position = Vector2(-0.00232172, 0.999997)
+rotation = 1.5708
+texture = ExtResource("1_xd2sm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_qf6ta")

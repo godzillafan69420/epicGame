@@ -84,6 +84,7 @@ func _on_area_entered(area: Area2D) -> void:
 		elif area is Rinbulletno2:
 			Hitpoint -= 7.5
 			area.queue_free()
+		
 		elif area is RinbulletNorm:
 			Hitpoint -= 20
 			area.queue_free()
@@ -91,6 +92,12 @@ func _on_area_entered(area: Area2D) -> void:
 			Hitpoint -= 10000
 		elif area is hollowPurple:
 			Hitpoint -= 10000
+		elif area is LazerShot2:
+			Hitpoint -= 15
+		
+			area.queue_free()
+		elif area is smallLazers:
+			Hitpoint -= 5
 		if area is Lazer:
 			inLazer +=1
 

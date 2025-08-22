@@ -3,7 +3,7 @@ class_name player3
 @onready var bombPrefab = preload("res://prefabs/bombDeleteArea.tscn")
 @onready var bulletPre = preload("res://prefabs/rin_bulllet.tscn")
 @onready var superPrefab = preload("res://prefabs/super_attack.tscn")
-@onready var bullet2Pre = preload("res://prefabs/rin_bullet_shot_2.tscn")
+@onready var bullet2Pre = preload("res://prefabs/lazer_shot_type_2.tscn")
 @onready var bullet3Pre = preload("res://prefabs/rinBulletno2again.tscn")
 @onready var nuke = preload("res://prefabs/virus.tscn")
 @onready var deathZones = preload("res://prefabs/death_zone.tscn")
@@ -24,11 +24,21 @@ var HP = GlobalVariables.PlayerHP
 var amountOfBombs = GlobalVariables.playerBombs
 @onready var bulletPrefab = bulletPre
 func _ready():
+	$lazer.visible = false
+	$lazer.monitorable = false
+	$lazer2.visible = false
+	$lazer2.monitorable = false
+	$lazer3.visible = false
+	$lazer3.monitorable = false
+	$lazer4.visible = false
+	$lazer4.monitorable = false
+	$lazer5.visible = false
+	$lazer5.monitorable = false
 	$hitboxes.hide()
 	add_to_group("player")
 	justDieded = false
 	if GlobalVariables.character == 2 and GlobalVariables.shotType == 2:
-		$shootinterval.wait_time = 0.1
+		$shootinterval.wait_time = 0.20
 		
 	if GlobalVariables.character == 2 and GlobalVariables.shotType == 1:
 		$shootinterval.wait_time = 0.25
@@ -36,6 +46,7 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+
 	GlobalVariables.playerBombs = amountOfBombs
 	GlobalVariables.playerPower = bulletLevel
 	GlobalVariables.PlayerHP = HP
@@ -115,44 +126,16 @@ func _process(_delta):
 			$lazer4.monitorable = false
 			$lazer5.visible = false
 			$lazer5.monitorable = false
-	if GlobalVariables.shotType == 2 and GlobalVariables.character == 3:
+	if GlobalVariables.shotType == 2 and GlobalVariables.character == 2:
 		
 		if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1 and wentToShoot:
-			for i in range(1):
-					var bullets = bullet3Pre.instantiate()
-					bullets.get_node("Sprite2D").modulate = Color8(randi_range(1,255),randi_range(1,255),randi_range(1,255),150)
-					bullets.position = position- Vector2(0,YOffset)
-					bullets.rotation = deg_to_rad(-90)
-					get_parent().add_child(bullets)
-			if bulletLevel <= 25:
+
+			if bulletLevel <= 101:
 				
-				for i in range(1):
-					var bullets = bullet2Pre.instantiate()
-					bullets.position = position + Vector2(0,0)- Vector2(0,YOffset)
-					bullets.rotation = deg_to_rad(-90)
-					get_parent().add_child(bullets)
-			elif bulletLevel <= 50:
-				
-				for i in range(2):
-					var bullets = bullet2Pre.instantiate()
-					bullets.position = position + Vector2(50*i - 25,0)- Vector2(0,YOffset)
-					bullets.rotation = deg_to_rad(-90)
-					get_parent().add_child(bullets)
-			elif bulletLevel <= 75:
-				
-				for i in range(3):
+				for i in range(6):
 					var bullets = bullet2Pre.instantiate()
 
-					bullets.position = position + Vector2(50*i -50,0)- Vector2(0,YOffset)
-					bullets.rotation = deg_to_rad(-90)
-					get_parent().add_child(bullets)
-			elif bulletLevel <= 101:
-				
-				for i in range(4):
-					var bullets = bullet2Pre.instantiate()
-
-					bullets.position = position + Vector2(50*i -75,0)- Vector2(0,YOffset)
-					bullets.rotation = deg_to_rad(-90)
+					bullets.position = position + Vector2(25*i -75,0)- Vector2(0,YOffset)
 					get_parent().add_child(bullets)
 			wentToShoot = false
 	if bulletLevel > 100:
