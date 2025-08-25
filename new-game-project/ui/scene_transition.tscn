@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxqwnhhteb662"]
+[gd_scene load_steps=7 format=3 uid="uid://dxqwnhhteb662"]
+
+[ext_resource type="Texture2D" uid="uid://133kyp02h4v3" path="res://images/Flag_of_the_Soviet_Union_(3-2).svg" id="1_li7wd"]
 
 [sub_resource type="Animation" id="Animation_li7wd"]
 length = 0.001
@@ -85,3 +87,9 @@ color = Color(0, 0, 0, 0)
 libraries = {
 &"": SubResource("AnimationLibrary_lcbxi")
 }
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.521569)
+position = Vector2(956.5, 545)
+scale = Vector2(2.16111, 1.83333)
+texture = ExtResource("1_li7wd")

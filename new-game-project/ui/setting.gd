@@ -23,3 +23,7 @@ func _on_vsync_item_selected(index: int) -> void:
 			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 		1:
 			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+
+
+func _on_check_box_2_toggled(toggled_on: bool) -> void:
+	GlobalVariables.communism = toggled_on
