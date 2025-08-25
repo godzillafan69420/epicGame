@@ -25,7 +25,11 @@ func _ready():
 func _process(_delta):
 	position.x += speed
 	if Hitpoint < 0:
+		$explode.emitting = true
+		
+		await get_tree().create_timer(0.2).timeout
 		if GlobalVariables.character == 2 and GlobalVariables.shotType == 2:
+			
 			for i in range(8):
 				var bullets = bulletsPre.instantiate()
 				bullets.position = position
@@ -45,6 +49,7 @@ func _process(_delta):
 			var items = powerUps.instantiate()
 			items.position = position
 			get_parent().add_child(items)
+		AudioManager.play("res://sfx/ouchForEnemies.wav")
 		queue_free()
 	if position.x > 410 or position.x < -940:
 		queue_free()

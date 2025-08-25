@@ -17,7 +17,7 @@ const back8 = preload("res://images/bgs-8.png.png")
 @onready var startOfGame = preload("res://stages/firstStage.tscn")
 func _ready() -> void:
 	
-	bgcode = randi_range(1,8)
+	bgcode = randi_range(1,7)
 	if bgcode == 1:
 		$Background.texture = back1
 	if bgcode == 2:
@@ -217,7 +217,7 @@ func _process(_delta: float) -> void:
 			peoples eyes"
 			$Jimmy/stats2.text = "Special: None yet"
 		if shotTypeSelected == 1:
-			$Jimmy/stats1.text ="Indevelopment"
+			$Jimmy/stats1.text ="Explosive Lazer"
 			$Jimmy/stats2.text = "Special: None yet"
 		$Jimmy/Knifee.position = Vector2(261+ shotTypeSelected* 640,890)
 		if shotTypeSelected == 0 and Input.is_action_just_pressed("shoot"):

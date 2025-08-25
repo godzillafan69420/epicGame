@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb07pdw48lgvp"]
+[gd_scene load_steps=6 format=3 uid="uid://bb07pdw48lgvp"]
 
 [ext_resource type="Script" uid="uid://nyt1rcjvdyy2" path="res://vman_elite_soldier.gd" id="1_xe4y7"]
 [ext_resource type="Texture2D" uid="uid://dmp6e658uwv3h" path="res://images/Elite.png" id="2_xe4y7"]
+[ext_resource type="Texture2D" uid="uid://dj2br04yejf1m" path="res://images/Reimu.PNG.webp" id="3_snbg6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ndri"]
 size = Vector2(55, 129)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3ndri"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.253
+spread = 180.0
+initial_velocity_min = 216.67
+initial_velocity_max = 400.0
+gravity = Vector3(0, 980, 0)
 
 [node name="VmanEliteSoldier" type="Area2D"]
 script = ExtResource("1_xe4y7")
@@ -22,6 +31,19 @@ scale = Vector2(0.338867, 0.338867)
 texture = ExtResource("2_xe4y7")
 
 [node name="Rotator" type="Node2D" parent="."]
+
+[node name="explode" type="GPUParticles2D" parent="."]
+position = Vector2(-0.773868, -2.38419e-07)
+emitting = false
+amount = 10
+amount_ratio = 0.656
+texture = ExtResource("3_snbg6")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+draw_order = 0
+trail_lifetime = 0.55
+process_material = SubResource("ParticleProcessMaterial_3ndri")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

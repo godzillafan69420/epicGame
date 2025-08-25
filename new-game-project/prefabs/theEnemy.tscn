@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmpm4hwdp4ij2"]
+[gd_scene load_steps=6 format=3 uid="uid://dmpm4hwdp4ij2"]
 
 [ext_resource type="Script" uid="uid://decx2bkwl6jhu" path="res://scripts/the_enemy.gd" id="1_temce"]
 [ext_resource type="Texture2D" uid="uid://il4gq1to5yyh" path="res://images/guywithagun.png" id="1_y4cat"]
+[ext_resource type="Texture2D" uid="uid://dj2br04yejf1m" path="res://images/Reimu.PNG.webp" id="3_wkumf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msdjt"]
 size = Vector2(55, 129)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c827m"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.253
+spread = 180.0
+initial_velocity_min = 216.67
+initial_velocity_max = 400.0
+gravity = Vector3(0, 980, 0)
 
 [node name="guyShootTowardsYou" type="Area2D"]
 script = ExtResource("1_temce")
@@ -19,6 +28,19 @@ wait_time = 5.0
 [node name="Guywithagun" type="Sprite2D" parent="."]
 position = Vector2(-1, 0)
 texture = ExtResource("1_y4cat")
+
+[node name="explode" type="GPUParticles2D" parent="."]
+position = Vector2(-0.773868, -2.38419e-07)
+emitting = false
+amount = 10
+amount_ratio = 0.656
+texture = ExtResource("3_wkumf")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+draw_order = 0
+trail_lifetime = 0.55
+process_material = SubResource("ParticleProcessMaterial_c827m")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

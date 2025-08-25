@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://di4827m7ueo1q" path="res://images/player.png" id="2_of66h"]
 [ext_resource type="Texture2D" uid="uid://di36wv4xid0kd" path="res://images/circle.png" id="2_xvq43"]
 [ext_resource type="Script" uid="uid://c2ld355al4qu2" path="res://scripts/collect_bread.gd" id="4_1eeyy"]
-[ext_resource type="AudioStream" uid="uid://dh77ej5ik6cs0" path="res://sfx/se_pldead00.wav" id="5_u51tk"]
-[ext_resource type="AudioStream" uid="uid://dnefp51w6sp13" path="res://sfx/se_item00.wav" id="6_kbsxf"]
-[ext_resource type="AudioStream" uid="uid://q7myv8c318m" path="res://sfx/se_extend.wav" id="7_rgeog"]
+[ext_resource type="AudioStream" uid="uid://mx8wyrdvc112" path="res://sfx/ivan asmr.wav" id="5_u51tk"]
+[ext_resource type="AudioStream" uid="uid://bq83ss50y5rr0" path="res://sfx/scroll.wav" id="6_u51tk"]
+[ext_resource type="AudioStream" uid="uid://peshdgehw2hd" path="res://sfx/extended.wav" id="7_kbsxf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7erbq"]
 radius = 7.14288
@@ -61,10 +61,10 @@ autostart = true
 stream = ExtResource("5_u51tk")
 
 [node name="SeItem00" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_kbsxf")
+stream = ExtResource("6_u51tk")
 
 [node name="SeExtend" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_rgeog")
+stream = ExtResource("7_kbsxf")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

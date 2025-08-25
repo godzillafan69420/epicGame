@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://duutoxbnnsydq" path="res://scripts/main_menu.gd" id="1_0dkrt"]
 [ext_resource type="Texture2D" uid="uid://bx73v8oimnqvh" path="res://images/background.png" id="2_ei257"]
-[ext_resource type="AudioStream" uid="uid://5kujfgtj6kig" path="res://sfx/se_select00.wav" id="2_i5ydv"]
+[ext_resource type="AudioStream" uid="uid://dx48kw0vnitpg" path="res://sfx/confirm.wav" id="2_i5ydv"]
 [ext_resource type="AudioStream" uid="uid://dndkf3r2n1o8c" path="res://music/titleAndDeath.mp3" id="2_wk0pr"]
+[ext_resource type="AudioStream" uid="uid://bq83ss50y5rr0" path="res://sfx/scroll.wav" id="3_racxt"]
 [ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="3_wk0pr"]
-[ext_resource type="AudioStream" uid="uid://dody6n36x7bhv" path="res://sfx/se_cancel00.wav" id="4_dooca"]
-[ext_resource type="AudioStream" uid="uid://wn3eu7j2mq76" path="res://sfx/se_ok00.wav" id="4_i5ydv"]
+[ext_resource type="AudioStream" uid="uid://bojgoeo7j2slk" path="res://sfx/exitMenu.wav" id="4_dooca"]
 [ext_resource type="Texture2D" uid="uid://7gm54sfbl03" path="res://images/title (2).png" id="4_jqly5"]
 [ext_resource type="Texture2D" uid="uid://cspacpfupv2gs" path="res://images/bob.png" id="7_arv2f"]
 [ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="7_p8ri8"]
@@ -41,7 +41,7 @@ script = ExtResource("1_0dkrt")
 stream = ExtResource("2_i5ydv")
 
 [node name="SeSlash" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_i5ydv")
+stream = ExtResource("3_racxt")
 
 [node name="SeCancel00" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dooca")

@@ -51,6 +51,7 @@ func _process(delta):
 	else:
 		monitoring = true
 	if Hitpoint < 0:
+		AudioManager.play("res://sfx/goodmorningChina.wav")
 		queue_free()
 	
 	if bossPhase == 3:
@@ -83,36 +84,51 @@ func _process(delta):
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if area is bullet:
-		Hitpoint -= 5
-		area.queue_free()
-	if area is bullet_shot2:
-		Hitpoint -= 20
-		area.queue_free()
-	if area is superAttack:
-		Hitpoint -= 22.5
-		area.queue_free()
-	elif area is LazerShot2:
+	if get_parent().gamePhase != 1:
+		if area is bullet:
+
+			Hitpoint -= 5
+			area.queue_free()
+		elif area is bullet_shot2:
+
+			Hitpoint -= 20
+			area.queue_free()
+		elif area is superAttack:
+
+			Hitpoint -= 100
+			area.queue_free()
+		elif area is Bomb:
+
+			Hitpoint -= 100
+		elif area is Rinbullet:
+
+			Hitpoint -= 150
+			area.queue_free()
+		elif area is Rinbulletno2:
+
+			Hitpoint -= 7.5
+			area.queue_free()
+		
+		elif area is RinbulletNorm:
+
+			Hitpoint -= 20
+			area.queue_free()
+		elif area is deathZone:
+			
+			Hitpoint -= 10000
+		elif area is hollowPurple:
+			
+			Hitpoint -= 10000
+		elif area is LazerShot2:
 			Hitpoint -= 15
 		
 			area.queue_free()
-	elif area is smallLazers:
+		elif area is smallLazers:
+
 			Hitpoint -= 5
-	if area is Rinbullet:
-		Hitpoint -= 150
-		area.queue_free()
-	if area is Rinbulletno2:
-		Hitpoint -= 7.5
-		area.queue_free()
-	if area is RinbulletNorm:
-		Hitpoint -= 20
-		area.queue_free()
-	if area is deathZone:
-		Hitpoint -= 10000
-	if area is hollowPurple:
-		Hitpoint -= 10000
-	if area is Lazer:
-		inLazer +=1
+		if area is Lazer:
+			inLazer +=1
+
 
 
 

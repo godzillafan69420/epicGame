@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfpj052y7q84g"]
+[gd_scene load_steps=6 format=3 uid="uid://dfpj052y7q84g"]
 
 [ext_resource type="Script" uid="uid://bcw4oah36h6f" path="res://scripts/elmo.gd" id="1_25ax4"]
 [ext_resource type="Texture2D" uid="uid://bbju35t1hd4l5" path="res://images/Job aplication.png" id="2_lbk4n"]
+[ext_resource type="Texture2D" uid="uid://dj2br04yejf1m" path="res://images/Reimu.PNG.webp" id="3_lbk4n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1powp"]
 radius = 55.7228
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gtmm7"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.253
+spread = 180.0
+initial_velocity_min = 216.67
+initial_velocity_max = 400.0
+gravity = Vector3(0, 980, 0)
 
 [node name="elmo" type="Area2D"]
 scale = Vector2(1.29221, 1.44195)
@@ -20,9 +29,21 @@ position = Vector2(0.773868, -15.9506)
 scale = Vector2(0.219329, 0.219329)
 texture = ExtResource("2_lbk4n")
 
+[node name="explode" type="GPUParticles2D" parent="."]
+position = Vector2(-0.773868, -2.38419e-07)
+emitting = false
+amount = 10
+amount_ratio = 0.656
+texture = ExtResource("3_lbk4n")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+draw_order = 0
+trail_lifetime = 0.55
+process_material = SubResource("ParticleProcessMaterial_gtmm7")
+
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
-autostart = true
+wait_time = 7.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

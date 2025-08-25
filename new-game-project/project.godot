@@ -21,6 +21,7 @@ config/windows_native_icon="res://images/icon.ico"
 [autoload]
 
 GlobalVariables="*res://scripts/global_variables.gd"
+AudioManager="*res://scripts/audioManager.gd"
 
 [display]
 

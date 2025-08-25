@@ -38,7 +38,7 @@ func _ready():
 	add_to_group("player")
 	justDieded = false
 	if GlobalVariables.character == 2 and GlobalVariables.shotType == 2:
-		$shootinterval.wait_time = 0.20
+		$shootinterval.wait_time = 0.15
 		
 	if GlobalVariables.character == 2 and GlobalVariables.shotType == 1:
 		$shootinterval.wait_time = 0.25
