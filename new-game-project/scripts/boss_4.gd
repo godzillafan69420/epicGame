@@ -3,7 +3,7 @@ extends Area2D
 class_name bossNo4
 
 
-var Hitpoint: float = 70000
+var Hitpoint: float = 50000
 var count: int = 0
 var count2: int = 0
 var bossPhase: int = 0
@@ -98,13 +98,13 @@ func _process(delta):
 	if bossPhase == 4 and count2 != 1:
 		$phase3Attack.start()
 		count2 = 1
-	if Hitpoint < 50000 and Hitpoint > 30000:
+	if Hitpoint < 37500 and Hitpoint > 25000:
 		bossPhase = 2
 	
-	if Hitpoint < 30000 and Hitpoint > 10000:
+	if Hitpoint < 25000 and Hitpoint > 12500:
 		
 		bossPhase = 3
-	if Hitpoint < 10000:
+	if Hitpoint < 12500:
 	
 		bossPhase = 4
 	Hitpoint -= 2*inLazer

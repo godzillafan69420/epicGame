@@ -3,7 +3,7 @@ extends Area2D
 class_name bossNo2
 
 
-var Hitpoint: float = 50000
+var Hitpoint: float = 40000
 var count: int = 0
 var count2: int = 0
 var bossPhase: int = 0

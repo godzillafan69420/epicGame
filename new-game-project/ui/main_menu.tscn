@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c6sc6jmkpi5an"]
+[gd_scene load_steps=26 format=3 uid="uid://c6sc6jmkpi5an"]
 
 [ext_resource type="Script" uid="uid://duutoxbnnsydq" path="res://scripts/main_menu.gd" id="1_0dkrt"]
 [ext_resource type="Texture2D" uid="uid://bx73v8oimnqvh" path="res://images/background.png" id="2_ei257"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b3vfqif5dbfs2" path="res://images/Screenshot 2025-08-11 204108.png" id="16_8jgmr"]
 [ext_resource type="Texture2D" uid="uid://is5jbaebi4hk" path="res://images/Screenshot 2025-08-11 204359.png" id="17_q75kt"]
 [ext_resource type="Texture2D" uid="uid://clql05uvu1yxw" path="res://images/conelWith bubble.png" id="18_pbm0j"]
+[ext_resource type="Texture2D" uid="uid://bod6vseopoo65" path="res://images/lazer2.png" id="18_racxt"]
 [ext_resource type="Texture2D" uid="uid://hjgigajbxtia" path="res://images/barryToes.png" id="19_sb7pk"]
 [ext_resource type="Texture2D" uid="uid://h0uvystrlwy8" path="res://images/rackNew.png" id="20_s1050"]
 [ext_resource type="Texture2D" uid="uid://dkhr3w5s11p" path="res://images/VmanWithBubble.png" id="21_i5ydv"]
@@ -342,7 +343,7 @@ text = "iscord light mode"
 [node name="ShootType1Char2" type="Sprite2D" parent="Jimmy"]
 position = Vector2(855, 394)
 scale = Vector2(3.92639, 3.92639)
-texture = ExtResource("14_0nobx")
+texture = ExtResource("18_racxt")
 
 [node name="Label5" type="Label" parent="Jimmy"]
 offset_left = 599.0

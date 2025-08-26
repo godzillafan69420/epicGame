@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://ddn04knp2k7hi"]
 
 [ext_resource type="Script" uid="uid://dqjlr263mifyy" path="res://prefabs/playable_2.gd" id="1_1161m"]
-[ext_resource type="Texture2D" uid="uid://boy38go6l0ajg" path="res://images/unamedYet.png" id="2_1161m"]
+[ext_resource type="Texture2D" uid="uid://cyu8sqo3ttji0" path="res://images/timmy.png" id="2_gl8kg"]
 [ext_resource type="Texture2D" uid="uid://di36wv4xid0kd" path="res://images/circle.png" id="3_cy6l6"]
 [ext_resource type="Script" uid="uid://c2ld355al4qu2" path="res://scripts/collect_bread.gd" id="4_u3xxk"]
 [ext_resource type="AudioStream" uid="uid://bfgc6ub7504t3" path="res://music/emergency-alert-us-2.wav" id="5_gl8kg"]
@@ -23,7 +23,7 @@ script = ExtResource("1_1161m")
 [node name="drip" type="Sprite2D" parent="."]
 position = Vector2(-2.38419e-07, 0)
 scale = Vector2(1.63853, 1.88782)
-texture = ExtResource("2_1161m")
+texture = ExtResource("2_gl8kg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_460ro")

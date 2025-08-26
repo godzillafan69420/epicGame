@@ -292,12 +292,13 @@ func _process(_delta: float) -> void:
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 12:
-				textBox.text = "Chicken - nugger"
+				textBox.text = "Chicken butt!"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			
 			if textToShow == 13:
-				textBox.text = "What is even that?????
+				textBox.text = "....
+				PREPARE THYSELF, JUDGEMENT, CRUSH, DIE, WEAK, THY END IS NOW.
 				"
 				barrySprite.visible = false
 				protagonistDialog.visible = true

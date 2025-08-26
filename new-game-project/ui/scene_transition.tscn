@@ -89,6 +89,7 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.521569)
 position = Vector2(956.5, 545)
 scale = Vector2(2.16111, 1.83333)
