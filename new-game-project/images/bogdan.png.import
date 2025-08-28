@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56x8i56f7b8x"
-path="res://.godot/imported/ConeL.png-e6801dec137d9dad5a31f64555ab4631.ctex"
+uid="uid://0foq0fnga2wq"
+path="res://.godot/imported/bogdan.png-48885d449dfecfb423bc4c1611f85e43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/ConeL.png"
-dest_files=["res://.godot/imported/ConeL.png-e6801dec137d9dad5a31f64555ab4631.ctex"]
+source_file="res://images/bogdan.png"
+dest_files=["res://.godot/imported/bogdan.png-48885d449dfecfb423bc4c1611f85e43.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=352
 detect_3d/compress_to=1

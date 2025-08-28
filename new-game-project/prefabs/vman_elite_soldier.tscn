@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bb07pdw48lgvp"]
 
-[ext_resource type="Script" uid="uid://nyt1rcjvdyy2" path="res://vman_elite_soldier.gd" id="1_xe4y7"]
+[ext_resource type="Script" uid="uid://nyt1rcjvdyy2" path="res://scripts/vman_elite_soldier.gd" id="1_xe4y7"]
 [ext_resource type="Texture2D" uid="uid://dmp6e658uwv3h" path="res://images/Elite.png" id="2_xe4y7"]
 [ext_resource type="Texture2D" uid="uid://dj2br04yejf1m" path="res://images/Reimu.PNG.webp" id="3_snbg6"]
 

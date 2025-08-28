@@ -6,6 +6,8 @@ class_name boss
 var Hitpoint: float = 35000
 var count: int = 0
 var bossPhase: int = 0
+const bogdan = preload("res://images/borisWithOutBubble.png")
+
 @onready var thePlayer
 @onready var bulletPrefab = preload("res://prefabs/bullet_to_player.tscn")
 @onready var bossSuperBulletPre = preload("res://prefabs/boss_super_bullet.tscn")
@@ -19,6 +21,8 @@ const spawn_point_count: int = 4
 const radius: float = 100
 
 func _ready() -> void:
+	if GlobalVariables.communism == true:
+		$Freaky.texture = bogdan
 	thePlayer = get_parent().get_node("player")
 	var step = 2 * PI  / spawn_point_count
 		
