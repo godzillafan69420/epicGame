@@ -4,6 +4,8 @@ func _ready() -> void:
 	AudioServer.set_bus_mute(0,false)
 	AudioServer.set_bus_volume_db(0, 0)
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	GlobalVariables.communism = false
+	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Bomb"):
 		
