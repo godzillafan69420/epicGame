@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bo5g54o7tiwcj"]
 
 [ext_resource type="Texture2D" uid="uid://djdbdl542i4oy" path="res://images/lazer.png" id="1_ifbys"]
-[ext_resource type="Script" uid="uid://mcp362hdsn6m" path="res://prefabs/lazer.gd" id="1_ntuir"]
+[ext_resource type="Script" uid="uid://mcp362hdsn6m" path="res://scripts/lazer.gd" id="1_ntuir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntuir"]
 size = Vector2(6, 253)

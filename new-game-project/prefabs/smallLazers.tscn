@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bl6l4kub63ai2"]
 
-[ext_resource type="Script" uid="uid://elwe4g6uysxw" path="res://prefabs/small_lazers.gd" id="1_qf6ta"]
+[ext_resource type="Script" uid="uid://elwe4g6uysxw" path="res://small_lazers.gd" id="1_qf6ta"]
 [ext_resource type="Texture2D" uid="uid://d4b4eabyxfknx" path="res://images/explodyLight.png" id="1_xd2sm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qf6ta"]
