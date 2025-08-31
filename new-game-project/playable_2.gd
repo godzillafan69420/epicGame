@@ -165,6 +165,8 @@ func _process(_delta):
 	
 		
 func uRdied():
+	$explode.emitting = true
+	get_parent().get_node("Camera2D").trauma = 0.5
 	$SePldead00.play()
 	invincibility = true
 	justDieded = true

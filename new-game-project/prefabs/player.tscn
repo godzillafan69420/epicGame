@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7a7kdiy2ua2k"]
+[gd_scene load_steps=12 format=3 uid="uid://b7a7kdiy2ua2k"]
 
 [ext_resource type="Script" uid="uid://dl6eh6bb5ejnk" path="res://scripts/player.gd" id="1_4j22m"]
 [ext_resource type="Texture2D" uid="uid://di4827m7ueo1q" path="res://images/player.png" id="2_of66h"]
@@ -7,12 +7,21 @@
 [ext_resource type="AudioStream" uid="uid://mx8wyrdvc112" path="res://sfx/ivan asmr.wav" id="5_u51tk"]
 [ext_resource type="AudioStream" uid="uid://bq83ss50y5rr0" path="res://sfx/scroll.wav" id="6_u51tk"]
 [ext_resource type="AudioStream" uid="uid://peshdgehw2hd" path="res://sfx/extended.wav" id="7_kbsxf"]
+[ext_resource type="Texture2D" uid="uid://dj2br04yejf1m" path="res://images/Reimu.PNG.webp" id="8_kbsxf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7erbq"]
 radius = 7.14288
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iqrp6"]
 radius = 115.082
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rgeog"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.253
+spread = 180.0
+initial_velocity_min = 216.67
+initial_velocity_max = 400.0
+gravity = Vector3(0, 980, 0)
 
 [node name="player" type="Area2D"]
 scale = Vector2(0.4, 0.399)
@@ -65,6 +74,20 @@ stream = ExtResource("6_u51tk")
 
 [node name="SeExtend" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_kbsxf")
+
+[node name="explode" type="GPUParticles2D" parent="."]
+position = Vector2(-0.773868, -2.38419e-07)
+emitting = false
+amount = 10
+amount_ratio = 0.656
+texture = ExtResource("8_kbsxf")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+local_coords = true
+draw_order = 0
+trail_lifetime = 0.55
+process_material = SubResource("ParticleProcessMaterial_rgeog")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
