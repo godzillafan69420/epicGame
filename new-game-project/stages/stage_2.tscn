@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cftub4i4qhmrk"]
+[gd_scene load_steps=8 format=3 uid="uid://cftub4i4qhmrk"]
 
 [ext_resource type="Script" uid="uid://crte30qnov4tq" path="res://scripts/stage_2.gd" id="1_txogb"]
+[ext_resource type="Script" uid="uid://bo2kucyohifd1" path="res://stages/camera_2d.gd" id="2_85jxm"]
 [ext_resource type="Texture2D" uid="uid://dgtf8vsw8d36l" path="res://images/coneLEvilbase.png" id="3_txogb"]
 [ext_resource type="AudioStream" uid="uid://cv3fmb17x3ak7" path="res://music/stage2.mp3" id="5_txogb"]
 [ext_resource type="PackedScene" uid="uid://due5nhs3wm7hu" path="res://ui/uiforstage2.tscn" id="6_85jxm"]
@@ -12,6 +13,7 @@ script = ExtResource("1_txogb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 ignore_rotation = false
+script = ExtResource("2_85jxm")
 
 [node name="UI" parent="." instance=ExtResource("6_85jxm")]
 offset_left = -967.0
@@ -50,6 +52,8 @@ stream = ExtResource("6_txogb")
 
 [node name="sceneTransition" parent="." instance=ExtResource("7_85jxm")]
 position = Vector2(-961, -542)
+
+[node name="target" type="Node2D" parent="."]
 
 [connection signal="startTheBossMusic" from="UI" to="." method="_on_ui_start_the_boss_music"]
 [connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]

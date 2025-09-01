@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgva82va80hav"]
+[gd_scene load_steps=8 format=3 uid="uid://cgva82va80hav"]
 
 [ext_resource type="PackedScene" uid="uid://b7i5brk8wrb0u" path="res://ui/stage3UI.tscn" id="1_1hwes"]
 [ext_resource type="Script" uid="uid://dx6asmnwghj2a" path="res://scripts/stage_3.gd" id="1_8iyqq"]
+[ext_resource type="Script" uid="uid://bo2kucyohifd1" path="res://stages/camera_2d.gd" id="2_sg1oo"]
 [ext_resource type="Texture2D" uid="uid://bu640p5gvgcxa" path="res://images/bananaBank.png" id="4_8iyqq"]
 [ext_resource type="AudioStream" uid="uid://wnuqjqedu8sm" path="res://music/bananamonopoly.mp3" id="4_sg1oo"]
 [ext_resource type="AudioStream" uid="uid://cprvy3fomjyp7" path="res://music/bananaField.mp3" id="5_8iyqq"]
@@ -12,6 +13,7 @@ script = ExtResource("1_8iyqq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 ignore_rotation = false
+script = ExtResource("2_sg1oo")
 
 [node name="elmoSpawnRate" type="Timer" parent="."]
 wait_time = 0.5
@@ -53,6 +55,8 @@ offset_bottom = -542.0
 
 [node name="sceneTransition" parent="." instance=ExtResource("7_sg1oo")]
 position = Vector2(-961, -542)
+
+[node name="target" type="Node2D" parent="."]
 
 [connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]
 [connection signal="timeout" from="gigaSpawnRate" to="." method="_on_giga_spawn_rate_timeout"]

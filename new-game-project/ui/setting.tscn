@@ -71,6 +71,15 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 55
 text = " NO Scam"
 
+[node name="Label5" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "Camera Shake"
+
+[node name="CheckBox3" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_right = 425.0
@@ -82,3 +91,4 @@ text = "[x] to go back"
 [connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/vsync" to="." method="_on_vsync_item_selected"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox2" to="." method="_on_check_box_2_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox3" to="." method="_on_check_box_3_toggled"]

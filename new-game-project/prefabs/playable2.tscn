@@ -41,7 +41,7 @@ shape = SubResource("CircleShape2D_460ro")
 script = ExtResource("4_u3xxk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collectBread"]
-position = Vector2(-2.5, 2.5)
+position = Vector2(-2.5, 7.5)
 shape = SubResource("CircleShape2D_ix5la")
 
 [node name="invincibility" type="Timer" parent="."]
