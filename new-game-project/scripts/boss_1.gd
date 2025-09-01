@@ -43,7 +43,8 @@ func _process(delta):
 		monitoring = true
 	Hitpoint -= 2*inLazer
 	if Hitpoint < 0:
-		get_parent().get_node("Camera2D").trauma = 0.5
+		if GlobalVariables.CameraShake:
+			get_parent().get_node("Camera2D").trauma = 0.5
 		AudioManager.play("res://sfx/barryDiedSOund.wav")
 		queue_free()
 	

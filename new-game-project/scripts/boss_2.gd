@@ -49,7 +49,8 @@ func _process(delta):
 	else:
 		monitoring = true
 	if Hitpoint < 0:
-		get_parent().get_node("Camera2D").trauma = 0.5
+		if GlobalVariables.CameraShake:
+			get_parent().get_node("Camera2D").trauma = 0.5
 		AudioManager.play("res://sfx/boom.wav")
 		queue_free()
 	

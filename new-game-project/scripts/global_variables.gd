@@ -3,8 +3,8 @@ extends Node
 var score: int = 0
 var PlayerHP: int = 3
 var playerBombs: int = 4
-var playerPower: int = 20
-var souls: int = 10
+var playerPower: int = 100
+var souls: int = 50
 var shotType: int = 2
 var character: int = 2
 var enemies: Array = [enemy,
@@ -18,7 +18,7 @@ GuyShootTowardsYou]
 var muteMusic = false
 var stage: int = 1
 var communism = false
-var CameraShake = false
+var CameraShake = true
 func _process(_delta: float) -> void:
 	if communism:
 		if get_tree().current_scene == null:

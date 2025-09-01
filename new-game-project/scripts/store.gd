@@ -28,14 +28,15 @@ func _process(_delta: float) -> void:
 	$souls.text = "Souls collected: " + str(GlobalVariables.souls)
 	$HP.text = "HP: " + str(GlobalVariables.PlayerHP)
 	if GlobalVariables.PlayerHP > 10:
-		
+		AudioManager.play("res://sfx/scammed.wav")
 		GlobalVariables.PlayerHP = 10
 	$bombs.text = "Bombs: " + str(GlobalVariables.playerBombs)
 	if GlobalVariables.playerBombs > 10:
-		
+		AudioManager.play("res://sfx/scammed.wav")
 		GlobalVariables.playerBombs = 10
 	$Power.text = "power: " + str(GlobalVariables.playerPower)
 	if GlobalVariables.playerPower > 100:
+		AudioManager.play("res://sfx/scammed.wav")
 		GlobalVariables.playerPower = 100
 	if Input.is_action_just_pressed("right"):
 		selectedItems += 1
