@@ -89,7 +89,8 @@ func _on_area_entered(area):
 		Hitpoint -= 10000
 	if area is Lazer:
 		inLazer += 1
-	
+	if area is fireBallOfDoom:
+			Hitpoint -= 2500
 	
 func _on_timer_timeout():
 	var ball = balls.instantiate()

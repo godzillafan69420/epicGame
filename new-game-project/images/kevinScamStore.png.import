@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56x8i56f7b8x"
-path="res://.godot/imported/ConeL.png-e6801dec137d9dad5a31f64555ab4631.ctex"
+uid="uid://dgahbodq0f82d"
+path="res://.godot/imported/kevinScamStore.png-cb11ff0ee7b2171b234b3cb154ba9aa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/ConeL.png"
-dest_files=["res://.godot/imported/ConeL.png-e6801dec137d9dad5a31f64555ab4631.ctex"]
+source_file="res://images/kevinScamStore.png"
+dest_files=["res://.godot/imported/kevinScamStore.png-cb11ff0ee7b2171b234b3cb154ba9aa0.ctex"]
 
 [params]
 

@@ -105,7 +105,8 @@ func _on_area_entered(area: Area2D) -> void:
 		Hitpoint -= 10000
 	if area is Lazer:
 		inLazer +=1
-
+	if area is fireBallOfDoom:
+			Hitpoint -= 2500
 
 func _on_area_exited(area: Area2D) -> void:
 	if area is Lazer:

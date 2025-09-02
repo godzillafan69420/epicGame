@@ -71,7 +71,7 @@ func _process(_delta: float) -> void:
 			AudioManager.play("res://sfx/confirm.wav")
 		else:
 			AudioManager.play("res://sfx/ouchForEnemies.wav")
-	$Knifee.position = Vector2(selectedItems * 610 + 297, 632)
+	$Knifee.position = Vector2(selectedItems * 400 + 484.0, 741)
 	if Input.is_action_just_pressed("Bomb"):
 		AudioManager.play("res://sfx/extended.wav")
 		$sceneTransition/AnimationPlayer.play("fade-Out")

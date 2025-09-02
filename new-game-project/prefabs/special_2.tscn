@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3aq2csrv01rq"]
+
+[ext_resource type="Script" uid="uid://b3nc3f40snhf6" path="res://prefabs/special_2.gd" id="1_uydf6"]
+[ext_resource type="Texture2D" uid="uid://b858ltjn5kq8k" path="res://images/firyballOf death.png" id="2_g5uaq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7no58"]
+radius = 155.824
+
+[node name="Special2" type="Area2D"]
+script = ExtResource("1_uydf6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7no58")
+
+[node name="FiryballOfDeath" type="Sprite2D" parent="."]
+position = Vector2(1, 3.8147e-06)
+scale = Vector2(2.42188, 2.42188)
+texture = ExtResource("2_g5uaq")

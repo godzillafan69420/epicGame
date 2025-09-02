@@ -128,6 +128,8 @@ func _on_area_entered(area: Area2D) -> void:
 		elif area is smallLazers:
 
 			Hitpoint -= 5
+		if area is fireBallOfDoom:
+			Hitpoint -= 2500
 		if area is Lazer:
 			inLazer +=1
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dp02eeg1k66cg"]
 
 [ext_resource type="Script" uid="uid://0wwh4xkoi0gy" path="res://scripts/store.gd" id="1_cjrdt"]
-[ext_resource type="Texture2D" uid="uid://b65l2ethyydb" path="res://images/store.png" id="1_kj3tv"]
+[ext_resource type="Texture2D" uid="uid://dgahbodq0f82d" path="res://images/kevinScamStore.png" id="2_od2if"]
 [ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="3_eflcf"]
 [ext_resource type="AudioStream" uid="uid://dmxdw2i64ejhp" path="res://music/scammingYourMoney.mp3" id="4_u1bgn"]
 [ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="5_od2if"]
@@ -15,10 +15,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cjrdt")
 
-[node name="Store" type="Sprite2D" parent="."]
-position = Vector2(951, 958)
-scale = Vector2(6.01875, 6.01875)
-texture = ExtResource("1_kj3tv")
+[node name="KevinScamStore" type="Sprite2D" parent="."]
+position = Vector2(961.5, 543)
+scale = Vector2(2.99844, 3.01111)
+texture = ExtResource("2_od2if")
 
 [node name="[X]" type="Label" parent="."]
 layout_mode = 0
@@ -30,8 +30,8 @@ theme_override_font_sizes/font_size = 100
 text = "[X] to continue"
 
 [node name="Knifee" type="Sprite2D" parent="."]
-position = Vector2(297, 632)
-scale = Vector2(9.26562, 9.26562)
+position = Vector2(484, 741)
+scale = Vector2(4.86562, 4.86562)
 texture = ExtResource("3_eflcf")
 
 [node name="HP" type="Label" parent="."]
@@ -49,11 +49,11 @@ text = "sigma"
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.123
-offset_left = 849.0
-offset_top = 677.0
-offset_right = 1902.0
-offset_bottom = 681.16
-theme_override_font_sizes/font_size = 100
+offset_left = 1194.0
+offset_top = 662.0
+offset_right = 1892.0
+offset_bottom = 666.16
+theme_override_font_sizes/font_size = 50
 horizontal_alignment = 2
 
 [node name="bombs" type="Label" parent="."]
@@ -81,37 +81,37 @@ stream = ExtResource("4_u1bgn")
 autoplay = true
 
 [node name="sceneTransition" parent="." instance=ExtResource("5_od2if")]
-position = Vector2(-1, 8)
+position = Vector2(4, 9)
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 71.0
-offset_top = 44.0
-offset_right = 515.0
-offset_bottom = 463.0
-theme_override_font_sizes/font_size = 100
+offset_left = 392.0
+offset_top = 452.0
+offset_right = 588.0
+offset_bottom = 637.0
+theme_override_font_sizes/font_size = 40
 text = "more HP
 
 50 souls"
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 616.0
-offset_top = 29.0
-offset_right = 1237.0
-offset_bottom = 474.0
-theme_override_font_sizes/font_size = 100
+offset_left = 721.0
+offset_top = 462.0
+offset_right = 974.0
+offset_bottom = 635.0
+theme_override_font_sizes/font_size = 40
 text = "more bombs
 
 25 souls"
 
 [node name="Button3" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1307.0
-offset_top = 30.0
-offset_right = 1905.0
-offset_bottom = 474.0
-theme_override_font_sizes/font_size = 100
+offset_left = 1170.0
+offset_top = 454.0
+offset_right = 1357.0
+offset_bottom = 627.0
+theme_override_font_sizes/font_size = 40
 text = "30 power
 
 50 souls"

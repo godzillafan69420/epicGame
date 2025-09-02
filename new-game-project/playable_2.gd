@@ -2,10 +2,10 @@ extends Area2D
 class_name player3
 @onready var bombPrefab = preload("res://prefabs/bombDeleteArea.tscn")
 @onready var bulletPre = preload("res://prefabs/rin_bulllet.tscn")
-@onready var superPrefab = preload("res://prefabs/super_attack.tscn")
+@onready var superPrefab = preload("res://prefabs/special_2.gd")
 @onready var bullet2Pre = preload("res://prefabs/lazer_shot_type_2.tscn")
 @onready var bullet3Pre = preload("res://prefabs/rinBulletno2again.tscn")
-@onready var nuke = preload("res://prefabs/virus.tscn")
+@onready var special = preload("res://prefabs/special_2.tscn")
 @onready var deathZones = preload("res://prefabs/death_zone.tscn")
 var usingSuper = false
 
@@ -149,6 +149,11 @@ func _process(_delta):
 					bullets.position = position + Vector2(25*i -50-12.5,0)- Vector2(0,YOffset)
 					get_parent().add_child(bullets)
 			wentToShoot = false
+	if bulletLevel > 25 and Input.is_action_just_pressed("fireSpecial"):
+		var fireBall = special.instantiate()
+		fireBall.position = position
+		get_parent().add_child(fireBall)
+		bulletLevel -=25
 	if bulletLevel > 100:
 			bulletLevel = 100
 	if Input.is_action_just_pressed("Bomb") and invincibility == false and amountOfBombs > 0:
