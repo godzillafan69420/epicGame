@@ -67,6 +67,11 @@ func _process(delta):
 	if Hitpoint < 0:
 		if GlobalVariables.CameraShake:
 			get_parent().get_node("Camera2D").trauma = 0.5
+		if GlobalVariables.enemyParticles:
+			$explode.emitting = true
+		
+			await get_tree().create_timer(0.2).timeout
+		
 		AudioManager.play("res://sfx/vmanDying.wav")
 		queue_free()
 	

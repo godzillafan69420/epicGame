@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://db5xiww8efvgw"]
+[gd_scene load_steps=6 format=3 uid="uid://db5xiww8efvgw"]
 
 [ext_resource type="Script" uid="uid://cwqvgufrmh1dk" path="res://scripts/boss_2.gd" id="1_q65c2"]
-[ext_resource type="Texture2D" uid="uid://56x8i56f7b8x" path="res://images/coneL.png" id="2_q65c2"]
+[ext_resource type="Texture2D" uid="uid://56x8i56f7b8x" path="res://images/ConeL.png" id="2_q65c2"]
+[ext_resource type="Texture2D" uid="uid://dj2br04yejf1m" path="res://images/Reimu.PNG.webp" id="3_nn7uc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q65c2"]
 size = Vector2(192, 201)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k8ibv"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.253
+spread = 180.0
+initial_velocity_min = 216.67
+initial_velocity_max = 400.0
+gravity = Vector3(0, 980, 0)
 
 [node name="ConeL" type="Area2D"]
 script = ExtResource("1_q65c2")
@@ -43,6 +52,19 @@ one_shot = true
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="explode" type="GPUParticles2D" parent="."]
+position = Vector2(-0.773868, -2.38419e-07)
+emitting = false
+amount = 10
+amount_ratio = 0.656
+texture = ExtResource("3_nn7uc")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+draw_order = 0
+trail_lifetime = 0.55
+process_material = SubResource("ParticleProcessMaterial_k8ibv")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -16,10 +16,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Hitpoint < 0:
+		if GlobalVariables.enemyParticles:
+			$explode.emitting = true
 		
-		$explode.emitting = true
-		
-		await get_tree().create_timer(0.2).timeout
+			await get_tree().create_timer(0.2).timeout
 		if GlobalVariables.character == 2 and GlobalVariables.shotType == 2:
 			for i in range(8):
 				var bullets = bulletsPre.instantiate()

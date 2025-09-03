@@ -1,7 +1,10 @@
 extends Area2D
 
 class_name deathZone
-
+var bg = preload("res://images/bgFor Stage1.png")
+var bg2 = preload("res://images/coneLEvilbase.png")
+var bg3 = preload("res://images/bananaBank.png")
+var bg4 = preload("res://images/stage4bg.png")
 func _on_timer_timeout() -> void:
 	if get_parent().gamePhase == 0:
 		get_parent().get_node("LoopingSong").volume_db = 0

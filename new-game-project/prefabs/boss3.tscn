@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://lb2agmfchj8u"]
+[gd_scene load_steps=6 format=3 uid="uid://lb2agmfchj8u"]
 
 [ext_resource type="Script" uid="uid://c6bb677nas22n" path="res://scripts/boss_3.gd" id="1_b3p8e"]
 [ext_resource type="Texture2D" uid="uid://b4cyuex63k58s" path="res://images/rackWithoutBubbleNew.png" id="2_b3p8e"]
+[ext_resource type="Texture2D" uid="uid://dj2br04yejf1m" path="res://images/Reimu.PNG.webp" id="3_pjr12"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmbb1"]
 size = Vector2(192, 201)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fmbb1"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.253
+spread = 180.0
+initial_velocity_min = 216.67
+initial_velocity_max = 400.0
+gravity = Vector3(0, 980, 0)
 
 [node name="Rack" type="Area2D"]
 script = ExtResource("1_b3p8e")
@@ -40,6 +49,19 @@ visible = false
 [node name="3Phaseattack" type="Timer" parent="."]
 wait_time = 0.75
 one_shot = true
+
+[node name="explode" type="GPUParticles2D" parent="."]
+position = Vector2(-0.773868, -2.38419e-07)
+emitting = false
+amount = 10
+amount_ratio = 0.656
+texture = ExtResource("3_pjr12")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+draw_order = 0
+trail_lifetime = 0.55
+process_material = SubResource("ParticleProcessMaterial_fmbb1")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

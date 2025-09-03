@@ -4,6 +4,7 @@ class_name player4
 @onready var bulletPre = preload("res://prefabs/hollow_purple.tscn")
 @onready var superPrefab = preload("res://prefabs/super_attack.tscn")
 @onready var bullet2Pre = preload("res://prefabs/shotgun_shoot_type_char_a.tscn")
+@onready var gigaDamage = preload("res://prefabs/death_zone.tscn")
 var usingSuper: bool = false
 
 var wentToShoot: bool = false
@@ -19,6 +20,7 @@ var invincibility: bool = false
 var currentSpeed = Speed
 var HP = GlobalVariables.PlayerHP
 var amountOfBombs = GlobalVariables.playerBombs
+var bgChange = preload("res://images/infvoid.jpg")
 @onready var bulletPrefab = bulletPre
 func _ready():
 	$hitboxes.hide()
@@ -75,6 +77,12 @@ func _process(_delta):
 			bullets.rotation = deg_to_rad(-90)
 			get_parent().add_child(bullets)
 		wentToShoot = false
+	if Input.is_action_just_pressed("fireSpecial") and bulletLevel >= 90:
+		bulletLevel -=90
+		get_parent().get_node("Unnamed").texture = bgChange
+		var deathZoneofDoom = gigaDamage.instantiate()
+		deathZoneofDoom.position = Vector2(0,0)
+		get_parent().add_child(deathZoneofDoom)
 	if Input.is_action_just_pressed("Bomb") and invincibility == false and amountOfBombs > 0:
 		invincibility = true
 		var bomb = bombPrefab.instantiate()

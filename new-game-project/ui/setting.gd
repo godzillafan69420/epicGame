@@ -6,6 +6,8 @@ func _ready() -> void:
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 	GlobalVariables.communism = false
 	GlobalVariables.CameraShake = true
+	GlobalVariables.enemyParticles = true
+	$MarginContainer/VBoxContainer/CheckBox4.button_pressed = true
 	$MarginContainer/VBoxContainer/CheckBox3.button_pressed = true
 	
 func _process(delta: float) -> void:
@@ -35,3 +37,7 @@ func _on_check_box_2_toggled(toggled_on: bool) -> void:
 
 func _on_check_box_3_toggled(toggled_on: bool) -> void:
 	GlobalVariables.CameraShake = toggled_on
+
+
+func _on_check_box_4_toggled(toggled_on: bool) -> void:
+	GlobalVariables.enemyParticles = toggled_on

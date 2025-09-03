@@ -139,6 +139,7 @@ func _process(_delta):
 	if bulletLevel > 100:
 			bulletLevel = 100
 	if Input.is_action_just_pressed("Bomb") and invincibility == false and amountOfBombs > 0:
+		AudioManager.play("res://sfx/bomb.wav")
 		invincibility = true
 		var bomb = bombPrefab.instantiate()
 		bomb.position = position

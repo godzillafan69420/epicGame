@@ -19,6 +19,7 @@ var muteMusic = false
 var stage: int = 1
 var communism = false
 var CameraShake = true
+var enemyParticles = true
 func _process(_delta: float) -> void:
 	if communism:
 		if get_tree().current_scene == null:

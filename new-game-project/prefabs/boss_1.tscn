@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxlh64yxeqp2w"]
+[gd_scene load_steps=6 format=3 uid="uid://dxlh64yxeqp2w"]
 
 [ext_resource type="Script" uid="uid://bjwgky73nvemt" path="res://scripts/boss_1.gd" id="1_bll8f"]
 [ext_resource type="Texture2D" uid="uid://c5pcel4oduo0y" path="res://images/barry.png" id="2_bll8f"]
+[ext_resource type="Texture2D" uid="uid://dj2br04yejf1m" path="res://images/Reimu.PNG.webp" id="3_o8vwr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bll8f"]
 size = Vector2(191.5, 247)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mdnfb"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.253
+spread = 180.0
+initial_velocity_min = 216.67
+initial_velocity_max = 400.0
+gravity = Vector3(0, 980, 0)
 
 [node name="boss" type="Area2D"]
 script = ExtResource("1_bll8f")
@@ -34,6 +43,19 @@ wait_time = 1.5
 
 [node name="Rotator" type="Node2D" parent="."]
 visible = false
+
+[node name="explode" type="GPUParticles2D" parent="."]
+position = Vector2(-0.773868, -2.38419e-07)
+emitting = false
+amount = 10
+amount_ratio = 0.656
+texture = ExtResource("3_o8vwr")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+draw_order = 0
+trail_lifetime = 0.55
+process_material = SubResource("ParticleProcessMaterial_mdnfb")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
