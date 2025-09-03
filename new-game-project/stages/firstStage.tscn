@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xykodx86abkc"]
+[gd_scene load_steps=10 format=3 uid="uid://xykodx86abkc"]
 
 [ext_resource type="Script" uid="uid://dx685i44ok57h" path="res://scripts/first_stage.gd" id="1_7ry33"]
 [ext_resource type="PackedScene" uid="uid://dq28g10k4d752" path="res://ui/ui.tscn" id="3_7ujss"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://kvhdhw54r5l5" path="res://music/barry2.0.mp3" id="6_81ccc"]
 [ext_resource type="Texture2D" uid="uid://b8rfflnqy1vir" path="res://images/jetPlane.png" id="7_81ccc"]
 [ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="8_7ujss"]
+[ext_resource type="PackedScene" uid="uid://d0rwgstuhr2fo" path="res://ui/pause_menu.tscn" id="9_oqolo"]
 
 [node name="firstStage" type="Node2D"]
 script = ExtResource("1_7ry33")
@@ -68,6 +69,10 @@ parameters/looping = false
 position = Vector2(-961, -542)
 
 [node name="target" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pauseMenu" parent="CanvasLayer" instance=ExtResource("9_oqolo")]
 
 [connection signal="startTheBossMusic" from="UI" to="." method="_on_ui_start_the_boss_music"]
 [connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]

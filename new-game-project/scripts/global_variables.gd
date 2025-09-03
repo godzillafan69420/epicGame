@@ -35,5 +35,3 @@ func _process(_delta: float) -> void:
 		get_tree().current_scene.get_node("sceneTransition").get_node("Sprite2D").visible = false
 	if communism and (Input.is_action_just_pressed("Bomb") or Input.is_action_just_pressed("shoot") or Input.is_action_just_pressed("fireSpecial") or Input.is_action_just_pressed("slowDown")):
 		AudioManager.play("res://sfx/communism.wav")
-	if Input.is_action_just_pressed("MainMenu"):
-		get_tree().change_scene_to_file("res://ui/main_menu.tscn")

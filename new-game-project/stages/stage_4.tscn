@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0stdvu8jp5y7"]
+[gd_scene load_steps=11 format=3 uid="uid://b0stdvu8jp5y7"]
 
 [ext_resource type="Script" uid="uid://bfawg6m4iy4vf" path="res://scripts/stage_4.gd" id="1_vf6kw"]
 [ext_resource type="Texture2D" uid="uid://cod5fllscj4xg" path="res://images/stage4bg.png" id="2_1wohy"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="6_ek58y"]
 [ext_resource type="Texture2D" uid="uid://b2dwcc813uftd" path="res://images/244-2445743_chicken-burger-bbq-chicken-burger-bbq-mcdonalds-removebg-preview.png" id="7_134k0"]
 [ext_resource type="Texture2D" uid="uid://ci5w88yvvuu3r" path="res://images/fumo.png" id="9_bn5jt"]
+[ext_resource type="PackedScene" uid="uid://d0rwgstuhr2fo" path="res://ui/pause_menu.tscn" id="10_134k0"]
 
 [node name="stage4" type="Node2D"]
 script = ExtResource("1_vf6kw")
@@ -86,6 +87,10 @@ stream = ExtResource("4_aoydv")
 position = Vector2(-961, -542)
 
 [node name="target" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pauseMenu" parent="CanvasLayer" instance=ExtResource("10_134k0")]
 
 [connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]
 [connection signal="timeout" from="gigaSpawnRate" to="." method="_on_giga_spawn_rate_timeout"]

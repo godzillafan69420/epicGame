@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgva82va80hav"]
+[gd_scene load_steps=9 format=3 uid="uid://cgva82va80hav"]
 
 [ext_resource type="PackedScene" uid="uid://b7i5brk8wrb0u" path="res://ui/stage3UI.tscn" id="1_1hwes"]
 [ext_resource type="Script" uid="uid://dx6asmnwghj2a" path="res://scripts/stage_3.gd" id="1_8iyqq"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://wnuqjqedu8sm" path="res://music/bananamonopoly.mp3" id="4_sg1oo"]
 [ext_resource type="AudioStream" uid="uid://cprvy3fomjyp7" path="res://music/bananaField.mp3" id="5_8iyqq"]
 [ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="7_sg1oo"]
+[ext_resource type="PackedScene" uid="uid://d0rwgstuhr2fo" path="res://ui/pause_menu.tscn" id="8_2i156"]
 
 [node name="stage3" type="Node2D"]
 script = ExtResource("1_8iyqq")
@@ -57,6 +58,10 @@ offset_bottom = -542.0
 position = Vector2(-961, -542)
 
 [node name="target" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pauseMenu" parent="CanvasLayer" instance=ExtResource("8_2i156")]
 
 [connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]
 [connection signal="timeout" from="gigaSpawnRate" to="." method="_on_giga_spawn_rate_timeout"]
