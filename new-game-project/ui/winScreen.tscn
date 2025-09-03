@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://bgu3yo545j84c" path="res://scripts/win_screen.gd" id="1_lun7r"]
 [ext_resource type="Texture2D" uid="uid://cw1brlb1k74vg" path="res://images/unnamed.jpg" id="2_5sexf"]
 [ext_resource type="AudioStream" uid="uid://dndkf3r2n1o8c" path="res://music/titleAndDeath.mp3" id="2_pwn25"]
-[ext_resource type="Texture2D" uid="uid://b65l2ethyydb" path="res://images/store.png" id="2_xiia5"]
 [ext_resource type="Texture2D" uid="uid://cspacpfupv2gs" path="res://images/bob.png" id="3_owqky"]
 [ext_resource type="Texture2D" uid="uid://2wbtfekm2uad" path="res://images/bgFor Stage1.png" id="3_wrm5i"]
+[ext_resource type="Texture2D" uid="uid://dgahbodq0f82d" path="res://images/kevinScamStore.png" id="4_ctcfl"]
 [ext_resource type="Texture2D" uid="uid://hjgigajbxtia" path="res://images/barryToes.png" id="4_efybc"]
 [ext_resource type="Texture2D" uid="uid://cod5fllscj4xg" path="res://images/stage4bg.png" id="5_m447b"]
 [ext_resource type="Texture2D" uid="uid://clql05uvu1yxw" path="res://images/conelWith bubble.png" id="5_s4kbo"]
@@ -35,17 +35,17 @@ autoplay = true
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(-158, 14)
 
-[node name="Store" type="Sprite2D" parent="Node2D"]
-modulate = Color(0.28485, 0.28485, 0.28485, 1)
-position = Vector2(1078, 3140)
-scale = Vector2(6.1375, 6.1375)
-texture = ExtResource("2_xiia5")
-
 [node name="BgForStage1" type="Sprite2D" parent="Node2D"]
 modulate = Color(0.259294, 0.259294, 0.259294, 1)
 position = Vector2(1081, 537)
 scale = Vector2(2.025, 2.06923)
 texture = ExtResource("3_wrm5i")
+
+[node name="KevinScamStore" type="Sprite2D" parent="Node2D"]
+modulate = Color(0.501407, 0.501406, 0.501406, 1)
+position = Vector2(1081, 2711)
+scale = Vector2(3.1, 3.1)
+texture = ExtResource("4_ctcfl")
 
 [node name="Stage2BackGround" type="Sprite2D" parent="Node2D"]
 modulate = Color(0.262932, 0.262932, 0.262932, 1)
