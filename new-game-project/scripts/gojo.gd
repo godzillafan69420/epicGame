@@ -20,7 +20,7 @@ var invincibility: bool = false
 var currentSpeed = Speed
 var HP = GlobalVariables.PlayerHP
 var amountOfBombs = GlobalVariables.playerBombs
-var bgChange = preload("res://images/infvoid.jpg")
+var bgChange = preload("res://images/jogoGone.jpg")
 @onready var bulletPrefab = bulletPre
 func _ready():
 	$hitboxes.hide()
@@ -63,22 +63,29 @@ func _process(_delta):
 		$hitboxes.hide()
 	if GlobalVariables.shotType == 1 and GlobalVariables.character == 4:
 		if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1 and wentToShoot:
+			AudioManager.play("res://sfx/hollow-purple.wav")		
 			var bullets = bulletPre.instantiate()
 			
 			bullets.position = position
 			bullets.rotation = deg_to_rad(-90)
 			get_parent().add_child(bullets)
-		wentToShoot = false
+			wentToShoot = false
 	if GlobalVariables.shotType == 2 and GlobalVariables.character == 4:
+		
 		if Input.is_action_pressed("shoot") and get_parent().gamePhase != 1 and wentToShoot:
+			AudioManager.play("res://sfx/hollow-purple.wav")
+
 			var bullets = bulletPre.instantiate()
 			
 			bullets.position = position
 			bullets.rotation = deg_to_rad(-90)
 			get_parent().add_child(bullets)
-		wentToShoot = false
+			wentToShoot = false
 	if Input.is_action_just_pressed("fireSpecial") and bulletLevel >= 90:
 		bulletLevel -=90
+		AudioManager.play("res://music/domainExpansion.wav")
+		
+		
 		get_parent().get_node("Unnamed").texture = bgChange
 		var deathZoneofDoom = gigaDamage.instantiate()
 		deathZoneofDoom.position = Vector2(0,0)
@@ -116,6 +123,7 @@ func _on_collect_bread_area_entered(area):
 		bulletLevel += 1
 		area.queue_free()
 	if area is dangerousBalls or area is bulletToPlayer or area is superBulletForBoss or area is coolPatternBullet:
+		AudioManager.play("res://sfx/yowai-mo.mp3")
 		area.queue_free()
 	if area is extrapoint:
 		GlobalVariables.score += 1000

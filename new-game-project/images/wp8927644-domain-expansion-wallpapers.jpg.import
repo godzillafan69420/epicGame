@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lqs7cymwy7rw"
-path="res://.godot/imported/infvoid.jpg-fa47ca00b708fbf4c317a272c59e7242.ctex"
+uid="uid://cwu8y13wi4jbd"
+path="res://.godot/imported/wp8927644-domain-expansion-wallpapers.jpg-f6fc891ff2c6a6ee77df0eb13c011341.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/infvoid.jpg"
-dest_files=["res://.godot/imported/infvoid.jpg-fa47ca00b708fbf4c317a272c59e7242.ctex"]
+source_file="res://images/wp8927644-domain-expansion-wallpapers.jpg"
+dest_files=["res://.godot/imported/wp8927644-domain-expansion-wallpapers.jpg-f6fc891ff2c6a6ee77df0eb13c011341.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=960
+process/size_limit=0
 detect_3d/compress_to=1
