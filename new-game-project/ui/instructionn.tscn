@@ -109,3 +109,5 @@ texture = ExtResource("3_k8w4k")
 position = Vector2(1558, 370)
 scale = Vector2(7.53125, 7.53125)
 texture = ExtResource("4_ybc1o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

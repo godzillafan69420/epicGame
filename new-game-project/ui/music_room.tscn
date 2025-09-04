@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cynbqx0sv3xao"]
+[gd_scene load_steps=4 format=3 uid="uid://beq25pdi834by"]
 
 [ext_resource type="Script" uid="uid://rxkcaeainw5b" path="res://scripts/music_room.gd" id="1_j15yv"]
 [ext_resource type="Texture2D" uid="uid://by00mvb5swtj" path="res://images/MusicRoom.png" id="2_3l4j5"]

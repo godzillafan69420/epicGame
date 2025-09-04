@@ -116,6 +116,8 @@ text = "30 power
 
 50 souls"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="Button3" to="." method="_on_button_3_button_down"]
