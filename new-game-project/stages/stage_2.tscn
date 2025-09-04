@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dgtf8vsw8d36l" path="res://images/coneLEvilbase.png" id="3_txogb"]
 [ext_resource type="AudioStream" uid="uid://cv3fmb17x3ak7" path="res://music/stage2.mp3" id="5_txogb"]
 [ext_resource type="PackedScene" uid="uid://due5nhs3wm7hu" path="res://ui/uiforstage2.tscn" id="6_85jxm"]
-[ext_resource type="AudioStream" uid="uid://4mttf37x56h3" path="res://music/coneL.mp3" id="6_txogb"]
+[ext_resource type="AudioStream" uid="uid://bo5dl8t63qqcx" path="res://music/coneL.mp3" id="6_txogb"]
 [ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="7_85jxm"]
 [ext_resource type="PackedScene" uid="uid://d0rwgstuhr2fo" path="res://ui/pause_menu.tscn" id="8_013ri"]
 

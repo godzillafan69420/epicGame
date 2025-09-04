@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://56x8i56f7b8x"
-path="res://.godot/imported/ConeL.png-e6801dec137d9dad5a31f64555ab4631.ctex"
+path="res://.godot/imported/coneL.png-e63067104a15b45699dabf0776a2ee91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/ConeL.png"
-dest_files=["res://.godot/imported/ConeL.png-e6801dec137d9dad5a31f64555ab4631.ctex"]
+source_file="res://images/coneL.png"
+dest_files=["res://.godot/imported/coneL.png-e63067104a15b45699dabf0776a2ee91.ctex"]
 
 [params]
 
