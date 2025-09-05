@@ -469,7 +469,7 @@ texture = ExtResource("16_8jgmr")
 
 [node name="ColorRect" type="ColorRect" parent="loadingScreen"]
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 23.0
 scale = Vector2(48.68, 48.68)
 color = Color(0, 0, 0, 1)
 

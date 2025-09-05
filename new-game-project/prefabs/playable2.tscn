@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://ddn04knp2k7hi"]
 
-[ext_resource type="Script" uid="uid://dqjlr263mifyy" path="res://playable_2.gd" id="1_1161m"]
+[ext_resource type="Script" uid="uid://dqjlr263mifyy" path="res://scripts/playable_2.gd" id="1_1161m"]
 [ext_resource type="Texture2D" uid="uid://cyu8sqo3ttji0" path="res://images/timmy.png" id="2_gl8kg"]
 [ext_resource type="Texture2D" uid="uid://di36wv4xid0kd" path="res://images/circle.png" id="3_cy6l6"]
 [ext_resource type="Script" uid="uid://c2ld355al4qu2" path="res://scripts/collect_bread.gd" id="4_u3xxk"]

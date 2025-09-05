@@ -112,7 +112,7 @@ func _process(_delta: float) -> void:
 			GlobalVariables.character = 4
 			$sceneTransition/AnimationPlayer.play("fade-Out")
 			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+			get_tree().change_scene_to_packed(startOfGame)
 			
 			
 	if part == 2:
@@ -149,12 +149,12 @@ func _process(_delta: float) -> void:
 			GlobalVariables.shotType = 1
 			$sceneTransition/AnimationPlayer.play("fade-Out")
 			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+			get_tree().change_scene_to_packed(startOfGame)
 		if shotTypeSelected == 1 and Input.is_action_just_pressed("shoot"):
 			GlobalVariables.shotType = 2
 			$sceneTransition/AnimationPlayer.play("fade-Out")
 			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+			get_tree().change_scene_to_packed(startOfGame)
 		if Input.is_action_just_pressed("Bomb"):
 			part = 1
 	if part == 2 and GlobalVariables.character == 3:
@@ -187,12 +187,12 @@ func _process(_delta: float) -> void:
 			GlobalVariables.shotType = 1
 			$sceneTransition/AnimationPlayer.play("fade-Out")
 			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+			get_tree().change_scene_to_packed(startOfGame)
 		if shotTypeSelected == 1 and Input.is_action_just_pressed("shoot"):
 			GlobalVariables.shotType = 2
 			$sceneTransition/AnimationPlayer.play("fade-Out")
 			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+			get_tree().change_scene_to_packed(startOfGame)
 		if Input.is_action_just_pressed("Bomb"):
 			
 			part = 1
@@ -215,21 +215,23 @@ func _process(_delta: float) -> void:
 		if shotTypeSelected == 0:
 			$Jimmy/stats1.text ="SuperBright lazer hurt
 			peoples eyes"
-			$Jimmy/stats2.text = "Special: None yet"
+			$Jimmy/stats2.text = "Special: Very painful ball of
+			light"
 		if shotTypeSelected == 1:
 			$Jimmy/stats1.text ="Explosive Lazer"
-			$Jimmy/stats2.text = "Special: None yet"
+			$Jimmy/stats2.text = "Special: Very painful ball of
+			 light"
 		$Jimmy/Knifee.position = Vector2(261+ shotTypeSelected* 640,890)
 		if shotTypeSelected == 0 and Input.is_action_just_pressed("shoot"):
 			GlobalVariables.shotType = 1
 			$sceneTransition/AnimationPlayer.play("fade-Out")
 			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+			get_tree().change_scene_to_packed(startOfGame)
 		if shotTypeSelected == 1 and Input.is_action_just_pressed("shoot"):
 			GlobalVariables.shotType = 2
 			$sceneTransition/AnimationPlayer.play("fade-Out")
 			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_file("res://stages/firstStage.tscn")
+			get_tree().change_scene_to_packed(startOfGame)
 		if Input.is_action_just_pressed("Bomb"):
 			
 			part = 1
