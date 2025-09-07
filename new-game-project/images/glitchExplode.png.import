@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56x8i56f7b8x"
-path="res://.godot/imported/ConeL.png-e6801dec137d9dad5a31f64555ab4631.ctex"
+uid="uid://dph766w1owbyw"
+path="res://.godot/imported/glitchExplode.png-fc587b6a69472ed410c42525309fa394.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/ConeL.png"
-dest_files=["res://.godot/imported/ConeL.png-e6801dec137d9dad5a31f64555ab4631.ctex"]
+source_file="res://images/glitchExplode.png"
+dest_files=["res://.godot/imported/glitchExplode.png-fc587b6a69472ed410c42525309fa394.ctex"]
 
 [params]
 

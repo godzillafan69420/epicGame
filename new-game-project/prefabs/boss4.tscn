@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bbpi0o8k6bk54" path="res://scripts/boss_4.gd" id="1_t8tms"]
 [ext_resource type="Texture2D" uid="uid://jkft8w5xbpl6" path="res://images/VmanWithoutBubble.png" id="2_t8tms"]
-[ext_resource type="Texture2D" uid="uid://dj2br04yejf1m" path="res://images/Reimu.PNG.webp" id="3_s87l8"]
+[ext_resource type="Texture2D" uid="uid://dpu5ouiv0r6dk" path="res://images/glitch.png" id="3_s87l8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4phh5"]
 size = Vector2(191.5, 247)

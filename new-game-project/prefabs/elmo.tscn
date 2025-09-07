@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcw4oah36h6f" path="res://scripts/elmo.gd" id="1_25ax4"]
 [ext_resource type="Texture2D" uid="uid://bbju35t1hd4l5" path="res://images/Job aplication.png" id="2_lbk4n"]
-[ext_resource type="Texture2D" uid="uid://dj2br04yejf1m" path="res://images/Reimu.PNG.webp" id="3_lbk4n"]
+[ext_resource type="Texture2D" uid="uid://dpu5ouiv0r6dk" path="res://images/glitch.png" id="3_lbk4n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1powp"]
 radius = 55.7228

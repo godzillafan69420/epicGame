@@ -168,8 +168,8 @@ func _process(_delta):
 		get_parent().add_child(bullets)
 		
 func uRdied():
-
-
+	if GlobalVariables.enemyParticles:
+		$explode.emitting = true
 	if GlobalVariables.CameraShake:
 		get_parent().get_node("Camera2D").trauma = 0.5
 	$SePldead00.play()
