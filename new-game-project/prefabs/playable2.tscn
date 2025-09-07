@@ -105,7 +105,6 @@ texture = ExtResource("10_4ka06")
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0
-local_coords = true
 draw_order = 0
 trail_lifetime = 0.55
 process_material = SubResource("ParticleProcessMaterial_mumej")
