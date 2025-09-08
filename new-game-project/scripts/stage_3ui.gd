@@ -10,7 +10,8 @@ extends Control
 @onready var gojo = preload("res://images/nahidWin.jpg")
 @onready var jimmy = preload("res://images/Unnamedcharacter.png")
 var textToShow: int = 0
-
+func _ready() -> void:
+	$JimmySpecial.hide()
 signal startTheBossMusic
 func _process(_delta: float) -> void:
 	$souls.text = str(GlobalVariables.souls)
@@ -99,18 +100,18 @@ func _process(_delta: float) -> void:
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 5:
-				textBox.text = "The one that controls all the bananas in the world"
+				textBox.text = "THen can you just die"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			
 			if textToShow == 6:
 				textBox.text = "yeah.
-				wait, why you ask"
+				wait, No"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			
 			if textToShow == 7:
-				textBox.text = "well ur getting executed because
+				textBox.text = "Ur getting executed because
 				all the moneky are straving because of your goofy monopoly.
 				"
 				barrySprite.visible = false
@@ -141,8 +142,7 @@ func _process(_delta: float) -> void:
 				protagonistDialog.visible = false
 			
 			if textToShow == 13:
-				textBox.text = ".... No
-				That is so bad
+				textBox.text = "I rather get a job than listen to these jokes
 				"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
@@ -240,30 +240,31 @@ func _process(_delta: float) -> void:
 			if textToShow == 0:
 				textBox.text = "Ahhh my weakness light"
 			if textToShow == 1:
-				textBox.text = "What is wrong with everyone in this period
-				Why are they allergic to light"
+				textBox.text = "Even you. People these days this Cone guy
+				A monkey, and the damn shopkeeper can't even take off
+				his sunglasses for 5 sec before he turn blind"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 2:
-				textBox.text = "... Video games?
+				textBox.text = "You should really play video games
 				"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 3:
-				textBox.text = "What is that crap."
+				textBox.text = "No now come with me"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 4:
-				textBox.text = "Um hard to explain"
+				textBox.text = "Why did I dooooo D:"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 5:
-				textBox.text = "Geez, anyways you gotta go ya bum"
+				textBox.text = "For very bad very bad things"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			
 			if textToShow == 6:
-				textBox.text = "D: What did I do?"
+				textBox.text = "Ok did i actually do"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			
@@ -273,7 +274,7 @@ func _process(_delta: float) -> void:
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:
-				textBox.text = "If I make you laugh
+				textBox.text = "Lets bet, If I make you laugh
 				 you will for get my crimes"
 				barrySprite.visible = true
 				protagonistDialog.visible = false

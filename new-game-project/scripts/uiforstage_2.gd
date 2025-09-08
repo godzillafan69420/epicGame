@@ -11,6 +11,8 @@ extends Control
 @onready var jimmy = preload("res://images/Unnamedcharacter.png")
 var textToShow: int = 0
 
+func _ready() -> void:
+	$JimmySpecial.hide()
 signal startTheBossMusic
 func _process(_delta: float) -> void:
 	$souls.text = str(GlobalVariables.souls)
@@ -37,7 +39,7 @@ func _process(_delta: float) -> void:
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 4:
-				textBox.text = "It's honestly not that deep on gigidy"
+				textBox.text = "It's honestly it's not that deep on gigidy"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 5:
@@ -47,12 +49,13 @@ func _process(_delta: float) -> void:
 				protagonistDialog.visible = true
 			
 			if textToShow == 6:
-				textBox.text = "Ok, Ok my bad"
+				textBox.text = "Ok, Ok my bad. But beat
+				me in a 1v1 little bro and if I win I get spared"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			
 			if textToShow == 7:
-				textBox.text = "Such a fool"
+				textBox.text = "... You ain't winning"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:
@@ -70,7 +73,7 @@ func _process(_delta: float) -> void:
 				textBox.text = "Can you stop attacking my goons
 				I am trying to ruin this kid's day"
 			if textToShow == 1:
-				textBox.text = "No, because they r a stinky poo"
+				textBox.text = "Sorry, self-defence"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 2:
@@ -80,22 +83,20 @@ func _process(_delta: float) -> void:
 				protagonistDialog.visible = false
 			if textToShow == 3:
 				protagonistDialog.texture =rinSpriteangry
-				textBox.text = "Too kill ConeL"
+				textBox.text = "Too kill ConeL :)"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 4:
-				textBox.text = "hmmmm sorry can't help u"
+				textBox.text = "Oh Conel is not here today"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 5:
 				protagonistDialog.texture =rinSprite
-				textBox.text = "wait a minute
-				ur Cone L"
+				textBox.text = ".... nice try"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 6:
-				textBox.text = "Awww I thought i got away.
-				What am I getting executed for"
+				textBox.text = "Ok fine, why am i getting killed for"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 7:
@@ -104,13 +105,13 @@ func _process(_delta: float) -> void:
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:
-				textBox.text = "It's not that deep.
-				Like Chronic depression is not that bad"
+				textBox.text = "FLyingDavid67 actually hire a hitman
+				to kill me is crazy"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			
 			if textToShow == 9:
-				textBox.text = "-_-
+				textBox.text = "Vro come on
 				"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
@@ -184,45 +185,42 @@ func _process(_delta: float) -> void:
 				textBox.text = "Really wish they add dark mode into real life
 				These lazer of yours really hurt my eyes"
 			if textToShow == 1:
-				textBox.text = "What's that"
+				textBox.text = "You kids these days really need to touch some
+				grass"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 2:
-				textBox.text = "hmmm hard to explain"
+				textBox.text = "Whatever gramps"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 3:
-				textBox.text = "It's ok I'm not here to know
-				what is dark mode."
+				textBox.text = "Any time for you to go"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 4:
-				textBox.text = "True what brings you here?"
+				textBox.text = "For what beating FlyingDavid67 in tsb.
+				That kid raging in vc was so funny"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 5:
-				textBox.text = "Your getting executed kid."
+				textBox.text = "Stop the yap"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 6:
-				textBox.text = "What did i do"
+				textBox.text = "Ok fine can I just sent the clip to 
+				the basement"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 7:
-				textBox.text = "Cyberbullying? what the heck is that"
+				textBox.text = "Sure make it quick"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:
-				textBox.text = "You must be very old"
+				textBox.text = "OK"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			
 			if textToShow == 9:
-				textBox.text = "Yes I'm like 2500 years old.
-				... Damn I'm old"
-				barrySprite.visible = false
-				protagonistDialog.visible = true
-			if textToShow == 10:
 				get_parent().gamePhase = 2
 				textBox.text = ""
 				barrySprite.visible = false

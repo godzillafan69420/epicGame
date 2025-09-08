@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmfldv5flfnr8"]
+[gd_scene load_steps=17 format=3 uid="uid://cmfldv5flfnr8"]
 
 [ext_resource type="Script" uid="uid://ujrf2tcl0vrp" path="res://scripts/rin.gd" id="1_460ro"]
+[ext_resource type="Texture2D" uid="uid://b38a8x116iv7d" path="res://images/RinSPecial.png" id="2_8lhpx"]
 [ext_resource type="Texture2D" uid="uid://b3em7d6ox7pbb" path="res://images/Rin player sprite.png" id="2_460ro"]
 [ext_resource type="Texture2D" uid="uid://di36wv4xid0kd" path="res://images/circle.png" id="3_2vwj7"]
 [ext_resource type="Script" uid="uid://c2ld355al4qu2" path="res://scripts/collect_bread.gd" id="4_q5qhq"]
@@ -9,6 +10,28 @@
 [ext_resource type="AudioStream" uid="uid://bq83ss50y5rr0" path="res://sfx/scroll.wav" id="7_4cyov"]
 [ext_resource type="AudioStream" uid="uid://peshdgehw2hd" path="res://sfx/extended.wav" id="8_8lhpx"]
 [ext_resource type="Texture2D" uid="uid://dj2br04yejf1m" path="res://images/Reimu.PNG.webp" id="9_4cyov"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdlfy"]
+atlas = ExtResource("2_8lhpx")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwk5m"]
+atlas = ExtResource("2_8lhpx")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ox6ds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdlfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwk5m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_460ro"]
 radius = 7.14288
@@ -28,10 +51,22 @@ gravity = Vector3(0, 980, 0)
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_460ro")
 
+[node name="specialReady" type="AnimatedSprite2D" parent="."]
+position = Vector2(72.5, -15)
+scale = Vector2(0.976562, 2.1875)
+sprite_frames = SubResource("SpriteFrames_ox6ds")
+frame_progress = 0.197664
+
 [node name="drip" type="Sprite2D" parent="."]
 position = Vector2(-2.38419e-07, 0)
 scale = Vector2(1.63853, 1.88782)
 texture = ExtResource("2_460ro")
+
+[node name="specialReady2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-68.75, -20)
+scale = Vector2(0.957031, 1.99219)
+sprite_frames = SubResource("SpriteFrames_ox6ds")
+frame_progress = 0.255309
 
 [node name="hitboxes" type="Sprite2D" parent="."]
 scale = Vector2(0.65625, 0.65625)
@@ -50,6 +85,7 @@ position = Vector2(65.9092, 0)
 script = ExtResource("4_q5qhq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collectBread"]
+position = Vector2(2.5, -2.5)
 shape = SubResource("CircleShape2D_ix5la")
 
 [node name="invincibility" type="Timer" parent="."]

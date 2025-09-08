@@ -21,6 +21,7 @@ var HP = GlobalVariables.PlayerHP
 var amountOfBombs = GlobalVariables.playerBombs
 @onready var bulletPrefab = bulletPre
 func _ready():
+	$specialAnimation.hide()
 	$hitboxes.hide()
 	add_to_group("player")
 	justDieded = false
@@ -174,11 +175,16 @@ func _process(_delta):
 		$drip.modulate = Color8(0,0,255,50)
 	else:
 		$drip.modulate = Color8(255,255,255,255)
-	if Input.is_action_just_pressed("fireSpecial") and bulletLevel > 20 and !usingSuper and GlobalVariables.shotType == 1 and GlobalVariables.character == 1:
+	if bulletLevel > 40:
+		$specialAnimation.show()
+		$specialAnimation.play()
+	else:
+		$specialAnimation.hide()
+	if Input.is_action_just_pressed("fireSpecial") and bulletLevel > 40 and !usingSuper and GlobalVariables.shotType == 1 and GlobalVariables.character == 1:
 		$superTimePeriod.start()
 		bulletPrefab = superPrefab
 		usingSuper = true
-	if Input.is_action_just_pressed("fireSpecial") and bulletLevel > 20 and !invincibility and GlobalVariables.shotType == 2 and GlobalVariables.character == 1:
+	if Input.is_action_just_pressed("fireSpecial") and bulletLevel > 40 and !invincibility and GlobalVariables.shotType == 2 and GlobalVariables.character == 1:
 		invincibility = true
 		var bomb = bombPrefab.instantiate()
 		bomb.position = position
@@ -230,7 +236,7 @@ func _on_invincibility_timeout():
 
 
 func _on_super_time_period_timeout() -> void:
-	bulletLevel -= 10
+	bulletLevel -= 40
 	bulletPrefab = bulletPre
 	usingSuper = false
 	

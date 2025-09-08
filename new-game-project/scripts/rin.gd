@@ -24,6 +24,8 @@ var HP = GlobalVariables.PlayerHP
 var amountOfBombs = GlobalVariables.playerBombs
 @onready var bulletPrefab = bulletPre
 func _ready():
+	$specialReady.hide()
+	$specialReady2.hide()
 	$hitboxes.hide()
 	add_to_group("player")
 	justDieded = false
@@ -150,6 +152,16 @@ func _process(_delta):
 		$drip.modulate = Color8(0,0,255,50)
 	else:
 		$drip.modulate = Color8(255,255,255,255)
+	if GlobalVariables.PlayerHP > 5 and GlobalVariables.playerPower > 50:
+		$specialReady2.show()
+		$specialReady.show()
+		$specialReady.play()
+		$specialReady2.play()
+	else:
+		$specialReady2.hide()
+		$specialReady.hide()
+		$specialReady.stop()
+		$specialReady2.stop()
 	if Input.is_action_just_pressed("fireSpecial") and GlobalVariables.PlayerHP > 5 and GlobalVariables.playerPower > 50:
 		get_parent().get_node("LoopingSong").volume_db = -80
 		get_parent().get_node("BarryToes").volume_db = -80

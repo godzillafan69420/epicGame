@@ -11,7 +11,8 @@ extends Control
 @onready var gojo = preload("res://images/nahidWin.jpg")
 @onready var jimmy = preload("res://images/Unnamedcharacter.png")
 var textToShow: int = 0
-
+func _ready() -> void:
+	$JimmySpecial.hide()
 signal startTheBossMusic
 func _process(_delta: float) -> void:
 	$souls.text = str(GlobalVariables.souls)
@@ -80,28 +81,26 @@ func _process(_delta: float) -> void:
 				protagonistDialog.visible = false
 			if textToShow == 3:
 				protagonistDialog.texture =rinSpriteangry
-				textBox.text = "Yeah"
+				textBox.text = "My job is to unemploy people"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 4:
-				textBox.text = "Then you need to be employed now.
+				textBox.text = "
 				You are Disgusting"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 5:
 				protagonistDialog.texture =rinSprite
-				textBox.text = "No U"
+				textBox.text = "No U. who wants to be employed"
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 6:
-				textBox.text = "What are these goofy ah responses
-				Wait, where is all my goons?"
+				textBox.text = "My goons and me. How dare you hurt my goons."
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			if textToShow == 7:
 				protagonistDialog.texture =rinSprite
-				textBox.text = "Their ear drums are burst open.
-				Sorry sorry"
+				textBox.text = "MB for their ear drums are burst open."
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:
@@ -222,12 +221,13 @@ func _process(_delta: float) -> void:
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 8:
-				textBox.text = "Am I really a threat"
+				textBox.text = "Am I really a threat. All I want
+				is employment in the world"
 				barrySprite.visible = true
 				protagonistDialog.visible = false
 			
 			if textToShow == 9:
-				textBox.text = "Don't ask me"
+				textBox.text = "Yes and that is final."
 				barrySprite.visible = false
 				protagonistDialog.visible = true
 			if textToShow == 10:

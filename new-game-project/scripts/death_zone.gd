@@ -8,10 +8,9 @@ var bg4 = preload("res://images/stage4bg.png")
 func _on_timer_timeout() -> void:
 	if GlobalVariables.character == 4:
 		return
-	if get_parent().gamePhase == 0:
-		get_parent().get_node("LoopingSong").volume_db = 0
-	else:
-		get_parent().get_node("BarryToes").volume_db = 0
+
+	get_parent().get_node("LoopingSong").volume_db = 0
+	get_parent().get_node("BarryToes").volume_db = 0
 	queue_free()
 
 

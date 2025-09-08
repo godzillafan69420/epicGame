@@ -149,11 +149,15 @@ func _process(_delta):
 					bullets.position = position + Vector2(25*i -50-12.5,0)- Vector2(0,YOffset)
 					get_parent().add_child(bullets)
 			wentToShoot = false
-	if bulletLevel > 25 and Input.is_action_just_pressed("fireSpecial"):
+	if bulletLevel > 40:
+		get_parent().get_node("UI").get_node("JimmySpecial").show()
+	else:
+		get_parent().get_node("UI").get_node("JimmySpecial").hide()
+	if bulletLevel > 40 and Input.is_action_just_pressed("fireSpecial"):
 		var fireBall = special.instantiate()
 		fireBall.position = position
 		get_parent().add_child(fireBall)
-		bulletLevel -=25
+		bulletLevel -=40
 	if bulletLevel > 100:
 			bulletLevel = 100
 	if Input.is_action_just_pressed("Bomb") and invincibility == false and amountOfBombs > 0:

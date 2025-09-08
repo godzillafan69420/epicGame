@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://due5nhs3wm7hu"]
+[gd_scene load_steps=22 format=3 uid="uid://due5nhs3wm7hu"]
 
 [ext_resource type="Script" uid="uid://cicvv8gisbhti" path="res://scripts/uiforstage_2.gd" id="1_h6l8i"]
 [ext_resource type="Texture2D" uid="uid://clql05uvu1yxw" path="res://images/conelWith bubble.png" id="2_g8w2e"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="6_ofjel"]
 [ext_resource type="Texture2D" uid="uid://vtmbteswfso7" path="res://images/healthBar.png" id="7_ofjel"]
 [ext_resource type="PackedScene" uid="uid://dkt4ysoejexn" path="res://ui/fps_counter.tscn" id="8_7mxx3"]
+[ext_resource type="Texture2D" uid="uid://cnshnpntaye6x" path="res://images/JimmySpecial.png" id="9_2w6he"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7mxx3"]
 load_path = "res://.godot/imported/healthBar.png-f8e541990aa8c7f47f324a715e0000c9.ctex"
@@ -315,3 +316,8 @@ offset_left = 1788.0
 offset_top = 1006.0
 offset_right = 1788.0
 offset_bottom = 1006.0
+
+[node name="JimmySpecial" type="Sprite2D" parent="."]
+position = Vector2(1816.75, 290.949)
+scale = Vector2(0.385742, 0.338891)
+texture = ExtResource("9_2w6he")

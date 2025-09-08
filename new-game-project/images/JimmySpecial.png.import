@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56x8i56f7b8x"
-path="res://.godot/imported/coneL.png-e63067104a15b45699dabf0776a2ee91.ctex"
+uid="uid://cnshnpntaye6x"
+path="res://.godot/imported/JimmySpecial.png-39e937f8947424a9eec38d697dd756a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/coneL.png"
-dest_files=["res://.godot/imported/coneL.png-e63067104a15b45699dabf0776a2ee91.ctex"]
+source_file="res://images/JimmySpecial.png"
+dest_files=["res://.godot/imported/JimmySpecial.png-39e937f8947424a9eec38d697dd756a2.ctex"]
 
 [params]
 

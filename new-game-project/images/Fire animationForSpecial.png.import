@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56x8i56f7b8x"
-path="res://.godot/imported/coneL.png-e63067104a15b45699dabf0776a2ee91.ctex"
+uid="uid://cnvwxk21ylmj"
+path="res://.godot/imported/Fire animationForSpecial.png-2e1cc3bb52ef12dcf4973b1702088c63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/coneL.png"
-dest_files=["res://.godot/imported/coneL.png-e63067104a15b45699dabf0776a2ee91.ctex"]
+source_file="res://images/Fire animationForSpecial.png"
+dest_files=["res://.godot/imported/Fire animationForSpecial.png-2e1cc3bb52ef12dcf4973b1702088c63.ctex"]
 
 [params]
 

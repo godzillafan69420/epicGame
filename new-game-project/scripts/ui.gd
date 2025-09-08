@@ -11,6 +11,8 @@ const boris = preload("res://images/bogdan.png")
 @onready var gojo = preload("res://images/nahidWin.jpg")
 @onready var Jimmy = preload("res://images/Unnamedcharacter.png")
 var textToShow: int = 0
+func _ready() -> void:
+	$JimmySpecial.hide()
 
 signal startTheBossMusic
 func _process(_delta: float) -> void:
@@ -267,7 +269,6 @@ func _process(_delta: float) -> void:
 					protagonistDialog.visible = false
 				if textToShow == 3:
 					textBox.text = "Ok thx. Can u die.
-					U have been the lucky winner to die.
 					For stealing that jet"
 					barrySprite.visible = false
 					protagonistDialog.visible = true
@@ -281,7 +282,7 @@ func _process(_delta: float) -> void:
 					protagonistDialog.visible = true
 				
 				if textToShow == 6:
-					textBox.text = "not a plane silly.
+					textBox.text = "that is not a plane silly.
 					However, If ya gonna git me. 
 					You gotta get pass these abs.
 					Reinforce by FREEDOM. *eagle sound*"
@@ -290,7 +291,7 @@ func _process(_delta: float) -> void:
 				
 				if textToShow == 7:
 					protagonistDialog.texture = rinSpriteangry
-					textBox.text = "Sure"
+					textBox.text = "GGs little bro"
 					barrySprite.visible = false
 					protagonistDialog.visible = true
 				if textToShow == 8:
@@ -356,7 +357,7 @@ func _process(_delta: float) -> void:
 					textBox.text = "Stop blasting lazer every where.
 					What is this, independence day?"
 				if textToShow == 1:
-					textBox.text = "Shut up with the US reference would ya.
+					textBox.text = "Stop with the US reference would ya.
 					I haven't seen a nationalist like you since 1945 .
 					Anyways you gotta go."
 					barrySprite.visible = false
@@ -366,22 +367,24 @@ func _process(_delta: float) -> void:
 					barrySprite.visible = true
 					protagonistDialog.visible = false
 				if textToShow == 3:
-					textBox.text = "Stealing a plane. Are you stupid like this game"
+					textBox.text = "Stealing a plane. Are you stupid like that 
+					shopkeeper
+					"
 					barrySprite.visible = false
 					protagonistDialog.visible = true
 				if textToShow == 4:
-					textBox.text = "Nah un"
+					textBox.text = "Noo"
 					barrySprite.visible = true
 					protagonistDialog.visible = false
 				if 	textToShow == 5:
-					textBox.text = "fair point this game is way too stupid
-					Come with me ya US glazer"
+					textBox.text = "fair point this guy is way too stupid
+					Come with me jail time"
 					barrySprite.visible = false
 					protagonistDialog.visible = true
 				
 				if textToShow == 6:
-					textBox.text = "Nah get pass my abs.
-					Reinforce by FREEDOM. *eagle sound*"
+					textBox.text = "No cage can hold back my freedom
+					bucko"
 					barrySprite.visible = true
 					protagonistDialog.visible = false
 				
