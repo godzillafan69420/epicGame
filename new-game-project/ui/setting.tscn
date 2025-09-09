@@ -55,6 +55,7 @@ text = "vsync"
 
 [node name="vsync" type="OptionButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+selected = 0
 item_count = 2
 popup/item_0/text = "disable"
 popup/item_0/id = 0
@@ -96,6 +97,7 @@ text = "fullscreen"
 
 [node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+selected = 0
 item_count = 2
 popup/item_0/text = "fullscreen"
 popup/item_0/id = 0

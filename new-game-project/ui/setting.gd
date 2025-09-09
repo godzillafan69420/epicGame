@@ -4,7 +4,7 @@ func _ready() -> void:
 	AudioServer.set_bus_mute(0,false)
 	AudioServer.set_bus_volume_db(0, 0)
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	GlobalVariables.communism = false
 	GlobalVariables.CameraShake = true
 	GlobalVariables.enemyParticles = true
