@@ -1,5 +1,6 @@
 extends Control
 
+@onready var startOfGame = preload("res://stages/firstStage.tscn")
 var bgcode :int
 var dummy = false
 var buttomSelected: int = 0
@@ -14,7 +15,7 @@ const back5 = preload("res://images/bgs-5.png (1).png")
 const back6 = preload("res://images/bgs-6.png.png")
 const back7 = preload("res://images/bgs-7.png.png")
 const back8 = preload("res://images/bgs-8.png.png")
-@onready var startOfGame = preload("res://stages/firstStage.tscn")
+
 func _ready() -> void:
 	
 	bgcode = randi_range(1,7)

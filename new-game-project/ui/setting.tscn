@@ -89,6 +89,19 @@ text = "Particles"
 layout_mode = 2
 theme_override_font_sizes/font_size = 55
 
+[node name="Label7" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "fullscreen"
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Not"
+popup/item_1/id = 1
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_right = 425.0
@@ -104,3 +117,4 @@ text = "[x] to go back"
 [connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox2" to="." method="_on_check_box_2_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox3" to="." method="_on_check_box_3_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox4" to="." method="_on_check_box_4_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]

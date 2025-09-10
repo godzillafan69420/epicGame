@@ -20,7 +20,7 @@ func testEsc():
 	elif Input.is_action_just_pressed("MainMenu") and get_tree().paused == true:
 		resume()
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	testEsc()
 	if get_tree().paused == false:
 		return

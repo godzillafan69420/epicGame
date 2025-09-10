@@ -4,6 +4,7 @@ func _ready() -> void:
 	AudioServer.set_bus_mute(0,false)
 	AudioServer.set_bus_volume_db(0, 0)
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	GlobalVariables.communism = false
 	GlobalVariables.CameraShake = true
 	GlobalVariables.enemyParticles = true
@@ -41,3 +42,11 @@ func _on_check_box_3_toggled(toggled_on: bool) -> void:
 
 func _on_check_box_4_toggled(toggled_on: bool) -> void:
 	GlobalVariables.enemyParticles = toggled_on
+
+
+func _on_option_button_item_selected(index: int) -> void:
+	match index:
+		0:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		1:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)

@@ -37,7 +37,8 @@ text = "Arrow Key to move
 
 Z to shoot and skip dialog
 X to Bomb- delete bullets
-Space to activate special
+C to activate special. There will be
+ indicated
 
 Shift to slowdown and Show Hitbox
 
@@ -79,10 +80,10 @@ text = "GIves more HP"
 
 [node name="Label5" type="Label" parent="."]
 layout_mode = 0
-offset_left = 27.0
-offset_top = 731.0
-offset_right = 897.0
-offset_bottom = 868.0
+offset_left = 41.0
+offset_top = 900.0
+offset_right = 911.0
+offset_bottom = 1037.0
 theme_override_font_sizes/font_size = 100
 text = "[X] go back"
 

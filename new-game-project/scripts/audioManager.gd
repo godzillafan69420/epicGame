@@ -26,10 +26,10 @@ func play(sound_path: String):
 	queue.append(sound_path)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 # Play a queued sound if any players are available
 	if not queue.is_empty() and not available.is_empty():
-		var player: AudioStreamPlayer = available.pop_front()
+		var Audplayer: AudioStreamPlayer = available.pop_front()
 		var path: String = queue.pop_front()
-		player.stream = load(path)
-		player.play()
+		Audplayer.stream = load(path)
+		Audplayer.play()
