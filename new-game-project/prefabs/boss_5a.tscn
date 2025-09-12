@@ -18,3 +18,26 @@ texture = ExtResource("1_basba")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.75, -2.5)
 shape = SubResource("RectangleShape2D_88vp3")
+
+[node name="rotatorAttack" type="Timer" parent="."]
+
+[node name="rotator" type="Node2D" parent="."]
+visible = false
+
+[node name="bossPhase1ShootTowards" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="bossPhase2AttackSide" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="bossPhase2ShotGun" type="Timer" parent="."]
+wait_time = 1.25
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="rotatorAttack" to="." method="_on_rotator_attack_timeout"]
+[connection signal="timeout" from="bossPhase1ShootTowards" to="." method="_on_boss_phase_1_shoot_towards_timeout"]
+[connection signal="timeout" from="bossPhase2AttackSide" to="." method="_on_boss_phase_2_attack_side_timeout"]
+[connection signal="timeout" from="bossPhase2ShotGun" to="." method="_on_boss_phase_2_shot_gun_timeout"]

@@ -8,7 +8,8 @@ class_name dangerousBalls
 
 
 var speed: float = 5
-
+func _ready() -> void:
+	add_to_group("Bullets")
 
 
 

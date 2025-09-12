@@ -1,6 +1,8 @@
 extends Area2D
 
 class_name coolPatternBullet
+func _ready() -> void:
+	add_to_group("Bullets")
 func _process(delta: float) -> void:
 	position += transform.x * 150 * delta
 	if position.y > 550  or position.y < -550:

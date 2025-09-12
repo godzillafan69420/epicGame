@@ -1,0 +1,303 @@
+[gd_scene load_steps=22 format=3 uid="uid://uu3fm8k7ks4j"]
+
+[ext_resource type="Texture2D" uid="uid://dkhr3w5s11p" path="res://images/VmanWithBubble.png" id="1_lkub3"]
+[ext_resource type="Script" uid="uid://dxj4ncpxwv1aj" path="res://ui/ui_5.gd" id="1_x6jwr"]
+[ext_resource type="Texture2D" uid="uid://cspacpfupv2gs" path="res://images/bob.png" id="2_x6jwr"]
+[ext_resource type="Texture2D" uid="uid://dyj1iw20kmijf" path="res://images/Souls.png" id="3_kj8xg"]
+[ext_resource type="Texture2D" uid="uid://uf520mnk4k6y" path="res://images/bomb.png" id="4_yh1l6"]
+[ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="5_4t4n1"]
+[ext_resource type="Texture2D" uid="uid://vtmbteswfso7" path="res://images/healthBar.png" id="6_h73ag"]
+[ext_resource type="PackedScene" uid="uid://dkt4ysoejexn" path="res://ui/fps_counter.tscn" id="7_w4e3h"]
+[ext_resource type="Texture2D" uid="uid://cnshnpntaye6x" path="res://images/JimmySpecial.png" id="8_dvhlj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7mxx3"]
+load_path = "res://.godot/imported/healthBar.png-f8e541990aa8c7f47f324a715e0000c9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w6he"]
+atlas = ExtResource("6_h73ag")
+region = Rect2(0, 0, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uo37d"]
+atlas = ExtResource("6_h73ag")
+region = Rect2(0, 128, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vj8c"]
+atlas = ExtResource("6_h73ag")
+region = Rect2(0, 256, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ehk2"]
+atlas = ExtResource("6_h73ag")
+region = Rect2(0, 384, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q2vu"]
+atlas = ExtResource("6_h73ag")
+region = Rect2(0, 512, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibsxb"]
+atlas = ExtResource("6_h73ag")
+region = Rect2(0, 640, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87n8b"]
+atlas = ExtResource("6_h73ag")
+region = Rect2(0, 768, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqgff"]
+atlas = ExtResource("6_h73ag")
+region = Rect2(0, 896, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq4df"]
+atlas = ExtResource("6_h73ag")
+region = Rect2(0, 1024, 1280, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpcdd"]
+atlas = ExtResource("6_h73ag")
+region = Rect2(0, 1152, 1280, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rwak8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_7mxx3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w6he")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uo37d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vj8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ehk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q2vu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibsxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87n8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqgff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq4df")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpcdd")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_x6jwr")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.569153, 0.864816, 1, 1)
+self_modulate = Color(0.96858, 2.02149e-06, 0.568588, 1)
+offset_left = 1409.0
+offset_top = -1.0
+offset_right = 1735.0
+offset_bottom = 795.0
+scale = Vector2(1.6, 1.44)
+
+[node name="score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.018
+offset_left = 1426.0
+offset_top = 87.0
+offset_right = 1656.68
+offset_bottom = 127.336
+scale = Vector2(1.6, 1.44)
+uppercase = true
+
+[node name="HP" type="Label" parent="."]
+offset_left = 1417.0
+offset_top = 138.0
+offset_right = 1700.0
+offset_bottom = 200.0
+scale = Vector2(1.6, 1.44)
+theme_override_font_sizes/font_size = 25
+text = "player:"
+
+[node name="power" type="Label" parent="."]
+offset_left = 1532.0
+offset_top = 264.0
+offset_right = 1756.0
+offset_bottom = 300.0
+scale = Vector2(1.6, 1.44)
+theme_override_font_sizes/font_size = 25
+
+[node name="bomb" type="Label" parent="."]
+offset_left = 1537.0
+offset_top = 326.0
+offset_right = 1761.0
+offset_bottom = 362.0
+scale = Vector2(1.6, 1.44)
+theme_override_font_sizes/font_size = 25
+text = "tep"
+
+[node name="souls" type="Label" parent="."]
+offset_left = 1535.0
+offset_top = 386.0
+offset_right = 1759.0
+offset_bottom = 422.0
+scale = Vector2(1.6, 1.44)
+theme_override_font_sizes/font_size = 25
+text = "tep"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.528
+anchor_bottom = 0.298
+offset_left = 1432.0
+offset_top = 777.0
+offset_right = 1464.87
+offset_bottom = 828.896
+scale = Vector2(1.6, 1.44)
+theme_override_font_sizes/font_size = 50
+text = "Stupid
+Project"
+uppercase = true
+
+[node name="BossName" type="Label" parent="."]
+offset_left = 46.0
+offset_top = 30.0
+offset_right = 328.0
+offset_bottom = 85.0
+scale = Vector2(1.6, 1.44)
+
+[node name="BossHP" type="Label" parent="."]
+offset_left = 1456.0
+offset_top = 699.0
+offset_right = 1631.0
+offset_bottom = 754.0
+scale = Vector2(1.6, 1.44)
+horizontal_alignment = 2
+
+[node name="WhenBoss spawn" type="Label" parent="."]
+offset_left = 1426.0
+offset_top = 455.0
+offset_right = 1782.0
+offset_bottom = 539.0
+theme_override_font_sizes/font_size = 50
+text = "test"
+
+[node name="barryDialog" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(155, 746)
+scale = Vector2(2.07147, 2.07147)
+texture = ExtResource("1_lkub3")
+
+[node name="Protagonist" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1227, 773)
+scale = Vector2(2.19024, 2.19024)
+texture = ExtResource("2_x6jwr")
+
+[node name="dialog" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.277
+anchor_top = 0.32
+anchor_right = 0.277
+anchor_bottom = 0.32
+offset_left = 1.0
+offset_top = 651.0
+offset_right = 1410.0
+offset_bottom = 1067.0
+
+[node name="dialogText" type="Label" parent="dialog"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 10.0
+offset_right = 1390.0
+offset_bottom = 398.0
+theme_override_font_sizes/font_size = 50
+max_lines_visible = 5
+
+[node name="healthBar" type="ProgressBar" parent="."]
+visible = false
+offset_right = 1408.0
+offset_bottom = 27.0
+step = 5.0
+show_percentage = false
+
+[node name="Souls" type="Sprite2D" parent="."]
+position = Vector2(1497, 408)
+scale = Vector2(1.8125, 1.8125)
+texture = ExtResource("3_kj8xg")
+
+[node name="Bomb" type="Sprite2D" parent="."]
+position = Vector2(1497, 352)
+scale = Vector2(0.476563, 0.476563)
+texture = ExtResource("4_yh1l6")
+
+[node name="Knifee" type="Sprite2D" parent="."]
+position = Vector2(1495, 284)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("5_4t4n1")
+
+[node name="PlayerHealth" type="AnimatedSprite2D" parent="."]
+position = Vector2(1668, 215)
+scale = Vector2(0.390625, 0.390625)
+sprite_frames = SubResource("SpriteFrames_rwak8")
+animation = &"new_animation"
+
+[node name="UWon" type="Panel" parent="."]
+visible = false
+offset_left = 523.0
+offset_top = 208.0
+offset_right = 1006.0
+offset_bottom = 787.0
+
+[node name="Label" type="Label" parent="UWon"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 24.0
+offset_right = 481.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 50
+text = "You Won"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="UWon"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 125.0
+offset_right = 480.0
+offset_bottom = 581.0
+theme_override_font_sizes/font_size = 50
+text = "
+[Z] to continue
+"
+horizontal_alignment = 1
+
+[node name="FPSCounter" parent="." instance=ExtResource("7_w4e3h")]
+layout_mode = 1
+offset_left = 1798.0
+offset_top = 1001.0
+offset_right = 1798.0
+offset_bottom = 1001.0
+
+[node name="JimmySpecial" type="Sprite2D" parent="."]
+position = Vector2(1816.75, 290.949)
+scale = Vector2(0.385742, 0.338891)
+texture = ExtResource("8_dvhlj")

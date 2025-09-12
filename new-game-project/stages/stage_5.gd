@@ -5,7 +5,7 @@ extends Node2D
 @onready var vman = preload("res://prefabs/vman_elite_soldier.tscn")
 @onready var guyTowards = preload("res://prefabs/theEnemy.tscn")
 @onready var shotGun = preload("res://prefabs/side_to_side_enemy.tscn")
-@onready var boss_1 = preload("res://prefabs/boss4.tscn")
+@onready var boss_1 = preload("res://prefabs/boss_5a.tscn")
 var Score = GlobalVariables.score
 @onready var thePlayerPre = preload("res://prefabs/player.tscn")
 @onready var thePlayable = preload("res://prefabs/playable2.tscn")
@@ -65,11 +65,11 @@ func _process(_delta):
 		
 		if gamePhase == 2:
 			
-			var theBoss = $VmanThePro
+			var theBoss = $kallumWank
 
 			if theBoss != null:
 				$UI/healthBar.visible = true
-				$UI/healthBar.max_value = 100
+				$UI/healthBar.max_value = 50000
 				$UI/healthBar.value = theBoss.Hitpoint
 				$"UI/WhenBoss spawn".text = ""
 				$UI/BossName.text = "Vman the Pro"
@@ -144,7 +144,7 @@ func _on_when_boss_spawn_timeout() -> void:
 func _on_ui_start_the_boss_music() -> void:
 	$LoopingSong.stop()
 	$BarryToes.play()
-	$VmanThePro.bossPhase = 1
+	$kallumWank.bossPhase = 1
 
 
 func _on_vman_elite_timeout() -> void:
