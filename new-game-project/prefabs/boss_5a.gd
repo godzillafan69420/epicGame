@@ -7,20 +7,23 @@ var Hitpoint: float = 55000
 var count: int = 0
 var count2: int = 0
 var bossPhase: int = 0
+var windUp: bool = false
 @onready var thePlayer 
 @onready var bulletPrefab = preload("res://prefabs/bullet_to_player.tscn")
 @onready var bossSuperBulletPre = preload("res://prefabs/boss_super_bullet.tscn")
 @onready var coolPattern = preload("res://prefabs/BossBall.tscn")
 const Bullet_scene = preload("res://prefabs/boss_bullet.tscn")
+const square_scene = preload("res://prefabs/square attack.tscn")
 @onready var shoot_timer = $rotatorAttack
 @onready var rotator = $rotator
-@onready var rotator2 = $Rotator2
+
 var inLazer: int = 0
-const rotate_speed: float = 30
+var rotate_speed: float = 30
 const shooter_timer_wait_timer: float = 0.2
 const spawn_point_count: int = 6
 const radius: float = 10
 
+var NextPhase = 2
 
 func _ready() -> void:
 
@@ -65,8 +68,19 @@ func _process(delta):
 	if bossPhase == 2 and count2 != 1:
 		$bossPhase2ShotGun.start()
 		count2 = 1
-	if Hitpoint < 44000:
+	if bossPhase == 3:
+		var new_rotation = rotator.rotation_degrees + rotate_speed * delta
+		rotator.rotation_degrees = fmod(new_rotation,360)
+	if bossPhase == 3 and count != 1:
+		$FunBullet.start()
+		count = 1
+	if Hitpoint < 44000 and Hitpoint > 34000:
 		bossPhase = 2
+	if (Hitpoint < 34000 and Hitpoint > 33000)or (Hitpoint < 45000 and Hitpoint > 44000) or (Hitpoint < 23000 and Hitpoint > 22000):
+		bossPhase = 10
+	if Hitpoint < 33000 and Hitpoint > 22000:
+		rotate_speed = 60
+		bossPhase = 3
 		
 	Hitpoint -= 2*inLazer
 
@@ -121,13 +135,21 @@ func _on_area_entered(area: Area2D) -> void:
 
 
 func _on_rotator_attack_timeout() -> void:
-	if bossPhase != 1:
-		return
-	for s in rotator.get_children():
-		var bullets = coolPattern.instantiate()
-		get_parent().add_child(bullets)
-		bullets.position = s.global_position
-		bullets.rotation = s.global_rotation
+	if bossPhase == 1:
+		for s in rotator.get_children():
+			var bullets = coolPattern.instantiate()
+			get_parent().add_child(bullets)
+			bullets.position = s.global_position
+			bullets.rotation = s.global_rotation
+		
+	
+	if bossPhase == 3:
+		
+		for s in rotator.get_children():
+			var bullets = square_scene.instantiate()
+			get_parent().add_child(bullets)
+			bullets.position = s.global_position
+			bullets.rotation = s.global_rotation
 
 
 func _on_boss_phase_1_shoot_towards_timeout() -> void:
@@ -136,6 +158,7 @@ func _on_boss_phase_1_shoot_towards_timeout() -> void:
 	bullets.theplayerDirtion = thePlayer.position-position
 	get_parent().add_child(bullets)
 	count = 0
+	
 
 
 
@@ -152,14 +175,27 @@ func _on_boss_phase_2_attack_side_timeout() -> void:
 		bullets.theplayerDirtion = Vector2(-1,0)
 		get_parent().add_child(bullets)
 	count = 0
+	
 		
 
 
 func _on_boss_phase_2_shot_gun_timeout() -> void:
 	for i in range(-10,10):
-		if thePlayer != null:
+		if windUp != true:
 			var bullets = bulletPrefab.instantiate()
 			bullets.position = position
 			bullets.theplayerDirtion = thePlayer.position+Vector2(75*i,0)-position
 			get_parent().add_child(bullets)
+	
 	count2 = 0
+
+		
+	
+
+
+func _on_fun_bullet_timeout() -> void:
+	var bullets = bulletPrefab.instantiate()
+	bullets.position = position
+	bullets.theplayerDirtion = thePlayer.position-position
+	get_parent().add_child(bullets)
+	count = 0

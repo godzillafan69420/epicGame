@@ -36,8 +36,12 @@ one_shot = true
 wait_time = 1.25
 one_shot = true
 
+[node name="FunBullet" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="rotatorAttack" to="." method="_on_rotator_attack_timeout"]
 [connection signal="timeout" from="bossPhase1ShootTowards" to="." method="_on_boss_phase_1_shoot_towards_timeout"]
 [connection signal="timeout" from="bossPhase2AttackSide" to="." method="_on_boss_phase_2_attack_side_timeout"]
 [connection signal="timeout" from="bossPhase2ShotGun" to="." method="_on_boss_phase_2_shot_gun_timeout"]
+[connection signal="timeout" from="FunBullet" to="." method="_on_fun_bullet_timeout"]

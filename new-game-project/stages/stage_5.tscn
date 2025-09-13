@@ -1,10 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://doyqg81gc5nvx"]
+[gd_scene load_steps=9 format=3 uid="uid://doyqg81gc5nvx"]
 
 [ext_resource type="Script" uid="uid://iwwn5ksgno4p" path="res://stages/stage_5.gd" id="1_3v67e"]
 [ext_resource type="Script" uid="uid://bo2kucyohifd1" path="res://stages/camera_2d.gd" id="2_kedbk"]
-[ext_resource type="Texture2D" uid="uid://cod5fllscj4xg" path="res://images/stage4bg.png" id="3_bhg88"]
-[ext_resource type="Texture2D" uid="uid://b2dwcc813uftd" path="res://images/244-2445743_chicken-burger-bbq-chicken-burger-bbq-mcdonalds-removebg-preview.png" id="4_q2ru0"]
-[ext_resource type="Texture2D" uid="uid://ci5w88yvvuu3r" path="res://images/fumo.png" id="5_uvwih"]
+[ext_resource type="Texture2D" uid="uid://fnewwlxwdkwd" path="res://images/stage5.png" id="3_8ith5"]
 [ext_resource type="AudioStream" uid="uid://ds6foxfyx2x7j" path="res://music/VmanGoons.mp3" id="6_dg0rj"]
 [ext_resource type="PackedScene" uid="uid://uu3fm8k7ks4j" path="res://ui/ui5.tscn" id="7_3v67e"]
 [ext_resource type="AudioStream" uid="uid://bspcjg0qvdoty" path="res://music/Vman.mp3" id="8_bpcqa"]
@@ -35,30 +33,7 @@ modulate = Color(0.473976, 0.473976, 0.473975, 1)
 z_index = -1000
 position = Vector2(-2.99991, -2.00002)
 scale = Vector2(2.00208, 2)
-texture = ExtResource("3_bhg88")
-
-[node name="244-2445743Chicken-burger-bbq-chicken-burger-bbq-mcdonalds-removebg-preview3" type="Sprite2D" parent="."]
-modulate = Color(0.666569, 0.666569, 0.666569, 1)
-position = Vector2(-340, 72)
-scale = Vector2(0.518047, 0.521635)
-texture = ExtResource("4_q2ru0")
-
-[node name="Fumo" type="Sprite2D" parent="."]
-modulate = Color(0.728822, 0.728822, 0.728822, 1)
-position = Vector2(-428, -440)
-texture = ExtResource("5_uvwih")
-
-[node name="244-2445743Chicken-burger-bbq-chicken-burger-bbq-mcdonalds-removebg-preview4" type="Sprite2D" parent="."]
-modulate = Color(0.683077, 0.683077, 0.683077, 1)
-position = Vector2(-432, -342)
-scale = Vector2(0.518047, 0.521635)
-texture = ExtResource("4_q2ru0")
-
-[node name="244-2445743Chicken-burger-bbq-chicken-burger-bbq-mcdonalds-removebg-preview2" type="Sprite2D" parent="."]
-modulate = Color(0.67069, 0.67069, 0.67069, 1)
-position = Vector2(454, 57)
-scale = Vector2(0.518047, 0.521635)
-texture = ExtResource("4_q2ru0")
+texture = ExtResource("3_8ith5")
 
 [node name="VmanElite" type="Timer" parent="."]
 wait_time = 10.0
