@@ -20,5 +20,5 @@ func _on_timer_timeout():
 
 
 func _on_area_entered(area):
-	if area is dangerousBalls or area is  bulletToPlayer or area is  superBulletForBoss or area is  coolPatternBullet:
+	if area is dangerousBalls or area is  bulletToPlayer or area is  superBulletForBoss or area is  coolPatternBullet or area is specialBossBullet:
 		area.queue_free()

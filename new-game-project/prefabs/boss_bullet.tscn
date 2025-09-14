@@ -1,22 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxb555mv4kdp2"]
 
 [ext_resource type="Script" uid="uid://0hhslbh0rh65" path="res://scripts/boss_bullet.gd" id="1_tg5vd"]
-[ext_resource type="Texture2D" uid="uid://cggu57kdkiejq" path="res://images/bullet.png" id="2_tg5vd"]
+[ext_resource type="Texture2D" uid="uid://di36wv4xid0kd" path="res://images/circle.png" id="2_tg5vd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1uyn"]
-size = Vector2(59.9904, 7.08216)
+[sub_resource type="CircleShape2D" id="CircleShape2D_k1uyn"]
+radius = 11.0114
 
 [node name="bossBulletType1" type="Area2D"]
 z_index = 1000
 monitoring = false
 script = ExtResource("1_tg5vd")
 
-[node name="Area2D" type="CollisionShape2D" parent="."]
-position = Vector2(9.53674e-07, -0.5)
-rotation = -0.00136948
-shape = SubResource("RectangleShape2D_k1uyn")
-
 [node name="Bullet" type="Sprite2D" parent="."]
 rotation = 1.5708
-scale = Vector2(1.88396, 1.88396)
+scale = Vector2(0.788673, 0.788673)
 texture = ExtResource("2_tg5vd")
+
+[node name="Area2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.13687e-13, 5.96046e-08)
+rotation = -0.00136948
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_k1uyn")

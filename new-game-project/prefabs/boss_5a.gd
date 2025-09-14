@@ -22,7 +22,7 @@ var rotate_speed: float = 30
 const shooter_timer_wait_timer: float = 0.2
 const spawn_point_count: int = 6
 const radius: float = 10
-
+var direction
 var NextPhase = 2
 
 func _ready() -> void:
@@ -74,14 +74,22 @@ func _process(delta):
 	if bossPhase == 3 and count != 1:
 		$FunBullet.start()
 		count = 1
+	if bossPhase == 4 and count != 1:
+		
 	if Hitpoint < 44000 and Hitpoint > 34000:
 		bossPhase = 2
-	if (Hitpoint < 34000 and Hitpoint > 33000)or (Hitpoint < 45000 and Hitpoint > 44000) or (Hitpoint < 23000 and Hitpoint > 22000):
+	if (Hitpoint < 34000 and Hitpoint > 33000)or (Hitpoint < 45000 and Hitpoint > 44000) or (Hitpoint < 22000 and Hitpoint > 21000):
 		bossPhase = 10
 	if Hitpoint < 33000 and Hitpoint > 22000:
 		rotate_speed = 60
 		bossPhase = 3
-		
+	if Hitpoint < 21000 and Hitpoint > 11000:
+		bossPhase =4
+		position.x += direction * 10
+		if position.x > 240:
+			direction = -1
+		if position.x < -710:
+			direction = 1
 	Hitpoint -= 2*inLazer
 
 
