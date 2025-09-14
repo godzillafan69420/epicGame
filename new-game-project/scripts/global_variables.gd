@@ -5,8 +5,8 @@ var PlayerHP: int = 10
 var playerBombs: int = 4
 var playerPower: int = 200
 var souls: int = 10
-var shotType: int = 2
-var character: int = 3
+var shotType: int = 1
+var character: int = 2
 var enemies: Array = [enemy,
 boss,
 bossNo2,

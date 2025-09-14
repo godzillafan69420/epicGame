@@ -22,7 +22,7 @@ var rotate_speed: float = 30
 const shooter_timer_wait_timer: float = 0.2
 const spawn_point_count: int = 6
 const radius: float = 10
-var direction
+var direction = 1
 var NextPhase = 2
 
 func _ready() -> void:
@@ -75,7 +75,8 @@ func _process(delta):
 		$FunBullet.start()
 		count = 1
 	if bossPhase == 4 and count != 1:
-		
+		$bossphase4Attack.start()
+		count = 1
 	if Hitpoint < 44000 and Hitpoint > 34000:
 		bossPhase = 2
 	if (Hitpoint < 34000 and Hitpoint > 33000)or (Hitpoint < 45000 and Hitpoint > 44000) or (Hitpoint < 22000 and Hitpoint > 21000):
@@ -85,7 +86,7 @@ func _process(delta):
 		bossPhase = 3
 	if Hitpoint < 21000 and Hitpoint > 11000:
 		bossPhase =4
-		position.x += direction * 10
+		position.x += direction * 4
 		if position.x > 240:
 			direction = -1
 		if position.x < -710:
@@ -207,3 +208,17 @@ func _on_fun_bullet_timeout() -> void:
 	bullets.theplayerDirtion = thePlayer.position-position
 	get_parent().add_child(bullets)
 	count = 0
+
+
+func _on_bossphase_4_attack_timeout() -> void:
+	for i in range(12):
+		var bullets = Bullet_scene.instantiate()
+		bullets.position = position
+		bullets.rotation = deg_to_rad((360/12) * i)
+		get_parent().add_child(bullets)
+	count = 0
+
+
+func _on_area_exited(area: Area2D) -> void:
+	if area is Lazer:
+			inLazer =1
