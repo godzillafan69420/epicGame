@@ -19,5 +19,4 @@ texture = ExtResource("2_tg5vd")
 [node name="Area2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.13687e-13, 5.96046e-08)
 rotation = -0.00136948
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_k1uyn")

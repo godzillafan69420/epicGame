@@ -6,7 +6,7 @@ var playerBombs: int = 4
 var playerPower: int = 200
 var souls: int = 10
 var shotType: int = 1
-var character: int = 2
+var character: int = 1
 var enemies: Array = [enemy,
 boss,
 bossNo2,

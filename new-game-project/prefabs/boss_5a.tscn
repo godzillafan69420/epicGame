@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://pv54622vfxsl"]
+[gd_scene load_steps=6 format=3 uid="uid://pv54622vfxsl"]
 
 [ext_resource type="Script" uid="uid://dfnx8aeknqw7m" path="res://prefabs/boss_5a.gd" id="1_88vp3"]
 [ext_resource type="Texture2D" uid="uid://cw6x0nr8iham3" path="res://images/Kallum.png" id="1_basba"]
+[ext_resource type="Texture2D" uid="uid://dpu5ouiv0r6dk" path="res://images/glitch.png" id="3_u14qh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88vp3"]
 size = Vector2(191.5, 247)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hyqqw"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.253
+spread = 180.0
+initial_velocity_min = 216.67
+initial_velocity_max = 400.0
+gravity = Vector3(0, 980, 0)
 
 [node name="kallumWank" type="Area2D"]
 script = ExtResource("1_88vp3")
@@ -42,6 +51,23 @@ one_shot = true
 [node name="bossphase4Attack" type="Timer" parent="."]
 wait_time = 0.25
 
+[node name="changePhase" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="explode" type="GPUParticles2D" parent="."]
+position = Vector2(-0.773868, -2.38419e-07)
+emitting = false
+amount = 10
+amount_ratio = 0.656
+texture = ExtResource("3_u14qh")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+draw_order = 0
+trail_lifetime = 0.55
+process_material = SubResource("ParticleProcessMaterial_hyqqw")
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="timeout" from="rotatorAttack" to="." method="_on_rotator_attack_timeout"]
@@ -50,3 +76,4 @@ wait_time = 0.25
 [connection signal="timeout" from="bossPhase2ShotGun" to="." method="_on_boss_phase_2_shot_gun_timeout"]
 [connection signal="timeout" from="FunBullet" to="." method="_on_fun_bullet_timeout"]
 [connection signal="timeout" from="bossphase4Attack" to="." method="_on_bossphase_4_attack_timeout"]
+[connection signal="timeout" from="changePhase" to="." method="_on_change_phase_timeout"]

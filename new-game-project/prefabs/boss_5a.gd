@@ -8,6 +8,7 @@ var count: int = 0
 var count2: int = 0
 var bossPhase: int = 0
 var windUp: bool = false
+@onready var powers = preload("res://prefabs/power_up.tscn")
 @onready var thePlayer 
 @onready var bulletPrefab = preload("res://prefabs/bullet_to_player.tscn")
 @onready var bossSuperBulletPre = preload("res://prefabs/boss_super_bullet.tscn")
@@ -17,6 +18,7 @@ const square_scene = preload("res://prefabs/square attack.tscn")
 @onready var shoot_timer = $rotatorAttack
 @onready var rotator = $rotator
 
+var stage4Offsets = 0
 var inLazer: int = 0
 var rotate_speed: float = 30
 const shooter_timer_wait_timer: float = 0.2
@@ -75,12 +77,18 @@ func _process(delta):
 		$FunBullet.start()
 		count = 1
 	if bossPhase == 4 and count != 1:
+		stage4Offsets += 10
 		$bossphase4Attack.start()
+		count = 1
+	if bossPhase == 10 and count != 1:
+		$changePhase.start()
 		count = 1
 	if Hitpoint < 44000 and Hitpoint > 34000:
 		bossPhase = 2
-	if (Hitpoint < 34000 and Hitpoint > 33000)or (Hitpoint < 45000 and Hitpoint > 44000) or (Hitpoint < 22000 and Hitpoint > 21000):
+	if ((Hitpoint < 11000 and Hitpoint > 10000)or(Hitpoint < 34000 and Hitpoint > 33000)or (Hitpoint < 45000 and Hitpoint > 44000) or (Hitpoint < 22000 and Hitpoint > 21000)):
 		bossPhase = 10
+		position.x = move_toward(position.x, -160, 20)
+		position.y = move_toward(position.y, -170, 20)
 	if Hitpoint < 33000 and Hitpoint > 22000:
 		rotate_speed = 60
 		bossPhase = 3
@@ -92,8 +100,8 @@ func _process(delta):
 		if position.x < -710:
 			direction = 1
 	if Hitpoint < 10000:
-		position.x = move_toward(position.x, -160, 20)
-		position.y = move_toward(position.y, -170, 20)
+		
+		bossPhase = 5
 	Hitpoint -= 2*inLazer
 
 
@@ -214,14 +222,28 @@ func _on_fun_bullet_timeout() -> void:
 
 
 func _on_bossphase_4_attack_timeout() -> void:
-	for i in range(12):
-		var bullets = Bullet_scene.instantiate()
-		bullets.position = position
-		bullets.rotation = deg_to_rad((360/12) * i)
-		get_parent().add_child(bullets)
+	if bossPhase == 4:
+		for i in range(12):
+			var bullets = Bullet_scene.instantiate()
+			bullets.position = position
+			bullets.rotation = deg_to_rad((360/12) * i + stage4Offsets)
+			get_parent().add_child(bullets)
 	count = 0
 
 
 func _on_area_exited(area: Area2D) -> void:
 	if area is Lazer:
 			inLazer =1
+
+
+
+		
+
+
+func _on_change_phase_timeout() -> void:
+	for i in range(10):
+		var power = powers.instantiate()
+		power.position = position + Vector2(randf_range(-75, 75), randf_range(-75, 75))
+		get_parent().add_child(power)
+	Hitpoint -= 1000
+	count = 0
