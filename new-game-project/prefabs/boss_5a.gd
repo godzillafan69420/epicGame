@@ -86,11 +86,14 @@ func _process(delta):
 		bossPhase = 3
 	if Hitpoint < 21000 and Hitpoint > 11000:
 		bossPhase =4
-		position.x += direction * 4
+		position.x += direction * 7.5
 		if position.x > 240:
 			direction = -1
 		if position.x < -710:
 			direction = 1
+	if Hitpoint < 10000:
+		position.x = move_toward(position.x, -160, 20)
+		position.y = move_toward(position.y, -170, 20)
 	Hitpoint -= 2*inLazer
 
 
