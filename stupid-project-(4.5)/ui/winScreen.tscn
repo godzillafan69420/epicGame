@@ -1,0 +1,212 @@
+[gd_scene load_steps=15 format=3 uid="uid://by6g6ij1ky4qs"]
+
+[ext_resource type="Script" uid="uid://bgu3yo545j84c" path="res://scripts/win_screen.gd" id="1_lun7r"]
+[ext_resource type="Texture2D" uid="uid://cw1brlb1k74vg" path="res://images/unnamed.jpg" id="2_5sexf"]
+[ext_resource type="AudioStream" uid="uid://dndkf3r2n1o8c" path="res://music/titleAndDeath.mp3" id="2_pwn25"]
+[ext_resource type="Texture2D" uid="uid://cspacpfupv2gs" path="res://images/bob.png" id="3_owqky"]
+[ext_resource type="Texture2D" uid="uid://2wbtfekm2uad" path="res://images/bgFor Stage1.png" id="3_wrm5i"]
+[ext_resource type="Texture2D" uid="uid://dgahbodq0f82d" path="res://images/kevinScamStore.png" id="4_ctcfl"]
+[ext_resource type="Texture2D" uid="uid://hjgigajbxtia" path="res://images/barryToes.png" id="4_efybc"]
+[ext_resource type="Texture2D" uid="uid://cod5fllscj4xg" path="res://images/stage4bg.png" id="5_m447b"]
+[ext_resource type="Texture2D" uid="uid://clql05uvu1yxw" path="res://images/conelWith bubble.png" id="5_s4kbo"]
+[ext_resource type="Texture2D" uid="uid://h0uvystrlwy8" path="res://images/rackNew.png" id="9_m447b"]
+[ext_resource type="Texture2D" uid="uid://bbju35t1hd4l5" path="res://images/Job aplication.png" id="10_rswt0"]
+[ext_resource type="Texture2D" uid="uid://dtfeq5h6sufif" path="res://images/freaky.PNG" id="11_qqv1g"]
+[ext_resource type="Texture2D" uid="uid://b8rfflnqy1vir" path="res://images/jetPlane.png" id="12_qt0e4"]
+[ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="13_wrm5i"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 47.0
+offset_top = -17.0
+offset_right = 47.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lun7r")
+
+[node name="TitleAndDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pwn25")
+autoplay = true
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-158, 14)
+
+[node name="BgForStage1" type="Sprite2D" parent="Node2D"]
+modulate = Color(0.259294, 0.259294, 0.259294, 1)
+position = Vector2(1081, 537)
+scale = Vector2(2.025, 2.06923)
+texture = ExtResource("3_wrm5i")
+
+[node name="KevinScamStore" type="Sprite2D" parent="Node2D"]
+modulate = Color(0.501407, 0.501406, 0.501406, 1)
+position = Vector2(1081, 2711)
+scale = Vector2(3.1, 3.1)
+texture = ExtResource("4_ctcfl")
+
+[node name="Stage2BackGround" type="Sprite2D" parent="Node2D"]
+modulate = Color(0.262932, 0.262932, 0.262932, 1)
+position = Vector2(1073.56, 1612)
+scale = Vector2(2.04074, 2.04074)
+texture = ExtResource("5_m447b")
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = 453.0
+offset_top = 534.0
+offset_right = 1340.0
+offset_bottom = 671.0
+theme_override_font_sizes/font_size = 100
+text = "You won"
+
+[node name="Label2" type="Label" parent="Node2D"]
+offset_left = 586.0
+offset_top = 683.0
+offset_right = 1041.0
+offset_bottom = 761.0
+theme_override_font_sizes/font_size = 50
+text = "Art - Kevin Xu"
+
+[node name="Label13" type="Label" parent="Node2D"]
+offset_left = 573.0
+offset_top = 856.0
+offset_right = 1207.0
+offset_bottom = 934.0
+theme_override_font_sizes/font_size = 50
+text = "SFX - Kevin Xu
+"
+
+[node name="score" type="Label" parent="Node2D"]
+offset_left = 930.0
+offset_top = 573.0
+offset_right = 1385.0
+offset_bottom = 651.0
+theme_override_font_sizes/font_size = 50
+
+[node name="Label7" type="Label" parent="Node2D"]
+offset_left = 543.0
+offset_top = 2556.0
+offset_right = 1448.0
+offset_bottom = 2697.0
+theme_override_font_sizes/font_size = 50
+text = "and you."
+
+[node name="Label10" type="Label" parent="Node2D"]
+offset_left = 553.0
+offset_top = 2811.0
+offset_right = 1458.0
+offset_bottom = 2952.0
+theme_override_font_sizes/font_size = 50
+text = "press [Z] to go back to Menu"
+
+[node name="Label5" type="Label" parent="Node2D"]
+offset_left = 522.0
+offset_top = 2250.0
+offset_right = 1235.0
+offset_bottom = 2391.0
+theme_override_font_sizes/font_size = 50
+text = "special thanks to people who 
+played sprint 1 and Sprint 2"
+
+[node name="Label6" type="Label" parent="Node2D"]
+offset_left = 521.0
+offset_top = 2131.0
+offset_right = 1426.0
+offset_bottom = 2272.0
+theme_override_font_sizes/font_size = 50
+text = "thanks to people who gave feed back  
+Some of it was just pure stupid which the game needs"
+
+[node name="Label8" type="Label" parent="Node2D"]
+offset_left = 567.0
+offset_top = 1014.0
+offset_right = 1472.0
+offset_bottom = 1155.0
+theme_override_font_sizes/font_size = 50
+text = "Boss 1 - Barrwee Toes"
+
+[node name="Label11" type="Label" parent="Node2D"]
+offset_left = 570.0
+offset_top = 1088.0
+offset_right = 1475.0
+offset_bottom = 1229.0
+theme_override_font_sizes/font_size = 50
+text = "Boss 2 - Cone L"
+
+[node name="Label12" type="Label" parent="Node2D"]
+offset_left = 562.0
+offset_top = 1158.0
+offset_right = 1467.0
+offset_bottom = 1299.0
+theme_override_font_sizes/font_size = 50
+text = "Boss 3 - Rack the banana dealers"
+
+[node name="Label14" type="Label" parent="Node2D"]
+offset_left = 564.0
+offset_top = 1229.0
+offset_right = 1469.0
+offset_bottom = 1370.0
+theme_override_font_sizes/font_size = 50
+text = "Boss 4 - Vman the Pro"
+
+[node name="Label9" type="Label" parent="Node2D"]
+offset_left = 578.0
+offset_top = 1382.0
+offset_right = 1483.0
+offset_bottom = 1523.0
+theme_override_font_sizes/font_size = 50
+text = "game influenced by Touhou Project"
+
+[node name="Label3" type="Label" parent="Node2D"]
+offset_left = 580.0
+offset_top = 740.0
+offset_right = 1161.0
+offset_bottom = 818.0
+theme_override_font_sizes/font_size = 50
+text = "Programming - Kevin Xu"
+
+[node name="Label4" type="Label" parent="Node2D"]
+offset_left = 582.0
+offset_top = 799.0
+offset_right = 1037.0
+offset_bottom = 877.0
+theme_override_font_sizes/font_size = 50
+text = "Music - Kevin Xu"
+
+[node name="RackNew" type="Sprite2D" parent="Node2D"]
+position = Vector2(1316, 1739)
+texture = ExtResource("9_m447b")
+
+[node name="JobAplication" type="Sprite2D" parent="Node2D"]
+position = Vector2(1675, 1028)
+texture = ExtResource("10_rswt0")
+
+[node name="Freaky" type="Sprite2D" parent="Node2D"]
+position = Vector2(324, 1357)
+texture = ExtResource("11_qqv1g")
+
+[node name="JetPlane" type="Sprite2D" parent="Node2D"]
+position = Vector2(649, 1932)
+texture = ExtResource("12_qt0e4")
+
+[node name="Unnamed" type="Sprite2D" parent="Node2D"]
+position = Vector2(680, 1583)
+scale = Vector2(0.586111, 0.586111)
+texture = ExtResource("2_5sexf")
+
+[node name="Bob" type="Sprite2D" parent="Node2D"]
+position = Vector2(961, 1737)
+texture = ExtResource("3_owqky")
+
+[node name="BarryToes" type="Sprite2D" parent="Node2D"]
+position = Vector2(1318, 900)
+texture = ExtResource("4_efybc")
+
+[node name="ConelWithBubble" type="Sprite2D" parent="Node2D"]
+position = Vector2(1625, 2540)
+texture = ExtResource("5_s4kbo")
+
+[node name="sceneTransition" parent="." instance=ExtResource("13_wrm5i")]
+position = Vector2(-34, 21)

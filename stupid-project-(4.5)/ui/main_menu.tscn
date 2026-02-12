@@ -1,0 +1,574 @@
+[gd_scene load_steps=26 format=3 uid="uid://c6sc6jmkpi5an"]
+
+[ext_resource type="Script" uid="uid://duutoxbnnsydq" path="res://scripts/main_menu.gd" id="1_0dkrt"]
+[ext_resource type="Texture2D" uid="uid://bx73v8oimnqvh" path="res://images/background.png" id="2_ei257"]
+[ext_resource type="AudioStream" uid="uid://dx48kw0vnitpg" path="res://sfx/confirm.wav" id="2_i5ydv"]
+[ext_resource type="AudioStream" uid="uid://dndkf3r2n1o8c" path="res://music/titleAndDeath.mp3" id="2_wk0pr"]
+[ext_resource type="AudioStream" uid="uid://bq83ss50y5rr0" path="res://sfx/scroll.wav" id="3_racxt"]
+[ext_resource type="Texture2D" uid="uid://4dyxnlr3gju0" path="res://images/knifee.png" id="3_wk0pr"]
+[ext_resource type="AudioStream" uid="uid://bojgoeo7j2slk" path="res://sfx/exitMenu.wav" id="4_dooca"]
+[ext_resource type="Texture2D" uid="uid://7gm54sfbl03" path="res://images/title (2).png" id="4_jqly5"]
+[ext_resource type="Texture2D" uid="uid://cspacpfupv2gs" path="res://images/bob.png" id="7_arv2f"]
+[ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="7_p8ri8"]
+[ext_resource type="Texture2D" uid="uid://ccd1fjlglv8j7" path="res://images/RinSatsuki.webp" id="9_jiymt"]
+[ext_resource type="Texture2D" uid="uid://bvtr415iyhgab" path="res://images/ShootType1char1.png" id="9_lsdqh"]
+[ext_resource type="Texture2D" uid="uid://bsee8y8xguwvx" path="res://images/vmanBuster.png" id="10_jiymt"]
+[ext_resource type="Texture2D" uid="uid://wsxmmj2pksy3" path="res://images/Rin even even better.png" id="12_kaxbk"]
+[ext_resource type="Texture2D" uid="uid://dtgi3tvo3cl3j" path="res://images/PhonkOverdrive.png" id="13_0nobx"]
+[ext_resource type="Texture2D" uid="uid://d3pr6gp566mtr" path="res://images/rin.exefunnit.png" id="14_0nobx"]
+[ext_resource type="Texture2D" uid="uid://h03qw2va5jbh" path="res://images/lazerlookingAh.png" id="14_pbm0j"]
+[ext_resource type="Texture2D" uid="uid://md6wl6ijo77t" path="res://images/Unnamedcharacter.png" id="15_q75kt"]
+[ext_resource type="Texture2D" uid="uid://b3vfqif5dbfs2" path="res://images/Screenshot 2025-08-11 204108.png" id="16_8jgmr"]
+[ext_resource type="Texture2D" uid="uid://is5jbaebi4hk" path="res://images/Screenshot 2025-08-11 204359.png" id="17_q75kt"]
+[ext_resource type="Texture2D" uid="uid://clql05uvu1yxw" path="res://images/conelWith bubble.png" id="18_pbm0j"]
+[ext_resource type="Texture2D" uid="uid://bod6vseopoo65" path="res://images/lazer2.png" id="18_racxt"]
+[ext_resource type="Texture2D" uid="uid://hjgigajbxtia" path="res://images/barryToes.png" id="19_sb7pk"]
+[ext_resource type="Texture2D" uid="uid://h0uvystrlwy8" path="res://images/rackNew.png" id="20_s1050"]
+[ext_resource type="Texture2D" uid="uid://dkhr3w5s11p" path="res://images/VmanWithBubble.png" id="21_i5ydv"]
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_0dkrt")
+
+[node name="SeSelect00" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_i5ydv")
+
+[node name="SeSlash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_racxt")
+
+[node name="SeCancel00" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dooca")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.617455, 0.617455, 0.617455, 1)
+position = Vector2(973, 567)
+scale = Vector2(2.04664, 2.10278)
+texture = ExtResource("2_ei257")
+
+[node name="TitleAndDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wk0pr")
+autoplay = true
+
+[node name="Title" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(420, 157)
+scale = Vector2(1.51829, 1.14629)
+texture = ExtResource("4_jqly5")
+
+[node name="characterSelection" type="Node2D" parent="."]
+visible = false
+
+[node name="Bob" type="Sprite2D" parent="characterSelection"]
+position = Vector2(246, 557)
+scale = Vector2(1.26406, 1.26406)
+texture = ExtResource("7_arv2f")
+
+[node name="Freaky" type="Sprite2D" parent="characterSelection"]
+position = Vector2(983, 545)
+scale = Vector2(1.27638, 1.33584)
+texture = ExtResource("15_q75kt")
+
+[node name="Freaky2" type="Sprite2D" parent="characterSelection"]
+position = Vector2(1581.34, 590.5)
+scale = Vector2(0.957124, 1.02946)
+texture = ExtResource("9_jiymt")
+
+[node name="Label" type="Label" parent="characterSelection"]
+offset_left = 95.0
+offset_top = 213.0
+offset_right = 537.0
+offset_bottom = 340.0
+scale = Vector2(0.759624, 0.759624)
+theme_override_font_sizes/font_size = 50
+text = "Timmy Juicebottle"
+
+[node name="Label4" type="Label" parent="characterSelection"]
+offset_left = 48.0
+offset_top = 39.0
+offset_right = 490.0
+offset_bottom = 166.0
+scale = Vector2(0.759624, 0.759624)
+theme_override_font_sizes/font_size = 100
+text = "Choose enforcer [X] to go back"
+uppercase = true
+
+[node name="Label2" type="Label" parent="characterSelection"]
+offset_left = 710.0
+offset_top = 235.0
+offset_right = 1152.0
+offset_bottom = 362.0
+scale = Vector2(0.759624, 0.759624)
+theme_override_font_sizes/font_size = 50
+text = "Jimmy Tuffchong"
+
+[node name="Label3" type="Label" parent="characterSelection"]
+offset_left = 1390.0
+offset_top = 231.0
+offset_right = 1832.0
+offset_bottom = 358.0
+scale = Vector2(0.759624, 0.759624)
+theme_override_font_sizes/font_size = 50
+text = "8D E1 8C 8E 20 97 D9"
+
+[node name="Knifee" type="Sprite2D" parent="characterSelection"]
+position = Vector2(233, 990)
+scale = Vector2(6.25, 6.25)
+texture = ExtResource("3_wk0pr")
+
+[node name="TimmyShotTypeSelection" type="Node2D" parent="."]
+visible = false
+
+[node name="Bob" type="Sprite2D" parent="TimmyShotTypeSelection"]
+modulate = Color(0.165656, 0.165656, 0.165656, 1)
+position = Vector2(579, 536)
+scale = Vector2(3.17773, 3.17773)
+texture = ExtResource("7_arv2f")
+
+[node name="ShootType1Char1" type="Sprite2D" parent="TimmyShotTypeSelection"]
+position = Vector2(276, 392)
+scale = Vector2(4.09375, 4.09375)
+texture = ExtResource("9_lsdqh")
+
+[node name="ShootType1Char2" type="Sprite2D" parent="TimmyShotTypeSelection"]
+position = Vector2(881, 384)
+scale = Vector2(4.09375, 4.09375)
+texture = ExtResource("10_jiymt")
+
+[node name="Label" type="Label" parent="TimmyShotTypeSelection"]
+offset_right = 867.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 100
+text = "Choose Shotype"
+
+[node name="Label4" type="Label" parent="TimmyShotTypeSelection"]
+offset_left = -3.0
+offset_top = 636.0
+offset_right = 864.0
+offset_bottom = 773.0
+theme_override_font_sizes/font_size = 75
+text = "Inf knife Hax"
+
+[node name="Label5" type="Label" parent="TimmyShotTypeSelection"]
+offset_left = 623.0
+offset_top = 621.0
+offset_right = 1490.0
+offset_bottom = 758.0
+theme_override_font_sizes/font_size = 75
+text = "Vman Buster"
+
+[node name="Label6" type="Label" parent="TimmyShotTypeSelection"]
+offset_left = 1422.0
+offset_top = 975.0
+offset_right = 2289.0
+offset_bottom = 1112.0
+theme_override_font_sizes/font_size = 75
+text = "[X] to go back"
+
+[node name="stats1" type="Label" parent="TimmyShotTypeSelection"]
+offset_left = 1163.0
+offset_top = 656.0
+offset_right = 2030.0
+offset_bottom = 793.0
+theme_override_font_sizes/font_size = 50
+text = "your mom"
+
+[node name="stats2" type="Label" parent="TimmyShotTypeSelection"]
+offset_left = 1168.0
+offset_top = 832.0
+offset_right = 2035.0
+offset_bottom = 969.0
+theme_override_font_sizes/font_size = 50
+
+[node name="Label3" type="Label" parent="TimmyShotTypeSelection"]
+offset_left = 1143.0
+offset_top = 131.0
+offset_right = 2372.0
+offset_bottom = 639.0
+theme_override_font_sizes/font_size = 40
+text = "Nothing special about Timmy. 
+He works for the underworld 
+Soul reapers to collect bad people's souls. 
+He works on minnium wage. 
+Please  support  change for soul 
+reaper working in poor condition. 
+He's very Broke
+speed: 8
+Shift Speed: 4"
+
+[node name="Label2" type="Label" parent="TimmyShotTypeSelection"]
+offset_left = 1047.0
+offset_top = -8.0
+offset_right = 1914.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 100
+text = "Character: Timmy"
+
+[node name="Knifee" type="Sprite2D" parent="TimmyShotTypeSelection"]
+position = Vector2(261, 890)
+scale = Vector2(9.40625, 9.40625)
+texture = ExtResource("3_wk0pr")
+
+[node name="RinSatsuki" type="Node2D" parent="."]
+visible = false
+
+[node name="Bob" type="Sprite2D" parent="RinSatsuki"]
+modulate = Color(0.165656, 0.165656, 0.165656, 1)
+position = Vector2(1911, 1115)
+scale = Vector2(3.17773, 3.17773)
+texture = ExtResource("12_kaxbk")
+
+[node name="ShootType1Char1" type="Sprite2D" parent="RinSatsuki"]
+position = Vector2(276, 392)
+scale = Vector2(15.5337, 15.5337)
+texture = ExtResource("13_0nobx")
+
+[node name="Label" type="Label" parent="RinSatsuki"]
+offset_right = 867.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 100
+text = "Choose Shotype"
+
+[node name="Label4" type="Label" parent="RinSatsuki"]
+offset_left = -3.0
+offset_top = 636.0
+offset_right = 864.0
+offset_bottom = 773.0
+scale = Vector2(1.01793, 1)
+theme_override_font_sizes/font_size = 75
+text = "Bad music"
+
+[node name="ShootType1Char2" type="Sprite2D" parent="RinSatsuki"]
+position = Vector2(855, 394)
+scale = Vector2(3.92639, 3.92639)
+texture = ExtResource("14_0nobx")
+
+[node name="Label5" type="Label" parent="RinSatsuki"]
+offset_left = 599.0
+offset_top = 637.0
+offset_right = 1466.0
+offset_bottom = 774.0
+scale = Vector2(1.01793, 1)
+theme_override_font_sizes/font_size = 75
+text = "Rin.exe"
+
+[node name="Label6" type="Label" parent="RinSatsuki"]
+offset_left = 1422.0
+offset_top = 975.0
+offset_right = 2289.0
+offset_bottom = 1112.0
+theme_override_font_sizes/font_size = 75
+text = "[X] to go back"
+
+[node name="stats1" type="Label" parent="RinSatsuki"]
+offset_left = 1163.0
+offset_top = 656.0
+offset_right = 2030.0
+offset_bottom = 793.0
+theme_override_font_sizes/font_size = 50
+text = "your mom"
+
+[node name="stats2" type="Label" parent="RinSatsuki"]
+offset_left = 1163.0
+offset_top = 778.0
+offset_right = 2030.0
+offset_bottom = 915.0
+theme_override_font_sizes/font_size = 50
+
+[node name="Label3" type="Label" parent="RinSatsuki"]
+offset_left = 1143.0
+offset_top = 131.0
+offset_right = 2372.0
+offset_bottom = 639.0
+theme_override_font_sizes/font_size = 40
+text = "Feel too bad for this character.
+Computer virus maybe.
+
+ZUN my mightly lord pls add this 
+character to main game
+
+
+Speed: 10
+Shift speed: 3.5"
+
+[node name="Label2" type="Label" parent="RinSatsuki"]
+offset_left = 851.0
+offset_top = -4.0
+offset_right = 1718.0
+offset_bottom = 133.0
+theme_override_font_sizes/font_size = 100
+text = "Character: Rin Satsuki"
+
+[node name="Knifee" type="Sprite2D" parent="RinSatsuki"]
+position = Vector2(261, 890)
+scale = Vector2(9.40625, 9.40625)
+texture = ExtResource("3_wk0pr")
+
+[node name="Jimmy" type="Node2D" parent="."]
+visible = false
+
+[node name="Bob" type="Sprite2D" parent="Jimmy"]
+modulate = Color(0.165656, 0.165656, 0.165656, 1)
+position = Vector2(1952, 971)
+scale = Vector2(3.17773, 3.17773)
+texture = ExtResource("15_q75kt")
+
+[node name="ShootType1Char1" type="Sprite2D" parent="Jimmy"]
+position = Vector2(270, 387)
+scale = Vector2(3.98499, 3.98499)
+texture = ExtResource("14_pbm0j")
+
+[node name="Label" type="Label" parent="Jimmy"]
+offset_right = 867.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 100
+text = "Choose Shotype"
+
+[node name="Label4" type="Label" parent="Jimmy"]
+offset_left = -3.0
+offset_top = 636.0
+offset_right = 864.0
+offset_bottom = 773.0
+scale = Vector2(1.01793, 1)
+theme_override_font_sizes/font_size = 67
+text = "iscord light mode"
+
+[node name="ShootType1Char2" type="Sprite2D" parent="Jimmy"]
+position = Vector2(855, 394)
+scale = Vector2(3.92639, 3.92639)
+texture = ExtResource("18_racxt")
+
+[node name="Label5" type="Label" parent="Jimmy"]
+offset_left = 599.0
+offset_top = 637.0
+offset_right = 1466.0
+offset_bottom = 774.0
+scale = Vector2(1.01793, 1)
+theme_override_font_sizes/font_size = 68
+text = "explosive Lazers"
+
+[node name="Label6" type="Label" parent="Jimmy"]
+offset_left = 1422.0
+offset_top = 975.0
+offset_right = 2289.0
+offset_bottom = 1112.0
+theme_override_font_sizes/font_size = 75
+text = "[X] to go back"
+
+[node name="stats1" type="Label" parent="Jimmy"]
+offset_left = 1163.0
+offset_top = 656.0
+offset_right = 2030.0
+offset_bottom = 793.0
+theme_override_font_sizes/font_size = 50
+text = "your mom"
+
+[node name="stats2" type="Label" parent="Jimmy"]
+offset_left = 1163.0
+offset_top = 778.0
+offset_right = 2030.0
+offset_bottom = 915.0
+theme_override_font_sizes/font_size = 50
+
+[node name="Label3" type="Label" parent="Jimmy"]
+offset_left = 1143.0
+offset_top = 131.0
+offset_right = 2372.0
+offset_bottom = 639.0
+theme_override_font_sizes/font_size = 40
+text = "Jimmy a giga chad war hero.
+Like lollipops and lazers.
+Really needs retirements
+Please support change for Soul reapers
+Has a pet silverFish called:
+Freaky Fred
+
+Speed: 12
+Shift speed: 5"
+
+[node name="Label2" type="Label" parent="Jimmy"]
+offset_left = 851.0
+offset_top = -4.0
+offset_right = 1718.0
+offset_bottom = 133.0
+theme_override_font_sizes/font_size = 100
+text = "Character: Jimmy"
+
+[node name="Knifee" type="Sprite2D" parent="Jimmy"]
+position = Vector2(261, 890)
+scale = Vector2(9.40625, 9.40625)
+texture = ExtResource("3_wk0pr")
+
+[node name="sceneTransition" parent="." instance=ExtResource("7_p8ri8")]
+position = Vector2(-1, 1)
+
+[node name="how move in the main menu" type="Node2D" parent="."]
+visible = false
+
+[node name="Screenshot2025-08-11204359" type="Sprite2D" parent="how move in the main menu"]
+position = Vector2(1315, 660)
+scale = Vector2(1.97917, 1.97917)
+texture = ExtResource("17_q75kt")
+
+[node name="Label2" type="Label" parent="how move in the main menu"]
+offset_left = 7.0
+offset_top = 195.0
+offset_right = 711.0
+offset_bottom = 408.0
+theme_override_font_sizes/font_size = 50
+text = "This is how little bro
+
+"
+
+[node name="Label3" type="Label" parent="how move in the main menu"]
+offset_left = 1186.0
+offset_top = 928.0
+offset_right = 1890.0
+offset_bottom = 1141.0
+theme_override_font_sizes/font_size = 50
+text = "Yes you are tweaking
+
+"
+
+[node name="Panel" type="Panel" parent="how move in the main menu"]
+offset_left = -5.0
+offset_top = 327.0
+offset_right = 727.0
+offset_bottom = 1000.0
+
+[node name="Label" type="Label" parent="how move in the main menu/Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 31.0
+offset_right = 716.0
+offset_bottom = 676.0
+theme_override_font_sizes/font_size = 50
+text = "How to move in the main 
+menu tutorial for dummies
+
+move around the main menu
+using arrow keys
+z to select
+x to go back
+
+"
+
+[node name="Screenshot2025-08-11204108" type="Sprite2D" parent="how move in the main menu"]
+position = Vector2(1334, 89)
+scale = Vector2(2.92421, 5.50695)
+texture = ExtResource("16_8jgmr")
+
+[node name="loadingScreen" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="loadingScreen"]
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(48.68, 48.68)
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="loadingScreen"]
+offset_left = 352.0
+offset_top = 25.0
+offset_right = 1971.0
+offset_bottom = 434.0
+scale = Vector2(0.983657, 1.08396)
+theme_override_font_sizes/font_size = 100
+text = "!! warning very stupid !!"
+
+[node name="Label2" type="Label" parent="loadingScreen"]
+offset_left = 394.0
+offset_top = 886.0
+offset_right = 2013.0
+offset_bottom = 1295.0
+scale = Vector2(0.983657, 1.08396)
+theme_override_font_sizes/font_size = 100
+text = "Beating a Vman up..."
+
+[node name="ConelWithBubble" type="Sprite2D" parent="loadingScreen"]
+position = Vector2(579, 554)
+texture = ExtResource("18_pbm0j")
+
+[node name="BarryToes" type="Sprite2D" parent="loadingScreen"]
+position = Vector2(178, 571)
+scale = Vector2(1.48, 1.48)
+texture = ExtResource("19_sb7pk")
+
+[node name="RackNew" type="Sprite2D" parent="loadingScreen"]
+position = Vector2(1068, 567)
+texture = ExtResource("20_s1050")
+
+[node name="VmanWithBubble" type="Sprite2D" parent="loadingScreen"]
+position = Vector2(1617, 546)
+texture = ExtResource("21_i5ydv")
+
+[node name="firstpart" type="Node2D" parent="."]
+visible = false
+
+[node name="start" type="Button" parent="firstpart"]
+offset_left = 1359.0
+offset_top = 462.0
+offset_right = 1883.0
+offset_bottom = 586.0
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "setting"
+
+[node name="start2" type="Button" parent="firstpart"]
+offset_left = 1359.0
+offset_top = 191.0
+offset_right = 1883.0
+offset_bottom = 315.0
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "start"
+
+[node name="extra" type="Button" parent="firstpart"]
+offset_left = 1359.0
+offset_top = 333.0
+offset_right = 1883.0
+offset_bottom = 457.0
+theme_override_font_sizes/font_size = 50
+text = "extra start"
+
+[node name="Instructions" type="Button" parent="firstpart"]
+offset_left = 1361.0
+offset_top = 599.0
+offset_right = 1885.0
+offset_bottom = 723.0
+theme_override_font_sizes/font_size = 50
+text = "Instruction"
+
+[node name="quit" type="Button" parent="firstpart"]
+offset_left = 1364.0
+offset_top = 874.0
+offset_right = 1888.0
+offset_bottom = 998.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="music Room" type="Button" parent="firstpart"]
+offset_left = 1363.0
+offset_top = 735.0
+offset_right = 1887.0
+offset_bottom = 859.0
+theme_override_font_sizes/font_size = 50
+text = "Music Room"
+
+[node name="Knifee" type="Sprite2D" parent="firstpart"]
+position = Vector2(1254, 394)
+rotation = 1.5708
+scale = Vector2(6.25, 6.25)
+texture = ExtResource("3_wk0pr")
+
+[connection signal="pressed" from="firstpart/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="firstpart/start2" to="." method="_on_start_pressed"]
+[connection signal="button_down" from="firstpart/Instructions" to="." method="_on_instructions_button_down"]
+[connection signal="button_down" from="firstpart/quit" to="." method="_on_quit_button_down"]
+[connection signal="button_down" from="firstpart/music Room" to="." method="_on_music_room_button_down"]

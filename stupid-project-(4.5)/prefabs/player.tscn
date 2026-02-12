@@ -1,0 +1,136 @@
+[gd_scene load_steps=18 format=3 uid="uid://b7a7kdiy2ua2k"]
+
+[ext_resource type="Script" uid="uid://dl6eh6bb5ejnk" path="res://scripts/player.gd" id="1_4j22m"]
+[ext_resource type="Texture2D" uid="uid://di4827m7ueo1q" path="res://images/player.png" id="2_of66h"]
+[ext_resource type="Texture2D" uid="uid://cnvwxk21ylmj" path="res://images/Fire animationForSpecial.png" id="2_rgeog"]
+[ext_resource type="Texture2D" uid="uid://di36wv4xid0kd" path="res://images/circle.png" id="2_xvq43"]
+[ext_resource type="Script" uid="uid://c2ld355al4qu2" path="res://scripts/collect_bread.gd" id="4_1eeyy"]
+[ext_resource type="AudioStream" uid="uid://mx8wyrdvc112" path="res://sfx/ivan asmr.wav" id="5_u51tk"]
+[ext_resource type="AudioStream" uid="uid://bq83ss50y5rr0" path="res://sfx/scroll.wav" id="6_u51tk"]
+[ext_resource type="AudioStream" uid="uid://peshdgehw2hd" path="res://sfx/extended.wav" id="7_kbsxf"]
+[ext_resource type="Texture2D" uid="uid://dj2br04yejf1m" path="res://images/Reimu.PNG.webp" id="8_kbsxf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opo22"]
+atlas = ExtResource("2_rgeog")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rb0w"]
+atlas = ExtResource("2_rgeog")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd3sa"]
+atlas = ExtResource("2_rgeog")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2qjg"]
+atlas = ExtResource("2_rgeog")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_llb5v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opo22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rb0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd3sa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2qjg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7erbq"]
+radius = 7.14288
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iqrp6"]
+radius = 115.082
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rgeog"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.253
+spread = 180.0
+initial_velocity_min = 216.67
+initial_velocity_max = 400.0
+gravity = Vector3(0, 980, 0)
+
+[node name="player" type="Area2D"]
+scale = Vector2(0.4, 0.399)
+script = ExtResource("1_4j22m")
+
+[node name="specialAnimation" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.309804)
+position = Vector2(-1.25, -30.0752)
+scale = Vector2(2.16797, 2.23214)
+sprite_frames = SubResource("SpriteFrames_llb5v")
+frame_progress = 0.319575
+
+[node name="drip" type="Sprite2D" parent="."]
+position = Vector2(-3.57144, 0)
+scale = Vector2(1.95853, 1.96782)
+texture = ExtResource("2_of66h")
+
+[node name="hitboxes" type="Sprite2D" parent="."]
+scale = Vector2(0.65625, 0.65625)
+texture = ExtResource("2_xvq43")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7erbq")
+
+[node name="collectBread" type="Area2D" parent="."]
+script = ExtResource("4_1eeyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectBread"]
+shape = SubResource("CircleShape2D_iqrp6")
+
+[node name="invincibility" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="superTimePeriod" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="shootinterval" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="powerUp" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[node name="SePldead00" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_u51tk")
+
+[node name="SeItem00" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_u51tk")
+
+[node name="SeExtend" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_kbsxf")
+
+[node name="explode" type="GPUParticles2D" parent="."]
+position = Vector2(-0.773868, -2.38419e-07)
+emitting = false
+amount = 10
+amount_ratio = 0.656
+texture = ExtResource("8_kbsxf")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+draw_order = 0
+trail_lifetime = 0.55
+process_material = SubResource("ParticleProcessMaterial_rgeog")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="collectBread" to="." method="_on_collect_bread_area_entered"]
+[connection signal="timeout" from="invincibility" to="." method="_on_invincibility_timeout"]
+[connection signal="timeout" from="superTimePeriod" to="." method="_on_super_time_period_timeout"]
+[connection signal="timeout" from="shootinterval" to="." method="_on_shootinterval_timeout"]
+[connection signal="timeout" from="powerUp" to="." method="_on_power_up_timeout"]

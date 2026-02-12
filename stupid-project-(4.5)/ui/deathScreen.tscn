@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://dut6g6ptou1mb"]
+
+[ext_resource type="Script" uid="uid://dtt8ntta5pj6m" path="res://scripts/death_screen.gd" id="1_y7kdk"]
+[ext_resource type="Texture2D" uid="uid://peqvte4xqet7" path="res://images/death.png" id="2_8tcr0"]
+[ext_resource type="AudioStream" uid="uid://bjewkmvmwrqx6" path="res://music/death.mp3" id="2_brfy3"]
+[ext_resource type="Texture2D" uid="uid://icil76oklt2s" path="res://images/scarwee.jpg" id="3_je28a"]
+[ext_resource type="Texture2D" uid="uid://dj2br04yejf1m" path="res://images/Reimu.PNG.webp" id="4_781wv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y7kdk")
+
+[node name="Death" type="Sprite2D" parent="."]
+position = Vector2(966.778, 541)
+scale = Vector2(3.00556, 3.00556)
+texture = ExtResource("2_8tcr0")
+
+[node name="Scarwee" type="Sprite2D" parent="."]
+position = Vector2(82.5734, 186.38)
+rotation = 0.0244287
+scale = Vector2(0.616575, 1)
+texture = ExtResource("3_je28a")
+
+[node name="Reimu_png" type="Sprite2D" parent="."]
+position = Vector2(688, 947)
+texture = ExtResource("4_781wv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.595
+anchor_bottom = 0.5
+offset_top = 96.0
+offset_right = 4.59998
+offset_bottom = -91.0
+theme_override_font_sizes/font_size = 100
+text = "You dieded 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitleAndDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_brfy3")
+autoplay = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 457.0
+offset_right = 757.0
+offset_bottom = 568.0
+theme_override_font_sizes/font_size = 50
+text = "[Z]go to alternative timeline"
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 638.0
+offset_right = 597.0
+offset_bottom = 762.0
+theme_override_font_sizes/font_size = 50
+text = "[X]back to titlescreen"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="quit" to="." method="_on_quit_button_down"]

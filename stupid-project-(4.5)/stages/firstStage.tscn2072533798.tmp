@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://xykodx86abkc"]
+
+[ext_resource type="Script" uid="uid://dx685i44ok57h" path="res://scripts/first_stage.gd" id="1_7ry33"]
+[ext_resource type="PackedScene" uid="uid://dq28g10k4d752" path="res://ui/ui.tscn" id="3_7ujss"]
+[ext_resource type="Texture2D" uid="uid://2wbtfekm2uad" path="res://images/bgFor Stage1.png" id="4_7ry33"]
+[ext_resource type="AudioStream" uid="uid://m7foh8msecth" path="res://music/looping song.wav" id="5_ugfdu"]
+[ext_resource type="AudioStream" uid="uid://c1goft2ei7yw5" path="res://music/barryToes.mp3" id="6_cvvoo"]
+[ext_resource type="Texture2D" uid="uid://b8rfflnqy1vir" path="res://images/jetPlane.png" id="7_81ccc"]
+[ext_resource type="PackedScene" uid="uid://dxqwnhhteb662" path="res://ui/scene_transition.tscn" id="8_7ujss"]
+
+[node name="firstStage" type="Node2D"]
+script = ExtResource("1_7ry33")
+
+[node name="Unnamed" type="Sprite2D" parent="."]
+modulate = Color(0.470076, 0.470076, 0.470076, 1)
+show_behind_parent = true
+z_index = -1000
+position = Vector2(-384, 3.99994)
+scale = Vector2(1.71667, 2.09231)
+texture = ExtResource("4_7ry33")
+
+[node name="JetPlane" type="Sprite2D" parent="."]
+modulate = Color(0.942823, 0.942823, 0.942823, 1)
+show_behind_parent = true
+z_index = -500
+position = Vector2(68, -85)
+scale = Vector2(2.06813, 2.06813)
+texture = ExtResource("7_81ccc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+
+[node name="UI" parent="." instance=ExtResource("3_7ujss")]
+top_level = true
+light_mask = 512
+offset_left = -966.0
+offset_top = -536.0
+offset_right = -966.0
+offset_bottom = -536.0
+
+[node name="elmoSpawnRate" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="gigaSpawnRate" type="Timer" parent="."]
+autostart = true
+
+[node name="sideToSide" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="LoopingSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ugfdu")
+volume_db = -1.0
+autoplay = true
+
+[node name="WhenBossSpawn" type="Timer" parent="."]
+wait_time = 75.0
+one_shot = true
+
+[node name="BarryToes" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_cvvoo")
+parameters/looping = false
+
+[node name="sceneTransition" parent="." instance=ExtResource("8_7ujss")]
+position = Vector2(-961, -542)
+
+[connection signal="startTheBossMusic" from="UI" to="." method="_on_ui_start_the_boss_music"]
+[connection signal="timeout" from="elmoSpawnRate" to="." method="_on_elmo_spawn_rate_timeout"]
+[connection signal="timeout" from="gigaSpawnRate" to="." method="_on_giga_spawn_rate_timeout"]
+[connection signal="timeout" from="sideToSide" to="." method="_on_side_to_side_timeout"]
+[connection signal="timeout" from="WhenBossSpawn" to="." method="_on_when_boss_spawn_timeout"]

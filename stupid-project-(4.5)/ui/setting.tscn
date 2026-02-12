@@ -1,0 +1,122 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3a1mhgiukji"]
+
+[ext_resource type="Script" uid="uid://dfcvyu03j7nfm" path="res://ui/setting.gd" id="1_qt3sj"]
+[ext_resource type="Texture2D" uid="uid://peqvte4xqet7" path="res://images/death.png" id="2_2w7xm"]
+
+[node name="setting" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qt3sj")
+
+[node name="Death" type="Sprite2D" parent="."]
+modulate = Color(0.359069, 0.359069, 0.359069, 1)
+position = Vector2(962.5, 543.5)
+scale = Vector2(3.00156, 3.01389)
+texture = ExtResource("2_2w7xm")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 487.0
+offset_right = -694.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "volume"
+
+[node name="volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -6.0
+max_value = 50.0
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "mute"
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = " "
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "vsync"
+
+[node name="vsync" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "disable"
+popup/item_0/id = 0
+popup/item_1/text = "enable"
+popup/item_1/id = 1
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "USSR mode Trust work 100 %"
+
+[node name="CheckBox2" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = " NO Scam"
+
+[node name="Label5" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "Camera Shake"
+
+[node name="CheckBox3" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+
+[node name="Label6" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "Particles"
+
+[node name="CheckBox4" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+
+[node name="Label7" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "fullscreen"
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Not"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 425.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 50
+text = "[x] to go back"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/vsync" to="." method="_on_vsync_item_selected"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox2" to="." method="_on_check_box_2_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox3" to="." method="_on_check_box_3_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox4" to="." method="_on_check_box_4_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]

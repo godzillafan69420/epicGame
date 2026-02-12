@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b81yayke14eft"]
+
+[ext_resource type="Script" uid="uid://cptov5j8m0c4m" path="res://prefabs/boss_ball.gd" id="1_8pjxh"]
+[ext_resource type="PackedScene" uid="uid://71g3ltp6fyoh" path="res://prefabs/group_boss_bullet.tscn" id="1_o4r7c"]
+
+[node name="LineBullet" type="Node2D"]
+script = ExtResource("1_8pjxh")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="GroupBossBullet" parent="Node2D" instance=ExtResource("1_o4r7c")]
+position = Vector2(-30, 0)
+
+[node name="GroupBossBullet4" parent="Node2D" instance=ExtResource("1_o4r7c")]
+position = Vector2(30, 0)

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvdxr8t3wasqr"]
+
+[ext_resource type="Script" uid="uid://brsin4uxgm6jf" path="res://prefabs/square_attack.gd" id="1_dsbfv"]
+[ext_resource type="PackedScene" uid="uid://71g3ltp6fyoh" path="res://prefabs/group_boss_bullet.tscn" id="1_jxfdc"]
+
+[node name="squareAttack" type="Node2D"]
+script = ExtResource("1_dsbfv")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-66, 0)
+
+[node name="GroupBossBullet" parent="Node2D" instance=ExtResource("1_jxfdc")]
+position = Vector2(0, -34)
+
+[node name="GroupBossBullet3" parent="Node2D" instance=ExtResource("1_jxfdc")]
+position = Vector2(1, 46)
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(61, 0)
+
+[node name="GroupBossBullet2" parent="Node2D2" instance=ExtResource("1_jxfdc")]
+position = Vector2(0, -35)
+
+[node name="GroupBossBullet4" parent="Node2D2" instance=ExtResource("1_jxfdc")]
+position = Vector2(2, 46)
